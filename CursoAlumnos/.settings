@@ -1,0 +1,15 @@
+[Breakpoints]
+Count=0
+
+[FCommit]
+LastCommit="Inicial\n---- Esta línea y las siguientes serán ignoradas ----\n\nA       .\nA       .connection\nA       CursosAlumnos\nA       .directory\nA       .project\nA       .src\nA       .src/FMain.form\nA       .src/FMain.class\nA       .hidden\nA       .icon.png\nA       EsquemaCursosAlumnos.dia"
+
+[OpenFile]
+Active=1
+File[1]=".src/FMain.form"
+Count=1
+
+[VersionControl]
+RememberPassword=1
+User="torredelaquila@gmail.com"
+
