@@ -10,7 +10,7 @@ Private t1 As Object
 Public Sub Abrir(Optional ruta As String) 
   
   Dim conexion As New Connection
-
+  
   If ruta <> "" Or ruta <> Null Then 
     mBase = conectar.abrir(conexion, ruta) 
   Else 
@@ -470,47 +470,47 @@ End
 '----------------Generacion de listas----------------
 Public Function lista(res As Result, campo As String) As String[]
   
-  Dim lista As New String[]
-
+  Dim llista As New String[]
+  
   Do While res.Available
-    lista.Add(res[campo])
+    llista.Add(res[campo])
     res.MoveNext()
   Loop
   res.MoveFirst() 'muevo al primer lugar del resultado...(para que puedan continuar otras funciones LISTA)
-  Return lista
+  Return llista
   
 End
 
 Public Function listaRutaFoto(res As Result) As String[]
   
-  Dim lista As New String[]
-
+  Dim llista As New String[]
+  
   Do While res.Available
-    lista.Add(res!RutaFoto)
+    llista.Add(res!RutaFoto)
     res.MoveNext()
   Loop
   res.MoveFirst() 'muevo al primer lugar del resultado...(para que puedan continuar otras funciones LISTA)
-  Return lista
+  Return llista
   
 End
 
 Public Function listaIdAlumno(res As Result) As String[]
   
-  Dim lista As New String[]
-
+  Dim llista As New String[]
+  
   Do While res.Available
-    lista.Add(res!idAlumno)
+    llista.Add(res!idAlumno)
     res.MoveNext()
   Loop
   res.MoveFirst() 'muevo al primer lugar del resultado...(para que puedan continuar otras funciones LISTA)
-  Return lista
+  Return llista
   
 End
 
 Public Function listaApellido(res As Result) As String[]
   
   Dim lista As New String[]
-
+  
   Do While res.Available
     lista.Add(res!Apellido)
     res.MoveNext()
@@ -523,7 +523,7 @@ End
 Public Function listaNombre(res As Result) As String[]
   
   Dim lista As New String[]
-
+  
   Do While res.Available
     lista.Add(res!Nombre)
     res.MoveNext()
@@ -536,7 +536,7 @@ End
 Public Function listaDocumento(res As Result) As String[]
   
   Dim lista As New String[]
-
+  
   Do While res.Available
     lista.Add(res!Documento)
     res.MoveNext()
@@ -549,7 +549,7 @@ End
 Public Function listaFechaNacimiento(res As Result) As String[]
   
   Dim lista As New String[]
-
+  
   Do While res.Available
     lista.Add(res!FechaNacimiento)
     res.MoveNext()
@@ -562,7 +562,7 @@ End
 Public Function listaDomicilio(res As Result) As String[]
   
   Dim lista As New String[]
-
+  
   Do While res.Available
     lista.Add(res!Domicilio)
     res.MoveNext()
@@ -575,7 +575,7 @@ End
 Public Function listaTelefono(res As Result) As String[]
   
   Dim lista As New String[]
-
+  
   Do While res.Available
     lista.Add(res!Telefono)
     res.MoveNext()
@@ -588,7 +588,7 @@ End
 Public Function listaNacionalidad(res As Result) As String[]
   
   Dim lista As New String[]
-
+  
   Do While res.Available
     lista.Add(res!Nacionalidad)
     res.MoveNext()
@@ -601,7 +601,7 @@ End
 Public Function listaEscOrigen(res As Result) As String[]
   
   Dim lista As New String[]
-
+  
   Do While res.Available
     lista.Add(res!EscOrigen)
     res.MoveNext()
@@ -614,7 +614,7 @@ End
 Public Function listaLegajo(res As Result) As String[]
   
   Dim lista As New String[]
-
+  
   Do While res.Available
     lista.Add(res!Legajo)
     res.MoveNext()
@@ -1077,7 +1077,7 @@ End
 Public Function informe() As String
   
   Dim texto As String
-
+  
   Print "Base de datos: CursosAlumnos"
   Print "        Tabla: Alumno"
   Print "             Campo: RutaFoto Tipo: String"
@@ -1181,20 +1181,21 @@ Public Function gridFormatearFilas(grid As GridView) As Gridview
   grid[10, 0].text = "Legajo" 
   grid[10, 0].background = color.lightgray  
   Return grid 
-
+  
 End
 
 Public Sub contenido() As Result 
-
+  
   Try SQLString = "SELECT * FROM Alumno" 
   mRs = mBase.Exec(SQLString) 
   Return mRs 
-
+  
 End 
 
 Public Function mostrarRegistro(numero As Integer, grid As GridView, Optional sqlcadena As String) As Result
-
+  
   Dim resultado As Result
+  
   If sqlcadena = Null Then 
     resultado = contenido()
   Else 
@@ -1212,11 +1213,11 @@ Public Function mostrarRegistro(numero As Integer, grid As GridView, Optional sq
   Try grid[8, 1].text = Str$(resultado!Nacionalidad)
   Try grid[9, 1].text = Str$(resultado!EscOrigen)
   Try grid[10, 1].text = Str$(resultado!Legajo)
-
+  
 End
 
 Public Function GridResultanteSQL(res As Result, grid As GridView) As Gridview  
-
+  
   Dim columna As Integer
   Dim hField As ResultField
   Dim a As Integer
@@ -1248,15 +1249,15 @@ Public Function GridResultanteSQL(res As Result, grid As GridView) As Gridview
     res.MoveNext()
   Loop
   Return grid 
-
+  
 End
 
 Public Sub resultObject(resultado As Result) As Object[]
-
+  
   Dim hField As ResultField
   Dim a As Integer
   Dim tarray As New Object[resultado.count]
-
+  
   For a = 0 To resultado.count - 1
     tarray[a] = New Alumno 
   Next 
@@ -1287,37 +1288,41 @@ Public Sub resultObject(resultado As Result) As Object[]
     
   Loop
   Return tarray
-
+  
 End
 
 Public Sub ToBD(obj As Alumno) As Object
-
+  
   Dim Taux As Object
+  
   Taux = New Alumno 
   Try taux.Alumno_RutaFoto = obj.RutaFoto
   Try taux.Alumno_idAlumno = obj.idAlumno
   Try taux.Alumno_Apellido = obj.Apellido
- Try taux.Alumno_Nombre = obj.Nombre
- Try taux.Alumno_Documento = obj.Documento
- Try taux.Alumno_FechaNacimiento = obj.FechaNacimiento
- Try taux.Alumno_Domicilio = obj.Domicilio
- Try taux.Alumno_Telefono = obj.Telefono
- Try taux.Alumno_Nacionalidad = obj.Nacionalidad
- Try taux.Alumno_EscOrigen = obj.EscOrigen
- Try taux.Alumno_Legajo = obj.Legajo
-Return taux
+  Try taux.Alumno_Nombre = obj.Nombre
+  Try taux.Alumno_Documento = obj.Documento
+  Try taux.Alumno_FechaNacimiento = obj.FechaNacimiento
+  Try taux.Alumno_Domicilio = obj.Domicilio
+  Try taux.Alumno_Telefono = obj.Telefono
+  Try taux.Alumno_Nacionalidad = obj.Nacionalidad
+  Try taux.Alumno_EscOrigen = obj.EscOrigen
+  Try taux.Alumno_Legajo = obj.Legajo
+  Return taux
+  
 End
 
 Public Sub ArrayObjectToBD(obj As Object[]) As Object[]
-Dim Taux As Object
-Dim TauxArray As New Object[]
-Dim a As Integer
-For a = 0 To obj.count - 1
-Taux = New Alumno 
-Taux = ToBD(Obj[a])
-TauxArray.add(Taux)
-Next
-
-Return TauxArray
+  
+  Dim Taux As Object
+  Dim TauxArray As New Object[]
+  Dim a As Integer
+  
+  For a = 0 To obj.count - 1
+    Taux = New Alumno 
+    Taux = ToBD(Obj[a])
+    TauxArray.add(Taux)
+  Next
+  
+  Return TauxArray
+  
 End
-

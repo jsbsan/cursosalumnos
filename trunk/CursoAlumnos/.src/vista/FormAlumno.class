@@ -1,0 +1,29 @@
+' Gambas class file
+
+Public ControladorAplicacion As Controlador
+
+Public Sub Form_Open()
+  
+  Me.Center()
+  'si no esta editando, poner todos los campos "vacios"
+  
+End
+
+Public Sub ToolButtonCalendario_Click()
+  
+  Dim fcalendario As New FormCalendario
+  
+  Dim fecha As New ClaseDato
+  
+  fcalendario.fecha = fecha
+  
+  fcalendario.Showmodal()
+  
+  TextBoxFECHANACIMIENTO.text = Format(Date(Year(fecha.tag), Month(fecha.tag), Day(fecha.tag)), "dd-mmmm-yyyy")
+  TextBoxFECHANACIMIENTO.tag = fecha.tag
+  
+End
+
+Public Sub ToolButtonAceptar_Click()
+  
+End

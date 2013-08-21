@@ -20,3 +20,19 @@ Public Sub Form_Resize()
   ListBoxInforme.h = Me.H - ListBoxInforme.y - IconPanelMenu.y - 10
   
 End
+
+Public Sub ToolButtonAnadir_Click()
+  
+  ControladorAplicacion.falumno.showmodal()
+  
+End
+
+Public Sub IconPanelMenu_Click()
+  
+  Select Case IconPanelMenu.Index
+    Case 4
+      'salir del programa
+      Me.Close()
+  End Select
+  
+End

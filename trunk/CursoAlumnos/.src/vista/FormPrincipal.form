@@ -17,9 +17,10 @@
     { IconPanelMenu IconPanel
       MoveScaled(0,14,97,52)
       AutoResize = True
-      Count = 4
+      Count = 5
       Index = 0
       Text = ("Alumnos")
+      Picture = Picture["icon:/16/people"]
       { HBox1 HBox
         MoveScaled(1,1,73,4)
         { ToolButtonAnadir ToolButton
@@ -58,6 +59,7 @@
       }
       Index = 1
       Text = ("Cursos")
+      Picture = Picture["icon:/16/book"]
       { HBox2 HBox
         MoveScaled(1,1,75,4)
         { ToolButtonAnadirCurso ToolButton
@@ -96,6 +98,7 @@
       }
       Index = 2
       Text = ("Listados")
+      Picture = Picture["icon:/16/text"]
       { Label1 Label
         MoveScaled(2,0,57,6)
         Text = ("Listado de informes disponibles...")
@@ -105,11 +108,15 @@
       }
       Index = 3
       Text = ("Acerca de...")
+      Picture = Picture["icon:/16/question"]
       { TextLabel1 TextLabel
         MoveScaled(0,0,55,51)
         Text = ("Control de Cursos y Alumnos<br>\nRealizado por:<br>\nJulio Sánchez Berro y Jorge Agustín Pereyra\n\n\n")
         Alignment = Align.Center
       }
+      Index = 4
+      Text = ("Salir")
+      Picture = Picture["icon:/16/quit"]
       Index = 0
     }
   }

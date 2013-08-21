@@ -1,154 +1,206 @@
-PROPERTY RutaFoto AS String 
-PRIVATE hRutaFoto AS String
+' Gambas class file
 
-PROPERTY idAlumno AS Integer 
-PRIVATE hidAlumno AS Integer
+Property RutaFoto As String 
+Private hRutaFoto As String
 
-PROPERTY Apellido AS String 
-PRIVATE hApellido AS String
+Property idAlumno As Integer 
+Private hidAlumno As Integer
 
-PROPERTY Nombre AS String 
-PRIVATE hNombre AS String
+Property Apellido As String 
+Private hApellido As String
 
-PROPERTY Documento AS String 
-PRIVATE hDocumento AS String
+Property Nombre As String 
+Private hNombre As String
 
-PROPERTY FechaNacimiento AS Float 
-PRIVATE hFechaNacimiento AS Float
+Property Documento As String 
+Private hDocumento As String
 
-PROPERTY Domicilio AS String 
-PRIVATE hDomicilio AS String
+Property FechaNacimiento As Float 
+Private hFechaNacimiento As Float
 
-PROPERTY Telefono AS String 
-PRIVATE hTelefono AS String
+Property Domicilio As String 
+Private hDomicilio As String
 
-PROPERTY Nacionalidad AS String 
-PRIVATE hNacionalidad AS String
+Property Telefono As String 
+Private hTelefono As String
 
-PROPERTY EscOrigen AS String 
-PRIVATE hEscOrigen AS String
+Property Nacionalidad As String 
+Private hNacionalidad As String
 
-PROPERTY Legajo AS String 
-PRIVATE hLegajo AS String
+Property EscOrigen As String 
+Private hEscOrigen As String
 
-PROPERTY campo AS string[] 
-PRIVATE hcampo AS new string[]
+Property Legajo As String 
+Private hLegajo As String
 
-PROPERTY campotipo AS string[] 
-PRIVATE hcampotipo AS new string[]
+Property campo As String[] 
+Private hcampo As New String[]
 
-PROPERTY campovisible AS string[] 
-PRIVATE hcampovisible AS new string[]
+Property campotipo As String[] 
+Private hcampotipo As New String[]
 
-PRIVATE FUNCTION RutaFoto_read() AS String
- RETURN hRutaFoto 
-END 
+Property campovisible As String[] 
+Private hcampovisible As New String[]
+
+Private Function RutaFoto_read() As String
+  
+  Return hRutaFoto 
+  
+End 
+
+Private Sub RutaFoto_write(Valor As String)
+  
+  hRutaFoto = Valor 
+  
+End  
+
+Private Function idAlumno_read() As Integer
+  
+  Return hidAlumno 
+  
+End 
+
+Private Sub idAlumno_write(Valor As Integer)
+  
+  hidAlumno = Valor 
+  
+End  
+
+Private Function Apellido_read() As String
+  
+  Return hApellido 
+  
+End 
+
+Private Sub Apellido_write(Valor As String)
+  
+  hApellido = Valor 
+  
+End  
+
+Private Function Nombre_read() As String
+  
+  Return hNombre 
+  
+End 
+
+Private Sub Nombre_write(Valor As String)
+  
+  hNombre = Valor 
+  
+End  
+
+Private Function Documento_read() As String
+  
+  Return hDocumento 
+  
+End 
+
+Private Sub Documento_write(Valor As String)
+  
+  hDocumento = Valor 
+  
+End  
+
+Private Function FechaNacimiento_read() As Float
+  
+  Return hFechaNacimiento 
+  
+End 
+
+Private Sub FechaNacimiento_write(Valor As Float)
+  
+  hFechaNacimiento = Valor 
+  
+End  
+
+Private Function Domicilio_read() As String
+  
+  Return hDomicilio 
+  
+End 
+
+Private Sub Domicilio_write(Valor As String)
+  
+  hDomicilio = Valor 
+  
+End  
+
+Private Function Telefono_read() As String
+  
+  Return hTelefono 
+  
+End 
+
+Private Sub Telefono_write(Valor As String)
+  
+  hTelefono = Valor 
+  
+End  
+
+Private Function Nacionalidad_read() As String
+  
+  Return hNacionalidad 
+  
+End 
+
+Private Sub Nacionalidad_write(Valor As String)
+  
+  hNacionalidad = Valor 
+  
+End  
+
+Private Function EscOrigen_read() As String
+  
+  Return hEscOrigen 
+  
+End 
+
+Private Sub EscOrigen_write(Valor As String)
+
+  hEscOrigen = Valor 
+
+End  
+
+Private Function Legajo_read() As String
+
+  Return hLegajo 
+
+End 
+
+Private Sub Legajo_write(Valor As String)
+
+  hLegajo = Valor 
+
+End  
+
+Private Function campo_read() As String[]
+
+  Return hcampo 
+
+End 
+
+Private Sub campo_write(Valor As String[])
+
+  hcampo = Valor 
+
+End  
+
+Private Function campotipo_read() As String[]
+
+  Return hcampotipo 
+
+End 
+
+Private Sub campotipo_write(Valor As String[])
+ hcampotipo = Valor 
+End  
  
-PRIVATE SUB RutaFoto_write(Valor AS String)
- hRutaFoto= Valor 
-END  
+Private Function campovisible_read() As String[]
+ Return hcampovisible 
+End 
  
-PRIVATE FUNCTION idAlumno_read() AS Integer
- RETURN hidAlumno 
-END 
- 
-PRIVATE SUB idAlumno_write(Valor AS Integer)
- hidAlumno= Valor 
-END  
- 
-PRIVATE FUNCTION Apellido_read() AS String
- RETURN hApellido 
-END 
- 
-PRIVATE SUB Apellido_write(Valor AS String)
- hApellido= Valor 
-END  
- 
-PRIVATE FUNCTION Nombre_read() AS String
- RETURN hNombre 
-END 
- 
-PRIVATE SUB Nombre_write(Valor AS String)
- hNombre= Valor 
-END  
- 
-PRIVATE FUNCTION Documento_read() AS String
- RETURN hDocumento 
-END 
- 
-PRIVATE SUB Documento_write(Valor AS String)
- hDocumento= Valor 
-END  
- 
-PRIVATE FUNCTION FechaNacimiento_read() AS Float
- RETURN hFechaNacimiento 
-END 
- 
-PRIVATE SUB FechaNacimiento_write(Valor AS Float)
- hFechaNacimiento= Valor 
-END  
- 
-PRIVATE FUNCTION Domicilio_read() AS String
- RETURN hDomicilio 
-END 
- 
-PRIVATE SUB Domicilio_write(Valor AS String)
- hDomicilio= Valor 
-END  
- 
-PRIVATE FUNCTION Telefono_read() AS String
- RETURN hTelefono 
-END 
- 
-PRIVATE SUB Telefono_write(Valor AS String)
- hTelefono= Valor 
-END  
- 
-PRIVATE FUNCTION Nacionalidad_read() AS String
- RETURN hNacionalidad 
-END 
- 
-PRIVATE SUB Nacionalidad_write(Valor AS String)
- hNacionalidad= Valor 
-END  
- 
-PRIVATE FUNCTION EscOrigen_read() AS String
- RETURN hEscOrigen 
-END 
- 
-PRIVATE SUB EscOrigen_write(Valor AS String)
- hEscOrigen= Valor 
-END  
- 
-PRIVATE FUNCTION Legajo_read() AS String
- RETURN hLegajo 
-END 
- 
-PRIVATE SUB Legajo_write(Valor AS String)
- hLegajo= Valor 
-END  
- 
-PRIVATE FUNCTION campo_read() AS string[]
- RETURN hcampo 
-END 
- 
-PRIVATE SUB campo_write(Valor AS string[])
- hcampo= Valor 
-END  
- 
-PRIVATE FUNCTION campotipo_read() AS string[]
- RETURN hcampotipo 
-END 
- 
-PRIVATE SUB campotipo_write(Valor AS string[])
- hcampotipo= Valor 
-END  
- 
-PRIVATE FUNCTION campovisible_read() AS string[]
- RETURN hcampovisible 
-END 
- 
-PRIVATE SUB campovisible_write(Valor AS string[])
- hcampovisible= Valor 
-END  
+Private Sub campovisible_write(Valor As String[])
+ hcampovisible = Valor 
+End  
  
