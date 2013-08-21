@@ -1,0 +1,34 @@
+' Gambas module file
+
+Public Sub main()
+  
+  'iniciar programa...
+  
+  Dim ControladorAplicacion As New Controlador
+  Dim FormularioControlAcceso As New FControlAcceso
+  
+  'relaciones MODELO VISTA CONTROLADOR
+  FormularioControlAcceso.ControladorAplicacion = ControladorAplicacion
+  
+  ControladorAplicacion.controlAcceso = FormularioControlAcceso
+  
+  'inicio usuario/password si no estan definidas
+  ControladorAplicacion.comprobarUsuarioPassword()
+  
+  If ControladorAplicacion.controlAcceso.Showmodal() Then 
+    'puedo continual con el program
+    Print "continuo con el programa"
+    
+  Else
+    Quit
+    
+  Endif
+  
+  'terminar ejecucion del programa
+  
+  FormularioControlAcceso = Null
+  ControladorAplicacion = Null
+  
+  Quit
+  
+End
