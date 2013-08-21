@@ -2,30 +2,39 @@
 
 Public Sub main()
   
+  Dim entrada As Boolean
   'iniciar programa...
   
   Dim ControladorAplicacion As New Controlador
   Dim FormularioControlAcceso As New FControlAcceso
+  Dim FormularioPrincipal As New FormPrincipal
   
   'relaciones MODELO VISTA CONTROLADOR
   FormularioControlAcceso.ControladorAplicacion = ControladorAplicacion
+  FormularioPrincipal.ControladorAplicacion = ControladorAplicacion
   
   ControladorAplicacion.controlAcceso = FormularioControlAcceso
+  ControladorAplicacion.Fprincipal = FormularioPrincipal
   
   'inicio usuario/password si no estan definidas
   ControladorAplicacion.comprobarUsuarioPassword()
   
-  If ControladorAplicacion.controlAcceso.Showmodal() Then 
+  entrada = ControladorAplicacion.controlAcceso.Showmodal() 
+  
+  If entrada = True Then 
     'puedo continual con el program
     Print "continuo con el programa"
-    
-  Else
-    Quit
-    
+    ControladorAplicacion.fprincipal.Showmodal()
   Endif
   
   'terminar ejecucion del programa
+  'anular relaciones entre formularios y clases
+  FormularioControlAcceso.ControladorAplicacion = Null
+  ControladorAplicacion.controlAcceso = Null
+  FormularioPrincipal.ControladorAplicacion = Null
+  ControladorAplicacion.fprincipal = Null 
   
+  FormularioPrincipal = Null
   FormularioControlAcceso = Null
   ControladorAplicacion = Null
   

@@ -1,13 +1,14 @@
 ' Gambas class file
 
 Public controlAcceso As FControlAcceso
+Public fprincipal As FormPrincipal
 
 Private usuarioActual As String
 Private passwordActual As String
 
 Public Sub comprobarUsuarioPassword(Optional usuario As String, Optional password As String) As Boolean
   'leo las contraseñas guardas
-
+  
   usuarioActual = Settings["Acceso/usuario", usuario]
   passwordActual = Settings["Acceso/password", password]
   

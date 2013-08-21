@@ -1,0 +1,116 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,101,71)
+  Persistent = True
+  Arrangement = Arrange.Fill
+  { VBox1 VBox
+    MoveScaled(1,1,98,68)
+    { Panel1 Panel
+      MoveScaled(0,0,77,14)
+      Border = Border.Plain
+      { PictureBox1 PictureBox
+        MoveScaled(0,0,79,15)
+        Picture = Picture["colegio13.jpg"]
+      }
+    }
+    { IconPanelMenu IconPanel
+      MoveScaled(0,14,97,52)
+      AutoResize = True
+      Count = 4
+      Index = 0
+      Text = ("Alumnos")
+      { HBox1 HBox
+        MoveScaled(1,1,73,4)
+        { ToolButtonAnadir ToolButton
+          MoveScaled(0,0,14,4)
+          Text = ("Añadir")
+          Picture = Picture["icon:/16/add"]
+          Border = True
+        }
+        { ToolButtonEditar ToolButton
+          MoveScaled(14,0,14,4)
+          Text = ("Editar")
+          Picture = Picture["icon:/16/edit"]
+          Border = True
+        }
+        { ToolButtonBorrar ToolButton
+          MoveScaled(28,0,14,4)
+          Text = ("Borrar")
+          Picture = Picture["icon:/16/erase"]
+          Border = True
+        }
+        { ToolButtonExpediente ToolButton
+          MoveScaled(42,0,18,4)
+          Text = ("Expediente")
+          Picture = Picture["icon:/16/view-detail"]
+          Border = True
+        }
+        { ToolButtonImprimir ToolButton
+          MoveScaled(60,0,13,4)
+          Text = ("Imprimir")
+          Picture = Picture["icon:/16/printer"]
+          Border = True
+        }
+      }
+      { GridViewAlumno GridView
+        MoveScaled(1,6,70,45)
+      }
+      Index = 1
+      Text = ("Cursos")
+      { HBox2 HBox
+        MoveScaled(1,1,75,4)
+        { ToolButtonAnadirCurso ToolButton
+          MoveScaled(0,0,14,4)
+          Text = ("Añadir")
+          Picture = Picture["icon:/16/add"]
+          Border = True
+        }
+        { ToolButtonEditarCurso ToolButton
+          MoveScaled(14,0,14,4)
+          Text = ("Editar")
+          Picture = Picture["icon:/16/edit"]
+          Border = True
+        }
+        { ToolButtonBorrarCurso ToolButton
+          MoveScaled(28,0,14,4)
+          Text = ("Borrar")
+          Picture = Picture["icon:/16/erase"]
+          Border = True
+        }
+        { ToolButtonExpedienteCurso ToolButton
+          MoveScaled(42,0,18,4)
+          Text = ("Expediente")
+          Picture = Picture["icon:/16/view-detail"]
+          Border = True
+        }
+        { ToolButtonImprimir2 ToolButton
+          MoveScaled(61,0,13,4)
+          Text = ("Imprimir")
+          Picture = Picture["icon:/16/printer"]
+          Border = True
+        }
+      }
+      { GridViewCurso GridView
+        MoveScaled(1,6,71,45)
+      }
+      Index = 2
+      Text = ("Listados")
+      { Label1 Label
+        MoveScaled(2,0,57,6)
+        Text = ("Listado de informes disponibles...")
+      }
+      { ListBoxInforme ListBox
+        MoveScaled(2,5,60,44)
+      }
+      Index = 3
+      Text = ("Acerca de...")
+      { TextLabel1 TextLabel
+        MoveScaled(0,0,55,51)
+        Text = ("Control de Cursos y Alumnos<br>\nRealizado por:<br>\nJulio Sánchez Berro y Jorge Agustín Pereyra\n\n\n")
+        Alignment = Align.Center
+      }
+      Index = 0
+    }
+  }
+}

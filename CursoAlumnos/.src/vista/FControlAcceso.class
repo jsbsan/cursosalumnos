@@ -17,8 +17,8 @@ End
 
 Public Sub ToolButtonCancelar_Click()
   'finaliza el programa
-  
-  Quit
+
+  Me.Close(False)
   
 End
 
@@ -57,7 +57,7 @@ Public Sub ToolButtonAceptar_Click()
     Endif
   Else
     'ha superado el numero de intentos...
-    Quit
+    Me.Close(False)
   Endif
   
 End

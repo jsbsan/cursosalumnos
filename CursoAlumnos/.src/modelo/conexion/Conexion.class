@@ -1,0 +1,31 @@
+' Gambas class file
+
+Public hconn As Connection
+
+Public Sub Conexion()
+  
+  If Exist(User.Home & "./CursoAlumnos/CursoAlumnos") Then 
+    'no hago nada, ya existe la base de datos ...
+  Else
+    Try Mkdir User.Home & "./CursoAlumnos/" 'donde se guardara la base de datos
+    Try Mkdir User.Home & "./CursoAlumnos/Fotos" 'donde se guardaran las fotos
+    Copy "CursoAlumnos" To User.Home & "./CursoAlumnos/CursoAlumnos" 'copio la base de datos original al directorio de trabajo
+  Endif
+  
+  hconn = New Connection
+  
+  hconn.Host = User.Home & "./CursoAlumnos/CursoAlumnos"
+  
+  hconn.name = User.Home & "./CursoAlumnos/CursoAlumnos"
+  
+  hconn.Type = "Sqlite3"
+  
+  If Error Then Print "Imposible abrir la base de datos. Error:"; Error.Text
+  
+End
+
+Public Sub desconectar()
+  
+  Try hconn.Close()
+  
+End
