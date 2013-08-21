@@ -1114,7 +1114,7 @@ Public Function gridFormatearColumnas(grid As GridView) As Gridview
     .header = 3 
     .rows.count = 0 
     .columns.count = 11 
-    .Columns[0].title = "RutaFoto"
+    .Columns[0].title = "Foto"
     .Columns[0].width = 80
     .Columns[1].title = "idAlumno"
     .Columns[1].width = 80
@@ -1127,7 +1127,7 @@ Public Function gridFormatearColumnas(grid As GridView) As Gridview
     .Columns[5].title = "FechaNacimiento"
     .Columns[5].width = 80
     .Columns[6].title = "Domicilio"
-    .Columns[6].width = 80
+    .Columns[6].width = 120
     .Columns[7].title = "Telefono"
     .Columns[7].width = 80
     .Columns[8].title = "Nacionalidad"

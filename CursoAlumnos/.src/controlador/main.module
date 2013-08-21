@@ -8,16 +8,25 @@ Public Sub main()
   Dim ControladorAplicacion As New Controlador
   Dim FormularioControlAcceso As New FControlAcceso
   Dim FormularioPrincipal As New FormPrincipal
+  Dim fcurso As New FormCurso
   Dim falumno As New FormAlumno
+  Dim fexpcurso As New FormExpedienteCurso
+  Dim fexpAlumno As New FormExpedienteAlumno
   
   'relaciones MODELO VISTA CONTROLADOR
   FormularioControlAcceso.ControladorAplicacion = ControladorAplicacion
   FormularioPrincipal.ControladorAplicacion = ControladorAplicacion
   falumno.ControladorAplicacion = ControladorAplicacion
+  fcurso.ControladorAplicacion = ControladorAplicacion
+  fexpcurso.ControladorAplicacion = ControladorAplicacion
+  fexpAlumno.ControladorAplicacion = ControladorAplicacion
   
   ControladorAplicacion.controlAcceso = FormularioControlAcceso
   ControladorAplicacion.Fprincipal = FormularioPrincipal
   ControladorAplicacion.falumno = falumno
+  ControladorAplicacion.fcurso = fcurso
+  ControladorAplicacion.fExpCurso = fexpcurso
+  ControladorAplicacion.fexpAlumno = fexpAlumno
   
   'inicio usuario/password si no estan definidas
   ControladorAplicacion.comprobarUsuarioPassword()
@@ -33,11 +42,26 @@ Public Sub main()
   'anular relaciones entre formularios y clases
   FormularioControlAcceso.ControladorAplicacion = Null
   ControladorAplicacion.controlAcceso = Null
+  
   FormularioPrincipal.ControladorAplicacion = Null
   ControladorAplicacion.fprincipal = Null 
+  
   falumno.ControladorAplicacion = Null
   ControladorAplicacion.falumno = Null
   
+  fcurso.ControladorAplicacion = Null
+  ControladorAplicacion.fcurso = Null
+  
+  fexpcurso.ControladorAplicacion = Null
+  ControladorAplicacion.fExpCurso = Null
+  
+  fexpAlumno.ControladorAplicacion = Null
+  ControladorAplicacion.fexpAlumno = Null
+  
+  'anulamos los objetos en si
+  fexpAlumno = Null
+  fexpcurso = Null
+  fcurso = Null
   falumno = Null
   FormularioPrincipal = Null
   FormularioControlAcceso = Null

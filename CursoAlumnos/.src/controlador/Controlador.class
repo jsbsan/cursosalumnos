@@ -3,24 +3,36 @@
 Public controlAcceso As FControlAcceso
 Public fprincipal As FormPrincipal
 Public falumno As FormAlumno
+Public fcurso As FormCurso
+Public fExpCurso As FormExpedienteCurso
+Public fexpAlumno As FormExpedienteAlumno
+
 Public log As Logica
 
 Private usuarioActual As String
 Private passwordActual As String
 
-Public Sub comprobarUsuarioPassword(Optional usuario As String, Optional password As String) As Boolean
+Public Sub actualizarPassword(usuario As String, password As String) 
+  'actualizo los datos de usuario y password
+  
+  Settings["Acceso/usuario"] = usuario
+  Settings["Acceso/password"] = password
+  
+End
+
+Public Function comprobarUsuarioPassword(Optional usuario As String, Optional password As String) As Boolean
   'leo las contraseñas guardas
   
-  usuarioActual = Settings["Acceso/usuario", usuario]
-  passwordActual = Settings["Acceso/password", password]
+  usuarioActual = Settings["Acceso/usuario"]
+  passwordActual = Settings["Acceso/password"]
   
   If usuarioActual = "" And passwordActual = "" Then 
     'como no hay valores pongo los de defecto
     Settings["Acceso/usuario"] = "admin"
     Settings["Acceso/password"] = "admin"
     'las leo de nuevo
-    usuarioActual = Settings["Acceso/usuario", usuario]
-    passwordActual = Settings["Acceso/password", password]
+    usuarioActual = Settings["Acceso/usuario"]
+    passwordActual = Settings["Acceso/password"]
     
   Endif
   
