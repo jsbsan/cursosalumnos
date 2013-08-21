@@ -52,6 +52,7 @@ Public Sub ToolButtonAceptar_Click()
       Message.Error("Usuario/Clave no correctas" & gb.CrLf & "Le quedan " & intentos & " intentos")
       TextBoxUsuario.TEXT = ""
       TextBoxContrasena.TEXT = ""
+      TextBoxUsuario.SetFocus()
       
     Endif
   Else

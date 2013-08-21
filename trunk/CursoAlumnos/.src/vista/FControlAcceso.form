@@ -2,37 +2,43 @@
 
 { Form Form
   MoveScaled(0,0,65,42)
+  Background = &HFFFFFF&
   Persistent = True
   { Label1 Label
-    MoveScaled(6,10,25,6)
+    MoveScaled(4,21,25,6)
     Font = Font["Arial,Bold,+2"]
     Text = ("Usuario:")
     Alignment = Align.Right
   }
   { Label2 Label
-    MoveScaled(6,18,26,7)
+    MoveScaled(3,28,26,7)
     Font = Font["Arial,Bold,+2"]
     Text = ("Contraseña:")
     Alignment = Align.Right
   }
   { ToolButtonAceptar ToolButton
-    MoveScaled(11,31,15,6)
+    MoveScaled(14,35,15,6)
     Text = ("Aceptar")
     Picture = Picture["icon:/16/apply"]
     Border = True
   }
   { ToolButtonCancelar ToolButton
-    MoveScaled(37,31,15,6)
+    MoveScaled(43,35,15,6)
     Text = ("Cancelar")
     Picture = Picture["icon:/16/cancel"]
     Border = True
   }
   { TextBoxUsuario TextBox
-    MoveScaled(34,10,17,5)
+    MoveScaled(32,21,17,5)
     Password = True
   }
   { TextBoxContrasena TextBox
-    MoveScaled(34,19,17,5)
+    MoveScaled(32,29,17,5)
     Password = True
+  }
+  { PictureBox1 PictureBox
+    MoveScaled(0,0,65,15)
+    Picture = Picture["colegio13.jpg"]
+    Stretch = True
   }
 }
