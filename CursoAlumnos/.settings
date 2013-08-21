@@ -1,15 +1,24 @@
 [Breakpoints]
 Count=0
 
+[DebugWindow]
+Count=0
+
 [FCommit]
-LastCommit="Inicial\n---- Esta línea y las siguientes serán ignoradas ----\n\nA       .\nA       .connection\nA       CursosAlumnos\nA       .directory\nA       .project\nA       .src\nA       .src/FMain.form\nA       .src/FMain.class\nA       .hidden\nA       .icon.png\nA       EsquemaCursosAlumnos.dia"
+LastCommit="Estructuro carpetas dentro del codigo fuente\n---- Esta línea y las siguientes serán ignoradas ----\n\nD       .src/FControlAcceso.form\nA       .src/controlador\nA       .src/controlador/main.module\nA       .src/controlador/Controlador.class\nA       .src/vista\nA       .src/vista/FControlAcceso.form\nA       .src/vista/FControlAcceso.class\nD       .src/main.module\nD       .src/FControlAcceso.class\nD       .src/Controlador.class\nA       .src/modelo"
 
 [OpenFile]
-Active=1
-File[1]=".src/FMain.form"
-Count=1
+File[1]=".src/vista/FControlAcceso.form"
+File[2]=".src/vista/FControlAcceso.class:43.23"
+Active=3
+File[3]=".src/controlador/main.module:29.30"
+File[4]=".src/controlador/Controlador.class:29.2"
+Count=4
 
 [VersionControl]
 RememberPassword=1
 User="torredelaquila@gmail.com"
+
+[Watches]
+Count=0
 
