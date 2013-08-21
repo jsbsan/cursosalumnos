@@ -2,6 +2,8 @@
 
 Public controlAcceso As FControlAcceso
 Public fprincipal As FormPrincipal
+Public falumno As FormAlumno
+Public log As Logica
 
 Private usuarioActual As String
 Private passwordActual As String
@@ -28,5 +30,14 @@ Public Sub comprobarUsuarioPassword(Optional usuario As String, Optional passwor
   Else
     Return False
   Endif
+  
+End
+
+'-----------------------------------------------------------------------------
+'-------------------TRABAJOS CON DATOS DE ALUMNOS-----------------------------
+'-----------------------------------------------------------------------------
+Public Sub anadirAlumno(DatosAlumnos As Alumno)
+  
+  log.validarRegistroAlumno(DatosAlumnos)
   
 End

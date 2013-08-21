@@ -8,13 +8,16 @@ Public Sub main()
   Dim ControladorAplicacion As New Controlador
   Dim FormularioControlAcceso As New FControlAcceso
   Dim FormularioPrincipal As New FormPrincipal
+  Dim falumno As New FormAlumno
   
   'relaciones MODELO VISTA CONTROLADOR
   FormularioControlAcceso.ControladorAplicacion = ControladorAplicacion
   FormularioPrincipal.ControladorAplicacion = ControladorAplicacion
+  falumno.ControladorAplicacion = ControladorAplicacion
   
   ControladorAplicacion.controlAcceso = FormularioControlAcceso
   ControladorAplicacion.Fprincipal = FormularioPrincipal
+  ControladorAplicacion.falumno = falumno
   
   'inicio usuario/password si no estan definidas
   ControladorAplicacion.comprobarUsuarioPassword()
@@ -23,7 +26,6 @@ Public Sub main()
   
   If entrada = True Then 
     'puedo continual con el program
-    Print "continuo con el programa"
     ControladorAplicacion.fprincipal.Showmodal()
   Endif
   
@@ -33,7 +35,10 @@ Public Sub main()
   ControladorAplicacion.controlAcceso = Null
   FormularioPrincipal.ControladorAplicacion = Null
   ControladorAplicacion.fprincipal = Null 
+  falumno.ControladorAplicacion = Null
+  ControladorAplicacion.falumno = Null
   
+  falumno = Null
   FormularioPrincipal = Null
   FormularioControlAcceso = Null
   ControladorAplicacion = Null

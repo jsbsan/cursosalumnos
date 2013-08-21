@@ -4,3 +4,9 @@
 'Reglas del Negocio: http://es.wikipedia.org/wiki/Reglas_de_negocio
 '------------------------------------------------------------------------
 'Esta clase contiene las "condiciones" para poder añadir/modificar/borrar la base de datos
+
+Public Sub validarRegistroAlumno(DatosAlumno As Alumno)
+  
+  DatosAlumno.Insertar()
+  
+End

@@ -22,11 +22,11 @@ msgstr ""
 msgid "Contraseña:"
 msgstr ""
 
-#: FControlAcceso.form:35
+#: FControlAcceso.form:35 FormAlumno.form:33 FormCalendario.form:16
 msgid "Aceptar"
 msgstr ""
 
-#: FControlAcceso.form:42
+#: FControlAcceso.form:42 FormAlumno.form:40
 msgid "Cancelar"
 msgstr ""
 
@@ -34,51 +34,91 @@ msgstr ""
 msgid "Control de Cursos y Alumnos"
 msgstr ""
 
+#: FormAlumno.form:47
+msgid "Nombre:"
+msgstr ""
+
+#: FormAlumno.form:61
+msgid "Apellidos:"
+msgstr ""
+
+#: FormAlumno.form:71
+msgid "Documento:"
+msgstr ""
+
+#: FormAlumno.form:83
+msgid "Fecha Nacimiento:"
+msgstr ""
+
+#: FormAlumno.form:92
+msgid "Domicilio:"
+msgstr ""
+
+#: FormAlumno.form:101
+msgid "Télefono:"
+msgstr ""
+
+#: FormAlumno.form:111
+msgid "Nacionalidad:"
+msgstr ""
+
+#: FormAlumno.form:121
+msgid "Esc.Origen:"
+msgstr ""
+
+#: FormAlumno.form:131
+msgid "Legajo:"
+msgstr ""
+
 #: FormPrincipal.form:49
 msgid "Alumnos"
 msgstr ""
 
-#: FormPrincipal.form:56
+#: FormPrincipal.form:57
 msgid "Añadir"
 msgstr ""
 
-#: FormPrincipal.form:63
+#: FormPrincipal.form:64
 msgid "Editar"
 msgstr ""
 
-#: FormPrincipal.form:70
+#: FormPrincipal.form:71
 msgid "Borrar"
 msgstr ""
 
-#: FormPrincipal.form:77
+#: FormPrincipal.form:78
 msgid "Expediente"
 msgstr ""
 
-#: FormPrincipal.form:84
+#: FormPrincipal.form:85
 msgid "Imprimir"
 msgstr ""
 
-#: FormPrincipal.form:94
+#: FormPrincipal.form:95
 msgid "Cursos"
 msgstr ""
 
-#: FormPrincipal.form:139
+#: FormPrincipal.form:141
 msgid "Listados"
 msgstr ""
 
-#: FormPrincipal.form:143
+#: FormPrincipal.form:146
 msgid "Listado de informes disponibles..."
 msgstr ""
 
-#: FormPrincipal.form:150
+#: FormPrincipal.form:153
 msgid "Acerca de..."
 msgstr ""
 
-#: FormPrincipal.form:154
+#: FormPrincipal.form:158
 msgid ""
 "Control de Cursos y Alumnos<br>\n"
 "Realizado por:<br>\n"
 "Julio Sánchez Berro y Jorge Agustín Pereyra\n"
 "\n"
 "\n"
+msgstr ""
+
+#: FormPrincipal.form:162
+msgid "Salir"
 msgstr ""
