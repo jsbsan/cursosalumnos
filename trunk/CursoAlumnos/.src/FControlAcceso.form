@@ -1,0 +1,38 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,65,42)
+  Persistent = True
+  { Label1 Label
+    MoveScaled(6,10,25,6)
+    Font = Font["Arial,Bold,+2"]
+    Text = ("Usuario:")
+    Alignment = Align.Right
+  }
+  { Label2 Label
+    MoveScaled(6,18,26,7)
+    Font = Font["Arial,Bold,+2"]
+    Text = ("Contraseña:")
+    Alignment = Align.Right
+  }
+  { ToolButtonAceptar ToolButton
+    MoveScaled(11,31,15,6)
+    Text = ("Aceptar")
+    Picture = Picture["icon:/16/apply"]
+    Border = True
+  }
+  { ToolButtonCancelar ToolButton
+    MoveScaled(37,31,15,6)
+    Text = ("Cancelar")
+    Picture = Picture["icon:/16/cancel"]
+    Border = True
+  }
+  { TextBoxUsuario TextBox
+    MoveScaled(34,10,17,5)
+    Password = True
+  }
+  { TextBoxContrasena TextBox
+    MoveScaled(34,19,17,5)
+    Password = True
+  }
+}

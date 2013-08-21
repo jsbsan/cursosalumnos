@@ -1,0 +1,31 @@
+' Gambas class file
+
+Public controlAcceso As FControlAcceso
+
+Private usuarioActual As String
+Private passwordActual As String
+
+Public Sub comprobarUsuarioPassword(Optional usuario As String, Optional password As String) As Boolean
+  'leo las contraseñas guardas
+
+  usuarioActual = Settings["Acceso/usuario", usuario]
+  passwordActual = Settings["Acceso/password", password]
+  
+  If usuarioActual = "" And passwordActual = "" Then 
+    'como no hay valores pongo los de defecto
+    Settings["Acceso/usuario"] = "admin"
+    Settings["Acceso/password"] = "admin"
+    'las leo de nuevo
+    usuarioActual = Settings["Acceso/usuario", usuario]
+    passwordActual = Settings["Acceso/password", password]
+    
+  Endif
+  
+  'comprobacion de usuario y password
+  If usuario = usuarioActual And password = passwordActual Then 
+    Return True
+  Else
+    Return False
+  Endif
+  
+End
