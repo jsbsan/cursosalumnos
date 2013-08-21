@@ -1,0 +1,22 @@
+' Gambas class file
+
+Public ControladorAplicacion As Controlador
+
+Public Sub Form_Open()
+  
+End
+
+'para el tema de dimensionado del formulario
+Public Sub Form_Resize()
+  
+  IconPanelMenu.W = Me.w - IconPanelMenu.X
+  IconPanelMenu.h = Me.H - IconPanelMenu.y - 10
+  
+  GridViewAlumno.w = Me.w - GridViewAlumno.X - IconPanelMenu.X - 30
+  GridViewAlumno.h = Me.H - GridViewAlumno.y - IconPanelMenu.y - 10
+  
+  GridViewCurso.w = Me.w - GridViewcurso.X - IconPanelMenu.X - 30
+  GridViewCurso.h = Me.H - GridViewCurso.y - IconPanelMenu.y - 10
+  ListBoxInforme.h = Me.H - ListBoxInforme.y - IconPanelMenu.y - 10
+  
+End

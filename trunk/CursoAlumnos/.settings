@@ -4,16 +4,25 @@ Count=0
 [DebugWindow]
 Count=0
 
+[DebugWindow/FormularioPrincipal]
+Geometry=[-4,-5,210,210]
+
 [FCommit]
-LastCommit="Estructuro carpetas dentro del codigo fuente\n---- Esta línea y las siguientes serán ignoradas ----\n\nD       .src/FControlAcceso.form\nA       .src/controlador\nA       .src/controlador/main.module\nA       .src/controlador/Controlador.class\nA       .src/vista\nA       .src/vista/FControlAcceso.form\nA       .src/vista/FControlAcceso.class\nD       .src/main.module\nD       .src/FControlAcceso.class\nD       .src/Controlador.class\nA       .src/modelo"
+LastCommit="Añado logotipos \n---- Esta línea y las siguientes serán ignoradas ----\n\nM       .settings\nA       colegio13.jpg\nM       .src/vista/FControlAcceso.class\nM       .src/vista/FControlAcceso.form"
 
 [OpenFile]
 File[1]=".src/vista/FControlAcceso.form"
-File[2]=".src/vista/FControlAcceso.class:43.23"
-Active=3
-File[3]=".src/controlador/main.module:29.30"
-File[4]=".src/controlador/Controlador.class:29.2"
-Count=4
+File[2]=".src/vista/FControlAcceso.class:4.0"
+File[3]=".src/controlador/main.module:4.2"
+File[4]=".src/controlador/Controlador.class:3.34"
+File[5]=".src/vista/FormPrincipal.form"
+File[6]=".src/vista/FormPrincipal.class:5.2"
+File[7]=".src/modelo/conexion/Conexion.class:11.126"
+File[8]=".src/modelo/Logica.class:6.0"
+File[9]=".src/Alumno.class:2.23"
+Active=10
+File[10]=".src/modelo/CursoRegistro.class:2.28"
+Count=10
 
 [VersionControl]
 RememberPassword=1

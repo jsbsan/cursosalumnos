@@ -1,44 +1,50 @@
 # Gambas Form File 3.0
 
 { Form Form
-  MoveScaled(0,0,65,42)
+  MoveScaled(0,0,81,42)
   Background = &HFFFFFF&
   Persistent = True
+  Border = False
   { Label1 Label
-    MoveScaled(4,21,25,6)
+    MoveScaled(12,21,25,6)
     Font = Font["Arial,Bold,+2"]
     Text = ("Usuario:")
     Alignment = Align.Right
   }
   { Label2 Label
-    MoveScaled(3,28,26,7)
+    MoveScaled(11,28,26,7)
     Font = Font["Arial,Bold,+2"]
     Text = ("Contraseña:")
     Alignment = Align.Right
   }
   { ToolButtonAceptar ToolButton
-    MoveScaled(14,35,15,6)
+    MoveScaled(50,35,15,6)
     Text = ("Aceptar")
     Picture = Picture["icon:/16/apply"]
     Border = True
   }
   { ToolButtonCancelar ToolButton
-    MoveScaled(43,35,15,6)
+    MoveScaled(19,35,15,6)
     Text = ("Cancelar")
     Picture = Picture["icon:/16/cancel"]
     Border = True
   }
   { TextBoxUsuario TextBox
-    MoveScaled(32,21,17,5)
+    MoveScaled(42,21,17,5)
     Password = True
   }
   { TextBoxContrasena TextBox
-    MoveScaled(32,29,17,5)
+    MoveScaled(42,29,17,5)
     Password = True
   }
   { PictureBox1 PictureBox
-    MoveScaled(0,0,65,15)
+    MoveScaled(0,0,80,15)
     Picture = Picture["colegio13.jpg"]
-    Stretch = True
+  }
+  { TextLabel1 TextLabel
+    MoveScaled(2,15,78,5)
+    Font = Font["Arial,Bold,+3"]
+    Text = ("Control de Cursos y Alumnos")
+    Alignment = Align.Center
   }
 }

@@ -1,0 +1,231 @@
+PROPERTY Alumno_RutaFoto AS String 
+PRIVATE hAlumno_RutaFoto AS String
+
+PROPERTY Alumno_idAlumno AS Integer 
+PRIVATE hAlumno_idAlumno AS Integer
+
+PROPERTY Alumno_Apellido AS String 
+PRIVATE hAlumno_Apellido AS String
+
+PROPERTY Alumno_Nombre AS String 
+PRIVATE hAlumno_Nombre AS String
+
+PROPERTY Alumno_Documento AS String 
+PRIVATE hAlumno_Documento AS String
+
+PROPERTY Alumno_FechaNacimiento AS Float 
+PRIVATE hAlumno_FechaNacimiento AS Float
+
+PROPERTY Alumno_Domicilio AS String 
+PRIVATE hAlumno_Domicilio AS String
+
+PROPERTY Alumno_Telefono AS String 
+PRIVATE hAlumno_Telefono AS String
+
+PROPERTY Alumno_Nacionalidad AS String 
+PRIVATE hAlumno_Nacionalidad AS String
+
+PROPERTY Alumno_EscOrigen AS String 
+PRIVATE hAlumno_EscOrigen AS String
+
+PROPERTY Alumno_Legajo AS String 
+PRIVATE hAlumno_Legajo AS String
+
+PROPERTY Curso_idCurso AS Integer 
+PRIVATE hCurso_idCurso AS Integer
+
+PROPERTY Curso_Nombre AS String 
+PRIVATE hCurso_Nombre AS String
+
+PROPERTY Curso_Detalle AS String 
+PRIVATE hCurso_Detalle AS String
+
+PROPERTY Relacion_idRelacion AS Integer 
+PRIVATE hRelacion_idRelacion AS Integer
+
+PROPERTY Relacion_idAlumno AS Integer 
+PRIVATE hRelacion_idAlumno AS Integer
+
+PROPERTY Relacion_idCurso AS Integer 
+PRIVATE hRelacion_idCurso AS Integer
+
+PROPERTY Relacion_Observacion AS String 
+PRIVATE hRelacion_Observacion AS String
+
+PROPERTY campo AS string[] 
+PRIVATE hcampo AS new string[]
+
+PROPERTY campotipo AS string[] 
+PRIVATE hcampotipo AS new string[]
+
+PROPERTY campovisible AS string[] 
+PRIVATE hcampovisible AS new string[]
+
+PRIVATE FUNCTION Alumno_RutaFoto_read() AS String
+ RETURN hAlumno_RutaFoto 
+END 
+ 
+PRIVATE SUB Alumno_RutaFoto_write(Valor AS String)
+ hAlumno_RutaFoto= Valor 
+END  
+ 
+PRIVATE FUNCTION Alumno_idAlumno_read() AS Integer
+ RETURN hAlumno_idAlumno 
+END 
+ 
+PRIVATE SUB Alumno_idAlumno_write(Valor AS Integer)
+ hAlumno_idAlumno= Valor 
+END  
+ 
+PRIVATE FUNCTION Alumno_Apellido_read() AS String
+ RETURN hAlumno_Apellido 
+END 
+ 
+PRIVATE SUB Alumno_Apellido_write(Valor AS String)
+ hAlumno_Apellido= Valor 
+END  
+ 
+PRIVATE FUNCTION Alumno_Nombre_read() AS String
+ RETURN hAlumno_Nombre 
+END 
+ 
+PRIVATE SUB Alumno_Nombre_write(Valor AS String)
+ hAlumno_Nombre= Valor 
+END  
+ 
+PRIVATE FUNCTION Alumno_Documento_read() AS String
+ RETURN hAlumno_Documento 
+END 
+ 
+PRIVATE SUB Alumno_Documento_write(Valor AS String)
+ hAlumno_Documento= Valor 
+END  
+ 
+PRIVATE FUNCTION Alumno_FechaNacimiento_read() AS Float
+ RETURN hAlumno_FechaNacimiento 
+END 
+ 
+PRIVATE SUB Alumno_FechaNacimiento_write(Valor AS Float)
+ hAlumno_FechaNacimiento= Valor 
+END  
+ 
+PRIVATE FUNCTION Alumno_Domicilio_read() AS String
+ RETURN hAlumno_Domicilio 
+END 
+ 
+PRIVATE SUB Alumno_Domicilio_write(Valor AS String)
+ hAlumno_Domicilio= Valor 
+END  
+ 
+PRIVATE FUNCTION Alumno_Telefono_read() AS String
+ RETURN hAlumno_Telefono 
+END 
+ 
+PRIVATE SUB Alumno_Telefono_write(Valor AS String)
+ hAlumno_Telefono= Valor 
+END  
+ 
+PRIVATE FUNCTION Alumno_Nacionalidad_read() AS String
+ RETURN hAlumno_Nacionalidad 
+END 
+ 
+PRIVATE SUB Alumno_Nacionalidad_write(Valor AS String)
+ hAlumno_Nacionalidad= Valor 
+END  
+ 
+PRIVATE FUNCTION Alumno_EscOrigen_read() AS String
+ RETURN hAlumno_EscOrigen 
+END 
+ 
+PRIVATE SUB Alumno_EscOrigen_write(Valor AS String)
+ hAlumno_EscOrigen= Valor 
+END  
+ 
+PRIVATE FUNCTION Alumno_Legajo_read() AS String
+ RETURN hAlumno_Legajo 
+END 
+ 
+PRIVATE SUB Alumno_Legajo_write(Valor AS String)
+ hAlumno_Legajo= Valor 
+END  
+ 
+PRIVATE FUNCTION Curso_idCurso_read() AS Integer
+ RETURN hCurso_idCurso 
+END 
+ 
+PRIVATE SUB Curso_idCurso_write(Valor AS Integer)
+ hCurso_idCurso= Valor 
+END  
+ 
+PRIVATE FUNCTION Curso_Nombre_read() AS String
+ RETURN hCurso_Nombre 
+END 
+ 
+PRIVATE SUB Curso_Nombre_write(Valor AS String)
+ hCurso_Nombre= Valor 
+END  
+ 
+PRIVATE FUNCTION Curso_Detalle_read() AS String
+ RETURN hCurso_Detalle 
+END 
+ 
+PRIVATE SUB Curso_Detalle_write(Valor AS String)
+ hCurso_Detalle= Valor 
+END  
+ 
+PRIVATE FUNCTION Relacion_idRelacion_read() AS Integer
+ RETURN hRelacion_idRelacion 
+END 
+ 
+PRIVATE SUB Relacion_idRelacion_write(Valor AS Integer)
+ hRelacion_idRelacion= Valor 
+END  
+ 
+PRIVATE FUNCTION Relacion_idAlumno_read() AS Integer
+ RETURN hRelacion_idAlumno 
+END 
+ 
+PRIVATE SUB Relacion_idAlumno_write(Valor AS Integer)
+ hRelacion_idAlumno= Valor 
+END  
+ 
+PRIVATE FUNCTION Relacion_idCurso_read() AS Integer
+ RETURN hRelacion_idCurso 
+END 
+ 
+PRIVATE SUB Relacion_idCurso_write(Valor AS Integer)
+ hRelacion_idCurso= Valor 
+END  
+ 
+PRIVATE FUNCTION Relacion_Observacion_read() AS String
+ RETURN hRelacion_Observacion 
+END 
+ 
+PRIVATE SUB Relacion_Observacion_write(Valor AS String)
+ hRelacion_Observacion= Valor 
+END  
+ 
+PRIVATE FUNCTION campo_read() AS string[]
+ RETURN hcampo 
+END 
+ 
+PRIVATE SUB campo_write(Valor AS string[])
+ hcampo= Valor 
+END  
+ 
+PRIVATE FUNCTION campotipo_read() AS string[]
+ RETURN hcampotipo 
+END 
+ 
+PRIVATE SUB campotipo_write(Valor AS string[])
+ hcampotipo= Valor 
+END  
+ 
+PRIVATE FUNCTION campovisible_read() AS string[]
+ RETURN hcampovisible 
+END 
+ 
+PRIVATE SUB campovisible_write(Valor AS string[])
+ hcampovisible= Valor 
+END  
+ 
