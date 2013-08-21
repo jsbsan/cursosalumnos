@@ -17,7 +17,7 @@
     { IconPanelMenu IconPanel
       MoveScaled(0,14,97,52)
       AutoResize = True
-      Count = 5
+      Count = 6
       Index = 0
       Text = ("Alumnos")
       Picture = Picture["icon:/16/people"]
@@ -55,7 +55,10 @@
         }
       }
       { GridViewAlumno GridView
-        MoveScaled(1,6,70,45)
+        MoveScaled(1,9,70,42)
+      }
+      { LabelMensajeAlumnos Label
+        MoveScaled(1,5,73,4)
       }
       Index = 1
       Text = ("Cursos")
@@ -94,7 +97,10 @@
         }
       }
       { GridViewCurso GridView
-        MoveScaled(1,6,71,45)
+        MoveScaled(1,9,71,42)
+      }
+      { LabelMensajeCursos Label
+        MoveScaled(1,5,73,4)
       }
       Index = 2
       Text = ("Listados")
@@ -115,6 +121,52 @@
         Alignment = Align.Center
       }
       Index = 4
+      Text = ("Administrador")
+      Picture = Picture["icon:/16/tools"]
+      { Label2 Label
+        MoveScaled(6,12,18,3)
+        Text = ("Clave Actual:")
+      }
+      { ButtonCambiarClave Button
+        MoveScaled(22,39,15,4)
+        Text = ("Cambiar")
+        Picture = Picture["icon:/16/apply"]
+      }
+      { TextBoxClaveActual TextBox
+        MoveScaled(25,11,25,4)
+        Password = True
+      }
+      { Label3 Label
+        MoveScaled(6,19,17,4)
+        Text = ("Clave Nueva:")
+      }
+      { TextBoxClaveNueva TextBox
+        MoveScaled(25,18,25,4)
+        Password = True
+      }
+      { Label4 Label
+        MoveScaled(6,24,19,5)
+        Text = ("Reescriba la clave:")
+      }
+      { TextBoxClaveReescrita TextBox
+        MoveScaled(25,24,25,4)
+        Password = True
+      }
+      { LabelMensajeClave Label
+        MoveScaled(5,31,46,5)
+        Foreground = &HFF0000&
+        AutoResize = True
+        Text = ("mensaje:")
+      }
+      { Label5 Label
+        MoveScaled(6,6,18,4)
+        Text = ("Usuario Actual:")
+      }
+      { TextBoxUsuarioActual TextBox
+        MoveScaled(25,6,25,4)
+        Password = True
+      }
+      Index = 5
       Text = ("Salir")
       Picture = Picture["icon:/16/quit"]
       Index = 0

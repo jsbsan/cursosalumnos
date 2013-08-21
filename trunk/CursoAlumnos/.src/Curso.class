@@ -363,7 +363,7 @@ Public Function gridFormatearColumnas(grid As GridView) As Gridview
     .Columns[0].title = "idCurso"
     .Columns[0].width = 80
     .Columns[1].title = "Nombre"
-    .Columns[1].width = 80
+    .Columns[1].width = 150
     .Columns[2].title = "Detalle"
     .Columns[2].width = 80
     .font.name = "Sans"
@@ -492,7 +492,7 @@ End
 Public Sub ToBD(obj As Curso) As Object
   
   Dim Taux As Object
-
+  
   Taux = New Curso 
   Try taux.Curso_idCurso = obj.idCurso
   Try taux.Curso_Nombre = obj.Nombre
@@ -502,11 +502,11 @@ Public Sub ToBD(obj As Curso) As Object
 End
 
 Public Sub ArrayObjectToBD(obj As Object[]) As Object[]
-
+  
   Dim Taux As Object
   Dim TauxArray As New Object[]
   Dim a As Integer
-
+  
   For a = 0 To obj.count - 1
     Taux = New Curso 
     Taux = ToBD(Obj[a])
@@ -514,5 +514,5 @@ Public Sub ArrayObjectToBD(obj As Object[]) As Object[]
   Next
   
   Return TauxArray
+  
 End
-

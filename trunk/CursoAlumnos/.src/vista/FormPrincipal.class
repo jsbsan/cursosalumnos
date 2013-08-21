@@ -3,7 +3,18 @@
 Public ControladorAplicacion As Controlador
 
 Public Sub Form_Open()
+  'formatear gridviews...
   
+  Dim alu As New Alumno
+  Dim curs As New Curso
+  
+  alu.gridFormatearColumnas(GridViewAlumno)
+  curs.gridFormatearColumnas(GridViewCurso)
+  ListBoxInforme.Add("lista de alumnos")
+  ListBoxInforme.Add("lista de cursos")
+  ListBoxInforme.Add("Expediente de Alumno determinado")
+  ListBoxInforme.Add("Expediente de Curso determinado")
+
 End
 
 'para el tema de dimensionado del formulario
@@ -20,6 +31,9 @@ Public Sub Form_Resize()
   ListBoxInforme.h = Me.H - ListBoxInforme.y - IconPanelMenu.y - 10
   
 End
+'--------------------------------------------------------------------
+'botones
+'--------------------------------------------------------------------
 
 Public Sub ToolButtonAnadir_Click()
   
@@ -27,12 +41,77 @@ Public Sub ToolButtonAnadir_Click()
   
 End
 
+Public Sub ToolButtonEditar_Click()
+  
+  ControladorAplicacion.falumno.showmodal()
+  
+End
+
+Public Sub ToolButtonAnadirCurso_Click()
+  
+  ControladorAplicacion.fcurso.showmodal()
+  
+End
+
+Public Sub ToolButtonEditarCurso_Click()
+  
+  ControladorAplicacion.fcurso.showmodal()
+  
+End
+'------------------------------------------------------------------
+'IconPanelMenu
+'------------------------------------------------------------------
+
 Public Sub IconPanelMenu_Click()
   
   Select Case IconPanelMenu.Index
     Case 4
+      'cambio de contraseña
+      LabelMensajeClave.text = "mensaje:"
+      TextBoxUsuarioActual.text = ""
+      TextBoxClaveActual.text = ""
+      TextBoxClaveNueva.text = ""
+      TextBoxClaveReescrita.text = ""
+    Case 5
       'salir del programa
       Me.Close()
   End Select
+  
+End
+
+'----------------------------------------------------------------------
+'Zona de Administrador....
+'----------------------------------------------------------------------
+Public Sub ButtonCambiarClave_Click()
+  
+  If TextBoxClaveNueva.text = TextBoxClaveReescrita.text Then 
+    
+    If ControladorAplicacion.comprobarUsuarioPassword(TextBoxUsuarioActual.text, TextBoxClaveActual.text) Then 
+      ControladorAplicacion.actualizarPassword(TextBoxUsuarioActual.text, TextBoxClaveNueva.text)
+      LabelMensajeClave.text = "mensaje: ok se ma modificado la contraseña"
+      TextBoxUsuarioActual.text = ""
+      TextBoxClaveActual.text = ""
+      TextBoxClaveNueva.text = ""
+      TextBoxClaveReescrita.text = ""
+    Else
+      LabelMensajeClave.text = "mensaje: no coincide la contraseña Actual"
+    Endif
+    
+  Else
+    
+    LabelMensajeClave.text = "mensaje: las clave Nueva no coincide con la Reescrita"
+  Endif
+  
+End
+
+Public Sub ToolButtonExpedienteCurso_Click()
+  
+  ControladorAplicacion.fExpCurso.ShowModal()
+  
+End
+
+Public Sub ToolButtonExpediente_Click()
+  
+  ControladorAplicacion.fexpAlumno.ShowModal()
   
 End
