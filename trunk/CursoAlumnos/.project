@@ -1,0 +1,12 @@
+# Gambas Project File 3.0
+Title=CursoAlumnos
+Startup=FMain
+Component=gb.db
+Component=gb.settings
+Component=gb.image
+Component=gb.gui
+Component=gb.form
+Component=gb.db.form
+Translate=1
+Language=es_ES.UTF-8
+
