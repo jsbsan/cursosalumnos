@@ -8,26 +8,35 @@ Count=0
 Geometry=[-4,-5,210,210]
 
 [FCommit]
-LastCommit="annadido formulario alumnos\n---- Esta línea y las siguientes serán ignoradas ----\n\nM       .lang/FormPrincipal.pot\nM       .lang/.pot\nA       .src/modelo/conexion/conectar.class\nD       .src/modelo/conexion/Conexion.class\nM       .src/modelo/Logica.class\nM       .src/modelo/BDCursosAlumnosRegistro.class\nM       .src/modelo/AlumnoRegistro.class\nM       .src/Curso.class\nM       .src/Alumno.class\nM       .src/Relacion.class\nA       .src/controlador/ClaseDato.class\nM       .src/controlador/main.module\nM       .src/controlador/Controlador.class\nA       .src/vista/FormAlumno.form\nA       .src/vista/FormAlumno.class\nM       .src/vista/FormPrincipal.form\nA       .src/vista/FormCalendario.form\nM       .src/vista/FormPrincipal.class\nA       .src/vista/FormCalendario.class\nM       .src/BDCursosAlumnos.class\nM       .gambas/MAIN\nM       .gambas/FORMPRINCIPAL\nM       .gambas/CONTROLADOR\n!       .gambas/CONEXION\nA       icono_fotos_personas.png\nM       .startup\nM       .project"
+LastCommit="Formularios de expedientes de alumnos y cursos\n---- Esta línea y las siguientes serán ignoradas ----\n\nM       .src/Curso.class\nM       .src/Alumno.class\nM       .src/controlador/main.module\nM       .src/controlador/Controlador.class\nM       .src/vista/FormPrincipal.class\nA       .src/vista/FormExpedienteCurso.form\nA       .src/vista/FormExpedienteAlumno.form\nA       .src/vista/FormExpedienteCurso.class\nA       .src/vista/FormExpedienteAlumno.class\nA       .src/vista/FormCurso.form\nA       .src/vista/FormCurso.class\nM       .src/vista/FormPrincipal.form\nM       .gambas/MAIN\nM       .gambas/FORMPRINCIPAL\nM       .gambas/CONTROLADOR\nM       .settings\nM       .startup\nM       .project\nM       .lang/.pot\nM       .lang/FormPrincipal.pot"
 
 [OpenFile]
 File[1]=".src/vista/FControlAcceso.form"
 File[2]=".src/vista/FControlAcceso.class:4.0"
-File[3]=".src/controlador/main.module:37.7"
-File[4]=".src/controlador/Controlador.class:43.0"
-Active=5
+File[3]=".src/controlador/main.module:4.2"
+File[4]=".src/controlador/Controlador.class:8.0"
 File[5]=".src/vista/FormPrincipal.form"
-File[6]=".src/vista/FormPrincipal.class:34.16"
+Active=6
+File[6]=".src/vista/FormPrincipal.class:16.0"
 File[7]=".src/modelo/Logica.class:10.2"
-File[8]=".src/Alumno.class:63.2"
+File[8]=".src/Alumno.class:1139.20"
 File[9]=".src/modelo/CursoRegistro.class:2.28"
 File[10]=".src/vista/FormAlumno.form"
-File[11]=".src/vista/FormAlumno.class:27.0"
+File[11]=".src/vista/FormAlumno.class:1.0"
 File[12]="icono_fotos_personas.png"
 File[13]=".src/vista/FormCalendario.form"
 File[14]=".src/vista/FormCalendario.class:10.0"
 File[15]=".src/controlador/ClaseDato.class:8.0"
-Count=15
+File[16]=".src/BDCursosAlumnos.class:0.19"
+File[17]=".src/modelo/BDCursosAlumnosRegistro.class:0.19"
+File[18]=".src/vista/FormCurso.form"
+File[19]=".src/vista/FormCurso.class:2.0"
+File[20]=".src/Curso.class:365.27"
+File[21]=".src/vista/FormExpedienteCurso.form"
+File[22]=".src/vista/FormExpedienteCurso.class:5.2"
+File[23]=".src/vista/FormExpedienteAlumno.form"
+File[24]=".src/vista/FormExpedienteAlumno.class:11.2"
+Count=24
 
 [VersionControl]
 RememberPassword=1
