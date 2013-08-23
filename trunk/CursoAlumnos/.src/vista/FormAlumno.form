@@ -92,8 +92,9 @@
     Picture = Picture["icon:/16/calendar"]
     Border = True
   }
-  { PictureBox1 PictureBox
+  { PictureBoxAlumno PictureBox
     MoveScaled(4,2,15,16)
+    Tag = "icono_fotos_personas.png"
     Picture = Picture["icono_fotos_personas.png"]
     Stretch = True
     Border = Border.Plain

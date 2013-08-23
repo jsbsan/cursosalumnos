@@ -1,12 +1,32 @@
 ' Gambas class file
 
+Public ControladorAplicacion As Controlador
+
 '------------------------------------------------------------------------
 'Reglas del Negocio: http://es.wikipedia.org/wiki/Reglas_de_negocio
 '------------------------------------------------------------------------
 'Esta clase contiene las "condiciones" para poder añadir/modificar/borrar la base de datos
 
-Public Sub validarRegistroAlumno(DatosAlumno As Alumno)
+'Public Function validarRegistroAlumno(DatosAlumno As Alumno) As Boolean
+
+'  Return True
+
+'End
+
+Public Function validarAnnadirAlumno(DatosAlumnos As Alumno) As Boolean
   
-  DatosAlumno.Insertar()
+  Dim rutadestino As String = ControladorAplicacion.rutaTrabajo & "Fotos/" & File.Name(DatosAlumnos.RutaFoto)
+  
+  'Trato el fichero de la foto del alumno:
+  '1 caso de que no haya fichero del alumno, poner una transparencia...
+  If DatosAlumnos.rutafoto = "icono_fotos_personas.png" Then
+    rutadestino = ControladorAplicacion.rutaTrabajo & "Fotos/transparente.png"
+  Else 
+    Try Copy DatosAlumnos.RutaFoto To rutadestino
+  Endif
+  'dejo solo el nombre...
+  DatosAlumnos.RutaFoto = File.Name(rutadestino)  
+  
+  Return DatosAlumnos.Insertar()
   
 End

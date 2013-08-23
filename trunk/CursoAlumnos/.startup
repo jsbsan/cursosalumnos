@@ -9,5 +9,6 @@ gb.gui
 gb.form
 gb.db
 gb.db.form
+gb.db.sqlite3
 gb.settings
 

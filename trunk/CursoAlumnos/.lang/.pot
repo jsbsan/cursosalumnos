@@ -71,6 +71,10 @@ msgstr ""
 msgid "Legajo:"
 msgstr ""
 
+#: FormAlumno.class:57
+msgid "Se ha producido un error al intentar añadir el nuevo alumno"
+msgstr ""
+
 #: FormCurso.form:17
 msgid "Nombre del curso:"
 msgstr ""
@@ -194,4 +198,8 @@ msgstr ""
 
 #: FormPrincipal.form:238
 msgid "Salir"
+msgstr ""
+
+#: conectar.class:18
+msgid "ok"
 msgstr ""

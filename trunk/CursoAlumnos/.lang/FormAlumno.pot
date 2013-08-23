@@ -58,3 +58,7 @@ msgstr ""
 msgid "Legajo:"
 msgstr ""
 
+#: FormAlumno.class:57
+msgid "Se ha producido un error al intentar añadir el nuevo alumno"
+msgstr ""
+
