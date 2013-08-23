@@ -15,8 +15,8 @@ Private hNombre As String
 Property Documento As String 
 Private hDocumento As String
 
-Property FechaNacimiento As Float 
-Private hFechaNacimiento As Float
+Property FechaNacimiento As Date 
+Private hFechaNacimiento As Date
 
 Property Domicilio As String 
 Private hDomicilio As String
@@ -102,13 +102,13 @@ Private Sub Documento_write(Valor As String)
   
 End  
 
-Private Function FechaNacimiento_read() As Float
+Private Function FechaNacimiento_read() As Date
   
   Return hFechaNacimiento 
   
 End 
 
-Private Sub FechaNacimiento_write(Valor As Float)
+Private Sub FechaNacimiento_write(Valor As Date)
   
   hFechaNacimiento = Valor 
   

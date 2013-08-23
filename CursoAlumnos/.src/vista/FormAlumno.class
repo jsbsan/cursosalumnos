@@ -1,6 +1,6 @@
 ' Gambas class file
 
-Public TmpAlumno As Alumno
+Public TmpAlumno As AlumnoVO
 Public ControladorAplicacion As Controlador
 
 Public Sub Form_Open()
