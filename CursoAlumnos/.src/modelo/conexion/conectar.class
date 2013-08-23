@@ -2,25 +2,20 @@
 
 Public hconn As Connection
 
-Public Sub Conexion()
-  
-  If Exist(User.Home & "./CursoAlumnos/CursoAlumnos") Then 
-    'no hago nada, ya existe la base de datos ...
-  Else
-    Try Mkdir User.Home & "./CursoAlumnos/" 'donde se guardara la base de datos
-    Try Mkdir User.Home & "./CursoAlumnos/Fotos" 'donde se guardaran las fotos
-    Copy "CursoAlumnos" To User.Home & "./CursoAlumnos/CursoAlumnos" 'copio la base de datos original al directorio de trabajo
-  Endif
+Public Sub Conexion() As String
   
   hconn = New Connection
   
-  hconn.Host = User.Home & "./CursoAlumnos/CursoAlumnos"
+  hconn.Host = main.rutaTrabajo & "CursosAlumnos"
   
-  hconn.name = User.Home & "./CursoAlumnos/CursoAlumnos"
+  hconn.name = main.rutaTrabajo & "CursosAlumnos"
   
   hconn.Type = "Sqlite3"
   
-  If Error Then Print "Imposible abrir la base de datos. Error:"; Error.Text
+  hconn.Open()
+  If Error Then Return ("Error: Imposible abrir la base de datos. Error: " & Error.Text)
+  
+  Return ("ok")
   
 End
 

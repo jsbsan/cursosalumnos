@@ -8,6 +8,7 @@ Component=gb.gui
 Component=gb.form
 Component=gb.db
 Component=gb.db.form
+Component=gb.db.sqlite3
 Component=gb.settings
 TabSize=2
 Translate=1

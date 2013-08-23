@@ -7,50 +7,6 @@ Public SQLString As String
 Private Gridview1 As Gridview 
 Private t1 As Object
 
-Public Sub Abrir(Optional ruta As String) 
-  
-  Dim conexion As New Connection
-  
-  If ruta <> "" Or ruta <> Null Then 
-    mBase = conectar.abrir(conexion, ruta) 
-  Else 
-    mBase = conectar.abrir(conexion) 
-  Endif 
-  mRs = mBase.Exec("SELECT * from Alumno") 
-  Super.campo.Resize(0)
-  Super.campotipo.Resize(0)
-  Super.campo.add("RutaFoto")
-  Super.campotipo.add("String")
-  Super.campo.add("idAlumno")
-  Super.campotipo.add("Integer")
-  Super.campo.add("Apellido")
-  Super.campotipo.add("String")
-  Super.campo.add("Nombre")
-  Super.campotipo.add("String")
-  Super.campo.add("Documento")
-  Super.campotipo.add("String")
-  Super.campo.add("FechaNacimiento")
-  Super.campotipo.add("Float")
-  Super.campo.add("Domicilio")
-  Super.campotipo.add("String")
-  Super.campo.add("Telefono")
-  Super.campotipo.add("String")
-  Super.campo.add("Nacionalidad")
-  Super.campotipo.add("String")
-  Super.campo.add("EscOrigen")
-  Super.campotipo.add("String")
-  Super.campo.add("Legajo")
-  Super.campotipo.add("String")
-  
-End Sub 
-
-Public Sub Cerrar() 
-  
-  mRs = Null
-  mBase.close 
-  
-End Sub 
-
 Public Function Total() As Integer 
   
   SQLString = "SELECT RutaFoto FROM Alumno" 
@@ -59,11 +15,17 @@ Public Function Total() As Integer
   
 End 
 
-Public Function Insertar() As Result 
+Public Function Insertar() As Boolean
+  
+  Dim con As New Conectar
+  Dim sqlstring As String
+  Dim mRs As Result
+  
+  con.Conexion()
   
   SQLString = "INSERT INTO Alumno(RutaFoto,idAlumno,Apellido,Nombre,Documento,FechaNacimiento,Domicilio,Telefono,Nacionalidad,EscOrigen,Legajo) Values ('"
   SQLString &= Super.RutaFoto
-  SQLString &= "','" & Super.idAlumno
+  SQLString &= "','" & "111333" 'pongo nulo para que sea autonimerico...
   SQLString &= "','" & Super.Apellido
   SQLString &= "','" & Super.Nombre
   SQLString &= "','" & Super.Documento
@@ -73,11 +35,14 @@ Public Function Insertar() As Result
   SQLString &= "','" & Super.Nacionalidad
   SQLString &= "','" & Super.EscOrigen
   SQLString &= "','" & Super.Legajo & "')"
-  Try mRs = mBase.Exec(SQLString) 
+  
+  Try con.hconn.Exec(SQLString) 
+  
   If Error Then 
-    Message.Error(" Se ha producido un ERROR al Intentar insertar datos, revise ID,  " & "\nSentencia:  " & sqlstring)
+    Message.Error(" Se ha producido un ERROR al Intentar insertar datos, revise ID,  " & "\nSentencia:  " & sqlstring & gb.CrLf & "Error: " & Error.text)
+    
   Else 
-    Return mRs
+    Return True
   Endif 
   
 End  

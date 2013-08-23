@@ -1,11 +1,14 @@
 ' Gambas class file
 
+Public TmpAlumno As Alumno
 Public ControladorAplicacion As Controlador
 
 Public Sub Form_Open()
   
   Me.Center()
   'si no esta editando, poner todos los campos "vacios"
+  'me voy la primera caja de texto...
+  TextBoxNOMBRE.SetFocus()
   
 End
 
@@ -25,5 +28,58 @@ Public Sub ToolButtonCalendario_Click()
 End
 
 Public Sub ToolButtonAceptar_Click()
+  
+  Dim TmpAlumno As New Alumno
+  
+  If TmpAlumno.idAlumno <> 0 Then 
+    'si estoy editando...  
+  Else 
+    
+    'si estoy añadiendo
+    TmpAlumno.idAlumno = 0
+    TmpAlumno.Nombre = TextBoxNOMBRE.Text
+    TmpAlumno.Apellido = TextBoxAPELLIDOS.Text
+    TmpAlumno.Documento = TextBoxDOCUMENTO.Text
+    TmpAlumno.Domicilio = TextBoxDOMICILIO.Text
+    TmpAlumno.EscOrigen = TextBoxESCORIGEN.Text
+    If TextBoxFECHANACIMIENTO.Tag = Null Then TextBoxFECHANACIMIENTO.Tag = Now
+    TmpAlumno.FechaNacimiento = TextBoxFECHANACIMIENTO.Tag
+    TmpAlumno.Legajo = TextBoxLEGAJO.Text
+    TmpAlumno.Nacionalidad = TextBoxNACIONALIDAD.Text
+    TmpAlumno.RutaFoto = PictureBoxAlumno.Tag
+    TmpAlumno.Telefono = TextBoxTELEFONO.Text
+    
+    If ControladorAplicacion.log.validarAnnadirAlumno(TmpAlumno) Then 
+      'se ha añadido bien el nuevo alumno
+      limpio()
+      Me.Close()
+    Else
+      Message.Error(("Se ha producido un error al intentar añadir el nuevo alumno"))
+    Endif
+    
+  Endif
+  
+End
+
+Public Sub limpio()
+  
+  TextBoxNOMBRE.Text = ""
+  TextBoxAPELLIDOS.Text = ""
+  TextBoxDOCUMENTO.Text = ""
+  TextBoxDOMICILIO.Text = ""
+  TextBoxESCORIGEN.Text = ""
+  TextBoxFECHANACIMIENTO.Tag = ""
+  TextBoxLEGAJO.Text = ""
+  TextBoxNACIONALIDAD.Text = ""
+  PictureBoxAlumno.Tag = ""
+  PictureBoxAlumno.Picture = Picture["icono_fotos_personas.png"]
+  TextBoxTELEFONO.Text = ""
+  
+End
+
+Public Sub ToolButtonCancelar_Click()
+  
+  limpio()
+  Me.Close()
   
 End

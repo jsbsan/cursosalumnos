@@ -1,5 +1,7 @@
 ' Gambas module file
 
+Public rutaTrabajo As String = User.home & "/.CursoAlumnos/"
+
 Public Sub main()
   
   Dim entrada As Boolean
@@ -12,6 +14,7 @@ Public Sub main()
   Dim falumno As New FormAlumno
   Dim fexpcurso As New FormExpedienteCurso
   Dim fexpAlumno As New FormExpedienteAlumno
+  Dim logicatmp As New Logica
   
   'relaciones MODELO VISTA CONTROLADOR
   FormularioControlAcceso.ControladorAplicacion = ControladorAplicacion
@@ -20,6 +23,7 @@ Public Sub main()
   fcurso.ControladorAplicacion = ControladorAplicacion
   fexpcurso.ControladorAplicacion = ControladorAplicacion
   fexpAlumno.ControladorAplicacion = ControladorAplicacion
+  logicatmp.ControladorAplicacion = ControladorAplicacion
   
   ControladorAplicacion.controlAcceso = FormularioControlAcceso
   ControladorAplicacion.Fprincipal = FormularioPrincipal
@@ -27,6 +31,10 @@ Public Sub main()
   ControladorAplicacion.fcurso = fcurso
   ControladorAplicacion.fExpCurso = fexpcurso
   ControladorAplicacion.fexpAlumno = fexpAlumno
+  ControladorAplicacion.log = Logicatmp
+  
+  'inicio directorios
+  iniciarDirectoriosYArchivos(ControladorAplicacion) 
   
   'inicio usuario/password si no estan definidas
   ControladorAplicacion.comprobarUsuarioPassword()
@@ -58,7 +66,11 @@ Public Sub main()
   fexpAlumno.ControladorAplicacion = Null
   ControladorAplicacion.fexpAlumno = Null
   
+  logicatmp.ControladorAplicacion = Null
+  ControladorAplicacion.log = Null
+  
   'anulamos los objetos en si
+  logicatmp = Null
   fexpAlumno = Null
   fexpcurso = Null
   fcurso = Null
@@ -68,5 +80,43 @@ Public Sub main()
   ControladorAplicacion = Null
   
   Quit
+  
+End
+
+Public Sub iniciarDirectoriosYArchivos(controladorApli As Controlador)
+  'defino ruta de trabajo
+  
+  ControladorApli.rutaTrabajo = User.home & "/.CursoAlumnos/"
+  'creo el directorio de trabajo si no existe
+  If Exist(ControladorApli.rutaTrabajo) Then 
+  Else
+    Mkdir ControladorApli.rutaTrabajo
+  Endif
+  
+  'copio la base de datos si no existe
+  If Exist(ControladorApli.rutaTrabajo & "CursosAlumnos") Then 
+    
+  Else
+    Copy "CursosAlumnos" To ControladorApli.rutaTrabajo & "/CursosAlumnos"
+  Endif
+  
+  'creo el directorio de fotos  si no existe
+  If Exist(ControladorApli.rutaTrabajo & "Fotos") Then 
+  Else
+    Mkdir ControladorApli.rutaTrabajo & "Fotos"
+  Endif
+  
+  'creo el directorio de fotosmini  si no existe
+  If Exist(ControladorApli.rutaTrabajo & "MiniFotos") Then 
+  Else
+    
+    Mkdir ControladorApli.rutaTrabajo & "MiniFotos"
+  Endif
+  
+  'copio el fichero transparente si no existe
+  If Exist(ControladorApli.rutaTrabajo & "Fotos/transparente.png") Then 
+  Else
+    Copy "transparente.png" To ControladorApli.rutaTrabajo & "Fotos/transparente.png"
+  Endif
   
 End

@@ -14,7 +14,7 @@ Public Sub Form_Open()
   ListBoxInforme.Add("lista de cursos")
   ListBoxInforme.Add("Expediente de Alumno determinado")
   ListBoxInforme.Add("Expediente de Curso determinado")
-
+  
 End
 
 'para el tema de dimensionado del formulario
@@ -37,6 +37,10 @@ End
 
 Public Sub ToolButtonAnadir_Click()
   
+  Dim nuevoalumno As New Alumno
+
+  nuevoalumno.idAlumno = 0 'para que sea a añadir
+  ControladorAplicacion.falumno.TmpAlumno = nuevoalumno
   ControladorAplicacion.falumno.showmodal()
   
 End

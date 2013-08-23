@@ -6,8 +6,11 @@ Public falumno As FormAlumno
 Public fcurso As FormCurso
 Public fExpCurso As FormExpedienteCurso
 Public fexpAlumno As FormExpedienteAlumno
+Public cone As Conectar
 
 Public log As Logica
+
+Public rutaTrabajo As String = User.home & "/.CursoAlumnos/"
 
 Private usuarioActual As String
 Private passwordActual As String
@@ -48,8 +51,8 @@ End
 '-----------------------------------------------------------------------------
 '-------------------TRABAJOS CON DATOS DE ALUMNOS-----------------------------
 '-----------------------------------------------------------------------------
-Public Sub anadirAlumno(DatosAlumnos As Alumno)
+Public Function anadirAlumno(DatosAlumnos As Alumno) As Boolean
   
-  log.validarRegistroAlumno(DatosAlumnos)
+  Return log.validarRegistroAlumno(DatosAlumnos)
   
 End
