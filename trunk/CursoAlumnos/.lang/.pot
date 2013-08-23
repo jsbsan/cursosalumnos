@@ -200,6 +200,6 @@ msgstr ""
 msgid "Salir"
 msgstr ""
 
-#: conectar.class:18
+#: conectar.class:18 conexion.class:18
 msgid "ok"
 msgstr ""

@@ -5,15 +5,17 @@ Public ControladorAplicacion As Controlador
 Public Sub Form_Open()
   'formatear gridviews...
   
-  Dim alu As New Alumno
-  Dim curs As New Curso
+  Dim alu As New Alumnodao
+  Dim curs As New Cursodao
   
   alu.gridFormatearColumnas(GridViewAlumno)
   curs.gridFormatearColumnas(GridViewCurso)
-  ListBoxInforme.Add("lista de alumnos")
-  ListBoxInforme.Add("lista de cursos")
-  ListBoxInforme.Add("Expediente de Alumno determinado")
-  ListBoxInforme.Add("Expediente de Curso determinado")
+  ListBoxInforme.Add("Lista de Alumnos")
+  ListBoxInforme.Add("Lista de Alumnos con los cursos que participan")
+  ListBoxInforme.Add("Lista de Cursos")
+  ListBoxInforme.Add("Lista de Cursos y Alumnos que lo conforman ")
+  ListBoxInforme.Add("Expediente de Alumno determinado con lista de Cursos")
+  ListBoxInforme.Add("Expediente de Curso determinado con lista de Alumnos")
   
 End
 
@@ -37,8 +39,8 @@ End
 
 Public Sub ToolButtonAnadir_Click()
   
-  Dim nuevoalumno As New Alumno
-
+  Dim nuevoalumno As New Alumnovo
+  
   nuevoalumno.idAlumno = 0 'para que sea a añadir
   ControladorAplicacion.falumno.TmpAlumno = nuevoalumno
   ControladorAplicacion.falumno.showmodal()
