@@ -2,7 +2,17 @@
 
 Public ControladorAplicacion As Controlador
 
+Public TmpAlumno As AlumnoVO
+
 Public Sub Form_Open()
+  
+End
+
+Public Sub form_Show()
+
+  TextBoxNombreAlumno.text = TmpAlumno.Nombre
+  TextBoxApellidosAlumno.text = TmpAlumno.Apellido
+  TextBoxDocumento.text = TmpAlumno.Documento
   
 End
 

@@ -32,6 +32,14 @@ Public Function validarAnnadirAlumno(DatosAlumnos As AlumnoVO) As Boolean
   
 End
 
+Public Function validarAnnadirCurso(datos As Cursovo) As Boolean
+  
+  Dim micurso As New CursoDAO
+
+  Return micurso.registrar(datos)
+  
+End
+
 Public Function ContenidoAlumnos() As Result
   
   Dim mialumno As New AlumnoDAO
@@ -41,8 +49,76 @@ Public Function ContenidoAlumnos() As Result
 End
 
 Public Function ContenidoCurso() As Result
-
+  
   Dim micurso As New CursoDAO
   
   Return micurso.contenido()
+  
+End
+
+Public Function buscarIdAlumno(id As Integer) As AlumnoVO
+  
+  Dim mialumno As New AlumnoDAO
+  Dim resultado As Result
+  Dim retornoAlumno As New AlumnoVO
+  
+  resultado = mialumno.BuscarIgualIdAlumno(id)
+  
+  retornoAlumno.Apellido = resultado["Apellido"]
+  retornoAlumno.Nombre = resultado["Nombre"]
+  retornoAlumno.Documento = resultado["Documento"]
+  retornoAlumno.FechaNacimiento = resultado["FechaNacimiento"]
+  retornoAlumno.Documento = resultado["Domicilio"]
+  retornoAlumno.Telefono = resultado["Telefono"]
+  retornoAlumno.Nacionalidad = resultado["Nacionalidad"]
+  retornoAlumno.EscOrigen = resultado["EscOrigen"]
+  retornoAlumno.Legajo = resultado["Legajo"]
+  retornoAlumno.RutaFoto = resultado["RutaFoto"]
+  Return retornoAlumno
+  
+End
+
+Public Function buscarIdCurso(id As Integer) As CursoVO
+  
+  Dim miCurso As New CursoDAO
+  Dim resultado As Result
+  Dim retornoCurso As New CursoVO
+  
+  resultado = micurso.BuscarIgualIdCurso(id)
+  retornoCurso.Nombre = resultado["Nombre"]
+  retornoCurso.Detalle = resultado["Detalle"]
+  Return retornoCurso
+  
+End
+
+Public Function ModificarIdAlumno(mialumnotmp As AlumnoVO) As Boolean
+  
+  Dim mialumno As New AlumnoDAO
+  
+  Return mialumno.ModificarIdAlumno(mialumnotmp.idAlumno, mialumnotmp)
+  
+End
+
+Public Function ModificarIdCurso(micursotmp As CursoVO) As Boolean
+  
+  Dim micurso As New CursoDAO
+  
+  Return micurso.ModificarId(micursotmp.idcurso, micursotmp)
+  
+End
+
+Public Function borrarIdAlumno(id As Integer) As Boolean
+  
+  Dim mialumno As New AlumnoDAO
+  
+  Return mialumno.BorrarIdAlumno(id)
+  
+End
+
+Public Function borrarIdcurso(id As Integer) As Boolean
+  
+  Dim micurso As New CursoDAO
+  
+  Return micurso.BorrarIdCurso(id)
+  
 End

@@ -11,7 +11,7 @@
   { TextBoxNombreCurso TextBox
     MoveScaled(3,5,57,6)
   }
-  { TextArea1 TextArea
+  { TextAreaDetalle TextArea
     MoveScaled(3,19,57,34)
     Wrap = True
   }

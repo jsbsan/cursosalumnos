@@ -1,8 +1,16 @@
 ' Gambas class file
 
 Public ControladorAplicacion As Controlador
+Public TmpCurso As CursoVO
 
 Public Sub Form_Open()
+  
+End
+
+Public Sub Form_Show()
+  
+  TextBoxNombre.text = TmpCurso.Nombre
+  TextAreaDetalle.text = TmpCurso.Detalle
   
 End
 

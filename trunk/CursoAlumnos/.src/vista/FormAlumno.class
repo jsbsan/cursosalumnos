@@ -7,11 +7,18 @@ Public Sub Form_Open()
   
   Me.Center()
   'si no esta editando, poner todos los campos "vacios"
+  If TmpAlumno.idAlumno = 0 Then 
+    'limpio los texbox
+    limpio()
+    'si estoy añadiendo
+    PictureBoxAlumno.tag = "icono_fotos_personas.png"
+  Else
+    'estoy editando...
+    rellena(TmpAlumno)
+  Endif
+  
   'me voy la primera caja de texto...
   TextBoxNOMBRE.SetFocus()
-  
-  'si estoy añadiendo
-  PictureBoxAlumno.tag = "icono_fotos_personas.png"
   
 End
 
@@ -34,32 +41,46 @@ Public Sub ToolButtonAceptar_Click()
   
   If TmpAlumno.idAlumno <> 0 Then 
     'si estoy editando...  
-  Else 
+    '
+  Else
+    'estoy añadiendo
     
-    'si estoy añadiendo
-    TmpAlumno.idAlumno = 0
-    TmpAlumno.Nombre = TextBoxNOMBRE.Text
-    TmpAlumno.Apellido = TextBoxAPELLIDOS.Text
-    TmpAlumno.Documento = TextBoxDOCUMENTO.Text
-    TmpAlumno.Domicilio = TextBoxDOMICILIO.Text
-    TmpAlumno.EscOrigen = TextBoxESCORIGEN.Text
-    If TextBoxFECHANACIMIENTO.Tag = Null Then TextBoxFECHANACIMIENTO.Tag = Now
-    TmpAlumno.FechaNacimiento = TextBoxFECHANACIMIENTO.Tag
-    TmpAlumno.Legajo = TextBoxLEGAJO.Text
-    TmpAlumno.Nacionalidad = TextBoxNACIONALIDAD.Text
-    TmpAlumno.RutaFoto = PictureBoxAlumno.Tag
-    TmpAlumno.Telefono = TextBoxTELEFONO.Text
-    'crear minifoto...
-    creaminifoto(PictureBoxAlumno.tag)
-    
-    If ControladorAplicacion.log.validarAnnadirAlumno(TmpAlumno) Then 
+  Endif
+  
+  TmpAlumno.Nombre = TextBoxNOMBRE.Text
+  TmpAlumno.Apellido = TextBoxAPELLIDOS.Text
+  TmpAlumno.Documento = TextBoxDOCUMENTO.Text
+  TmpAlumno.Domicilio = TextBoxDOMICILIO.Text
+  TmpAlumno.EscOrigen = TextBoxESCORIGEN.Text
+  If TextBoxFECHANACIMIENTO.Tag = Null Then TextBoxFECHANACIMIENTO.Tag = Now
+  TmpAlumno.FechaNacimiento = TextBoxFECHANACIMIENTO.Tag
+  TmpAlumno.Legajo = TextBoxLEGAJO.Text
+  TmpAlumno.Nacionalidad = TextBoxNACIONALIDAD.Text
+  TmpAlumno.RutaFoto = file.Name(PictureBoxAlumno.Tag)
+  TmpAlumno.Telefono = TextBoxTELEFONO.Text
+  'crear minifoto...
+  creaminifoto(PictureBoxAlumno.tag)
+  
+  If TmpAlumno.idAlumno <> 0 Then 
+    If ControladorAplicacion.log.ModificarIdAlumno(TmpAlumno) Then
       'se ha añadido bien el nuevo alumno
       limpio()
       Me.Close()
+      Return
     Else
       Message.Error(("Se ha producido un error al intentar añadir el nuevo alumno"))
+      Return 
+      
     Endif
-    
+  Endif
+  If TmpAlumno.idAlumno = 0 And If ControladorAplicacion.log.validarAnnadirAlumno(TmpAlumno) Then 
+    'se ha añadido bien el nuevo alumno
+    limpio()
+    Me.Close()
+    Return
+  Else
+    Message.Error(("Se ha producido un error al intentar añadir el nuevo alumno"))
+    Return
   Endif
   
 End
@@ -76,6 +97,23 @@ Public Sub limpio()
   TextBoxNACIONALIDAD.Text = ""
   PictureBoxAlumno.Tag = ""
   PictureBoxAlumno.Picture = Picture["icono_fotos_personas.png"]
+  TextBoxTELEFONO.Text = ""
+  
+End
+
+Public Sub rellena(alu As AlumnoVO)
+  
+  TextBoxNOMBRE.Text = alu.Nombre
+  TextBoxAPELLIDOS.Text = alu.Apellido
+  TextBoxDOCUMENTO.Text = alu.Documento
+  TextBoxDOMICILIO.Text = alu.Domicilio
+  TextBoxESCORIGEN.Text = alu.EscOrigen
+  TextBoxFECHANACIMIENTO.Tag = alu.FechaNacimiento
+  TextBoxFECHANACIMIENTO.text = Format(Date(Year(TextBoxFECHANACIMIENTO.Tag), Month(TextBoxFECHANACIMIENTO.Tag), Day(TextBoxFECHANACIMIENTO.Tag)), "dd-mmmm-yyyy")
+  TextBoxLEGAJO.Text = alu.Legajo
+  TextBoxNACIONALIDAD.Text = alu.Nacionalidad
+  PictureBoxAlumno.Tag = ControladorAplicacion.rutaTrabajo & "Fotos/" & alu.RutaFoto
+  PictureBoxAlumno.Picture = Picture[ControladorAplicacion.rutaTrabajo & "Fotos/" & alu.RutaFoto]
   TextBoxTELEFONO.Text = ""
   
 End
@@ -99,7 +137,7 @@ Public Sub ToolButtonfoto_Click()
   If Exist(User.home & "/webcam_carnet.png") Then 
     Exec ["mv", User.home & "/webcam_carnet.png", nombrefinal] Wait
     
-    PictureBoxAlumno.tag = File.Name(nombrefinal)
+    PictureBoxAlumno.tag = nombrefinal
     PictureBoxAlumno.picture = Picture[nombrefinal]
   Endif
   
@@ -119,9 +157,13 @@ Public Sub creaminifoto(ruta As String)
   
   i = i.Stretch(30, 30)
   
-  i.Save(ControladorAplicacion.rutaTrabajo & "MiniFotos/Mini" & File.Name(ruta))
-  
+  If Exist(ControladorAplicacion.rutaTrabajo & "MiniFotos/Mini" & File.Name(ruta)) Then 
+    'no crea mini foto ya que existe una con el mismo nombre
+  Endif
+  If File.Ext(ruta) = "" Then 
+    ruta &= ".png"
+  Endif
+  Try i.Save(ControladorAplicacion.rutaTrabajo & "MiniFotos/Mini" & File.Name(ruta))
   Return 
-
+  
 End
-

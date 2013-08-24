@@ -1,9 +1,34 @@
 ' Gambas class file
 
 Public ControladorAplicacion As Controlador
+Public TmpCurso As CursoVO
 
 Public Sub Form_Open()
   
   Me.center
+  
+End
+
+Public Sub ToolButtonAceptar_Click()
+
+  TmpCurso.Nombre = TextBoxNombreCurso.Text
+  TmpCurso.Detalle = TextAreaDetalle.Text
+  
+  If TmpCurso.idcurso = 0 And If ControladorAplicacion.log.validarAnnadirCurso(TmpCurso) Then 
+    'se ha añadido bien el nuevo alumno
+    limpio()
+    Me.Close()
+    Return
+  Else
+    Message.Error(("Se ha producido un error al intentar añadir el nuevo alumno"))
+    Return
+  Endif
+  
+End
+
+Public Sub limpio()
+  
+  TextAreaDetalle.text = ""
+  TextBoxNombreCurso.text = ""
   
 End

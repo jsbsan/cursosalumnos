@@ -62,7 +62,7 @@ msgstr ""
 msgid "webcam"
 msgstr ""
 
-#: FormAlumno.class:60
+#: FormAlumno.class:71
 msgid "Se ha producido un error al intentar añadir el nuevo alumno"
 msgstr ""
 

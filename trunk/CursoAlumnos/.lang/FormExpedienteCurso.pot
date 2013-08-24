@@ -26,19 +26,19 @@ msgstr ""
 msgid "Alumnos en el curso:"
 msgstr ""
 
-#: FormExpedienteCurso.form:53
+#: FormExpedienteCurso.form:55
 msgid "Añadir Alumno"
 msgstr ""
 
-#: FormExpedienteCurso.form:60
+#: FormExpedienteCurso.form:64
 msgid "Borrar Alumno"
 msgstr ""
 
-#: FormExpedienteCurso.form:67
+#: FormExpedienteCurso.form:73
 msgid "Editar Observaciones"
 msgstr ""
 
-#: FormExpedienteCurso.form:74
+#: FormExpedienteCurso.form:80
 msgid "Aceptar"
 msgstr ""
 

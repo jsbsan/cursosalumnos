@@ -17,7 +17,7 @@
     MoveScaled(1,15,17,4)
     Text = ("Detalles:")
   }
-  { TextArea1 TextArea
+  { TextAreaDetalle TextArea
     MoveScaled(1,20,42,36)
     Background = &HBFBFBF&
     ReadOnly = True
@@ -31,18 +31,24 @@
   }
   { ToolButtonAnnadirAlumnoCurso ToolButton
     MoveScaled(49,0,20,5)
+    Font = Font["-2"]
+    AutoResize = True
     Text = ("Añadir Alumno")
     Picture = Picture["icon:/16/add"]
     Border = True
   }
   { ToolButtonBorrarAlumno ToolButton
     MoveScaled(72,0,20,5)
+    Font = Font["-2"]
+    AutoResize = True
     Text = ("Borrar Alumno")
     Picture = Picture["icon:/16/erase"]
     Border = True
   }
   { ToolButtonEditarAlumno ToolButton
     MoveScaled(94,0,27,5)
+    Font = Font["-2"]
+    AutoResize = True
     Text = ("Editar Observaciones")
     Picture = Picture["icon:/16/edit"]
     Border = True
