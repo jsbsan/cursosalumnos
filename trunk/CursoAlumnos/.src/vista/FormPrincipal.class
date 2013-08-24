@@ -145,7 +145,11 @@ Public Sub GridViewAlumno_Data(row As Integer, column As Integer)
   '  'ancho de la columna IdAlumno
   '  GridViewAlumno.Columns[1].width = 0
   'Endif
-  
+  If column = 0 Then 
+    Try GridViewAlumno.Data.Picture = Picture.Load(ControladorAplicacion.rutaTrabajo & "MiniFotos/Mini" & resultadoAlumno[GridViewAlumno.Columns[column].text])
+    Return 
+    
+  Endif
   If GridViewAlumno.Columns[column].text <> "FechaNacimiento" Then 
     'no es una fecha
     GridViewAlumno.Data.text = Str(resultadoAlumno[GridViewAlumno.Columns[column].text])

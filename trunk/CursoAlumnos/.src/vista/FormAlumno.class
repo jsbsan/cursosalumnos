@@ -49,6 +49,8 @@ Public Sub ToolButtonAceptar_Click()
     TmpAlumno.Nacionalidad = TextBoxNACIONALIDAD.Text
     TmpAlumno.RutaFoto = PictureBoxAlumno.Tag
     TmpAlumno.Telefono = TextBoxTELEFONO.Text
+    'crear minifoto...
+    creaminifoto(PictureBoxAlumno.tag)
     
     If ControladorAplicacion.log.validarAnnadirAlumno(TmpAlumno) Then 
       'se ha añadido bien el nuevo alumno
@@ -102,3 +104,24 @@ Public Sub ToolButtonfoto_Click()
   Endif
   
 End
+
+Public Sub PictureBoxAlumno_MouseDown()
+  
+  ModuleAsignarYSoltarImagenes.asignaImagen(PictureBoxAlumno, ControladorAplicacion.rutaTrabajo & "Fotos/")
+  
+End
+
+Public Sub creaminifoto(ruta As String)
+  
+  Dim i As Image
+  
+  i = Image.Load(ruta)
+  
+  i = i.Stretch(30, 30)
+  
+  i.Save(ControladorAplicacion.rutaTrabajo & "MiniFotos/Mini" & File.Name(ruta))
+  
+  Return 
+
+End
+

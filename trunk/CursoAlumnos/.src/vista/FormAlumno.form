@@ -94,14 +94,14 @@
     Border = True
   }
   { PictureBoxAlumno PictureBox
-    MoveScaled(3,1,15,16)
+    MoveScaled(3,1,12.1429,17)
     Tag = "icono_fotos_personas.png"
     Picture = Picture["icono_fotos_personas.png"]
     Stretch = True
     Border = Border.Plain
   }
   { ToolButtonfoto ToolButton
-    MoveScaled(3,18,15,4)
+    MoveScaled(1,18,16,4)
     Text = ("webcam")
     Picture = Picture["camara_icono.png"]
     Border = True

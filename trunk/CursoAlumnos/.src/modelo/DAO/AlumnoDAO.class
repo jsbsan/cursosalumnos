@@ -1138,21 +1138,22 @@ Public Function gridFormatearColumnas(grid As GridView) As Gridview
   With grid 
     .header = 3 
     .rows.count = 0 
+    .Rows.H = 40
     .columns.count = 11 
     .Columns[0].title = "RutaFoto"
-    .Columns[0].width = 80
+    .Columns[0].width = 30
     .Columns[1].title = "idAlumno"
     .Columns[1].width = 0
     .Columns[2].title = "Apellido"
-    .Columns[2].width = 80
+    .Columns[2].width = 200
     .Columns[3].title = "Nombre"
-    .Columns[3].width = 80
+    .Columns[3].width = 100
     .Columns[4].title = "Documento"
     .Columns[4].width = 80
     .Columns[5].title = "FechaNacimiento"
-    .Columns[5].width = 80
+    .Columns[5].width = 100
     .Columns[6].title = "Domicilio"
-    .Columns[6].width = 80
+    .Columns[6].width = 200
     .Columns[7].title = "Telefono"
     .Columns[7].width = 80
     .Columns[8].title = "Nacionalidad"
@@ -1162,7 +1163,7 @@ Public Function gridFormatearColumnas(grid As GridView) As Gridview
     .Columns[10].title = "Legajo"
     .Columns[10].width = 80
     .font.name = "Sans"
-    .font.size = 10 
+    .font.size = 8
     .Background = 16777215 
     .Foreground = 0 
   End With

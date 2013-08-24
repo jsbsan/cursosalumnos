@@ -23,11 +23,13 @@ msgid "Contraseña:"
 msgstr ""
 
 #: FControlAcceso.form:36 FormAlumno.form:35 FormCalendario.form:17
-#: FormCurso.form:44 FormExpedienteAlumno.form:87 FormExpedienteCurso.form:74
+#: FormCurso.form:44 FormElegirFichero.form:23 FormExpedienteAlumno.form:87
+#: FormExpedienteCurso.form:74
 msgid "Aceptar"
 msgstr ""
 
 #: FControlAcceso.form:43 FormAlumno.form:42 FormCurso.form:37
+#: FormElegirFichero.form:31
 msgid "Cancelar"
 msgstr ""
 
@@ -75,7 +77,7 @@ msgstr ""
 msgid "webcam"
 msgstr ""
 
-#: FormAlumno.class:58
+#: FormAlumno.class:60
 msgid "Se ha producido un error al intentar añadir el nuevo alumno"
 msgstr ""
 
@@ -85,6 +87,30 @@ msgstr ""
 
 #: FormCurso.form:32
 msgid "Detalle"
+msgstr ""
+
+#: FormElegirFichero.form:44
+msgid "Pegar desde Portapapeles"
+msgstr ""
+
+#: FormElegirFichero.form:45
+msgid "Pegar (Url)"
+msgstr ""
+
+#: FormError.form:14
+msgid "Mensaje de Error:"
+msgstr ""
+
+#: FormError.form:20
+msgid "Copiar Al portapapeles"
+msgstr ""
+
+#: FormError.form:25 FormPrincipal.form:239
+msgid "Salir"
+msgstr ""
+
+#: FormError.form:30
+msgid "Label1"
 msgstr ""
 
 #: FormExpedienteAlumno.form:39
@@ -121,6 +147,10 @@ msgstr ""
 
 #: FormExpedienteCurso.form:60
 msgid "Borrar Alumno"
+msgstr ""
+
+#: FormPensando.class:7
+msgid "Espere por favor..."
 msgstr ""
 
 #: FormPrincipal.form:62
@@ -200,8 +230,16 @@ msgstr ""
 msgid "Usuario Actual:"
 msgstr ""
 
-#: FormPrincipal.form:239
-msgid "Salir"
+#: ModuleAsignarYSoltarImagenes.module:17
+msgid "Elija el archivo gráfico"
+msgstr ""
+
+#: ModuleAsignarYSoltarImagenes.module:18
+msgid "Ficheros de Imágenes"
+msgstr ""
+
+#: ModuleAsignarYSoltarImagenes.module:39
+msgid "No se ha podido descargarse el archivo"
 msgstr ""
 
 #: conexion.class:18
