@@ -51,29 +51,107 @@ Public Sub ToolButtonAnadir_Click()
   nuevoalumno.idAlumno = 0 'para que sea a añadir
   ControladorAplicacion.falumno.TmpAlumno = nuevoalumno
   ControladorAplicacion.falumno.showmodal()
-  
+  ControladorAplicacion.falumno.TmpAlumno = Null
   'relleno el gridview de datos...
   RefrescarDatosAlumnos()
   
 End
 
-Public Sub ToolButtonEditar_Click()
+Public Sub ToolButtonAnadirCurso_Click()
   
-  ControladorAplicacion.falumno.showmodal()
+  Dim nuevoCurso As New CursoVO
+  
+  nuevoCurso.idCurso = 0
+  ControladorAplicacion.fcurso.tmpcurso = nuevoCurso
+  ControladorAplicacion.fcurso.showmodal()
+  ControladorAplicacion.fcurso.tmpcurso = Null
+  'relleno el gridview de datos...
+  RefrescarDatosCursos()
   
 End
 
-Public Sub ToolButtonAnadirCurso_Click()
+Public Sub ToolButtonEditar_Click()
   
-  ControladorAplicacion.fcurso.showmodal()
+  Dim alu As New AlumnoVO
+  
+  If GridViewAlumno.row = -1 Then 
+    'no puedo editar ya que no esta el cursor puesto en el gridvies
+  Else
+    alu = ControladorAplicacion.BuscarIdalumno(Val(GridViewAlumno[GridViewAlumno.row, 1].Text))
+    ControladorAplicacion.falumno.TmpAlumno = alu
+    ControladorAplicacion.falumno.TmpAlumno.idAlumno = GridViewAlumno[GridViewAlumno.row, 1].Text
+    
+    ControladorAplicacion.falumno.showmodal()
+    ControladorAplicacion.falumno.TmpAlumno = Null
+    'relleno el gridview de datos...
+    RefrescarDatosAlumnos()
+  Endif
   
 End
 
 Public Sub ToolButtonEditarCurso_Click()
   
-  ControladorAplicacion.fcurso.showmodal()
+  Dim cur As New CursoVO
+  
+  If GridViewCurso.row = -1 Then 
+    
+  Else
+    cur = ControladorAplicacion.BuscarIdCurso(Val(GridViewCurso[GridViewCurso.row, 0].Text))
+    ControladorAplicacion.fcurso.TmpCurso = cur
+    ControladorAplicacion.fcurso.TmpCurso.idCurso = GridViewCurso[GridViewCurso.row, 0].Text
+    ControladorAplicacion.fcurso.showmodal()
+    ControladorAplicacion.fcurso.TmpCurso = Null
+    'relleno el gridview de datos...
+    
+    RefrescarDatosCursos()
+  Endif  
   
 End
+
+Public Sub ToolButtonBorrar_Click()
+  
+  Dim valor As Integer
+  
+  If GridViewAlumno.row = -1 Then 
+    'no puedo editar ya que no esta el cursor puesto en el gridvies
+  Else
+    valor = Message.Question("¿quieres borrar un alumno? " & gb.CrLf & "Si lo borras, borraras los datos de los cursos en que ha estado", "aceptar", "cancelar")
+    If valor = 1 Then 
+      If ControladorAplicacion.log.borrarIdAlumno(Val(GridViewAlumno[GridViewAlumno.row, 1].Text)) Then 
+        'relleno el gridview de datos...
+        RefrescarDatosAlumnos()
+      Else
+        Message.Info("Ha habido un problema al borrar el alumno")
+      Endif
+      
+    Endif
+    
+  Endif
+  
+End
+
+Public Sub ToolButtonBorrarCurso_Click()
+  
+  Dim valor As Integer
+  
+  If GridViewcurso.row = -1 Then 
+    'no puedo editar ya que no esta el cursor puesto en el gridvies
+  Else
+    valor = Message.Question("¿quieres borrar un curso? " & gb.CrLf & "Si lo borras, borraras los datos de los alumnos que lo han cursado", "aceptar", "cancelar")
+    If valor = 1 Then 
+      If ControladorAplicacion.log.borrarIdCurso(Val(GridViewCurso[GridViewCurso.row, 0].Text)) Then 
+        'relleno el gridview de datos...
+        RefrescarDatosCursos()
+      Else
+        Message.Info("Ha habido un problema al borrar el alumno")
+      Endif
+      
+    Endif
+    
+  Endif
+  
+End
+
 '------------------------------------------------------------------
 'IconPanelMenu
 '------------------------------------------------------------------
@@ -122,13 +200,31 @@ End
 
 Public Sub ToolButtonExpedienteCurso_Click()
   
-  ControladorAplicacion.fExpCurso.ShowModal()
+  Dim cur As New CursoVO
+
+  If GridViewCurso.row = -1 Then 
+    'no puedo editar ya que no esta el cursor puesto en el gridvies
+  Else
+    cur = ControladorAplicacion.BuscarIdCurso(Val(GridViewCurso[GridViewCurso.row, 0].Text))
+    ControladorAplicacion.fExpCurso.TmpCurso = cur
+    
+    ControladorAplicacion.fExpCurso.ShowModal()
+    
+  Endif
   
 End
 
 Public Sub ToolButtonExpediente_Click()
   
-  ControladorAplicacion.fexpAlumno.ShowModal()
+  Dim alu As New AlumnoVO
+  
+  If GridViewAlumno.row = -1 Then 
+    'no puedo editar ya que no esta el cursor puesto en el gridvies
+  Else
+    alu = ControladorAplicacion.BuscarIdalumno(Val(GridViewAlumno[GridViewAlumno.row, 1].Text))
+    ControladorAplicacion.fexpAlumno.TmpAlumno = alu
+    ControladorAplicacion.fexpAlumno.ShowModal()
+  Endif
   
 End
 
@@ -146,9 +242,13 @@ Public Sub GridViewAlumno_Data(row As Integer, column As Integer)
   '  GridViewAlumno.Columns[1].width = 0
   'Endif
   If column = 0 Then 
-    Try GridViewAlumno.Data.Picture = Picture.Load(ControladorAplicacion.rutaTrabajo & "MiniFotos/Mini" & resultadoAlumno[GridViewAlumno.Columns[column].text])
-    Return 
-    
+    If Exist(ControladorAplicacion.rutaTrabajo & "MiniFotos/Mini" & resultadoAlumno[GridViewAlumno.Columns[column].text]) Then 
+      GridViewAlumno.Data.Picture = Picture.Load(ControladorAplicacion.rutaTrabajo & "MiniFotos/Mini" & resultadoAlumno[GridViewAlumno.Columns[column].text])
+      Return 
+    Else
+      GridViewAlumno.Data.text = ""
+      Return
+    Endif
   Endif
   If GridViewAlumno.Columns[column].text <> "FechaNacimiento" Then 
     'no es una fecha
@@ -160,7 +260,13 @@ Public Sub GridViewAlumno_Data(row As Integer, column As Integer)
     
   Endif
   ' colorea la fila, según sea par o impar
-  If row Mod 2 = 0 Then GridViewAlumno.Data.Background = Color.LightBackground
+  If row = GridViewAlumno.row Then 
+    'cursor donde esta situado en el gridview
+    GridViewAlumno.Data.Background = Color.Orange
+  Else
+    
+    If row Mod 2 = 0 Then GridViewAlumno.Data.Background = Color.LightBackground
+  Endif
   
 End
 
@@ -185,7 +291,13 @@ Public Sub GridViewCurso_Data(row As Integer, column As Integer)
   
   resultadoCurso.MoveTo(row)
   GridViewCurso.Data.text = Str(resultadoCurso[GridViewCurso.Columns[column].text])
+  
   ' colorea la fila, según sea par o impar
-  If row Mod 2 = 0 Then GridViewCurso.Data.Background = Color.Cyan
+  If row = GridViewCurso.row Then 
+    'cursor donde esta situado en el gridview
+    GridViewCurso.Data.Background = Color.Orange
+  Else
+    If row Mod 2 = 0 Then GridViewCurso.Data.Background = Color.Cyan
+  Endif
   
 End

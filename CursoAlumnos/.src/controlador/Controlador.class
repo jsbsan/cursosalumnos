@@ -57,6 +57,12 @@ Public Function anadirAlumno(DatosAlumnos As AlumnoVO) As Boolean
   
 End
 
+Public Function anadirCurso(Datos As CursoVO) As Boolean
+  
+  Return log.validarRegistroCurso(Datos)
+  
+End
+
 Public Function ContenidoAlumnos() As Result
   
   Return log.ContenidoAlumnos()
@@ -66,5 +72,17 @@ End
 Public Function ContenidoCurso() As Result
   
   Return log.ContenidoCurso()
+  
+End
+
+Public Function BuscarIdCurso(id As Integer) As CursoVO
+  
+  Return log.BuscarIdCurso(id)
+  
+End
+
+Public Function BuscarIdalumno(id As Integer) As AlumnoVO
+  
+  Return log.BuscarIdalumno(id)
   
 End

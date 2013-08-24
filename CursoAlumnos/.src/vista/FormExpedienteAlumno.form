@@ -22,23 +22,29 @@
   }
   { ToolButtonAnnadirAlumnoCurso ToolButton
     MoveScaled(1,24,20,5)
-    Text = ("Añadir Curso")
+    Font = Font["Arial,-2"]
+    AutoResize = True
+    Text = ("Añadirle a un  Curso")
     Picture = Picture["icon:/16/add"]
     Border = True
   }
   { ToolButtonBorrarAlumno ToolButton
-    MoveScaled(24,24,20,5)
-    Text = ("Borrar Curso")
+    MoveScaled(26,24,20,5)
+    Font = Font["Arial,-2"]
+    AutoResize = True
+    Text = ("Borrarle de un  Curso")
     Picture = Picture["icon:/16/erase"]
     Border = True
   }
   { ToolButtonEditarAlumno ToolButton
-    MoveScaled(47,24,27,5)
+    MoveScaled(51,24,23,5)
+    Font = Font["Arial,-2"]
+    AutoResize = True
     Text = ("Editar Observaciones")
     Picture = Picture["icon:/16/edit"]
     Border = True
   }
-  { TextBoxDireccion TextBox
+  { TextBoxDocumento TextBox
     MoveScaled(19,14,54,5)
     Background = &HBFBFBF&
     ReadOnly = True

@@ -1,7 +1,7 @@
 <Base De Datos>
 <tipo>Sqlite3<Fin_tipo>
-<nombre>/home/uno/CursosAlumnos<Fin_nombre>
-<ruta>/home/uno/CursosAlumnos<Fin_ruta> <destino>/home/uno/Documentos/00_TRABAJOS_EXTERNOS/CursosAlumnos/cursosalumnos/CursoAlumnos<Fin_destino>
+<nombre>/home/uno/PruebaCurso/CursosAlumnos<Fin_nombre>
+<ruta>/home/uno/PruebaCurso/CursosAlumnos<Fin_ruta> <destino>/home/uno/PruebaCurso<Fin_destino>
 <Tablas>
 <Tabla>Alumno<Fin_Tabla>
 <Campos>
@@ -10,7 +10,7 @@
 <Campo><tipo>String<Fin_tipo><nombre_campo>Apellido<Fin_nombre_campo><Fin_Campo>
 <Campo><tipo>String<Fin_tipo><nombre_campo>Nombre<Fin_nombre_campo><Fin_Campo>
 <Campo><tipo>String<Fin_tipo><nombre_campo>Documento<Fin_nombre_campo><Fin_Campo>
-<Campo><tipo>Float<Fin_tipo><nombre_campo>FechaNacimiento<Fin_nombre_campo><Fin_Campo>
+<Campo><tipo>Date<Fin_tipo><nombre_campo>FechaNacimiento<Fin_nombre_campo><Fin_Campo>
 <Campo><tipo>String<Fin_tipo><nombre_campo>Domicilio<Fin_nombre_campo><Fin_Campo>
 <Campo><tipo>String<Fin_tipo><nombre_campo>Telefono<Fin_nombre_campo><Fin_Campo>
 <Campo><tipo>String<Fin_tipo><nombre_campo>Nacionalidad<Fin_nombre_campo><Fin_Campo>

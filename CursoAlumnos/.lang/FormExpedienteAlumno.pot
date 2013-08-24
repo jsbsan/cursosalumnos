@@ -30,19 +30,19 @@ msgstr ""
 msgid "Cursos a los que esta apuntado:"
 msgstr ""
 
-#: FormExpedienteAlumno.form:44
-msgid "Añadir Curso"
+#: FormExpedienteAlumno.form:46
+msgid "Añadirle a un  Curso"
 msgstr ""
 
-#: FormExpedienteAlumno.form:51
-msgid "Borrar Curso"
+#: FormExpedienteAlumno.form:55
+msgid "Borrarle de un  Curso"
 msgstr ""
 
-#: FormExpedienteAlumno.form:58
+#: FormExpedienteAlumno.form:64
 msgid "Editar Observaciones"
 msgstr ""
 
-#: FormExpedienteAlumno.form:87
+#: FormExpedienteAlumno.form:93
 msgid "Aceptar"
 msgstr ""
 
