@@ -14,35 +14,35 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: FormExpedienteAlumno.form:23
+#: FormExpedienteAlumno.form:24
 msgid "Nombre:"
 msgstr ""
 
-#: FormExpedienteAlumno.form:28
+#: FormExpedienteAlumno.form:29
 msgid "Apellidos:"
 msgstr ""
 
-#: FormExpedienteAlumno.form:33
+#: FormExpedienteAlumno.form:34
 msgid "Documento:"
 msgstr ""
 
-#: FormExpedienteAlumno.form:38
+#: FormExpedienteAlumno.form:39
 msgid "Cursos a los que esta apuntado:"
 msgstr ""
 
-#: FormExpedienteAlumno.form:43
+#: FormExpedienteAlumno.form:44
 msgid "Añadir Curso"
 msgstr ""
 
-#: FormExpedienteAlumno.form:50
+#: FormExpedienteAlumno.form:51
 msgid "Borrar Curso"
 msgstr ""
 
-#: FormExpedienteAlumno.form:57
+#: FormExpedienteAlumno.form:58
 msgid "Editar Observaciones"
 msgstr ""
 
-#: FormExpedienteAlumno.form:86
+#: FormExpedienteAlumno.form:87
 msgid "Aceptar"
 msgstr ""
 

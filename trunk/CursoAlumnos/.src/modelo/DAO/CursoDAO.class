@@ -23,9 +23,9 @@ Public Function registrar(NuevaCurso As CursoVO) As Boolean
   Dim SQLString As String
   
   conectar.Conexion()
-  SQLString = "INSERT INTO Curso(idCurso,Nombre,Detalle) Values ('"
-  SQLString &= NuevaCurso.idCurso
-  SQLString &= "','" & NuevaCurso.Nombre
+  SQLString = "INSERT INTO Curso(idCurso,Nombre,Detalle) Values ("
+  SQLString &= "Null" 'NuevaCurso.idCurso
+  SQLString &= ",'" & NuevaCurso.Nombre
   SQLString &= "','" & NuevaCurso.Detalle & "')"
   Try conectar.hconn.Exec(SQLString) 
   If Error Then 
@@ -319,9 +319,10 @@ End
 Public Function sql(consulta As String) As Result
   
   Dim conectar As New Conexion
-  Dim SQLString As String
+  '  Dim SQLString As String
   Dim mRs As Result
   
+  conectar.Conexion()
   Try mRs = conectar.hconn.Exec(consulta) 
   If Error Then message.info("Consulta erronea, revisela")
   Return mRs 
@@ -396,8 +397,9 @@ Public Sub contenido() As Result
   Dim SQLString As String
   Dim mRs As Result
   
-  Try SQLString = "SELECT * FROM Curso" 
-  mRs = conectar.hconn.Exec(SQLString) 
+  conectar.Conexion()
+  SQLString = "SELECT * FROM Curso" 
+  Try mRs = conectar.hconn.Exec(SQLString) 
   Return mRs 
   
 End 

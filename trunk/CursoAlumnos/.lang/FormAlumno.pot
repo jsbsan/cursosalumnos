@@ -14,51 +14,55 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: FormAlumno.form:33
+#: FormAlumno.form:35
 msgid "Aceptar"
 msgstr ""
 
-#: FormAlumno.form:40
+#: FormAlumno.form:42
 msgid "Cancelar"
 msgstr ""
 
-#: FormAlumno.form:47
+#: FormAlumno.form:49
 msgid "Nombre:"
 msgstr ""
 
-#: FormAlumno.form:61
+#: FormAlumno.form:63
 msgid "Apellidos:"
 msgstr ""
 
-#: FormAlumno.form:71
+#: FormAlumno.form:73
 msgid "Documento:"
 msgstr ""
 
-#: FormAlumno.form:83
+#: FormAlumno.form:85
 msgid "Fecha Nacimiento:"
 msgstr ""
 
-#: FormAlumno.form:92
+#: FormAlumno.form:94
 msgid "Domicilio:"
 msgstr ""
 
-#: FormAlumno.form:101
+#: FormAlumno.form:103
 msgid "Télefono:"
 msgstr ""
 
-#: FormAlumno.form:111
+#: FormAlumno.form:113
 msgid "Nacionalidad:"
 msgstr ""
 
-#: FormAlumno.form:121
+#: FormAlumno.form:123
 msgid "Esc.Origen:"
 msgstr ""
 
-#: FormAlumno.form:131
+#: FormAlumno.form:133
 msgid "Legajo:"
 msgstr ""
 
-#: FormAlumno.class:57
+#: FormAlumno.form:153
+msgid "webcam"
+msgstr ""
+
+#: FormAlumno.class:58
 msgid "Se ha producido un error al intentar añadir el nuevo alumno"
 msgstr ""
 

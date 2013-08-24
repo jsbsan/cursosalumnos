@@ -84,6 +84,8 @@ Public Sub main()
 End
 
 Public Sub iniciarDirectoriosYArchivos(controladorApli As Controlador)
+  
+  Dim con As New Conexion
   'defino ruta de trabajo
   
   ControladorApli.rutaTrabajo = User.home & "/.CursoAlumnos/"
@@ -97,7 +99,19 @@ Public Sub iniciarDirectoriosYArchivos(controladorApli As Controlador)
   If Exist(ControladorApli.rutaTrabajo & "CursosAlumnos") Then 
     
   Else
-    Copy "CursosAlumnos" To ControladorApli.rutaTrabajo & "/CursosAlumnos"
+    Copy "CursosAlumnosVacia" To ControladorApli.rutaTrabajo & "/CursosAlumnos"
+    'añado tablas...
+    Try con.Conexion()
+    Try con.hconn.Exec("CREATE TABLE Curso (idCurso INTEGER PRIMARY KEY AUTOINCREMENT, Nombre TEXT, Detalle TEXT)")
+    Try con.hconn.Exec("Create TABLE Relacion(idRelacion INTEGER PRIMARY KEY AUTOINCREMENT, idAlumno NUMERIC, idCurso NUMERIC, Observacion TEXT)")
+    Try con.hconn.Exec("Create TABLE Alumno(RutaFoto TEXT, idAlumno INTEGER PRIMARY KEY AUTOINCREMENT, Apellido TEXT, Nombre TEXT, Documento TEXT, FechaNacimiento DATE, Domicilio TEXT, Telefono TEXT, Nacionalidad TEXT, EscOrigen TEXT, Legajo TEXT); ")
+    If Error Then 
+      Message.Info("Se ha producido un error al intentar crear las tablas" & gb.CrLf & "Error: " & Error.Text)
+      Return
+      
+    Endif
+    con.desconectar()
+    
   Endif
   
   'creo el directorio de fotos  si no existe
@@ -117,6 +131,14 @@ Public Sub iniciarDirectoriosYArchivos(controladorApli As Controlador)
   If Exist(ControladorApli.rutaTrabajo & "Fotos/transparente.png") Then 
   Else
     Copy "transparente.png" To ControladorApli.rutaTrabajo & "Fotos/transparente.png"
+  Endif
+  
+  'copio porgrama de tomar fotos
+  If Exist(ControladorApli.rutaTrabajo & "FotoCarnetMyWebCam.gambas") Then 
+  Else
+    Copy "FotoCarnetMyWebCam.gambas1" To ControladorApli.rutaTrabajo & "FotoCarnetMyWebCam.gambas"
+    Wait 0.5
+    Chmod ControladorApli.rutaTrabajo & "FotoCarnetMyWebCam.gambas" To "rwxrwxrwx"
   Endif
   
 End

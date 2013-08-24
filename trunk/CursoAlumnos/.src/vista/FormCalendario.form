@@ -2,6 +2,7 @@
 
 { Form Form
   MoveScaled(0,0,29,30)
+  Icon = Picture["icon:/16/calendar"]
   { DateChooser1 DateChooser
     MoveScaled(0,0,29,26)
   }

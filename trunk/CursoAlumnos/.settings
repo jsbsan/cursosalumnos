@@ -4,14 +4,29 @@ Count=0
 [DebugWindow]
 Count=0
 
+[DebugWindow/Conexion]
+Geometry=[20,422,210,210]
+
 [DebugWindow/ControladorAplicacion]
 Geometry=[-7,-8,210,210]
 
 [DebugWindow/ControladorAplicacion.cone]
 Geometry=[-60,481,485,210]
 
+[DebugWindow/DatosAlumnos]
+Geometry=[-10,-8,210,210]
+
 [DebugWindow/FormularioPrincipal]
 Geometry=[-4,-5,210,210]
+
+[DebugWindow/GridViewAlumno]
+Geometry=[-10,-8,210,210]
+
+[DebugWindow/GridViewAlumno.Columns[column]]
+Geometry=[-7,-8,210,485]
+
+[DebugWindow/TmpAlumno]
+Geometry=[-10,-8,326,223]
 
 [DebugWindow/con]
 Geometry=[-7,-8,549,210]
@@ -19,8 +34,17 @@ Geometry=[-7,-8,549,210]
 [DebugWindow/cone]
 Geometry=[-7,-8,397,210]
 
+[DebugWindow/conectar]
+Geometry=[-10,-8,210,210]
+
 [DebugWindow/nuevoalumno]
 Geometry=[-7,-8,210,666]
+
+[DebugWindow/resultadoAlumno]
+Geometry=[-10,-8,692,225]
+
+[DebugWindow/resultadoAlumno.Fields]
+Geometry=[4,6,210,210]
 
 [FCommit]
 LastCommit="Formularios de expedientes de alumnos y cursos\n---- Esta línea y las siguientes serán ignoradas ----\n\nM       .src/Curso.class\nM       .src/Alumno.class\nM       .src/controlador/main.module\nM       .src/controlador/Controlador.class\nM       .src/vista/FormPrincipal.class\nA       .src/vista/FormExpedienteCurso.form\nA       .src/vista/FormExpedienteAlumno.form\nA       .src/vista/FormExpedienteCurso.class\nA       .src/vista/FormExpedienteAlumno.class\nA       .src/vista/FormCurso.form\nA       .src/vista/FormCurso.class\nM       .src/vista/FormPrincipal.form\nM       .gambas/MAIN\nM       .gambas/FORMPRINCIPAL\nM       .gambas/CONTROLADOR\nM       .settings\nM       .startup\nM       .project\nM       .lang/.pot\nM       .lang/FormPrincipal.pot"
@@ -28,19 +52,19 @@ LastCommit="Formularios de expedientes de alumnos y cursos\n---- Esta línea y l
 [OpenFile]
 File[1]=".src/vista/FControlAcceso.form"
 File[2]=".src/vista/FControlAcceso.class:4.0"
-File[3]=".src/controlador/main.module:88.2"
-File[4]=".src/controlador/Controlador.class:53.63"
+File[3]=".src/controlador/main.module:141.7"
+File[4]=".src/controlador/Controlador.class:67.29"
 File[5]=".src/vista/FormPrincipal.form"
-File[6]=".src/vista/FormPrincipal.class:44.33"
-File[7]=".src/modelo/Logica.class:27.50"
+File[6]=".src/vista/FormPrincipal.class:155.4"
+File[7]=".src/modelo/Logica.class:47.0"
 File[8]=".src/vista/FormAlumno.form"
-File[9]=".src/vista/FormAlumno.class:3.43"
+Active=9
+File[9]=".src/vista/FormAlumno.class:92.21"
 File[10]="icono_fotos_personas.png"
 File[11]=".src/vista/FormCalendario.form"
 File[12]=".src/vista/FormCalendario.class:10.0"
 File[13]=".src/controlador/ClaseDato.class:8.0"
 File[14]=".src/vista/FormCurso.form"
-Active=15
 File[15]=".src/vista/FormCurso.class:6.2"
 File[16]=".src/vista/FormExpedienteCurso.form"
 File[17]=".src/vista/FormExpedienteCurso.class:5.2"
@@ -48,13 +72,14 @@ File[18]=".src/vista/FormExpedienteAlumno.form"
 File[19]=".src/vista/FormExpedienteAlumno.class:11.2"
 File[20]="transparente.png"
 File[21]=".src/modelo/conexion/conexion.class:20.0"
-File[22]=".src/modelo/DAO/RelacionDAO.class:441.0"
-File[23]=".src/modelo/DAO/CursoDAO.class:455.0"
-File[24]=".src/modelo/DAO/AlumnoDAO.class:1155.0"
-File[25]=".src/modelo/VO/AlumnoVO.class:2.28"
-File[26]=".src/modelo/VO/CursoVO.class:2.28"
-File[27]=".src/modelo/VO/RelacionVO.class:2.31"
-Count=27
+File[22]=".src/modelo/VO/AlumnoVO.class:2.28"
+File[23]=".src/modelo/VO/CursoVO.class:2.28"
+File[24]=".src/modelo/VO/RelacionVO.class:2.31"
+File[25]=".src/modelo/DAO/AlumnoDAO.class:31.73"
+File[26]=".src/modelo/DAO/CursoDAO.class:21.2"
+File[27]=".src/modelo/DAO/RelacionDAO.class:27.44"
+File[28]="camara_icono.png"
+Count=28
 
 [VersionControl]
 RememberPassword=1

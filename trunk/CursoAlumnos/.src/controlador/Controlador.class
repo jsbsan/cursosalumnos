@@ -6,7 +6,7 @@ Public falumno As FormAlumno
 Public fcurso As FormCurso
 Public fExpCurso As FormExpedienteCurso
 Public fexpAlumno As FormExpedienteAlumno
-Public cone As Conectar
+Public cone As Conexion
 
 Public log As Logica
 
@@ -51,8 +51,20 @@ End
 '-----------------------------------------------------------------------------
 '-------------------TRABAJOS CON DATOS DE ALUMNOS-----------------------------
 '-----------------------------------------------------------------------------
-Public Function anadirAlumno(DatosAlumnos As Alumno) As Boolean
+Public Function anadirAlumno(DatosAlumnos As AlumnoVO) As Boolean
   
   Return log.validarRegistroAlumno(DatosAlumnos)
+  
+End
+
+Public Function ContenidoAlumnos() As Result
+  
+  Return log.ContenidoAlumnos()
+  
+End
+
+Public Function ContenidoCurso() As Result
+  
+  Return log.ContenidoCurso()
   
 End

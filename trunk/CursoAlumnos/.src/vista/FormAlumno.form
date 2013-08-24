@@ -2,6 +2,7 @@
 
 { Form Form
   MoveScaled(0,0,64,64)
+  Icon = Picture["icon:/16/people"]
   Persistent = True
   { ToolButtonAceptar ToolButton
     MoveScaled(40,57,15,6)
@@ -40,19 +41,19 @@
     Alignment = Align.Right
   }
   { TextBoxFECHANACIMIENTO TextBox
-    MoveScaled(23,20,21,4)
+    MoveScaled(23,21,21,4)
     Background = &HBFBFBF&
     ReadOnly = True
   }
   { Label4 Label
-    MoveScaled(1,20,20,4)
+    MoveScaled(1,22,20,3)
     Text = ("Fecha Nacimiento:")
   }
   { TextBoxDOMICILIO TextBox
     MoveScaled(1,29,62,4)
   }
   { Label5 Label
-    MoveScaled(1,24,20,4)
+    MoveScaled(1,26,20,3)
     Text = ("Domicilio:")
   }
   { TextBoxTELEFONO TextBox
@@ -88,15 +89,21 @@
     Alignment = Align.Right
   }
   { ToolButtonCalendario ToolButton
-    MoveScaled(47,20,5,4)
+    MoveScaled(46,20,5,4)
     Picture = Picture["icon:/16/calendar"]
     Border = True
   }
   { PictureBoxAlumno PictureBox
-    MoveScaled(4,2,15,16)
+    MoveScaled(3,1,15,16)
     Tag = "icono_fotos_personas.png"
     Picture = Picture["icono_fotos_personas.png"]
     Stretch = True
     Border = Border.Plain
+  }
+  { ToolButtonfoto ToolButton
+    MoveScaled(3,18,15,4)
+    Text = ("webcam")
+    Picture = Picture["camara_icono.png"]
+    Border = True
   }
 }
