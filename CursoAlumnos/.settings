@@ -25,6 +25,9 @@ Geometry=[-10,-8,210,210]
 [DebugWindow/GridViewAlumno.Columns[column]]
 Geometry=[-7,-8,210,485]
 
+[DebugWindow/PictureBoxAlumno]
+Geometry=[-64,264,210,437]
+
 [DebugWindow/TmpAlumno]
 Geometry=[-10,-8,326,223]
 
@@ -52,14 +55,13 @@ LastCommit="Formularios de expedientes de alumnos y cursos\n---- Esta línea y l
 [OpenFile]
 File[1]=".src/vista/FControlAcceso.form"
 File[2]=".src/vista/FControlAcceso.class:4.0"
-File[3]=".src/controlador/main.module:141.7"
+File[3]=".src/controlador/main.module:9.7"
 File[4]=".src/controlador/Controlador.class:67.29"
 File[5]=".src/vista/FormPrincipal.form"
-File[6]=".src/vista/FormPrincipal.class:155.4"
-File[7]=".src/modelo/Logica.class:47.0"
+File[6]=".src/vista/FormPrincipal.class:148.159"
+File[7]=".src/modelo/Logica.class:29.2"
 File[8]=".src/vista/FormAlumno.form"
-Active=9
-File[9]=".src/vista/FormAlumno.class:92.21"
+File[9]=".src/vista/FormAlumno.class:121.79"
 File[10]="icono_fotos_personas.png"
 File[11]=".src/vista/FormCalendario.form"
 File[12]=".src/vista/FormCalendario.class:10.0"
@@ -72,14 +74,24 @@ File[18]=".src/vista/FormExpedienteAlumno.form"
 File[19]=".src/vista/FormExpedienteAlumno.class:11.2"
 File[20]="transparente.png"
 File[21]=".src/modelo/conexion/conexion.class:20.0"
-File[22]=".src/modelo/VO/AlumnoVO.class:2.28"
+File[22]=".src/modelo/VO/AlumnoVO.class:2.17"
 File[23]=".src/modelo/VO/CursoVO.class:2.28"
 File[24]=".src/modelo/VO/RelacionVO.class:2.31"
-File[25]=".src/modelo/DAO/AlumnoDAO.class:31.73"
+File[25]=".src/modelo/DAO/AlumnoDAO.class:1140.16"
 File[26]=".src/modelo/DAO/CursoDAO.class:21.2"
 File[27]=".src/modelo/DAO/RelacionDAO.class:27.44"
 File[28]="camara_icono.png"
-Count=28
+File[29]=".src/Otros Formularios/ModuleAsignarYSoltarImagenes.module:79.21"
+File[30]=".src/Otros Formularios/FormElegirFichero.form"
+Active=31
+File[31]=".src/Otros Formularios/FormElegirFichero.class:99.0"
+File[32]=".src/controlador/ClassDato.class:0.19"
+File[33]=".src/Otros Formularios/FormPensando.form"
+File[34]=".src/Otros Formularios/FormError.form"
+File[35]=".src/ModuleUtilidadesDisco.module:81.6"
+File[36]=".src/Otros Formularios/FormPensando.class:0.19"
+File[37]="icoLoading.gif"
+Count=37
 
 [VersionControl]
 RememberPassword=1
