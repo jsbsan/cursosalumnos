@@ -2,6 +2,7 @@
 
 { Form Form
   MoveScaled(0,0,123,62)
+  Icon = Picture["icon:/16/bookmark"]
   Persistent = True
   { Label1 Label
     MoveScaled(1,1,17,4)

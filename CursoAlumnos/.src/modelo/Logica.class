@@ -13,8 +13,9 @@ Public ControladorAplicacion As Controlador
 
 'End
 
-Public Function validarAnnadirAlumno(DatosAlumnos As Alumno) As Boolean
+Public Function validarAnnadirAlumno(DatosAlumnos As AlumnoVO) As Boolean
   
+  Dim miAlumno As New AlumnoDAO
   Dim rutadestino As String = ControladorAplicacion.rutaTrabajo & "Fotos/" & File.Name(DatosAlumnos.RutaFoto)
   
   'Trato el fichero de la foto del alumno:
@@ -27,6 +28,21 @@ Public Function validarAnnadirAlumno(DatosAlumnos As Alumno) As Boolean
   'dejo solo el nombre...
   DatosAlumnos.RutaFoto = File.Name(rutadestino)  
   
-  Return DatosAlumnos.Insertar()
+  Return miAlumno.registrar(DatosAlumnos)
   
+End
+
+Public Function ContenidoAlumnos() As Result
+  
+  Dim mialumno As New AlumnoDAO
+  
+  Return mialumno.contenido()   
+  
+End
+
+Public Function ContenidoCurso() As Result
+
+  Dim micurso As New CursoDAO
+  
+  Return micurso.contenido()
 End

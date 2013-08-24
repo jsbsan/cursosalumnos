@@ -25,11 +25,11 @@ Public Function registrar(NuevaAlumno As AlumnoVO) As Boolean
   conectar.Conexion()
   SQLString = "INSERT INTO Alumno(RutaFoto,idAlumno,Apellido,Nombre,Documento,FechaNacimiento,Domicilio,Telefono,Nacionalidad,EscOrigen,Legajo) Values ('"
   SQLString &= NuevaAlumno.RutaFoto
-  SQLString &= "','" & NuevaAlumno.idAlumno
-  SQLString &= "','" & NuevaAlumno.Apellido
+  SQLString &= "'," & "null" ' NuevaAlumno.idAlumno
+  SQLString &= ",'" & NuevaAlumno.Apellido
   SQLString &= "','" & NuevaAlumno.Nombre
   SQLString &= "','" & NuevaAlumno.Documento
-  SQLString &= "','" & NuevaAlumno.FechaNacimiento
+  SqlString &= "','" & Format(NuevaAlumno.FechaNacimiento, "yyyy-mm-dd") 
   SQLString &= "','" & NuevaAlumno.Domicilio
   SQLString &= "','" & NuevaAlumno.Telefono
   SQLString &= "','" & NuevaAlumno.Nacionalidad
@@ -55,7 +55,7 @@ Public Function ModificarRutaFoto(editado As String, NuevaAlumno As AlumnoVO) As
   SQLString &= "', Apellido='" & NuevaAlumno.Apellido 
   SQLString &= "', Nombre='" & NuevaAlumno.Nombre 
   SQLString &= "', Documento='" & NuevaAlumno.Documento 
-  SQLString &= "', FechaNacimiento='" & NuevaAlumno.FechaNacimiento 
+  SQLString &= "', FechaNacimiento='" & Format(NuevaAlumno.FechaNacimiento, "yyyy-mm-dd") 
   SQLString &= "', Domicilio='" & NuevaAlumno.Domicilio 
   SQLString &= "', Telefono='" & NuevaAlumno.Telefono 
   SQLString &= "', Nacionalidad='" & NuevaAlumno.Nacionalidad 
@@ -83,7 +83,7 @@ Public Function ModificarIdAlumno(editado As Integer, NuevaAlumno As AlumnoVO) A
   SQLString &= "', Apellido='" & NuevaAlumno.Apellido 
   SQLString &= "', Nombre='" & NuevaAlumno.Nombre 
   SQLString &= "', Documento='" & NuevaAlumno.Documento 
-  SQLString &= "', FechaNacimiento='" & NuevaAlumno.FechaNacimiento 
+  SQLString &= "', FechaNacimiento='" & Format(NuevaAlumno.FechaNacimiento, "yyyy-mm-dd") 
   SQLString &= "', Domicilio='" & NuevaAlumno.Domicilio 
   SQLString &= "', Telefono='" & NuevaAlumno.Telefono 
   SQLString &= "', Nacionalidad='" & NuevaAlumno.Nacionalidad 
@@ -111,7 +111,7 @@ Public Function ModificarApellido(editado As String, NuevaAlumno As AlumnoVO) As
   SQLString &= "', idAlumno='" & NuevaAlumno.idAlumno 
   SQLString &= "', Nombre='" & NuevaAlumno.Nombre 
   SQLString &= "', Documento='" & NuevaAlumno.Documento 
-  SQLString &= "', FechaNacimiento='" & NuevaAlumno.FechaNacimiento 
+  SQLString &= "', FechaNacimiento='" & Format(NuevaAlumno.FechaNacimiento, "yyyy-mm-dd") 
   SQLString &= "', Domicilio='" & NuevaAlumno.Domicilio 
   SQLString &= "', Telefono='" & NuevaAlumno.Telefono 
   SQLString &= "', Nacionalidad='" & NuevaAlumno.Nacionalidad 
@@ -139,7 +139,7 @@ Public Function ModificarNombre(editado As String, NuevaAlumno As AlumnoVO) As B
   SQLString &= "', idAlumno='" & NuevaAlumno.idAlumno 
   SQLString &= "', Apellido='" & NuevaAlumno.Apellido 
   SQLString &= "', Documento='" & NuevaAlumno.Documento 
-  SQLString &= "', FechaNacimiento='" & NuevaAlumno.FechaNacimiento 
+  SQLString &= "', FechaNacimiento='" & Format(NuevaAlumno.FechaNacimiento, "yyyy-mm-dd") 
   SQLString &= "', Domicilio='" & NuevaAlumno.Domicilio 
   SQLString &= "', Telefono='" & NuevaAlumno.Telefono 
   SQLString &= "', Nacionalidad='" & NuevaAlumno.Nacionalidad 
@@ -167,7 +167,7 @@ Public Function ModificarDocumento(editado As String, NuevaAlumno As AlumnoVO) A
   SQLString &= "', idAlumno='" & NuevaAlumno.idAlumno 
   SQLString &= "', Apellido='" & NuevaAlumno.Apellido 
   SQLString &= "', Nombre='" & NuevaAlumno.Nombre 
-  SQLString &= "', FechaNacimiento='" & NuevaAlumno.FechaNacimiento 
+  SQLString &= "', FechaNacimiento='" & Format(NuevaAlumno.FechaNacimiento, "yyyy-mm-dd") 
   SQLString &= "', Domicilio='" & NuevaAlumno.Domicilio 
   SQLString &= "', Telefono='" & NuevaAlumno.Telefono 
   SQLString &= "', Nacionalidad='" & NuevaAlumno.Nacionalidad 
@@ -224,7 +224,7 @@ Public Function ModificarDomicilio(editado As String, NuevaAlumno As AlumnoVO) A
   SQLString &= "', Apellido='" & NuevaAlumno.Apellido 
   SQLString &= "', Nombre='" & NuevaAlumno.Nombre 
   SQLString &= "', Documento='" & NuevaAlumno.Documento 
-  SQLString &= "', FechaNacimiento='" & NuevaAlumno.FechaNacimiento 
+  SQLString &= "', FechaNacimiento='" & Format(NuevaAlumno.FechaNacimiento, "yyyy-mm-dd") 
   SQLString &= "', Telefono='" & NuevaAlumno.Telefono 
   SQLString &= "', Nacionalidad='" & NuevaAlumno.Nacionalidad 
   SQLString &= "', EscOrigen='" & NuevaAlumno.EscOrigen 
@@ -252,7 +252,7 @@ Public Function ModificarTelefono(editado As String, NuevaAlumno As AlumnoVO) As
   SQLString &= "', Apellido='" & NuevaAlumno.Apellido 
   SQLString &= "', Nombre='" & NuevaAlumno.Nombre 
   SQLString &= "', Documento='" & NuevaAlumno.Documento 
-  SQLString &= "', FechaNacimiento='" & NuevaAlumno.FechaNacimiento 
+  SQLString &= "', FechaNacimiento='" & Format(NuevaAlumno.FechaNacimiento, "yyyy-mm-dd") 
   SQLString &= "', Domicilio='" & NuevaAlumno.Domicilio 
   SQLString &= "', Nacionalidad='" & NuevaAlumno.Nacionalidad 
   SQLString &= "', EscOrigen='" & NuevaAlumno.EscOrigen 
@@ -280,7 +280,7 @@ Public Function ModificarNacionalidad(editado As String, NuevaAlumno As AlumnoVO
   SQLString &= "', Apellido='" & NuevaAlumno.Apellido 
   SQLString &= "', Nombre='" & NuevaAlumno.Nombre 
   SQLString &= "', Documento='" & NuevaAlumno.Documento 
-  SQLString &= "', FechaNacimiento='" & NuevaAlumno.FechaNacimiento 
+  SQLString &= "', FechaNacimiento='" & Format(NuevaAlumno.FechaNacimiento, "yyyy-mm-dd") 
   SQLString &= "', Domicilio='" & NuevaAlumno.Domicilio 
   SQLString &= "', Telefono='" & NuevaAlumno.Telefono 
   SQLString &= "', EscOrigen='" & NuevaAlumno.EscOrigen 
@@ -308,7 +308,7 @@ Public Function ModificarEscOrigen(editado As String, NuevaAlumno As AlumnoVO) A
   SQLString &= "', Apellido='" & NuevaAlumno.Apellido 
   SQLString &= "', Nombre='" & NuevaAlumno.Nombre 
   SQLString &= "', Documento='" & NuevaAlumno.Documento 
-  SQLString &= "', FechaNacimiento='" & NuevaAlumno.FechaNacimiento 
+  SQLString &= "', FechaNacimiento='" & Format(NuevaAlumno.FechaNacimiento, "yyyy-mm-dd") 
   SQLString &= "', Domicilio='" & NuevaAlumno.Domicilio 
   SQLString &= "', Telefono='" & NuevaAlumno.Telefono 
   SQLString &= "', Nacionalidad='" & NuevaAlumno.Nacionalidad 
@@ -336,7 +336,7 @@ Public Function ModificarLegajo(editado As String, NuevaAlumno As AlumnoVO) As B
   SQLString &= "', Apellido='" & NuevaAlumno.Apellido 
   SQLString &= "', Nombre='" & NuevaAlumno.Nombre 
   SQLString &= "', Documento='" & NuevaAlumno.Documento 
-  SQLString &= "', FechaNacimiento='" & NuevaAlumno.FechaNacimiento 
+  SQLString &= "', FechaNacimiento='" & Format(NuevaAlumno.FechaNacimiento, "yyyy-mm-dd") 
   SQLString &= "', Domicilio='" & NuevaAlumno.Domicilio 
   SQLString &= "', Telefono='" & NuevaAlumno.Telefono 
   SQLString &= "', Nacionalidad='" & NuevaAlumno.Nacionalidad 
@@ -603,6 +603,69 @@ Public Function BuscarIgualIdAlumno(valor As Integer, Optional CampoOrden As Str
   
 End  
 
+Public Function BuscarMenorQueIdAlumno(valor As Integer, Optional CampoOrden As String) As Result
+  
+  Dim conectar As New Conexion
+  Dim SQLString As String
+  Dim mRs As Result
+  
+  SQLString = "Select * From Alumno"
+  If CampoOrden = Null Then 
+    SQlString &= " WHERE idAlumno<" & valor 
+  Else 
+    SQlString &= " WHERE idAlumno<" & valor & "  Order by CampoOrden"
+  Endif 
+  Try mRs = conectar.hconn.Exec(SQLString) 
+  If Error Then 
+    Message.Error(" Se ha producido un ERROR al Buscar datos, " & "\nSentencia:  " & sqlstring)
+  Else 
+    Return mRs
+  Endif 
+  
+End  
+
+Public Function BuscarMayorQueIdAlumno(valor As Integer, Optional CampoOrden As String) As Result
+  
+  Dim conectar As New Conexion
+  Dim SQLString As String
+  Dim mRs As Result
+  
+  SQLString = "Select * From Alumno"
+  If CampoOrden = Null Then 
+    SQlString &= " WHERE idAlumno>" & valor  
+  Else 
+    SQlString &= " WHERE idAlumno>" & valor & " Order by CampoOrden"
+  Endif 
+  Try mRs = conectar.hconn.Exec(SQLString) 
+  If Error Then 
+    Message.Error(" Se ha producido un ERROR al Buscar datos, " & "\nSentencia:  " & sqlstring)
+  Else 
+    Return mRs
+  Endif 
+  
+End  
+
+Public Function BuscarEntreIdAlumno(valorMin As Integer, valorMax As Integer, Optional CampoOrden As String) As Result
+  
+  Dim conectar As New Conexion
+  Dim SQLString As String
+  Dim mRs As Result
+  
+  SQLString = "Select * From Alumno"
+  If CampoOrden = Null Then 
+    SQlString &= " WHERE idAlumno BETWEEN " & valorMin & " And " & valorMax  
+  Else 
+    SQlString &= " WHERE idAlumno BETWEEN " & valorMin & " And " & valorMax & "Order by CampoOrden"
+  Endif 
+  Try mRs = conectar.hconn.Exec(SQLString) 
+  If Error Then 
+    Message.Error(" Se ha producido un ERROR al Buscar datos, " & "\nSentencia:  " & sqlstring)
+  Else 
+    Return mRs
+  Endif 
+  
+End  
+
 Public Function BuscarContenidoApellido(valor As String, Optional CampoOrden As String) As Result
   
   Dim conectar As New Conexion
@@ -740,6 +803,69 @@ Public Function BuscarIgualFechaNacimiento(valor As Date, Optional CampoOrden As
     SQlString &= " WHERE FechaNacimiento like '" & valor & "' "
   Else 
     SQlString &= " WHERE FechaNacimiento like '" & valor & "'  Order by CampoOrden"
+  Endif 
+  Try mRs = conectar.hconn.Exec(SQLString) 
+  If Error Then 
+    Message.Error(" Se ha producido un ERROR al Buscar datos, " & "\nSentencia:  " & sqlstring)
+  Else 
+    Return mRs
+  Endif 
+  
+End  
+
+Public Function BuscarMenorQueFechaNacimiento(valor As Date, Optional CampoOrden As String) As Result
+  
+  Dim conectar As New Conexion
+  Dim SQLString As String
+  Dim mRs As Result
+  
+  SQLString = "Select * From Alumno"
+  If CampoOrden = Null Then 
+    SQlString &= " WHERE FechaNacimiento<" & valor 
+  Else 
+    SQlString &= " WHERE FechaNacimiento<" & valor & "  Order by CampoOrden"
+  Endif 
+  Try mRs = conectar.hconn.Exec(SQLString) 
+  If Error Then 
+    Message.Error(" Se ha producido un ERROR al Buscar datos, " & "\nSentencia:  " & sqlstring)
+  Else 
+    Return mRs
+  Endif 
+  
+End  
+
+Public Function BuscarMayorQueFechaNacimiento(valor As Date, Optional CampoOrden As String) As Result
+  
+  Dim conectar As New Conexion
+  Dim SQLString As String
+  Dim mRs As Result
+  
+  SQLString = "Select * From Alumno"
+  If CampoOrden = Null Then 
+    SQlString &= " WHERE FechaNacimiento>" & valor  
+  Else 
+    SQlString &= " WHERE FechaNacimiento>" & valor & " Order by CampoOrden"
+  Endif 
+  Try mRs = conectar.hconn.Exec(SQLString) 
+  If Error Then 
+    Message.Error(" Se ha producido un ERROR al Buscar datos, " & "\nSentencia:  " & sqlstring)
+  Else 
+    Return mRs
+  Endif 
+  
+End  
+
+Public Function BuscarEntreFechaNacimiento(valorMin As Date, valorMax As Date, Optional CampoOrden As String) As Result
+  
+  Dim conectar As New Conexion
+  Dim SQLString As String
+  Dim mRs As Result
+  
+  SQLString = "Select * From Alumno"
+  If CampoOrden = Null Then 
+    SQlString &= " WHERE FechaNacimiento BETWEEN " & valorMin & " And " & valorMax  
+  Else 
+    SQlString &= " WHERE FechaNacimiento BETWEEN " & valorMin & " And " & valorMax & "Order by CampoOrden"
   Endif 
   Try mRs = conectar.hconn.Exec(SQLString) 
   If Error Then 
@@ -963,9 +1089,10 @@ End
 Public Function sql(consulta As String) As Result
   
   Dim conectar As New Conexion
-  Dim SQLString As String
+  'Dim SQLString As String
   Dim mRs As Result
   
+  conectar.Conexion()
   Try mRs = conectar.hconn.Exec(consulta) 
   If Error Then message.info("Consulta erronea, revisela")
   Return mRs 
@@ -979,11 +1106,11 @@ Public Function informe() As String
   Print "Base de datos: CursosAlumnos"
   Print "        Tabla: Alumno"
   Print "             Campo: RutaFoto Tipo: String"
-  Print "             Campo: idAlumno Tipo: integer"
+  Print "             Campo: idAlumno Tipo: Integer"
   Print "             Campo: Apellido Tipo: String"
   Print "             Campo: Nombre Tipo: String"
   Print "             Campo: Documento Tipo: String"
-  Print "             Campo: FechaNacimiento Tipo: date"
+  Print "             Campo: FechaNacimiento Tipo: Date"
   Print "             Campo: Domicilio Tipo: String"
   Print "             Campo: Telefono Tipo: String"
   Print "             Campo: Nacionalidad Tipo: String"
@@ -992,11 +1119,11 @@ Public Function informe() As String
   texto = "Base_de_datos:|CursosAlumnos|"
   texto &= "Tabla:|Alumno"
   texto &= "|campo:|RutaFoto|tipo:|String"
-  texto &= "|campo:|idAlumno|tipo:|integer"
+  texto &= "|campo:|idAlumno|tipo:|Integer"
   texto &= "|campo:|Apellido|tipo:|String"
   texto &= "|campo:|Nombre|tipo:|String"
   texto &= "|campo:|Documento|tipo:|String"
-  texto &= "|campo:|FechaNacimiento|tipo:|date"
+  texto &= "|campo:|FechaNacimiento|tipo:|Date"
   texto &= "|campo:|Domicilio|tipo:|String"
   texto &= "|campo:|Telefono|tipo:|String"
   texto &= "|campo:|Nacionalidad|tipo:|String"
@@ -1015,7 +1142,7 @@ Public Function gridFormatearColumnas(grid As GridView) As Gridview
     .Columns[0].title = "RutaFoto"
     .Columns[0].width = 80
     .Columns[1].title = "idAlumno"
-    .Columns[1].width = 80
+    .Columns[1].width = 0
     .Columns[2].title = "Apellido"
     .Columns[2].width = 80
     .Columns[3].title = "Nombre"
@@ -1088,7 +1215,8 @@ Public Sub contenido() As Result
   Dim SQLString As String
   Dim mRs As Result
   
-  Try SQLString = "SELECT * FROM Alumno" 
+  SQLString = "SELECT * FROM Alumno" 
+  conectar.Conexion()
   mRs = conectar.hconn.Exec(SQLString) 
   Return mRs 
   

@@ -14,23 +14,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: FControlAcceso.form:22
+#: FControlAcceso.form:23
 msgid "Usuario:"
 msgstr ""
 
-#: FControlAcceso.form:29
+#: FControlAcceso.form:30
 msgid "Contraseña:"
 msgstr ""
 
-#: FControlAcceso.form:35
+#: FControlAcceso.form:36
 msgid "Aceptar"
 msgstr ""
 
-#: FControlAcceso.form:42
+#: FControlAcceso.form:43
 msgid "Cancelar"
 msgstr ""
 
-#: FControlAcceso.form:65
+#: FControlAcceso.form:66
 msgid "Control de Cursos y Alumnos"
 msgstr ""
 

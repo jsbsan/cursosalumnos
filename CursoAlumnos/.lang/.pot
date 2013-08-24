@@ -14,152 +14,156 @@ msgstr ""
 msgid "CursoAlumnos"
 msgstr ""
 
-#: FControlAcceso.form:22
+#: FControlAcceso.form:23
 msgid "Usuario:"
 msgstr ""
 
-#: FControlAcceso.form:29
+#: FControlAcceso.form:30
 msgid "Contraseña:"
 msgstr ""
 
-#: FControlAcceso.form:35 FormAlumno.form:33 FormCalendario.form:16
-#: FormCurso.form:43 FormExpedienteAlumno.form:86 FormExpedienteCurso.form:73
+#: FControlAcceso.form:36 FormAlumno.form:35 FormCalendario.form:17
+#: FormCurso.form:44 FormExpedienteAlumno.form:87 FormExpedienteCurso.form:74
 msgid "Aceptar"
 msgstr ""
 
-#: FControlAcceso.form:42 FormAlumno.form:40 FormCurso.form:36
+#: FControlAcceso.form:43 FormAlumno.form:42 FormCurso.form:37
 msgid "Cancelar"
 msgstr ""
 
-#: FControlAcceso.form:65
+#: FControlAcceso.form:66
 msgid "Control de Cursos y Alumnos"
 msgstr ""
 
-#: FormAlumno.form:47 FormExpedienteAlumno.form:23
+#: FormAlumno.form:49 FormExpedienteAlumno.form:24
 msgid "Nombre:"
 msgstr ""
 
-#: FormAlumno.form:61 FormExpedienteAlumno.form:28
+#: FormAlumno.form:63 FormExpedienteAlumno.form:29
 msgid "Apellidos:"
 msgstr ""
 
-#: FormAlumno.form:71 FormExpedienteAlumno.form:33
+#: FormAlumno.form:73 FormExpedienteAlumno.form:34
 msgid "Documento:"
 msgstr ""
 
-#: FormAlumno.form:83
+#: FormAlumno.form:85
 msgid "Fecha Nacimiento:"
 msgstr ""
 
-#: FormAlumno.form:92
+#: FormAlumno.form:94
 msgid "Domicilio:"
 msgstr ""
 
-#: FormAlumno.form:101
+#: FormAlumno.form:103
 msgid "Télefono:"
 msgstr ""
 
-#: FormAlumno.form:111
+#: FormAlumno.form:113
 msgid "Nacionalidad:"
 msgstr ""
 
-#: FormAlumno.form:121
+#: FormAlumno.form:123
 msgid "Esc.Origen:"
 msgstr ""
 
-#: FormAlumno.form:131
+#: FormAlumno.form:133
 msgid "Legajo:"
 msgstr ""
 
-#: FormAlumno.class:57
+#: FormAlumno.form:153
+msgid "webcam"
+msgstr ""
+
+#: FormAlumno.class:58
 msgid "Se ha producido un error al intentar añadir el nuevo alumno"
 msgstr ""
 
-#: FormCurso.form:17
+#: FormCurso.form:18
 msgid "Nombre del curso:"
 msgstr ""
 
-#: FormCurso.form:31
+#: FormCurso.form:32
 msgid "Detalle"
 msgstr ""
 
-#: FormExpedienteAlumno.form:38
+#: FormExpedienteAlumno.form:39
 msgid "Cursos a los que esta apuntado:"
 msgstr ""
 
-#: FormExpedienteAlumno.form:43
+#: FormExpedienteAlumno.form:44
 msgid "Añadir Curso"
 msgstr ""
 
-#: FormExpedienteAlumno.form:50
+#: FormExpedienteAlumno.form:51
 msgid "Borrar Curso"
 msgstr ""
 
-#: FormExpedienteAlumno.form:57 FormExpedienteCurso.form:66
+#: FormExpedienteAlumno.form:58 FormExpedienteCurso.form:67
 msgid "Editar Observaciones"
 msgstr ""
 
-#: FormExpedienteCurso.form:21
+#: FormExpedienteCurso.form:22
 msgid "Curso:"
 msgstr ""
 
-#: FormExpedienteCurso.form:32
+#: FormExpedienteCurso.form:33
 msgid "Detalles:"
 msgstr ""
 
-#: FormExpedienteCurso.form:43
+#: FormExpedienteCurso.form:44
 msgid "Alumnos en el curso:"
 msgstr ""
 
-#: FormExpedienteCurso.form:52
+#: FormExpedienteCurso.form:53
 msgid "Añadir Alumno"
 msgstr ""
 
-#: FormExpedienteCurso.form:59
+#: FormExpedienteCurso.form:60
 msgid "Borrar Alumno"
 msgstr ""
 
-#: FormPrincipal.form:61
+#: FormPrincipal.form:62
 msgid "Alumnos"
 msgstr ""
 
-#: FormPrincipal.form:69
+#: FormPrincipal.form:70
 msgid "Añadir"
 msgstr ""
 
-#: FormPrincipal.form:76
+#: FormPrincipal.form:77
 msgid "Editar"
 msgstr ""
 
-#: FormPrincipal.form:83
+#: FormPrincipal.form:84
 msgid "Borrar"
 msgstr ""
 
-#: FormPrincipal.form:90
+#: FormPrincipal.form:91
 msgid "Expediente"
 msgstr ""
 
-#: FormPrincipal.form:97
+#: FormPrincipal.form:98
 msgid "Imprimir"
 msgstr ""
 
-#: FormPrincipal.form:111
+#: FormPrincipal.form:112
 msgid "Cursos"
 msgstr ""
 
-#: FormPrincipal.form:161
+#: FormPrincipal.form:162
 msgid "Listados"
 msgstr ""
 
-#: FormPrincipal.form:166
+#: FormPrincipal.form:167
 msgid "Listado de informes disponibles..."
 msgstr ""
 
-#: FormPrincipal.form:173
+#: FormPrincipal.form:174
 msgid "Acerca de..."
 msgstr ""
 
-#: FormPrincipal.form:178
+#: FormPrincipal.form:179
 msgid ""
 "Control de Cursos y Alumnos<br>\n"
 "Realizado por:<br>\n"
@@ -168,38 +172,38 @@ msgid ""
 "\n"
 msgstr ""
 
-#: FormPrincipal.form:182
+#: FormPrincipal.form:183
 msgid "Administrador"
 msgstr ""
 
-#: FormPrincipal.form:187
+#: FormPrincipal.form:188
 msgid "Clave Actual:"
 msgstr ""
 
-#: FormPrincipal.form:192
+#: FormPrincipal.form:193
 msgid "Cambiar"
 msgstr ""
 
-#: FormPrincipal.form:203
+#: FormPrincipal.form:204
 msgid "Clave Nueva:"
 msgstr ""
 
-#: FormPrincipal.form:213
+#: FormPrincipal.form:214
 msgid "Reescriba la clave:"
 msgstr ""
 
-#: FormPrincipal.form:225
+#: FormPrincipal.form:226
 msgid "mensaje:"
 msgstr ""
 
-#: FormPrincipal.form:230
+#: FormPrincipal.form:231
 msgid "Usuario Actual:"
 msgstr ""
 
-#: FormPrincipal.form:238
+#: FormPrincipal.form:239
 msgid "Salir"
 msgstr ""
 
-#: conectar.class:18 conexion.class:18
+#: conexion.class:18
 msgid "ok"
 msgstr ""

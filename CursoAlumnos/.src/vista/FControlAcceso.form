@@ -3,6 +3,7 @@
 { Form Form
   MoveScaled(0,0,81,42)
   Background = &HFFFFFF&
+  Icon = Picture["icon:/16/book"]
   Persistent = True
   Border = False
   { Label1 Label

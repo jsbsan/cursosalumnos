@@ -1,5 +1,8 @@
 ' Gambas class file
 
+Private resultadoAlumno As Result
+Private resultadoCurso As Result
+
 Public ControladorAplicacion As Controlador
 
 Public Sub Form_Open()
@@ -16,6 +19,10 @@ Public Sub Form_Open()
   ListBoxInforme.Add("Lista de Cursos y Alumnos que lo conforman ")
   ListBoxInforme.Add("Expediente de Alumno determinado con lista de Cursos")
   ListBoxInforme.Add("Expediente de Curso determinado con lista de Alumnos")
+  'relleno el gridview de datos...
+  RefrescarDatosAlumnos()
+  'relleno el gridview de datos...
+  RefrescarDatosCursos()
   
 End
 
@@ -44,6 +51,9 @@ Public Sub ToolButtonAnadir_Click()
   nuevoalumno.idAlumno = 0 'para que sea a añadir
   ControladorAplicacion.falumno.TmpAlumno = nuevoalumno
   ControladorAplicacion.falumno.showmodal()
+  
+  'relleno el gridview de datos...
+  RefrescarDatosAlumnos()
   
 End
 
@@ -119,5 +129,59 @@ End
 Public Sub ToolButtonExpediente_Click()
   
   ControladorAplicacion.fexpAlumno.ShowModal()
+  
+End
+
+'-------------------------- Actualizacion datos gridview-------------------------
+Public Sub GridViewAlumno_Data(row As Integer, column As Integer)
+  ' este evento se encarga de dibujar los datos en el gridviews, para que aparezcan en la pantalla.
+  
+  Dim valorfecha As String
+  
+  resultadoAlumno.MoveTo(row)
+  
+  'la columna IdAlumno la oculto en la definicion...
+  ' If column = 1 Then 
+  '  'ancho de la columna IdAlumno
+  '  GridViewAlumno.Columns[1].width = 0
+  'Endif
+  
+  If GridViewAlumno.Columns[column].text <> "FechaNacimiento" Then 
+    'no es una fecha
+    GridViewAlumno.Data.text = Str(resultadoAlumno[GridViewAlumno.Columns[column].text])
+  Else 
+    'presentacion de fecha
+    ValorFecha = resultadoAlumno[GridViewAlumno.Columns[column].text]
+    GridViewAlumno.Data.text = Format(Date(Year(ValorFecha), Month(ValorFecha), Day(ValorFecha)), "dd-mmmm-yyyy")
+    
+  Endif
+  ' colorea la fila, según sea par o impar
+  If row Mod 2 = 0 Then GridViewAlumno.Data.Background = Color.LightBackground
+  
+End
+
+Public Sub RefrescarDatosAlumnos()
+  
+  resultadoAlumno = ControladorAplicacion.ContenidoAlumnos()
+  GridViewAlumno.Rows.count = 0 'lo ponemos a cero el numero de filas
+  GridViewAlumno.Rows.count = resultadoAlumno.count 'actualizamso al resultado de la consulta
+  
+End
+
+Public Sub RefrescarDatosCursos()
+  
+  resultadoCurso = ControladorAplicacion.ContenidoCurso()
+  GridViewCurso.Rows.count = 0 'lo ponemos a cero el numero de filas
+  GridViewCurso.Rows.count = resultadoCurso.count 'actualizamso al resultado de la consulta
+  
+End
+
+Public Sub GridViewCurso_Data(row As Integer, column As Integer)
+  ' este evento se encarga de dibujar los datos en el gridviews, para que aparezcan en la pantalla.
+  
+  resultadoCurso.MoveTo(row)
+  GridViewCurso.Data.text = Str(resultadoCurso[GridViewCurso.Columns[column].text])
+  ' colorea la fila, según sea par o impar
+  If row Mod 2 = 0 Then GridViewCurso.Data.Background = Color.Cyan
   
 End

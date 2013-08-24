@@ -10,6 +10,9 @@ Public Sub Form_Open()
   'me voy la primera caja de texto...
   TextBoxNOMBRE.SetFocus()
   
+  'si estoy añadiendo
+  PictureBoxAlumno.tag = "icono_fotos_personas.png"
+  
 End
 
 Public Sub ToolButtonCalendario_Click()
@@ -28,8 +31,6 @@ Public Sub ToolButtonCalendario_Click()
 End
 
 Public Sub ToolButtonAceptar_Click()
-  
-  Dim TmpAlumno As New Alumno
   
   If TmpAlumno.idAlumno <> 0 Then 
     'si estoy editando...  
@@ -81,5 +82,23 @@ Public Sub ToolButtonCancelar_Click()
   
   limpio()
   Me.Close()
+  
+End
+
+Public Sub ToolButtonfoto_Click()
+  
+  Dim comando As String = ControladorAplicacion.rutaTrabajo & "FotoCarnetMyWebCam.gambas"
+  Dim nombrefinal As String
+  
+  Exec [comando] Wait
+  '  User.home & "/webcam_carnet.png"
+  nombrefinal = ControladorAplicacion.rutaTrabajo & "Fotos/" & Replace(Replace(Replace("webcam_carnet" & Str$(Now()) & ".png", " ", "_"), "/", "-"), ":", "-")
+  
+  If Exist(User.home & "/webcam_carnet.png") Then 
+    Exec ["mv", User.home & "/webcam_carnet.png", nombrefinal] Wait
+    
+    PictureBoxAlumno.tag = File.Name(nombrefinal)
+    PictureBoxAlumno.picture = Picture[nombrefinal]
+  Endif
   
 End

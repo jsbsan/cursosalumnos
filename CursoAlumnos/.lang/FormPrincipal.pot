@@ -14,79 +14,79 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: FormPrincipal.form:61
+#: FormPrincipal.form:62
 msgid "Alumnos"
 msgstr ""
 
-#: FormPrincipal.form:69
+#: FormPrincipal.form:70
 msgid "Añadir"
 msgstr ""
 
-#: FormPrincipal.form:76
+#: FormPrincipal.form:77
 msgid "Editar"
 msgstr ""
 
-#: FormPrincipal.form:83
+#: FormPrincipal.form:84
 msgid "Borrar"
 msgstr ""
 
-#: FormPrincipal.form:90
+#: FormPrincipal.form:91
 msgid "Expediente"
 msgstr ""
 
-#: FormPrincipal.form:97
+#: FormPrincipal.form:98
 msgid "Imprimir"
 msgstr ""
 
-#: FormPrincipal.form:111
+#: FormPrincipal.form:112
 msgid "Cursos"
 msgstr ""
 
-#: FormPrincipal.form:161
+#: FormPrincipal.form:162
 msgid "Listados"
 msgstr ""
 
-#: FormPrincipal.form:166
+#: FormPrincipal.form:167
 msgid "Listado de informes disponibles..."
 msgstr ""
 
-#: FormPrincipal.form:173
+#: FormPrincipal.form:174
 msgid "Acerca de..."
 msgstr ""
 
-#: FormPrincipal.form:178
+#: FormPrincipal.form:179
 msgid "Control de Cursos y Alumnos<br>\nRealizado por:<br>\nJulio Sánchez Berro y Jorge Agustín Pereyra\n\n\n"
 msgstr ""
 
-#: FormPrincipal.form:182
+#: FormPrincipal.form:183
 msgid "Administrador"
 msgstr ""
 
-#: FormPrincipal.form:187
+#: FormPrincipal.form:188
 msgid "Clave Actual:"
 msgstr ""
 
-#: FormPrincipal.form:192
+#: FormPrincipal.form:193
 msgid "Cambiar"
 msgstr ""
 
-#: FormPrincipal.form:203
+#: FormPrincipal.form:204
 msgid "Clave Nueva:"
 msgstr ""
 
-#: FormPrincipal.form:213
+#: FormPrincipal.form:214
 msgid "Reescriba la clave:"
 msgstr ""
 
-#: FormPrincipal.form:225
+#: FormPrincipal.form:226
 msgid "mensaje:"
 msgstr ""
 
-#: FormPrincipal.form:230
+#: FormPrincipal.form:231
 msgid "Usuario Actual:"
 msgstr ""
 
-#: FormPrincipal.form:238
+#: FormPrincipal.form:239
 msgid "Salir"
 msgstr ""
 
