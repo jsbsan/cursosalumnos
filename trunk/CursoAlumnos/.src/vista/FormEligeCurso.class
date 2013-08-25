@@ -22,9 +22,6 @@ End
 
 Public Sub ToolButtonAceptar_Click()
   
-  Dim resp As Integer
-  Dim rela As RelacionVO
-  
   If GridViewCurso.row = -1 Then 
     Message.Info("No ha seleccinado ningun curso, y no se añadira nada al alumno")
     Return 

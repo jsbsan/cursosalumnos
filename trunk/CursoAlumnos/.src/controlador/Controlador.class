@@ -111,3 +111,9 @@ Public Function BuscarIdalumno(id As Integer) As AlumnoVO
   Return log.BuscarIdalumno(id)
   
 End
+
+Public Function borrarAlumnoDeCurso(idcurso As Integer) As Boolean
+  
+  Return log.BorrarRelacionCurso(idcurso)
+  
+End

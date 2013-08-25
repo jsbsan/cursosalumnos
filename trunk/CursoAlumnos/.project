@@ -2,7 +2,7 @@
 # Compiled with Gambas 3.4.1
 Title=CursoAlumnos
 Startup=main
-Version=0.0.3
+Version=0.0.4
 Component=gb.image
 Component=gb.gui
 Component=gb.form
@@ -10,6 +10,8 @@ Component=gb.db
 Component=gb.db.form
 Component=gb.db.sqlite3
 Component=gb.settings
+Description="Control de Alumnos en Cursos"
+Authors="Julio Sánchez Berro y Jorge Agustín Pereyra"
 TabSize=2
 Translate=1
 Language=es

@@ -50,6 +50,7 @@
         }
         { ToolButtonImprimir ToolButton
           MoveScaled(60,0,13,4)
+          Enabled = False
           Text = ("Imprimir")
           Picture = Picture["icon:/16/printer"]
           Border = True
@@ -86,12 +87,14 @@
         }
         { ToolButtonExpedienteCurso ToolButton
           MoveScaled(42,0,18,4)
+          Enabled = False
           Text = ("Expediente")
           Picture = Picture["icon:/16/view-detail"]
           Border = True
         }
         { ToolButtonImprimir2 ToolButton
           MoveScaled(61,0,13,4)
+          Enabled = False
           Text = ("Imprimir")
           Picture = Picture["icon:/16/printer"]
           Border = True
@@ -112,6 +115,7 @@
       }
       { ListBoxInforme ListBox
         MoveScaled(2,5,60,44)
+        Enabled = False
       }
       Index = 3
       Text = ("Acerca de...")

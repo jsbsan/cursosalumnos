@@ -4,24 +4,40 @@
   MoveScaled(0,0,77,64)
   Icon = Picture["icon:/16/bookmark"]
   Persistent = True
+  Arrangement = Arrange.Row
   { Label1 Label
-    MoveScaled(2,1,16,5)
+    MoveScaled(1,0,16,5)
     Text = ("Nombre:")
   }
+  { TextBoxNombreAlumno TextBox
+    MoveScaled(18,0,54,5)
+    Background = &HBFBFBF&
+    ReadOnly = True
+  }
   { Label2 Label
-    MoveScaled(2,7,16,5)
+    MoveScaled(0.8571,5.8571,16,5)
     Text = ("Apellidos:")
   }
+  { TextBoxApellidosAlumno TextBox
+    MoveScaled(18,6,54,5)
+    Background = &HBFBFBF&
+    ReadOnly = True
+  }
   { Label3 Label
-    MoveScaled(2,14,16,5)
+    MoveScaled(1,13,16,5)
     Text = ("Documento:")
   }
+  { TextBoxDocumento TextBox
+    MoveScaled(18.1429,13,54,5)
+    Background = &HBFBFBF&
+    ReadOnly = True
+  }
   { Label4 Label
-    MoveScaled(2,19,59,4)
+    MoveScaled(1,18,59,4)
     Text = ("Cursos a los que esta apuntado:")
   }
   { ToolButtonAnnadirAlumnoCurso ToolButton
-    MoveScaled(1,24,20,5)
+    MoveScaled(0,23,20,5)
     Font = Font["Arial,-2"]
     AutoResize = True
     Text = ("Añadirle a un  Curso")
@@ -29,7 +45,7 @@
     Border = True
   }
   { ToolButtonBorrarAlumno ToolButton
-    MoveScaled(26,24,20,5)
+    MoveScaled(25,23,20,5)
     Font = Font["Arial,-2"]
     AutoResize = True
     Text = ("Borrarle de un  Curso")
@@ -37,33 +53,18 @@
     Border = True
   }
   { ToolButtonEditarAlumno ToolButton
-    MoveScaled(51,24,23,5)
+    MoveScaled(50,23,23,5)
     Font = Font["Arial,-2"]
     AutoResize = True
     Text = ("Editar Observaciones")
     Picture = Picture["icon:/16/edit"]
     Border = True
   }
-  { TextBoxDocumento TextBox
-    MoveScaled(19,14,54,5)
-    Background = &HBFBFBF&
-    ReadOnly = True
-  }
-  { TextBoxApellidosAlumno TextBox
-    MoveScaled(19,7,54,5)
-    Background = &HBFBFBF&
-    ReadOnly = True
-  }
-  { TextBoxNombreAlumno TextBox
-    MoveScaled(19,1,54,5)
-    Background = &HBFBFBF&
-    ReadOnly = True
-  }
   { GridViewRelacionCursos GridView
-    MoveScaled(2,31,73,27)
+    MoveScaled(1,30,73,27)
   }
   { ToolButtonAceptar ToolButton
-    MoveScaled(31,59,15,5)
+    MoveScaled(30,58,15,5)
     Text = ("Aceptar")
     Picture = Picture["icon:/16/apply"]
     Border = True

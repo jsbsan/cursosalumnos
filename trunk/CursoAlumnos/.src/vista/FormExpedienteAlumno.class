@@ -9,8 +9,9 @@ Private resultadoCurso As Result
 Public Sub Form_Open()
   
   Dim mirela As New RelacionDAO
-  
-  mirela.gridFormatearColumnas(GridViewRelacionCursos)
+  'formateo el gridvies, segun el resultado de una consulta...
+  GridViewRelacionCursos = mirela.GridResultanteSQL(ControladorAplicacion.ContenidoRelaciones(TmpAlumno.idAlumno), GridViewRelacionCursos)
+  refrescarDatosCursos()
   
 End
 
@@ -18,7 +19,7 @@ Public Sub form_Show()
   
   Dim mirela As New RelacionDAO
   
-  mirela.gridFormatearColumnas(GridViewRelacionCursos)
+  mirela.GridResultanteSQL(ControladorAplicacion.ContenidoRelaciones(TmpAlumno.idAlumno), GridViewRelacionCursos)
   
   TextBoxNombreAlumno.text = TmpAlumno.Nombre
   TextBoxApellidosAlumno.text = TmpAlumno.Apellido
@@ -61,6 +62,7 @@ End
 Public Sub RefrescarDatosCursos()
   
   resultadoCurso = ControladorAplicacion.ContenidoRelaciones(TmpAlumno.idAlumno)
+  
   GridViewRelacionCursos.Rows.count = 0 'lo ponemos a cero el numero de filas
   GridViewRelacionCursos.Rows.count = resultadoCurso.count 'actualizamso al resultado de la consulta
   
@@ -69,7 +71,8 @@ End
 Public Sub GridViewRelacionCursos_Data(row As Integer, column As Integer)
   ' este evento se encarga de dibujar los datos en el gridviews, para que aparezcan en la pantalla.
   
-  resultadoCurso.MoveTo(row)
+  Try resultadoCurso.MoveTo(row)
+  If Error Then Return 
   GridViewRelacionCursos.Data.text = Str(resultadoCurso[GridViewRelacionCursos.Columns[column].text])
   
   ' colorea la fila, según sea par o impar
@@ -78,6 +81,21 @@ Public Sub GridViewRelacionCursos_Data(row As Integer, column As Integer)
     GridViewRelacionCursos.Data.Background = Color.Orange
   Else
     If row Mod 2 = 0 Then GridViewRelacionCursos.Data.Background = Color.Cyan
+  Endif
+  
+End
+
+Public Sub ToolButtonBorrarAlumno_Click()
+  
+  If GridViewRelacionCursos.row = -1 Then 
+    Message.Info("Seleccione un curso")
+  Else
+    
+    If ControladorAplicacion.borrarAlumnoDeCurso(Val(GridViewRelacionCursos[GridViewRelacionCursos.row, 3].Text)) Then 
+      Message.Info("Alumno borrado del curso")
+      refrescarDatosCursos()
+    Endif
+    
   Endif
   
 End

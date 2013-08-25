@@ -1317,16 +1317,16 @@ Public Function GridResultanteSQL(res As Result, grid As GridView) As Gridview
     .Foreground = 0 
   End With
   'relleno los datos procedentes de la consulta en las filas...
-  Grid.Rows.count = res.Count
-  fila = -1
-  Do While res.Available
-    Inc fila
-    For a = 0 To grid.columns.count - 1
-      'PRINT grid.Columns[a].title
-      grid[fila, a].text = res[grid.Columns[a].title] ' nombre 'grid.Columns[a].title]
-    Next 
-    res.MoveNext()
-  Loop
+  ' Grid.Rows.count = res.Count
+  ' fila = -1
+  ' Do While res.Available
+  '  Inc fila
+  '  For a = 0 To grid.columns.count - 1
+  '    'PRINT grid.Columns[a].title
+  '    grid[fila, a].text = res[grid.Columns[a].title] ' nombre 'grid.Columns[a].title]
+  '  Next 
+  '  res.MoveNext()
+  'Loop
   Return grid 
   
 End
