@@ -7,6 +7,7 @@ Public fcurso As FormCurso
 Public fExpCurso As FormExpedienteCurso
 Public fexpAlumno As FormExpedienteAlumno
 Public cone As Conexion
+Public eligecurso As FormEligeCurso
 
 Public log As Logica
 
@@ -53,13 +54,37 @@ End
 '-----------------------------------------------------------------------------
 Public Function anadirAlumno(DatosAlumnos As AlumnoVO) As Boolean
   
-  Return log.validarRegistroAlumno(DatosAlumnos)
+  Return log.validarAnnadirAlumno(datosAlumnos)
   
 End
 
 Public Function anadirCurso(Datos As CursoVO) As Boolean
   
-  Return log.validarRegistroCurso(Datos)
+  Return log.validarAnnadirCurso(Datos)
+  
+End
+
+Public Function anadirRelacion(datos As RelacionVO) As Boolean
+  
+  Return log.validarAnnadirRela(datos)
+  
+End
+
+Public Function ContenidoRelaciones(IdAlumno As Integer) As Result
+  
+  Return log.mostrarRelacionesIdAlumno(idalumno)
+  
+End
+
+Public Function modificarIdAlumno(datos As Alumnovo) As Boolean
+  
+  Return log.ModificarIdAlumno(datos)
+  
+End
+
+Public Function modificarIdCurso(datos As CursoVO) As Boolean
+  
+  Return log.ModificarIdCurso(datos) 
   
 End
 

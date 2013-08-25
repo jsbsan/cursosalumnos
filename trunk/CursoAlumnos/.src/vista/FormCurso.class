@@ -7,20 +7,42 @@ Public Sub Form_Open()
   
   Me.center
   
+  If TmpCurso.idCurso = 0 Then
+    'limpio los textbox
+    limpio()
+  Else
+    'estoy editando
+    rellena(TmpCurso)
+  Endif
+  
+  TextBoxNombreCurso.SetFocus()
+  
 End
 
 Public Sub ToolButtonAceptar_Click()
-
+  
   TmpCurso.Nombre = TextBoxNombreCurso.Text
   TmpCurso.Detalle = TextAreaDetalle.Text
   
-  If TmpCurso.idcurso = 0 And If ControladorAplicacion.log.validarAnnadirCurso(TmpCurso) Then 
+  If TmpCurso.idCurso <> 0 Then
+    If ControladorAplicacion.ModificarIdCurso(TmpCurso) Then 
+      'se ha añadido bien el curso
+      limpio()
+      Me.Close()
+      Return
+    Else
+      Message.Error(("Se ha producido un error al intentar añadir el nuevo curso"))
+      Return 
+    Endif
+  Endif
+  
+  If TmpCurso.idcurso = 0 And If ControladorAplicacion.anadirCurso(TmpCurso) Then 
     'se ha añadido bien el nuevo alumno
     limpio()
     Me.Close()
     Return
   Else
-    Message.Error(("Se ha producido un error al intentar añadir el nuevo alumno"))
+    Message.Error(("Se ha producido un error al intentar añadir el nuevo curso"))
     Return
   Endif
   
@@ -30,5 +52,12 @@ Public Sub limpio()
   
   TextAreaDetalle.text = ""
   TextBoxNombreCurso.text = ""
+  
+End
+
+Public Sub rellena(micurso As CursoVO)
+  
+  TextBoxNombreCurso.text = micurso.Nombre
+  TextAreaDetalle.text = micurso.Detalle
   
 End

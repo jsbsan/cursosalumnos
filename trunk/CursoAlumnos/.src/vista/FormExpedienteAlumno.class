@@ -4,20 +4,80 @@ Public ControladorAplicacion As Controlador
 
 Public TmpAlumno As AlumnoVO
 
+Private resultadoCurso As Result
+
 Public Sub Form_Open()
+  
+  Dim mirela As New RelacionDAO
+  
+  mirela.gridFormatearColumnas(GridViewRelacionCursos)
   
 End
 
 Public Sub form_Show()
-
+  
+  Dim mirela As New RelacionDAO
+  
+  mirela.gridFormatearColumnas(GridViewRelacionCursos)
+  
   TextBoxNombreAlumno.text = TmpAlumno.Nombre
   TextBoxApellidosAlumno.text = TmpAlumno.Apellido
   TextBoxDocumento.text = TmpAlumno.Documento
+  refrescarDatosCursos()
   
 End
 
 Public Sub ToolButtonAceptar_Click()
   
   Me.Close()
+  
+End
+
+Public Sub ToolButtonAnnadirAlumnoCurso_Click()
+  
+  Dim rela As New RelacionVO
+  Dim cursoelegido As New ClaseDato
+  
+  ControladorAplicacion.EligeCurso.cursoelegido = cursoelegido
+  
+  ControladorAplicacion.EligeCurso.showmodal()
+  If cursoelegido.tag <> "" Then 
+    'añadir relacion sabiendo idcurso,idalumno
+    rela.idAlumno = TmpAlumno.idAlumno
+    rela.idCurso = cursoelegido.tag
+    
+    rela.Observacion = InputBox("Objservacion:", "Introduzca una observacion")
+    If ControladorAplicacion.anadirRelacion(rela) Then 
+      Message.Info("Curso asignado al alumno")
+      refrescarDatosCursos()
+    Endif
+    
+  Endif
+  
+End
+
+'-----------------------------------------------------------------
+
+Public Sub RefrescarDatosCursos()
+  
+  resultadoCurso = ControladorAplicacion.ContenidoRelaciones(TmpAlumno.idAlumno)
+  GridViewRelacionCursos.Rows.count = 0 'lo ponemos a cero el numero de filas
+  GridViewRelacionCursos.Rows.count = resultadoCurso.count 'actualizamso al resultado de la consulta
+  
+End
+
+Public Sub GridViewRelacionCursos_Data(row As Integer, column As Integer)
+  ' este evento se encarga de dibujar los datos en el gridviews, para que aparezcan en la pantalla.
+  
+  resultadoCurso.MoveTo(row)
+  GridViewRelacionCursos.Data.text = Str(resultadoCurso[GridViewRelacionCursos.Columns[column].text])
+  
+  ' colorea la fila, según sea par o impar
+  If row = GridViewRelacionCursos.row Then 
+    'cursor donde esta situado en el gridview
+    GridViewRelacionCursos.Data.Background = Color.Orange
+  Else
+    If row Mod 2 = 0 Then GridViewRelacionCursos.Data.Background = Color.Cyan
+  Endif
   
 End

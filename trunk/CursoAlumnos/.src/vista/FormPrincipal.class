@@ -76,6 +76,7 @@ Public Sub ToolButtonEditar_Click()
   
   If GridViewAlumno.row = -1 Then 
     'no puedo editar ya que no esta el cursor puesto en el gridvies
+    Message.Info("Seleccione un alumno")
   Else
     alu = ControladorAplicacion.BuscarIdalumno(Val(GridViewAlumno[GridViewAlumno.row, 1].Text))
     ControladorAplicacion.falumno.TmpAlumno = alu
@@ -94,7 +95,7 @@ Public Sub ToolButtonEditarCurso_Click()
   Dim cur As New CursoVO
   
   If GridViewCurso.row = -1 Then 
-    
+    Message.Info("Seleccione un curso")
   Else
     cur = ControladorAplicacion.BuscarIdCurso(Val(GridViewCurso[GridViewCurso.row, 0].Text))
     ControladorAplicacion.fcurso.TmpCurso = cur
@@ -114,6 +115,7 @@ Public Sub ToolButtonBorrar_Click()
   
   If GridViewAlumno.row = -1 Then 
     'no puedo editar ya que no esta el cursor puesto en el gridvies
+    Message.Info("Seleccione un alumno")
   Else
     valor = Message.Question("¿quieres borrar un alumno? " & gb.CrLf & "Si lo borras, borraras los datos de los cursos en que ha estado", "aceptar", "cancelar")
     If valor = 1 Then 
@@ -136,6 +138,7 @@ Public Sub ToolButtonBorrarCurso_Click()
   
   If GridViewcurso.row = -1 Then 
     'no puedo editar ya que no esta el cursor puesto en el gridvies
+    Message.Info("Seleccione un curso")
   Else
     valor = Message.Question("¿quieres borrar un curso? " & gb.CrLf & "Si lo borras, borraras los datos de los alumnos que lo han cursado", "aceptar", "cancelar")
     If valor = 1 Then 
@@ -201,9 +204,10 @@ End
 Public Sub ToolButtonExpedienteCurso_Click()
   
   Dim cur As New CursoVO
-
+  
   If GridViewCurso.row = -1 Then 
     'no puedo editar ya que no esta el cursor puesto en el gridvies
+    Message.Info("Seleccione un curso")
   Else
     cur = ControladorAplicacion.BuscarIdCurso(Val(GridViewCurso[GridViewCurso.row, 0].Text))
     ControladorAplicacion.fExpCurso.TmpCurso = cur
@@ -220,6 +224,7 @@ Public Sub ToolButtonExpediente_Click()
   
   If GridViewAlumno.row = -1 Then 
     'no puedo editar ya que no esta el cursor puesto en el gridvies
+    Message.Info("Seleccione un alumno")
   Else
     alu = ControladorAplicacion.BuscarIdalumno(Val(GridViewAlumno[GridViewAlumno.row, 1].Text))
     ControladorAplicacion.fexpAlumno.TmpAlumno = alu
@@ -298,6 +303,28 @@ Public Sub GridViewCurso_Data(row As Integer, column As Integer)
     GridViewCurso.Data.Background = Color.Orange
   Else
     If row Mod 2 = 0 Then GridViewCurso.Data.Background = Color.Cyan
+  Endif
+  
+End
+
+Public Sub ToolButtonImprimir_Click()
+  
+  If GridViewAlumno.row = -1 Then 
+    'no puedo editar ya que no esta el cursor puesto en el gridvies
+    Message.Info("Seleccione un alumno")
+  Else
+    
+  Endif
+  
+End
+
+Public Sub ToolButtonImprimir2_Click()
+  
+  If GridViewCurso.row = -1 Then 
+    'no puedo editar ya que no esta el cursor puesto en el gridvies
+    Message.Info("Seleccione un curso")
+  Else
+    
   Endif
   
 End

@@ -30,7 +30,7 @@ msgstr ""
 msgid "Aceptar"
 msgstr ""
 
-#: FormCurso.class:23
-msgid "Se ha producido un error al intentar añadir el nuevo alumno"
+#: FormCurso.class:34
+msgid "Se ha producido un error al intentar añadir el nuevo curso"
 msgstr ""
 
