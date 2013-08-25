@@ -52,7 +52,8 @@ Public Function mostrarRelacionesIdAlumno(idalumno As Integer) As Result
   
   Dim mirela As New RelacionDAO
   
-  Return mirela.sql("Select * From Relacion where idalumno=" & Str$(idAlumno))
+  'Return mirela.sql("Select * From Relacion  where idalumno=" & Str$(idAlumno))
+  Return mirela.sql("Select idRelacion as IdR,Nombre as Nombre_del_Curso,Observacion as Observaciones_del_Alumno, Curso.idCurso From (Relacion join Curso On Relacion.IdCurso = Curso.IdCurso) where idalumno =" & Str$(idAlumno))
   
 End
 
@@ -136,5 +137,13 @@ Public Function borrarIdcurso(id As Integer) As Boolean
   Dim micurso As New CursoDAO
   
   Return micurso.BorrarIdCurso(id)
+  
+End
+
+Public Function BorrarRelacionCurso(idcurso As Integer) As Boolean
+  
+  Dim mirel As New RelacionDAO
+  
+  Return mirel.BorrarIdCurso(idcurso)
   
 End
