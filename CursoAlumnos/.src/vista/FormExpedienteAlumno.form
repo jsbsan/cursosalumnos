@@ -59,7 +59,7 @@
     Background = &HBFBFBF&
     ReadOnly = True
   }
-  { GridView1 GridView
+  { GridViewRelacionCursos GridView
     MoveScaled(2,31,73,27)
   }
   { ToolButtonAceptar ToolButton

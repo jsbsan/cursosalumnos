@@ -15,8 +15,11 @@ Public Sub main()
   Dim fexpcurso As New FormExpedienteCurso
   Dim fexpAlumno As New FormExpedienteAlumno
   Dim logicatmp As New Logica
+  Dim eligeCurso As New FormEligeCurso
   
+  eligeCurso.Persistent = True
   'relaciones MODELO VISTA CONTROLADOR
+  
   FormularioControlAcceso.ControladorAplicacion = ControladorAplicacion
   FormularioPrincipal.ControladorAplicacion = ControladorAplicacion
   falumno.ControladorAplicacion = ControladorAplicacion
@@ -24,6 +27,7 @@ Public Sub main()
   fexpcurso.ControladorAplicacion = ControladorAplicacion
   fexpAlumno.ControladorAplicacion = ControladorAplicacion
   logicatmp.ControladorAplicacion = ControladorAplicacion
+  eligeCurso.ControladorAplicacion = ControladorAplicacion
   
   ControladorAplicacion.controlAcceso = FormularioControlAcceso
   ControladorAplicacion.Fprincipal = FormularioPrincipal
@@ -32,6 +36,7 @@ Public Sub main()
   ControladorAplicacion.fExpCurso = fexpcurso
   ControladorAplicacion.fexpAlumno = fexpAlumno
   ControladorAplicacion.log = Logicatmp
+  ControladorAplicacion.eligeCurso = eligeCurso
   
   'inicio directorios
   iniciarDirectoriosYArchivos(ControladorAplicacion) 
@@ -68,6 +73,9 @@ Public Sub main()
   
   logicatmp.ControladorAplicacion = Null
   ControladorAplicacion.log = Null
+  
+  eligeCurso.ControladorAplicacion = Null
+  ControladorAplicacion.eligeCurso = Null
   
   'anulamos los objetos en si
   logicatmp = Null

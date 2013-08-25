@@ -62,7 +62,7 @@ Public Sub ToolButtonAceptar_Click()
   creaminifoto(PictureBoxAlumno.tag)
   
   If TmpAlumno.idAlumno <> 0 Then 
-    If ControladorAplicacion.log.ModificarIdAlumno(TmpAlumno) Then
+    If ControladorAplicacion.ModificarIdAlumno(TmpAlumno) Then
       'se ha añadido bien el nuevo alumno
       limpio()
       Me.Close()
@@ -73,7 +73,7 @@ Public Sub ToolButtonAceptar_Click()
       
     Endif
   Endif
-  If TmpAlumno.idAlumno = 0 And If ControladorAplicacion.log.validarAnnadirAlumno(TmpAlumno) Then 
+  If TmpAlumno.idAlumno = 0 And If ControladorAplicacion.anadirAlumno(TmpAlumno) Then 
     'se ha añadido bien el nuevo alumno
     limpio()
     Me.Close()
@@ -112,8 +112,14 @@ Public Sub rellena(alu As AlumnoVO)
   TextBoxFECHANACIMIENTO.text = Format(Date(Year(TextBoxFECHANACIMIENTO.Tag), Month(TextBoxFECHANACIMIENTO.Tag), Day(TextBoxFECHANACIMIENTO.Tag)), "dd-mmmm-yyyy")
   TextBoxLEGAJO.Text = alu.Legajo
   TextBoxNACIONALIDAD.Text = alu.Nacionalidad
-  PictureBoxAlumno.Tag = ControladorAplicacion.rutaTrabajo & "Fotos/" & alu.RutaFoto
-  PictureBoxAlumno.Picture = Picture[ControladorAplicacion.rutaTrabajo & "Fotos/" & alu.RutaFoto]
+  
+  If alu.RutaFoto <> "transparente.png" Then 
+    
+    PictureBoxAlumno.Tag = ControladorAplicacion.rutaTrabajo & "Fotos/" & alu.RutaFoto
+    PictureBoxAlumno.Picture = Picture[ControladorAplicacion.rutaTrabajo & "Fotos/" & alu.RutaFoto]
+  Else
+    PictureBoxAlumno.Picture = Picture["icono_fotos_personas.png"]
+  Endif
   TextBoxTELEFONO.Text = ""
   
 End

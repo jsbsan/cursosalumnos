@@ -514,7 +514,10 @@ Public Function sql(consulta As String) As Result
   
   conectar.Conexion()
   Try mRs = conectar.hconn.Exec(consulta) 
-  If Error Then message.info("Consulta erronea, revisela")
+  If Error Then
+    message.info("Consulta erronea, revisela")
+    Debug "error: ", Error , Error.text
+  Endif
   Return mRs 
   
 End 

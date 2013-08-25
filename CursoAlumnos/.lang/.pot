@@ -23,13 +23,13 @@ msgid "Contraseña:"
 msgstr ""
 
 #: FControlAcceso.form:36 FormAlumno.form:35 FormCalendario.form:17
-#: FormCurso.form:44 FormElegirFichero.form:23 FormExpedienteAlumno.form:93
-#: FormExpedienteCurso.form:80
+#: FormCurso.form:44 FormElegirFichero.form:23 FormEligeCurso.form:25
+#: FormExpedienteAlumno.form:93 FormExpedienteCurso.form:80
 msgid "Aceptar"
 msgstr ""
 
 #: FControlAcceso.form:43 FormAlumno.form:42 FormCurso.form:37
-#: FormElegirFichero.form:31
+#: FormElegirFichero.form:31 FormEligeCurso.form:32
 msgid "Cancelar"
 msgstr ""
 
@@ -77,7 +77,7 @@ msgstr ""
 msgid "webcam"
 msgstr ""
 
-#: FormAlumno.class:71 FormCurso.class:23
+#: FormAlumno.class:71
 msgid "Se ha producido un error al intentar añadir el nuevo alumno"
 msgstr ""
 
@@ -89,12 +89,20 @@ msgstr ""
 msgid "Detalle"
 msgstr ""
 
+#: FormCurso.class:34
+msgid "Se ha producido un error al intentar añadir el nuevo curso"
+msgstr ""
+
 #: FormElegirFichero.form:44
 msgid "Pegar desde Portapapeles"
 msgstr ""
 
 #: FormElegirFichero.form:45
 msgid "Pegar (Url)"
+msgstr ""
+
+#: FormEligeCurso.form:16
+msgid "Cursos Disponibles...."
 msgstr ""
 
 #: FormError.form:14

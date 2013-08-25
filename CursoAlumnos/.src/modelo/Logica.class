@@ -35,8 +35,24 @@ End
 Public Function validarAnnadirCurso(datos As Cursovo) As Boolean
   
   Dim micurso As New CursoDAO
-
+  
   Return micurso.registrar(datos)
+  
+End
+
+Public Function validarAnnadirRela(datos As RelacionVo) As Boolean
+  
+  Dim mirela As New RelacionDAO
+  
+  Return mirela.registrar(datos)
+  
+End
+
+Public Function mostrarRelacionesIdAlumno(idalumno As Integer) As Result
+  
+  Dim mirela As New RelacionDAO
+  
+  Return mirela.sql("Select * From Relacion where idalumno=" & Str$(idAlumno))
   
 End
 
@@ -103,7 +119,7 @@ Public Function ModificarIdCurso(micursotmp As CursoVO) As Boolean
   
   Dim micurso As New CursoDAO
   
-  Return micurso.ModificarId(micursotmp.idcurso, micursotmp)
+  Return micurso.ModificarIdCurso(micursotmp.idcurso, micursotmp)
   
 End
 
