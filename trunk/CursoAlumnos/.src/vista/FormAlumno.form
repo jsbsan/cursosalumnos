@@ -4,6 +4,7 @@
   MoveScaled(0,0,64,64)
   Icon = Picture["icon:/16/people"]
   Persistent = True
+  Resizable = False
   { ToolButtonAceptar ToolButton
     MoveScaled(40,57,15,6)
     Text = ("Aceptar")

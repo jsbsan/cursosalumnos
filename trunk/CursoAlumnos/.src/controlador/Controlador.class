@@ -8,7 +8,7 @@ Public fExpCurso As FormExpedienteCurso
 Public fexpAlumno As FormExpedienteAlumno
 Public cone As Conexion
 Public eligecurso As FormEligeCurso
-
+Public eligeAlumno As FormEligeAlumno
 Public log As Logica
 
 Public rutaTrabajo As String = User.home & "/.CursoAlumnos/"
@@ -70,9 +70,15 @@ Public Function anadirRelacion(datos As RelacionVO) As Boolean
   
 End
 
-Public Function ContenidoRelaciones(IdAlumno As Integer) As Result
+Public Function ContenidoRelacionesIdAlumnos(IdAlumno As Integer) As Result
   
   Return log.mostrarRelacionesIdAlumno(idalumno)
+  
+End
+
+Public Function ContenidoRelacionesIdCurso(IdCurso As Integer) As Result
+  
+  Return log.mostrarRelacionesIdCurso(IdCurso)
   
 End
 
@@ -115,5 +121,17 @@ End
 Public Function borrarAlumnoDeCurso(idcurso As Integer) As Boolean
   
   Return log.BorrarRelacionCurso(idcurso)
+  
+End
+
+Public Function borrarAlumnoDeCursoIdAlumno(idalumno As Integer) As Boolean
+  
+  Return log.BorrarRelacionAlumno(idalumno) 
+  
+End
+
+Public Function modificarIdRelacion(datos As RelacionVO) As Boolean
+  
+  Return log.modificarIdRelacion(datos)
   
 End

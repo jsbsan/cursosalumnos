@@ -14,19 +14,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: FormCurso.form:18
+#: FormCurso.form:19
 msgid "Nombre del curso:"
 msgstr ""
 
-#: FormCurso.form:32
+#: FormCurso.form:33
 msgid "Detalle"
 msgstr ""
 
-#: FormCurso.form:37
+#: FormCurso.form:38
 msgid "Cancelar"
 msgstr ""
 
-#: FormCurso.form:44
+#: FormCurso.form:45
 msgid "Aceptar"
 msgstr ""
 

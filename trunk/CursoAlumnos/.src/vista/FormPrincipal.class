@@ -12,7 +12,9 @@ Public Sub Form_Open()
   Dim curs As New Cursodao
   
   alu.gridFormatearColumnas(GridViewAlumno)
+  regillaAlumno()
   curs.gridFormatearColumnas(GridViewCurso)
+  regillaCurso()
   ListBoxInforme.Add("Lista de Alumnos")
   ListBoxInforme.Add("Lista de Alumnos con los cursos que participan")
   ListBoxInforme.Add("Lista de Cursos")
@@ -329,5 +331,44 @@ Public Sub ToolButtonImprimir2_Click()
   Else
     
   Endif
+  
+End
+
+'Anchos y alto de columnas de los gridview..
+
+Private Sub regillaAlumno()
+  
+  With GridViewAlumno    
+    .Columns[0].width = 40
+    .Rows.Height = 40
+    .Columns[1].width = 0
+    .Columns[2].width = 150
+    .Columns[5].width = 125
+    .Columns[6].width = 250
+    .font.size = 8
+  End With
+  
+End
+
+Private Sub regillaCurso()
+  
+  With GridViewCurso    
+    .Columns[0].width = 0
+    .Columns[1].width = 200
+  End With
+  
+End
+
+'-----------------------------------------------------
+'Hacer doble click para ver los expedientes...
+Public Sub GridViewAlumno_DblClick()
+  
+  ToolButtonExpediente_Click()
+  
+End
+
+Public Sub GridViewCurso_DblClick()
+  
+  ToolButtonExpedienteCurso_Click()
   
 End

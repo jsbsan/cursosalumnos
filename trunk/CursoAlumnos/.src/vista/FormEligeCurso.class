@@ -9,11 +9,13 @@ Public Sub Form_Show()
   Dim curs As New Cursodao
   
   curs.gridFormatearColumnas(GridViewCurso)
+  RevisarAnchos(GridViewCurso)
+  
   RefrescarDatosCursos()
   
 End
 
-Public Sub ToolButtonAceptar2_Click()
+Public Sub ToolButtonCancelar_Click()
   
   Me.Close()
   Return
@@ -59,5 +61,16 @@ Public Sub GridViewCurso_Data(row As Integer, column As Integer)
 End
 
 Public Sub Form_Open()
+  
+End
+'reviso anchos de las columnas
+
+Public Sub RevisarAnchos(rejilla As GridView)
+  
+  With rejilla 
+    
+    .Columns[0].width = 0
+    
+  End With
   
 End

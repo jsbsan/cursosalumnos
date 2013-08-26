@@ -1,25 +1,25 @@
 # Gambas Form File 3.0
 
 { Form Form
-  MoveScaled(0,0,60,64)
+  MoveScaled(0,0,59,64)
   Resizable = False
   { Label1 Label
-    MoveScaled(1,0,33,6)
+    MoveScaled(0,0,57,6)
     Font = Font["Arial,Bold,+2"]
     AutoResize = True
-    Text = ("Cursos Disponibles....")
+    Text = ("Alumnos Disponibles....")
   }
-  { GridViewCurso GridView
-    MoveScaled(1,5,57,52)
+  { GridViewAlumnos GridView
+    MoveScaled(0,5,57,52)
   }
   { ToolButtonAceptar ToolButton
-    MoveScaled(37,58,15,5)
+    MoveScaled(36,58,15,5)
     Text = ("Aceptar")
     Picture = Picture["icon:/16/apply"]
     Border = True
   }
   { ToolButtonCancelar ToolButton
-    MoveScaled(10,58,15,5)
+    MoveScaled(9,58,15,5)
     Text = ("Cancelar")
     Picture = Picture["icon:/16/cancel"]
     Border = True

@@ -34,59 +34,63 @@ msgstr ""
 msgid "Expediente"
 msgstr ""
 
-#: FormPrincipal.form:99
+#: FormPrincipal.form:98
 msgid "Imprimir"
+msgstr ""
+
+#: FormPrincipal.form:106
+msgid "si hace doble click editará el expediente"
 msgstr ""
 
 #: FormPrincipal.form:113
 msgid "Cursos"
 msgstr ""
 
-#: FormPrincipal.form:165
+#: FormPrincipal.form:164
 msgid "Listados"
 msgstr ""
 
-#: FormPrincipal.form:170
+#: FormPrincipal.form:169
 msgid "Listado de informes disponibles..."
 msgstr ""
 
-#: FormPrincipal.form:178
+#: FormPrincipal.form:177
 msgid "Acerca de..."
 msgstr ""
 
-#: FormPrincipal.form:183
+#: FormPrincipal.form:182
 msgid "Control de Cursos y Alumnos<br>\nRealizado por:<br>\nJulio Sánchez Berro y Jorge Agustín Pereyra\n\n\n"
 msgstr ""
 
-#: FormPrincipal.form:187
+#: FormPrincipal.form:186
 msgid "Administrador"
 msgstr ""
 
-#: FormPrincipal.form:192
+#: FormPrincipal.form:191
 msgid "Clave Actual:"
 msgstr ""
 
-#: FormPrincipal.form:197
+#: FormPrincipal.form:196
 msgid "Cambiar"
 msgstr ""
 
-#: FormPrincipal.form:208
+#: FormPrincipal.form:207
 msgid "Clave Nueva:"
 msgstr ""
 
-#: FormPrincipal.form:218
+#: FormPrincipal.form:217
 msgid "Reescriba la clave:"
 msgstr ""
 
-#: FormPrincipal.form:230
+#: FormPrincipal.form:229
 msgid "mensaje:"
 msgstr ""
 
-#: FormPrincipal.form:235
+#: FormPrincipal.form:234
 msgid "Usuario Actual:"
 msgstr ""
 
-#: FormPrincipal.form:243
+#: FormPrincipal.form:242
 msgid "Salir"
 msgstr ""
 
