@@ -1,8 +1,11 @@
 [Breakpoints]
-Count=0
+Breakpoint[1]="Imprimir.160"
+Count=1
 
 [DebugWindow]
-Count=0
+Count=2
+DebugWindow[1]="resultadoCurso"
+DebugWindow[2]="gridviewTmporal"
 
 [DebugWindow/ClaseDato]
 Geometry=[-7,-8,210,210]
@@ -24,6 +27,9 @@ Geometry=[-10,-8,210,210]
 
 [DebugWindow/FormularioPrincipal]
 Geometry=[-4,-5,210,210]
+
+[DebugWindow/GridView]
+Geometry=[-10,-8,210,210]
 
 [DebugWindow/GridViewAlumno]
 Geometry=[-10,-8,210,210]
@@ -61,11 +67,14 @@ Geometry=[-10,-8,210,210]
 [DebugWindow/cursoelegido]
 Geometry=[-7,-8,210,210]
 
+[DebugWindow/gridviewTmporal]
+Geometry=[-10,-8,210,210]
+
 [DebugWindow/nuevoalumno]
 Geometry=[-7,-8,210,666]
 
 [DebugWindow/rejilla]
-Geometry=[-10,-8,210,210]
+Geometry=[-10,-8,287,260]
 
 [DebugWindow/rela]
 Geometry=[-7,-8,669,239]
@@ -91,10 +100,10 @@ File[2]=".src/vista/FControlAcceso.class:4.0"
 File[3]=".src/controlador/main.module:6.2"
 File[4]=".src/controlador/Controlador.class:113.2"
 File[5]=".src/vista/FormPrincipal.form"
-File[6]=".src/vista/FormPrincipal.class:147.8"
-File[7]=".src/modelo/Logica.class:164.36"
+File[6]=".src/vista/FormPrincipal.class:350.2"
+File[7]=".src/modelo/Logica.class:127.42"
 File[8]=".src/vista/FormAlumno.form"
-File[9]=".src/vista/FormAlumno.class:115.17"
+File[9]=".src/vista/FormAlumno.class:34.111"
 File[10]="icono_fotos_personas.png"
 File[11]=".src/vista/FormCalendario.form"
 File[12]=".src/vista/FormCalendario.class:10.0"
@@ -104,15 +113,15 @@ File[15]=".src/vista/FormCurso.class:67.8"
 File[16]=".src/vista/FormExpedienteCurso.form"
 File[17]=".src/vista/FormExpedienteCurso.class:48.2"
 File[18]=".src/vista/FormExpedienteAlumno.form"
-File[19]=".src/vista/FormExpedienteAlumno.class:15.37"
+File[19]=".src/vista/FormExpedienteAlumno.class:185.3"
 File[20]="transparente.png"
 File[21]=".src/modelo/conexion/conexion.class:20.0"
 File[22]=".src/modelo/VO/AlumnoVO.class:2.17"
 File[23]=".src/modelo/VO/CursoVO.class:2.28"
 File[24]=".src/modelo/VO/RelacionVO.class:2.31"
-File[25]=".src/modelo/DAO/AlumnoDAO.class:1301.0"
+File[25]=".src/modelo/DAO/AlumnoDAO.class:1327.7"
 File[26]=".src/modelo/DAO/CursoDAO.class:441.0"
-File[27]=".src/modelo/DAO/RelacionDAO.class:627.0"
+File[27]=".src/modelo/DAO/RelacionDAO.class:629.12"
 File[28]="camara_icono.png"
 File[29]=".src/Otros Formularios y Modulos/ModuleAsignarYSoltarImagenes.module:78.22"
 File[30]=".src/Otros Formularios y Modulos/FormElegirFichero.form"
@@ -120,7 +129,6 @@ File[31]=".src/Otros Formularios y Modulos/FormElegirFichero.class:99.0"
 File[32]=".src/controlador/ClassDato.class:0.19"
 File[33]=".src/Otros Formularios y Modulos/FormPensando.form"
 File[34]=".src/Otros Formularios y Modulos/FormError.form"
-Active=35
 File[35]=".src/Otros Formularios y Modulos/ModuleUtilidadesDisco.module:82.2"
 File[36]=".src/Otros Formularios y Modulos/FormPensando.class:18.3"
 File[37]="icoLoading.gif"
@@ -129,7 +137,21 @@ File[39]=".src/vista/FormEligeCurso.class:28.11"
 File[40]=".src/vista/FormEligeAlumno.form"
 File[41]=".src/vista/FormEligeAlumno.class:50.160"
 File[42]="esquema.MpBd:0.0"
-Count=42
+Active=43
+File[43]=".src/Imprimir/Imprimir.module:169.2"
+File[44]=".src/Latex/Latex.class:424.7"
+File[45]=".src/Latex/_Environment.class:5.33"
+File[46]=".src/Latex/_Line.class:0.19"
+File[47]=".src/Latex/_Size.class:0.19"
+File[48]=".src/Latex/_TypeFont.class:0.19"
+File[49]=".src/Latex/box/_Box.class:0.19"
+File[50]=".src/Latex/LatexHelper.module:228.0"
+File[51]=".src/Latex/_Environment/_Bibliography.class:0.19"
+File[52]=".src/Latex/_Environment/_Center.class:0.19"
+File[53]=".src/Latex/_Environment/_Enumerate.class:0.19"
+File[54]=".src/Latex/_Environment/_Landscape.class:0.19"
+File[55]=".src/Latex/_Environment/_Verbatim.class:0.19"
+Count=55
 
 [VersionControl]
 RememberPassword=1

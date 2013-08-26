@@ -15,7 +15,7 @@ Public Sub Form_Show()
   RevisarAnchos(GridViewRelacionAlumnos)
   refrescarDatosAlumnos()
   Me.Title = "Expedientes del Curso"
-
+  
 End
 
 Public Sub ToolButtonAceptar_Click()
@@ -143,5 +143,32 @@ Public Sub RevisarAnchos(rejilla As GridView)
     .Columns[1].width = 0
     .Columns[2].width = 0
   End With
+  
+End
+
+Public Sub ToolButtonEditarCurso_Click()
+  
+  Dim cur As New CursoVO
+  
+  cur = TmpCurso 
+  ControladorAplicacion.fcurso.TmpCurso = cur
+  'ControladorAplicacion.fcurso.TmpCurso.idCurso 
+  ControladorAplicacion.fcurso.showmodal()
+  ControladorAplicacion.fcurso.TmpCurso = Null
+  
+  RefrescarDatosCursos()
+  
+End
+
+Public Sub RefrescarDatosCursos()
+  
+  TextBoxNombre.text = TmpCurso.Nombre
+  TextAreaDetalle.text = TmpCurso.Detalle
+  
+End
+
+Public Sub ToolButtonImprimir_Click()
+  
+  Imprimir.FichaCurso(TmpCurso.idCurso)
   
 End

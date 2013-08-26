@@ -28,8 +28,8 @@ msgstr ""
 
 #: FControlAcceso.form:36 FormAlumno.form:36 FormCalendario.form:19
 #: FormCurso.form:45 FormElegirFichero.form:23 FormEligeAlumno.form:26
-#: FormEligeCurso.form:26 FormExpedienteAlumno.form:93
-#: FormExpedienteCurso.form:80
+#: FormEligeCurso.form:26 FormExpedienteAlumno.form:97
+#: FormExpedienteCurso.form:83
 msgid "Aceptar"
 msgstr ""
 
@@ -42,15 +42,15 @@ msgstr ""
 msgid "Control de Cursos y Alumnos"
 msgstr ""
 
-#: FormAlumno.form:50 FormExpedienteAlumno.form:24
+#: FormAlumno.form:50 FormExpedienteAlumno.form:27
 msgid "Nombre:"
 msgstr ""
 
-#: FormAlumno.form:64 FormExpedienteAlumno.form:35
+#: FormAlumno.form:64 FormExpedienteAlumno.form:38
 msgid "Apellidos:"
 msgstr ""
 
-#: FormAlumno.form:74 FormExpedienteAlumno.form:46
+#: FormAlumno.form:74 FormExpedienteAlumno.form:49
 msgid "Documento:"
 msgstr ""
 
@@ -130,40 +130,53 @@ msgstr ""
 msgid "Label1"
 msgstr ""
 
-#: FormExpedienteAlumno.form:57
+#: FormExpedienteAlumno.form:60
 msgid "Cursos a los que esta apuntado:"
 msgstr ""
 
-#: FormExpedienteAlumno.form:64
+#: FormExpedienteAlumno.form:67
 msgid "Añadirle a un  Curso"
 msgstr ""
 
-#: FormExpedienteAlumno.form:73
+#: FormExpedienteAlumno.form:76
 msgid "Borrarle de un  Curso"
 msgstr ""
 
-#: FormExpedienteAlumno.form:82 FormExpedienteCurso.form:73
+#: FormExpedienteAlumno.form:85 FormExpedienteCurso.form:75
 msgid "Editar Observaciones"
 msgstr ""
 
-#: FormExpedienteCurso.form:22
+#: FormExpedienteAlumno.form:106
+msgid "Editar Alumno"
+msgstr ""
+
+#: FormExpedienteAlumno.form:121 FormExpedienteCurso.form:101
+#: FormPrincipal.form:98
+msgid "Imprimir"
+msgstr ""
+
+#: FormExpedienteCurso.form:24
 msgid "Curso:"
 msgstr ""
 
-#: FormExpedienteCurso.form:33
+#: FormExpedienteCurso.form:35
 msgid "Detalles:"
 msgstr ""
 
-#: FormExpedienteCurso.form:44
+#: FormExpedienteCurso.form:46
 msgid "Alumnos en el curso:"
 msgstr ""
 
-#: FormExpedienteCurso.form:55
+#: FormExpedienteCurso.form:57
 msgid "Añadir Alumno"
 msgstr ""
 
-#: FormExpedienteCurso.form:64
+#: FormExpedienteCurso.form:66
 msgid "Borrar Alumno"
+msgstr ""
+
+#: FormExpedienteCurso.form:92
+msgid "Editar Curso"
 msgstr ""
 
 #: FormPensando.class:7
@@ -188,10 +201,6 @@ msgstr ""
 
 #: FormPrincipal.form:91
 msgid "Expediente"
-msgstr ""
-
-#: FormPrincipal.form:98
-msgid "Imprimir"
 msgstr ""
 
 #: FormPrincipal.form:106
@@ -249,6 +258,22 @@ msgstr ""
 
 #: FormPrincipal.form:234
 msgid "Usuario Actual:"
+msgstr ""
+
+#: LatexHelper.module:13
+msgid "Error: You need to install gedit"
+msgstr ""
+
+#: LatexHelper.module:38
+msgid "Error: Try create file .tex"
+msgstr ""
+
+#: LatexHelper.module:52
+msgid "Error: You need to install latex-beamer and texlive-latex-extra"
+msgstr ""
+
+#: LatexHelper.module:57
+msgid "Error: You need to install evince"
 msgstr ""
 
 #: ModuleAsignarYSoltarImagenes.module:17

@@ -152,24 +152,42 @@ End
 Public Sub PictureBoxAlumno_MouseDown()
   
   ModuleAsignarYSoltarImagenes.asignaImagen(PictureBoxAlumno, ControladorAplicacion.rutaTrabajo & "Fotos/")
+  'reducir imagen a 120x85
+  creaminifoto(PictureBoxAlumno.Tag, 85, 119, ControladorAplicacion.rutaTrabajo & "Fotos")
   
 End
 
-Public Sub creaminifoto(ruta As String)
+Public Sub creaminifoto(ruta As String, Optional w As Integer, Optional h As Integer, Optional rutaFinal As String)
   
   Dim i As Image
   
   i = Image.Load(ruta)
   
-  i = i.Stretch(30, 30)
+  If w = 0 And h = 0 Then 
+    i = i.Stretch(30, 30)
+  Else
+    i = i.Stretch(w, h)
+  Endif
   
-  If Exist(ControladorAplicacion.rutaTrabajo & "MiniFotos/Mini" & File.Name(ruta)) Then 
-    'no crea mini foto ya que existe una con el mismo nombre
+  If rutafinal = "" Then 
+    If Exist(ControladorAplicacion.rutaTrabajo & "MiniFotos/Mini" & File.Name(ruta)) Then 
+      'no crea mini foto ya que existe una con el mismo nombre
+      Return 
+    Endif
+    If File.Ext(ruta) = "" Then 
+      ruta &= ".png"
+    Endif
+    Try i.Save(ControladorAplicacion.rutaTrabajo & "MiniFotos/Mini" & File.Name(ruta))
+    Return 
+  Else
+    If Exist(rutaFinal & "/" & File.Name(ruta)) Then 
+      'borrar foto existente
+      Kill rutaFinal & "/" & File.Name(ruta)
+    Endif
+    
+    Try i.Save(rutaFinal & "/" & File.Name(ruta))
+    Return 
+    
   Endif
-  If File.Ext(ruta) = "" Then 
-    ruta &= ".png"
-  Endif
-  Try i.Save(ControladorAplicacion.rutaTrabajo & "MiniFotos/Mini" & File.Name(ruta))
-  Return 
   
 End

@@ -5,34 +5,34 @@
   Icon = Picture["icon:/16/bookmark"]
   Persistent = True
   { Label1 Label
-    MoveScaled(1,0,16,5)
+    MoveScaled(20,0,16,5)
     Text = ("Nombre:")
   }
   { TextBoxNombreAlumno TextBox
-    MoveScaled(18,0,54,5)
+    MoveScaled(37,0,35.7143,5)
     Background = &HBFBFBF&
     ReadOnly = True
   }
   { Label2 Label
-    MoveScaled(0.8571,5.8571,16,5)
+    MoveScaled(19.8571,5.8571,16,5)
     Text = ("Apellidos:")
   }
   { TextBoxApellidosAlumno TextBox
-    MoveScaled(18,6,54,5)
+    MoveScaled(37,6,35.7143,5)
     Background = &HBFBFBF&
     ReadOnly = True
   }
   { Label3 Label
-    MoveScaled(1,12,16,5)
+    MoveScaled(20,12,16,5)
     Text = ("Documento:")
   }
   { TextBoxDocumento TextBox
-    MoveScaled(18,12,54,5)
+    MoveScaled(37,12,35.7143,5)
     Background = &HBFBFBF&
     ReadOnly = True
   }
   { Label4 Label
-    MoveScaled(1,18,59,4)
+    MoveScaled(2,22,64,4)
     Text = ("Cursos a los que esta apuntado:")
   }
   { ToolButtonAnnadirAlumnoCurso ToolButton
@@ -64,8 +64,30 @@
   }
   { ToolButtonAceptar ToolButton
     MoveScaled(57,17,15,5)
+    Font = Font["Andale Mono,-1"]
     Text = ("Aceptar")
     Picture = Picture["icon:/16/apply"]
+    Border = True
+  }
+  { ToolButtonEditarAlumno ToolButton
+    MoveScaled(15,17,20,5)
+    Font = Font["Andale Mono,-1"]
+    AutoResize = True
+    Text = ("Editar Alumno")
+    Picture = Picture["icon:/16/edit"]
+    Border = True
+  }
+  { PictureBoxAlumno PictureBox
+    MoveScaled(2,1,12.1429,17)
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ToolButtonImprimir ToolButton
+    MoveScaled(39,17,7,5)
+    Font = Font["Andale Mono,-1"]
+    AutoResize = True
+    Text = ("Imprimir")
+    Picture = Picture["icon:/16/printer"]
     Border = True
   }
 }

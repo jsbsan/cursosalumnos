@@ -1,0 +1,252 @@
+' Gambas module file
+
+Public alumno As New AlumnoVO
+Public curso As New CursoVO
+Public resultados As Result
+Public mirela As New RelacionDAO
+Public resultadoCurso As Result
+Public f As New Form
+Public gridviewTmporal As New GridView(f)
+
+Public controladorAplicacion As Controlador
+'------------------------------------------------------------------------------------------------
+'INFORMES: Datos Alumno y su expediente
+'------------------------------------------------------------------------------------------------
+
+Public Sub FichaAlumno(idalumno As Integer)
+  
+  Dim doc As New Latex
+  Dim stext As String
+  Dim parrafo As String
+  
+  'leer datos del alumno
+  alumno = controladorAplicacion.BuscarIdalumno(idalumno)
+  alumno.idAlumno = idalumno
+  'leer datos de Relaciones
+  mirela.GridResultanteSQL(ControladorAplicacion.ContenidoRelacionesIdAlumnos(idAlumno), gridviewTmporal)
+  revisarAnchosDatosCursos(gridviewTmporal)
+  'realizar consulta 
+  RefrescarDatosCursos()
+  'Escribir datos del alumno
+  doc.pageHeader("", "Expediente Alumno", "")
+  doc.pageFooter("", "", "" & doc.pageNumber())
+  
+  parrafo = doc.Picture(ControladorAplicacion.rutaTrabajo & "Fotos/" & alumno.RutaFoto, 0.5, 0) &
+    gb.CrLf & gb.CrLf & ""
+  
+  stext &= parrafo
+  stext &= doc.bold("Nombre y apellidos: ") & String.Upper$(alumno.Nombre) & " " & String.Upper$(alumno.Apellido) & doc.CrLf()
+  stext &= doc.bold("Documento: ") & alumno.Documento & doc.CrLf()
+  stext &= doc.bold("Fecha Nacimiento: ") & Format(Date(Year(alumno.FechaNacimiento), Month(alumno.FechaNacimiento), Day(alumno.FechaNacimiento)), "dd mmmm yyyy") & doc.CrLf()
+  stext &= doc.bold("Telefono: ") & alumno.Telefono & doc.CrLf() 
+  stext &= doc.bold("Nacionalidad: ") & alumno.Nacionalidad & doc.CrLf()
+  stext &= doc.bold("Esc. Origen: ") & alumno.EscOrigen & doc.CrLf()
+  stext &= doc.bold("Legajo: ") & alumno.Legajo & doc.CrLf()
+  stext &= doc.spaceV(0.5)
+  stext &= doc.Size.LargeP("Asistencia a Cursos:")
+  stext &= doc.spaceV(0.5)
+  stext &= doc.CrLf()
+  
+  stext &= doc.TableGridViews(gridviewTmporal, "|l|l|")
+  'Escribir datos de las relaciones
+  'escribir documento en pdf...
+  'LatexHelper.compileTEX(stext, doc, "FichaAlumno", True)
+  LatexHelper.compilePDF(stext, doc, "FichaAlumno", True)
+  
+End
+
+'------------------------------------------------------------------------------------------------
+'INFORMES: Datos Curso y su expediente
+'------------------------------------------------------------------------------------------------
+
+Public Sub FichaCurso(idcurso As Integer)
+  
+  Dim doc As New Latex
+  Dim stext As String
+  Dim parrafo As String
+  
+  'leer datos del alumno
+  curso = controladorAplicacion.BuscarIdcurso(idcurso)
+  curso.idcurso = idcurso
+  
+  'leer datos de Relaciones
+  mirela.GridResultanteSQL(ControladorAplicacion.ContenidoRelacionesIdCurso(idcurso), gridviewTmporal)
+  revisarAnchosDatosAlumnos(gridviewTmporal)
+  'realizar consulta 
+  RefrescarDatosAlumnos()
+  'Escribir datos del alumno
+  doc.pageHeader("", "Expediente Curso", "")
+  doc.pageFooter("", "", "" & doc.pageNumber())
+  
+  stext &= doc.bold("Curso: ") & String.Upper$(curso.Nombre) & doc.CrLf()
+  stext &= doc.bold("Obsevaciones: ") & doc.CrLf()
+  stext &= curso.Detalle & doc.CrLf()
+  stext &= doc.spaceV(0.5)
+  stext &= doc.Size.LargeP("Alumnos del Curso:")
+  stext &= doc.spaceV(0.5)
+  stext &= doc.CrLf()
+  'Escribir datos de las relaciones
+  stext &= doc.TableGridViews(gridviewTmporal, "|l|l|l|")
+  
+  'escribir documento en pdf...
+  '  LatexHelper.compileTEX(stext, doc, "FichaCurso", True)
+  LatexHelper.compilePDF(stext, doc, "FichaCurso", True)
+  
+End
+
+Public Sub ListaAlumnos()
+  
+  Dim doc As New Latex
+  Dim stext As String
+  Dim parrafo As String
+  
+  Dim fila As Integer
+  Dim a As Integer
+  
+  Dim alu As New Alumnodao
+  
+  alu.gridFormatearColumnas(gridviewTmporal)
+  With gridviewTmporal
+    .Columns[0].width = 0
+    .Rows.Height = 40
+    .Columns[1].width = 0
+    .Columns[2].width = 150
+    .Columns[5].width = 125
+    .Columns[6].width = 250
+    .font.size = 8
+  End With
+  
+  'rellenar lista de alumnos
+  resultadoCurso = ControladorAplicacion.ContenidoAlumnos()
+  
+  gridviewTmporal.Rows.count = resultadoCurso.count 
+  
+  fila = -1
+  Do While resultadoCurso.Available
+    Inc fila
+    For a = 0 To gridviewTmporal.columns.count - 1
+      gridviewTmporal[fila, a].text = resultadoCurso[gridviewTmporal.Columns[a].title]
+    Next 
+    resultadoCurso.MoveNext()
+  Loop
+  doc.pageHeader("", "Lista de Alumnos", "")
+  doc.pageFooter("", "", "" & doc.pageNumber())
+  stext = doc.Environment.LandScape.Begin()
+  stext &= "\\scalebox{0.7}{ " & doc.TableGridViews(gridviewTmporal) & " }"
+  
+  stext &= doc.Environment.LandScape.End()
+  'LatexHelper.compileTEX(stext, doc, "ListaAlumnos", True)
+  LatexHelper.compilePDF(stext, doc, "ListaAlumnos", True)
+  
+End
+
+Public Sub ListaCusos()
+  
+  Dim doc As New Latex
+  Dim stext As String
+  Dim parrafo As String
+  
+  Dim fila As Integer
+  Dim a As Integer
+  
+  Dim cur As New CursoDAO
+  
+  cur.gridFormatearColumnas(gridviewTmporal)
+  With gridviewTmporal    
+    .Columns[0].width = 0
+    .Columns[1].width = 200
+  End With
+  
+  'rellenar lista de alumnos
+  resultadoCurso = ControladorAplicacion.ContenidoCurso()
+  
+  gridviewTmporal.Rows.count = resultadoCurso.count 
+  
+  fila = -1
+  Do While resultadoCurso.Available
+    Inc fila
+    For a = 0 To gridviewTmporal.columns.count - 1
+      gridviewTmporal[fila, a].text = resultadoCurso[gridviewTmporal.Columns[a].title]
+    Next 
+    resultadoCurso.MoveNext()
+  Loop
+  doc.pageHeader("", "Lista de Cursos", "")
+  doc.pageFooter("", "", "" & doc.pageNumber())
+  
+  stext &= "{ " & doc.TableGridViews(gridviewTmporal) & " }"
+  
+  'LatexHelper.compileTEX(stext, doc, "ListaAlumnos", True)
+  LatexHelper.compilePDF(stext, doc, "ListaCursos", True)
+  
+End
+
+'------------------------------------------
+Public Sub revisarAnchosDatosCursos(rejilla As GridView)
+  
+  With rejilla 
+    .Columns[0].width = 0
+    .Columns[2].width = 300
+    .Columns[3].width = 0
+    .Columns[4].width = 0
+    
+  End With
+  
+End
+
+Public Sub revisarAnchosDatosAlumnos(rejilla As Gridview)
+  
+  With rejilla 
+    
+    .Columns[0].width = 0
+    .Columns[1].width = 0
+    .Columns[2].width = 0
+  End With
+  
+End
+
+'-----------------------------------------------------------------
+
+Public Sub RefrescarDatosCursos()
+  'para el informe de ficha de alumnos
+  
+  Dim fila As Integer
+  Dim a As Integer
+  
+  resultadoCurso = ControladorAplicacion.ContenidoRelacionesIdAlumnos(alumno.idAlumno)
+  
+  gridviewTmporal.Rows.count = 0 'lo ponemos a cero el numero de filas
+  gridviewTmporal.Rows.count = resultadoCurso.count 'actualizamso al resultado de la consulta
+  
+  fila = -1
+  Do While resultadoCurso.Available
+    Inc fila
+    For a = 0 To gridviewTmporal.columns.count - 1
+      gridviewTmporal[fila, a].text = resultadoCurso[gridviewTmporal.Columns[a].title]
+    Next 
+    resultadoCurso.MoveNext()
+  Loop
+  
+End
+
+'--------------------------------------
+Public Sub RefrescarDatosAlumnos()
+  'para el informe de ficha de Curso
+  
+  Dim fila As Integer
+  Dim a As Integer
+  
+  resultadoCurso = ControladorAplicacion.ContenidoRelacionesIdCurso(curso.idCurso)
+  
+  gridviewTmporal.Rows.count = 0 'lo ponemos a cero el numero de filas
+  gridviewTmporal.Rows.count = resultadoCurso.count 'actualizamso al resultado de la consulta
+  
+  fila = -1
+  Do While resultadoCurso.Available
+    Inc fila
+    For a = 0 To gridviewTmporal.columns.count - 1
+      gridviewTmporal[fila, a].text = resultadoCurso[gridviewTmporal.Columns[a].title]
+    Next 
+    resultadoCurso.MoveNext()
+  Loop
+  
+End
