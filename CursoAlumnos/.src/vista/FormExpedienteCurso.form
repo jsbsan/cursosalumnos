@@ -18,7 +18,7 @@
     Text = ("Detalles:")
   }
   { TextAreaDetalle TextArea
-    MoveScaled(1,20,42,36)
+    MoveScaled(1,20,45,36)
     Background = &HBFBFBF&
     ReadOnly = True
   }
@@ -54,9 +54,26 @@
     Border = True
   }
   { ToolButtonAceptar ToolButton
-    MoveScaled(26,57,15,5)
+    MoveScaled(35,57,12,5)
+    Font = Font["Andale Mono,-1"]
     Text = ("Aceptar")
     Picture = Picture["icon:/16/apply"]
+    Border = True
+  }
+  { ToolButtonEditarCurso ToolButton
+    MoveScaled(0,57,13,5)
+    Font = Font["Andale Mono,-1"]
+    AutoResize = True
+    Text = ("Editar Curso")
+    Picture = Picture["icon:/16/edit"]
+    Border = True
+  }
+  { ToolButtonImprimir ToolButton
+    MoveScaled(19,57,7,5)
+    Font = Font["Andale Mono,-1"]
+    AutoResize = True
+    Text = ("Imprimir")
+    Picture = Picture["icon:/16/printer"]
     Border = True
   }
 }

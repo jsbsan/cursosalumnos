@@ -217,7 +217,7 @@ Public Sub ToolButtonExpedienteCurso_Click()
     'para parsar el id del curso elegido...
     cur.idCurso = Val(GridViewCurso[GridViewCurso.row, 0].Text)
     ControladorAplicacion.fExpCurso.ShowModal()
-    
+    RefrescarDatosCursos()
   Endif
   
 End
@@ -235,6 +235,7 @@ Public Sub ToolButtonExpediente_Click()
     alu.idAlumno = Val(GridViewAlumno[GridViewAlumno.row, 1].Text)
     ControladorAplicacion.fexpAlumno.TmpAlumno = alu
     ControladorAplicacion.fexpAlumno.ShowModal()
+    RefrescarDatosAlumnos()
   Endif
   
 End
@@ -315,24 +316,14 @@ End
 
 Public Sub ToolButtonImprimir_Click()
   
-  If GridViewAlumno.row = -1 Then 
-    'no puedo editar ya que no esta el cursor puesto en el gridvies
-    Message.Info("Seleccione un alumno")
-  Else
-    
-  Endif
+  Imprimir.ListaAlumnos
   
 End
 
 Public Sub ToolButtonImprimir2_Click()
-  
-  If GridViewCurso.row = -1 Then 
-    'no puedo editar ya que no esta el cursor puesto en el gridvies
-    Message.Info("Seleccione un curso")
-  Else
-    
-  Endif
-  
+
+  Imprimir.ListaCusos()
+
 End
 
 'Anchos y alto de columnas de los gridview..

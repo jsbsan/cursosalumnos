@@ -21,6 +21,9 @@ Public Sub main()
   eligeCurso.Persistent = True
   eligeAlumno.Persistent = True
   
+  'modulos / Clases Estaticas
+  Imprimir.controladorAplicacion = ControladorAplicacion
+  
   'relaciones MODELO VISTA CONTROLADOR
   FormularioControlAcceso.ControladorAplicacion = ControladorAplicacion
   FormularioPrincipal.ControladorAplicacion = ControladorAplicacion

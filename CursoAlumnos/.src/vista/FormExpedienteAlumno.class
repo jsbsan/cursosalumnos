@@ -14,7 +14,7 @@ Public Sub Form_Open()
   refrescarDatosCursos()
   RevisarAnchos(GridViewRelacionCursos)
   Me.Title = "Expedientes de Alumnos"
-
+  
 End
 
 Public Sub form_Show()
@@ -23,11 +23,7 @@ Public Sub form_Show()
   
   mirela.GridResultanteSQL(ControladorAplicacion.ContenidoRelacionesIdAlumnos(TmpAlumno.idAlumno), GridViewRelacionCursos)
   
-  TextBoxNombreAlumno.text = TmpAlumno.Nombre
-  TextBoxApellidosAlumno.text = TmpAlumno.Apellido
-  TextBoxDocumento.text = TmpAlumno.Documento
-  refrescarDatosCursos()
-  RevisarAnchos(GridViewRelacionCursos)
+  RefrescarDatosAlumnos()
   
 End
 
@@ -151,5 +147,40 @@ Public Sub RevisarAnchos(rejilla As GridView)
     .Columns[4].width = 0
     
   End With
+  
+End
+
+Public Sub ToolButtonEditarAlumno_Click()
+  
+  ControladorAplicacion.falumno.TmpAlumno = TmpAlumno
+  
+  ControladorAplicacion.falumno.showmodal()
+  ControladorAplicacion.falumno.TmpAlumno = Null
+  'relleno el gridview de datos...
+  RefrescarDatosAlumnos()
+  
+End
+
+Public Sub RefrescarDatosAlumnos()
+  
+  TextBoxNombreAlumno.text = TmpAlumno.Nombre
+  TextBoxApellidosAlumno.text = TmpAlumno.Apellido
+  TextBoxDocumento.text = TmpAlumno.Documento
+  refrescarDatosCursos()
+  RevisarAnchos(GridViewRelacionCursos)
+  'rellenar foto del alumno
+  If TmpAlumno.RutaFoto <> "transparente.png" Then 
+    
+    PictureBoxAlumno.Tag = ControladorAplicacion.rutaTrabajo & "Fotos/" & TmpAlumno.RutaFoto
+    PictureBoxAlumno.Picture = Picture[ControladorAplicacion.rutaTrabajo & "Fotos/" & TmpAlumno.RutaFoto]
+  Else
+    PictureBoxAlumno.Picture = Picture["icono_fotos_personas.png"]
+  Endif
+  
+End
+
+Public Sub ToolButtonImprimir_Click()
+  
+  Imprimir.FichaAlumno(TmpAlumno.idAlumno)
   
 End
