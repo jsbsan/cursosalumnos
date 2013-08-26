@@ -5,7 +5,7 @@
   Background = &HFFFFFF&
   Icon = Picture["icon:/16/book"]
   Persistent = True
-  Border = False
+  Resizable = False
   { Label1 Label
     MoveScaled(12,21,25,6)
     Font = Font["Arial,Bold,+2"]

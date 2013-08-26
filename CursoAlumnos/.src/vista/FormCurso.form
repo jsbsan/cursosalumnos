@@ -4,6 +4,7 @@
   MoveScaled(0,0,64,64)
   Icon = Picture["icon:/16/book"]
   Persistent = True
+  Resizable = False
   { Label1 Label
     MoveScaled(3,1,28,5)
     Text = ("Nombre del curso:")

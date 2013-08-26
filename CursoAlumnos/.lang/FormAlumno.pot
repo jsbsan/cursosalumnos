@@ -14,51 +14,51 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: FormAlumno.form:35
+#: FormAlumno.form:36
 msgid "Aceptar"
 msgstr ""
 
-#: FormAlumno.form:42
+#: FormAlumno.form:43
 msgid "Cancelar"
 msgstr ""
 
-#: FormAlumno.form:49
+#: FormAlumno.form:50
 msgid "Nombre:"
 msgstr ""
 
-#: FormAlumno.form:63
+#: FormAlumno.form:64
 msgid "Apellidos:"
 msgstr ""
 
-#: FormAlumno.form:73
+#: FormAlumno.form:74
 msgid "Documento:"
 msgstr ""
 
-#: FormAlumno.form:85
+#: FormAlumno.form:86
 msgid "Fecha Nacimiento:"
 msgstr ""
 
-#: FormAlumno.form:94
+#: FormAlumno.form:95
 msgid "Domicilio:"
 msgstr ""
 
-#: FormAlumno.form:103
+#: FormAlumno.form:104
 msgid "Télefono:"
 msgstr ""
 
-#: FormAlumno.form:113
+#: FormAlumno.form:114
 msgid "Nacionalidad:"
 msgstr ""
 
-#: FormAlumno.form:123
+#: FormAlumno.form:124
 msgid "Esc.Origen:"
 msgstr ""
 
-#: FormAlumno.form:133
+#: FormAlumno.form:134
 msgid "Legajo:"
 msgstr ""
 
-#: FormAlumno.form:153
+#: FormAlumno.form:154
 msgid "webcam"
 msgstr ""
 

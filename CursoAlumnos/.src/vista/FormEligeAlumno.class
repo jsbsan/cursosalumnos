@@ -1,0 +1,87 @@
+' Gambas class file
+
+Public ControladorAplicacion As Controlador
+Private resultadoAlumnos As Result
+Public AlumnoElegido As ClaseDato
+
+Public Sub Form_show()
+  
+  Dim alu As New AlumnoDAO
+  
+  alu.gridFormatearColumnas(GridViewAlumnos)
+  RefrescarDatosAlumnos()
+  regillaAlumno()
+  
+End
+
+Public Sub ToolButtonCancelar_Click()
+  
+  Me.Close()
+  Return
+  
+End
+
+Public Sub ToolButtonAceptar_Click()
+  
+  If GridViewAlumnos.Row = -1 Then 
+    Message.Info("No ha seleccionado ningun alumno, no se añadirá nada alcurso")
+    Return 
+  Else
+    AlumnoElegido.tag = GridViewAlumnos[GridViewAlumnos.row, 1].text
+    Me.Close()
+    Return
+  Endif
+  
+End
+
+Public Sub RefrescarDatosAlumnos()
+  
+  resultadoAlumnos = ControladorAplicacion.ContenidoAlumnos()
+  GridViewAlumnos.Rows.count = 0 'lo ponemos a cero el numero de filas
+  GridViewAlumnos.Rows.count = resultadoAlumnos.count 'actualizamso al resultado de la consulta
+  
+End
+
+Public Sub GridViewAlumnos_Data(row As Integer, column As Integer)
+  
+  resultadoAlumnos.MoveTo(row)
+  
+  If column = 0 Then 
+    If Exist(ControladorAplicacion.rutaTrabajo & "MiniFotos/Mini" & resultadoAlumnos[GridViewAlumnos.Columns[column].text]) Then 
+      GridViewAlumnos.Data.Picture = Picture.Load(ControladorAplicacion.rutaTrabajo & "MiniFotos/Mini" & resultadoAlumnos[GridViewAlumnos.Columns[column].text])
+      Return 
+    Else
+      GridViewAlumnos.Data.text = ""
+      Return
+    Endif
+  Endif
+  
+  GridViewAlumnos.Data.text = Str(resultadoAlumnos[GridViewAlumnos.Columns[column].text])
+  
+  ' colorea la fila, según sea par o impar
+  If row = GridViewAlumnos.row Then 
+    'cursor donde esta situado en el gridview
+    GridViewAlumnos.Data.Background = Color.Orange
+  Else
+    If row Mod 2 = 0 Then GridViewAlumnos.Data.Background = Color.LightGray
+  Endif
+  
+End
+
+Public Sub Form_Open()
+  
+End
+
+Private Sub regillaAlumno()
+  
+  With GridViewAlumnos    
+    .Columns[0].width = 40
+    .Rows.Height = 40
+    .Columns[1].width = 0
+    .Columns[2].width = 150
+    .Columns[5].width = 125
+    .Columns[6].width = 250
+    .font.size = 8
+  End With
+  
+End

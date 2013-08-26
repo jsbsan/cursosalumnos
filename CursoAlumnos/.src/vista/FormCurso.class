@@ -61,3 +61,10 @@ Public Sub rellena(micurso As CursoVO)
   TextAreaDetalle.text = micurso.Detalle
   
 End
+
+Public Sub ToolButtonCancelar_Click()
+  
+  Me.Close()
+  Return
+  
+End

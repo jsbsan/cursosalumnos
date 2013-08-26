@@ -1,10 +1,9 @@
 # Gambas Form File 3.0
 
 { Form Form
-  MoveScaled(0,0,77,64)
+  MoveScaled(0,0,75,60)
   Icon = Picture["icon:/16/bookmark"]
   Persistent = True
-  Arrangement = Arrange.Row
   { Label1 Label
     MoveScaled(1,0,16,5)
     Text = ("Nombre:")
@@ -24,11 +23,11 @@
     ReadOnly = True
   }
   { Label3 Label
-    MoveScaled(1,13,16,5)
+    MoveScaled(1,12,16,5)
     Text = ("Documento:")
   }
   { TextBoxDocumento TextBox
-    MoveScaled(18.1429,13,54,5)
+    MoveScaled(18,12,54,5)
     Background = &HBFBFBF&
     ReadOnly = True
   }
@@ -37,7 +36,7 @@
     Text = ("Cursos a los que esta apuntado:")
   }
   { ToolButtonAnnadirAlumnoCurso ToolButton
-    MoveScaled(0,23,20,5)
+    MoveScaled(2,26,20,5)
     Font = Font["Arial,-2"]
     AutoResize = True
     Text = ("Añadirle a un  Curso")
@@ -45,15 +44,15 @@
     Border = True
   }
   { ToolButtonBorrarAlumno ToolButton
-    MoveScaled(25,23,20,5)
+    MoveScaled(22,26,20,5)
     Font = Font["Arial,-2"]
     AutoResize = True
     Text = ("Borrarle de un  Curso")
     Picture = Picture["icon:/16/erase"]
     Border = True
   }
-  { ToolButtonEditarAlumno ToolButton
-    MoveScaled(50,23,23,5)
+  { ToolButtonEditarObservacion ToolButton
+    MoveScaled(43,26,23,5)
     Font = Font["Arial,-2"]
     AutoResize = True
     Text = ("Editar Observaciones")
@@ -61,10 +60,10 @@
     Border = True
   }
   { GridViewRelacionCursos GridView
-    MoveScaled(1,30,73,27)
+    MoveScaled(1,32,73,27)
   }
   { ToolButtonAceptar ToolButton
-    MoveScaled(30,58,15,5)
+    MoveScaled(57,17,15,5)
     Text = ("Aceptar")
     Picture = Picture["icon:/16/apply"]
     Border = True
