@@ -145,6 +145,7 @@ Public Sub ToolButtonBorrarCurso_Click()
     valor = Message.Question("¿quieres borrar un curso? " & gb.CrLf & "Si lo borras, borraras los datos de los alumnos que lo han cursado", "aceptar", "cancelar")
     If valor = 1 Then 
       If ControladorAplicacion.log.borrarIdCurso(Val(GridViewCurso[GridViewCurso.row, 0].Text)) Then 
+        
         'relleno el gridview de datos...
         RefrescarDatosCursos()
       Else

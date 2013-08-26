@@ -28,7 +28,7 @@ Public Sub ToolButtonAceptar_Click()
     Message.Info("No ha seleccinado ningun curso, y no se añadira nada al alumno")
     Return 
   Else
-    Debug "curso elegido: ", GridViewCurso[GridViewCurso.row, 0].text
+    '  Debug "curso elegido: ", GridViewCurso[GridViewCurso.row, 0].text
     cursoelegido.tag = GridViewCurso[GridViewCurso.row, 0].text
     Me.Close()
     Return

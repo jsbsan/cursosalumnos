@@ -81,6 +81,7 @@ End
 ' ------------------------------
 Public Sub EsperarProceso(proceso As Process, Optional a As Integer, Optional pagina As Integer)
   
+  Debug a
   Do While proceso.state = Process.Running
     Wait 0.1
   Loop
