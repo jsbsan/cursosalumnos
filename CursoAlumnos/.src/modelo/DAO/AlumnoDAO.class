@@ -1299,8 +1299,7 @@ Public Function GridResultanteSQL(res As Result, grid As GridView) As Gridview
   
   Dim columna As Integer
   Dim hField As ResultField
-  Dim a As Integer
-  Dim fila As Integer
+  
   'defino la regilla
   With grid 
     .header = 3 

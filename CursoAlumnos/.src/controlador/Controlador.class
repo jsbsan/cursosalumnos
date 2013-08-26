@@ -96,17 +96,21 @@ End
 
 Public Function ContenidoAlumnos() As Result
   
-  Return log.ContenidoAlumnos()
+  Return log.ContenidoAlumnosOrdenados()
+  'Return log.ContenidoAlumnos()
   
 End
 
 Public Function ContenidoCurso() As Result
   
-  Return log.ContenidoCurso()
+  Return log.ContenidoCursosOrdenados()
+  'Return log.ContenidoCurso()
   
 End
 
 Public Function BuscarIdCurso(id As Integer) As CursoVO
+  
+  'si borro un curso tambien tengo que borrar las apariciones que haga en la tabla relaciones...
   
   Return log.BuscarIdCurso(id)
   
