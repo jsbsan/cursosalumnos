@@ -12,3 +12,11 @@ End
 Public Sub Form_Open()
   
 End
+
+Public Sub DateChooser1_KeyPress()
+  
+  If Key.code = Key.return Or Key.code = Key.enter Then 
+    ButtonAceptar.SetFocus()
+  Endif
+  
+End

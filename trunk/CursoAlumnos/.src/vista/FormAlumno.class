@@ -34,6 +34,7 @@ Public Sub ToolButtonCalendario_Click()
   
   TextBoxFECHANACIMIENTO.text = Format(Date(Year(fecha.tag), Month(fecha.tag), Day(fecha.tag)), "dd-mmmm-yyyy")
   TextBoxFECHANACIMIENTO.tag = fecha.tag
+  TextBoxDOMICILIO.SetFocus()
   
 End
 
@@ -161,6 +162,9 @@ Public Sub creaminifoto(ruta As String, Optional w As Integer, Optional h As Int
   
   Dim i As Image
   
+  If ruta = "" Then 
+    ruta = ControladorAplicacion.rutaTrabajo & "Fotos/transparente.png"
+  Endif
   i = Image.Load(ruta)
   
   If w = 0 And h = 0 Then 
@@ -188,6 +192,70 @@ Public Sub creaminifoto(ruta As String, Optional w As Integer, Optional h As Int
     Try i.Save(rutaFinal & "/" & File.Name(ruta))
     Return 
     
+  Endif
+  
+End
+
+Public Sub TextBoxNOMBRE_KeyPress()
+  
+  If Key.code = Key.return Or Key.code = Key.enter Then 
+    TextBoxAPELLIDOS.SetFocus()
+  Endif
+  
+End
+
+Public Sub TextBoxAPELLIDOS_KeyPress()
+  
+  If Key.code = Key.return Or Key.code = Key.enter Then 
+    TextBoxDOCUMENTO.SetFocus()
+  Endif
+  
+End
+
+Public Sub TextBoxDOCUMENTO_KeyPress()
+  
+  If Key.code = Key.return Or Key.code = Key.enter Then 
+    ToolButtonCalendario.SetFocus()
+  Endif
+  
+End
+
+Public Sub TextBoxDOMICILIO_KeyPress()
+  
+  If Key.code = Key.return Or Key.code = Key.enter Then 
+    TextBoxTELEFONO.SetFocus()
+  Endif
+  
+End
+
+Public Sub TextBoxTELEFONO_KeyPress()
+  
+  If Key.code = Key.return Or Key.code = Key.enter Then 
+    TextBoxNACIONALIDAD.SetFocus()
+  Endif
+  
+End
+
+Public Sub TextBoxNACIONALIDAD_KeyPress()
+  
+  If Key.code = Key.return Or Key.code = Key.enter Then 
+    TextBoxESCORIGEN.SetFocus()
+  Endif
+  
+End
+
+Public Sub TextBoxESCORIGEN_KeyPress()
+  
+  If Key.code = Key.return Or Key.code = Key.enter Then 
+    TextBoxLEGAJO.SetFocus()
+  Endif
+  
+End
+
+Public Sub TextBoxLEGAJO_KeyPress()
+  
+  If Key.code = Key.return Or Key.code = Key.enter Then 
+    ToolButtonAceptar.SetFocus()
   Endif
   
 End

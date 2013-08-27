@@ -18,15 +18,15 @@ msgstr ""
 msgid "Nombre del curso:"
 msgstr ""
 
-#: FormCurso.form:33
+#: FormCurso.form:28
 msgid "Detalle"
 msgstr ""
 
-#: FormCurso.form:38
+#: FormCurso.form:33
 msgid "Cancelar"
 msgstr ""
 
-#: FormCurso.form:45
+#: FormCurso.form:40
 msgid "Aceptar"
 msgstr ""
 

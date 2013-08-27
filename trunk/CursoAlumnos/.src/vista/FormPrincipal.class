@@ -10,7 +10,9 @@ Public Sub Form_Open()
   
   Dim alu As New Alumnodao
   Dim curs As New Cursodao
-  
+
+  Me.Title = "Control de Cursos y Alumnos"
+  TextLabelAcercaDe.text &= "<br> Version :" & Application.Version
   alu.gridFormatearColumnas(GridViewAlumno)
   regillaAlumno()
   curs.gridFormatearColumnas(GridViewCurso)
@@ -314,16 +316,16 @@ Public Sub GridViewCurso_Data(row As Integer, column As Integer)
   
 End
 
-Public Sub ToolButtonImprimir_Click()
+Public Sub ToolButtonImprimirListaAlumnos_Click()
   
-  Imprimir.ListaAlumnos
+  Imprimir.ListaAlumnos()
   
 End
 
-Public Sub ToolButtonImprimir2_Click()
-
+Public Sub ToolButtonImprimirListaCursos_Click()
+  
   Imprimir.ListaCusos()
-
+  
 End
 
 'Anchos y alto de columnas de los gridview..
@@ -362,5 +364,26 @@ End
 Public Sub GridViewCurso_DblClick()
   
   ToolButtonExpedienteCurso_Click()
+  
+End
+
+Public Sub ListBoxInforme_Click()
+  
+  Debug ListBoxInforme.Index, ListBoxInforme[ListBoxInforme.index].Text
+  
+  Select Case ListBoxInforme.Index
+    Case 0 'Lista de Alumnos
+      Imprimir.ListaAlumnos()
+    Case 1 'Lista de Alumnos con los cursos que participan
+      imprimir.ListaAlumnosConCursosParticipal()
+    Case 2 'Lista de Cursos
+      Imprimir.ListaCusos()
+    Case 3 ' Lista de Cursos y Alumnos que lo conforman 
+      imprimir.ListaCusosConAlumnosParticipal()
+    Case 4 'Expediente de Alumno determinado con lista de Cursos
+      imprimir.ExpedienteDeterminadoAlumno
+    Case 5 ' Expediente de Curso determinado con lista de Alumnos
+      imprimir.ExpedienteDeterminadoCurso
+  End Select
   
 End

@@ -9,16 +9,16 @@
     Text = ("Curso:")
   }
   { TextBoxNombre TextBox
-    MoveScaled(1,6,42,4)
+    MoveScaled(1,6,44,4)
     Background = &HBFBFBF&
     ReadOnly = True
   }
   { Label2 Label
-    MoveScaled(1,15,17,4)
+    MoveScaled(1,11,17,4)
     Text = ("Detalles:")
   }
   { TextAreaDetalle TextArea
-    MoveScaled(1,20,45,36)
+    MoveScaled(1,16,45,40)
     Background = &HBFBFBF&
     ReadOnly = True
   }
@@ -27,10 +27,10 @@
     Text = ("Alumnos en el curso:")
   }
   { GridViewRelacionAlumnos GridView
-    MoveScaled(49,10,72,52)
+    MoveScaled(49,10,73,52)
   }
   { ToolButtonAnnadirAlumnoCurso ToolButton
-    MoveScaled(49,0,20,5)
+    MoveScaled(49,1,20,4.2857)
     Font = Font["-2"]
     AutoResize = True
     Text = ("Añadir Alumno")
@@ -38,7 +38,7 @@
     Border = True
   }
   { ToolButtonBorrarAlumno ToolButton
-    MoveScaled(72,0,20,5)
+    MoveScaled(72,1,20,4.2857)
     Font = Font["-2"]
     AutoResize = True
     Text = ("Borrar Alumno")
@@ -46,7 +46,7 @@
     Border = True
   }
   { ToolButtonEditarAlumno ToolButton
-    MoveScaled(94,0,27,5)
+    MoveScaled(96,1,27,4.2857)
     Font = Font["-2"]
     AutoResize = True
     Text = ("Editar Observaciones")
@@ -54,14 +54,14 @@
     Border = True
   }
   { ToolButtonAceptar ToolButton
-    MoveScaled(35,57,12,5)
+    MoveScaled(35,57,12,4.2857)
     Font = Font["Andale Mono,-1"]
     Text = ("Aceptar")
     Picture = Picture["icon:/16/apply"]
     Border = True
   }
   { ToolButtonEditarCurso ToolButton
-    MoveScaled(0,57,13,5)
+    MoveScaled(0,57,13,4.2857)
     Font = Font["Andale Mono,-1"]
     AutoResize = True
     Text = ("Editar Curso")
@@ -69,7 +69,7 @@
     Border = True
   }
   { ToolButtonImprimir ToolButton
-    MoveScaled(19,57,7,5)
+    MoveScaled(19,57,7,4.2857)
     Font = Font["Andale Mono,-1"]
     AutoResize = True
     Text = ("Imprimir")

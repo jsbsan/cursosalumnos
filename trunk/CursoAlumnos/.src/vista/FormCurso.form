@@ -6,15 +6,11 @@
   Persistent = True
   Resizable = False
   { Label1 Label
-    MoveScaled(3,1,28,5)
+    MoveScaled(3,3,28,5)
     Text = ("Nombre del curso:")
   }
   { TextBoxNombreCurso TextBox
-    MoveScaled(3,5,57,6)
-  }
-  { TextAreaDetalle TextArea
-    MoveScaled(3,19,57,34)
-    Wrap = True
+    MoveScaled(3,8,57,6)
   }
   { Label2 Label
     MoveScaled(3,15,18,3)
@@ -31,5 +27,9 @@
     Text = ("Aceptar")
     Picture = Picture["icon:/16/apply"]
     Border = True
+  }
+  { TextAreaDetalle TextArea
+    MoveScaled(3,19,57,34)
+    Wrap = True
   }
 }

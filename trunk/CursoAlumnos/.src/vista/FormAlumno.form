@@ -5,18 +5,6 @@
   Icon = Picture["icon:/16/people"]
   Persistent = True
   Resizable = False
-  { ToolButtonAceptar ToolButton
-    MoveScaled(40,57,15,6)
-    Text = ("Aceptar")
-    Picture = Picture["icon:/16/apply"]
-    Border = True
-  }
-  { ToolButtonCancelar ToolButton
-    MoveScaled(9,57,15,6)
-    Text = ("Cancelar")
-    Picture = Picture["icon:/16/cancel"]
-    Border = True
-  }
   { Label1 Label
     MoveScaled(17,4,20,4)
     Text = ("Nombre:")
@@ -97,6 +85,7 @@
   { PictureBoxAlumno PictureBox
     MoveScaled(3,1,12.1429,17)
     Tag = "icono_fotos_personas.png"
+    ToolTip = ("haga click para elegir una imagen")
     Picture = Picture["icono_fotos_personas.png"]
     Stretch = True
     Border = Border.Plain
@@ -105,6 +94,18 @@
     MoveScaled(1,18,16,4)
     Text = ("webcam")
     Picture = Picture["camara_icono.png"]
+    Border = True
+  }
+  { ToolButtonCancelar ToolButton
+    MoveScaled(9,57,15,6)
+    Text = ("Cancelar")
+    Picture = Picture["icon:/16/cancel"]
+    Border = True
+  }
+  { ToolButtonAceptar ToolButton
+    MoveScaled(40,57,15,6)
+    Text = ("Aceptar")
+    Picture = Picture["icon:/16/apply"]
     Border = True
   }
 }

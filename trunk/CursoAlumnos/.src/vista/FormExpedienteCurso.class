@@ -37,7 +37,6 @@ Public Sub ToolButtonAnnadirAlumnoCurso_Click()
     rela.idCurso = TmpCurso.idCurso
     
     If ControladorAplicacion.anadirRelacion(rela) Then 
-      Message.Info("Alumno asignado al alumno")
       refrescarDatosAlumnos()
     Endif
     
@@ -80,11 +79,10 @@ Public Sub ToolButtonBorrarAlumno_Click()
   Dim idalumnoBorrar As Integer
   
   If GridViewRelacionAlumnos.row = -1 Then 
-    Message.Info("Seleccione un alumno")
+    Message.Info("Seleccione un Alumno")
   Else
     idalumnoBorrar = Val(GridViewRelacionAlumnos[GridViewRelacionAlumnos.row, 1].Text)
     If ControladorAplicacion.borrarAlumnoDeCursoIdAlumno(idalumnoBorrar) Then 
-      Message.Info("Alumno borrado del curso")
       refrescarDatosAlumnos()
       Return
     Endif
@@ -98,7 +96,7 @@ Public Sub ToolButtonEditarAlumno_Click()
   Dim textoObservacion As String
   
   If GridViewRelacionAlumnos.row = -1 Then 
-    Message.Info("Seleccione un curso")
+    Message.Info("Seleccione un Alumno")
   Else
     
     textoObservacion = InputBox("Introduzca Observación sobre " & 
@@ -116,7 +114,6 @@ Public Sub ToolButtonEditarAlumno_Click()
       
       If ControladorAplicacion.modificarIdRelacion(rela) Then 
         refrescarDatosAlumnos()
-        Message.Info("Observación modificada")
       Else
         Message.Error("No se ha podido modificar la observacion")
       Endif
@@ -169,6 +166,6 @@ End
 
 Public Sub ToolButtonImprimir_Click()
   
-  Imprimir.FichaCurso(TmpCurso.idCurso)
+  Imprimir.FichaCurso(TmpCurso.idCurso, True)
   
 End
