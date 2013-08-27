@@ -239,14 +239,13 @@ Public Sub ListaAlumnosConCursosParticipal()
     If Exist("/tmp/ListaTodosLosAlumnos/FichaAlumno" & Str(fila) & ".pdf") Then 
       Kill "/tmp/ListaTodosLosAlumnos/FichaAlumno" & Str(fila) & ".pdf"
     Endif
-    Wait 0.2
+    
+    Do While (Not Exist("/tmp/FichaAlumno.pdf"))
+      Wait 0.1
+    Loop
+    
     Try Move "/tmp/FichaAlumno.pdf" To "/tmp/ListaTodosLosAlumnos/FichaAlumno" & Str(fila) & ".pdf"
-    If Error Then 
-      'hago que espere 1 segundo
-      Wait 1
-      Try Move "/tmp/FichaAlumno.pdf" To "/tmp/ListaTodosLosAlumnos/FichaAlumno" & Str(fila) & ".pdf"
-      
-    Endif
+    
     resultadoTodosLosAlumnos.MoveNext()
   Loop
   
@@ -278,7 +277,11 @@ Public Sub ListaCusosConAlumnosParticipal()
     If Exist("/tmp/ListaTodosLosCursos/FichaCurso" & Str(fila) & ".pdf") Then 
       Kill "/tmp/ListaTodosLosCursos/FichaCurso" & Str(fila) & ".pdf"
     Endif
-    Wait 0.2
+    
+    Do While (Not Exist("/tmp/FichaCurso.pdf"))
+      Wait 0.1
+    Loop
+    
     Move "/tmp/FichaCurso.pdf" To "/tmp/ListaTodosLosCursos/FichaCurso" & Str(fila) & ".pdf"
     
     resultadoTodosLosCursos.MoveNext()
