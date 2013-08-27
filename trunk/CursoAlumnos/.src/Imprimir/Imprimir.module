@@ -287,12 +287,12 @@ Public Sub ListaCusosConAlumnosParticipal()
     resultadoTodosLosCursos.MoveNext()
   Loop
   
+  'abrir en la caperta temporal para ver los documentos pdf
+  Desktop.Open("/tmp/ListaTodosLosCursos")
   fpensando.parar = True
   fpensando.Close()
   fpensando = Null
-  'abrir en la caperta temporal para ver los documentos pdf
-  Desktop.Open("/tmp/ListaTodosLosCursos")
-  
+
 End
 
 '------------------------------------------
