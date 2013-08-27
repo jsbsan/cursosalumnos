@@ -68,6 +68,10 @@ Public Sub ToolButtonAceptar_Click()
   Shell comando Wait
   valor.dato = "/tmp/" & ModuleUtilidadesDisco.extraedesdebarra(Mid$(valor.dato, 1, Len(valor.dato) - Len(ModuleUtilidadesDisco.extraeExtension(valor.dato)))) & "png"
   
+  fpensando.parar = True
+  fpensando.Close()
+  fpensando = Null
+  
   Me.Close
   
 End
