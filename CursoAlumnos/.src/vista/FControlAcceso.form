@@ -43,9 +43,25 @@
     Picture = Picture["colegio13.jpg"]
   }
   { TextLabel1 TextLabel
-    MoveScaled(2,15,78,5)
+    MoveScaled(3,15,78,5)
+    Font = Font["Arial,Bold,+3"]
+    Foreground = &H4765BF&
+    Text = ("Control de Cursos y Alumnos")
+    Alignment = Align.Center
+  }
+  { TextLabel2 TextLabel
+    MoveScaled(3,15,78,4)
     Font = Font["Arial,Bold,+3"]
     Text = ("Control de Cursos y Alumnos")
     Alignment = Align.Center
+  }
+  { PictureBoxLogo PictureBox
+    MoveScaled(3,19,11,13)
+    Picture = Picture["libro.png"]
+  }
+  { PictureBox2 PictureBox
+    MoveScaled(69,19,11,13)
+    Picture = Picture["logo gambas.png"]
+    Stretch = True
   }
 }

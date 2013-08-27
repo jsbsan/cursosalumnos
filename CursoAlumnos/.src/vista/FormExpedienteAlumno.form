@@ -52,7 +52,7 @@
     Border = True
   }
   { ToolButtonEditarObservacion ToolButton
-    MoveScaled(43,26,23,5)
+    MoveScaled(44,26,23,5)
     Font = Font["Arial,-2"]
     AutoResize = True
     Text = ("Editar Observaciones")

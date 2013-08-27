@@ -9,14 +9,14 @@
     ShowFile = False
   }
   { ToolButtonAceptar ToolButton
-    MoveScaled(25,65,16,4)
+    MoveScaled(58,65,16,4)
     Font = Font["Arial,-2"]
     Text = ("Aceptar")
     Picture = Picture["icon:/22/apply"]
     Border = True
   }
   { ToolButtonCancelar ToolButton
-    MoveScaled(59,65,16,4)
+    MoveScaled(22,65,16,4)
     Font = Font["Arial,-2"]
     Text = ("Cancelar")
     Picture = Picture["icon:/22/cancel"]

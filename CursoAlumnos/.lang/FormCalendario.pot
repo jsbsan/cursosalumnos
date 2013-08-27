@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: FormCalendario.form:19
+#: FormCalendario.form:18
 msgid "Aceptar"
 msgstr ""
 

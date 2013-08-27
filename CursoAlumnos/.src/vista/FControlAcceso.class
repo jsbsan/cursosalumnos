@@ -17,7 +17,7 @@ End
 
 Public Sub ToolButtonCancelar_Click()
   'finaliza el programa
-
+  
   Me.Close(False)
   
 End
@@ -41,7 +41,7 @@ End
 Public Sub ToolButtonAceptar_Click()
   'compruebo validez de usuario/password
   
-  If intentos > 1 Then 
+  If intentos > 0 Then 
     
     If ControladorAplicacion.comprobarUsuarioPassword(TextBoxUsuario.TEXT, TextBoxContrasena.TEXT) Then 
       'Clave verdadera 

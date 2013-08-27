@@ -6,7 +6,7 @@ Public TmpCurso As CursoVO
 Public Sub Form_Open()
   
   Me.center
-  
+  Me.Title = "Curso"
   If TmpCurso.idCurso = 0 Then
     'limpio los textbox
     limpio()
@@ -66,5 +66,13 @@ Public Sub ToolButtonCancelar_Click()
   
   Me.Close()
   Return
+  
+End
+
+Public Sub TextBoxNombreCurso_KeyPress()
+  
+  If Key.code = Key.enter Or Key.code = Key.Return Then 
+    TextAreaDetalle.SetFocus()
+  Endif
   
 End

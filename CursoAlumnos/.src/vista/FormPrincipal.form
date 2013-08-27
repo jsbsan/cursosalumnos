@@ -8,11 +8,12 @@
   { VBox1 VBox
     MoveScaled(1,1,98,68)
     { Panel1 Panel
-      MoveScaled(0,0,77,14)
+      MoveScaled(0,0,98,14)
       Border = Border.Plain
       { PictureBox1 PictureBox
-        MoveScaled(0,0,79,15)
+        MoveScaled(0,0,96,14)
         Picture = Picture["colegio13.jpg"]
+        Stretch = True
       }
     }
     { IconPanelMenu IconPanel
@@ -20,37 +21,60 @@
       AutoResize = True
       Count = 6
       Index = 0
+      Text = ("Acerca de...")
+      Picture = Picture["icon:/16/question"]
+      { TextLabelAcercaDe TextLabel
+        MoveScaled(2,7,55,51)
+        Text = ("<h2>Control de Cursos y Alumnos</h2><br>\nRealizado por:<br>\n<i>Julio Sánchez Berro y Jorge Agustín Pereyra</i><br>\n<br>\n<br>\n<b>Nota:</b><br>\nEs necesario tener instalado las programas:<br>\nlatex-beamer <br>\ntexlive-latex-extra<br>\nPara la creación de informes<br>\n\n\n")
+        Alignment = Align.Center
+      }
+      { PictureBoxLogo PictureBox
+        MoveScaled(9,2,11,13)
+        Picture = Picture["libro.png"]
+      }
+      { PictureBox2 PictureBox
+        MoveScaled(41,1,11,13)
+        Picture = Picture["logo gambas.png"]
+        Stretch = True
+      }
+      Index = 1
       Text = ("Alumnos")
       Picture = Picture["icon:/16/people"]
       { HBox1 HBox
-        MoveScaled(1,1,73,4)
+        MoveScaled(1,1,76,4)
+        AutoResize = True
         { ToolButtonAnadir ToolButton
           MoveScaled(0,0,14,4)
+          Font = Font["Arial,-2"]
           Text = ("Añadir")
           Picture = Picture["icon:/16/add"]
           Border = True
         }
         { ToolButtonEditar ToolButton
           MoveScaled(14,0,14,4)
+          Font = Font["Arial,-2"]
           Text = ("Editar")
           Picture = Picture["icon:/16/edit"]
           Border = True
         }
         { ToolButtonBorrar ToolButton
           MoveScaled(28,0,14,4)
+          Font = Font["Arial,-2"]
           Text = ("Borrar")
           Picture = Picture["icon:/16/erase"]
           Border = True
         }
         { ToolButtonExpediente ToolButton
           MoveScaled(43,0,18,4)
+          Font = Font["Arial,-2"]
           Text = ("Expediente")
           Picture = Picture["icon:/16/view-detail"]
           Border = True
         }
-        { ToolButtonImprimir ToolButton
+        { ToolButtonImprimirListaAlumnos ToolButton
           MoveScaled(60,0,13,4)
-          Text = ("Imprimir")
+          Font = Font["Arial,-2"]
+          Text = ("Imprimir Lista")
           Picture = Picture["icon:/16/printer"]
           Border = True
         }
@@ -62,38 +86,43 @@
       { LabelMensajeAlumnos Label
         MoveScaled(1,5,73,4)
       }
-      Index = 1
+      Index = 2
       Text = ("Cursos")
       Picture = Picture["icon:/16/book"]
       { HBox2 HBox
         MoveScaled(1,1,75,4)
         { ToolButtonAnadirCurso ToolButton
-          MoveScaled(0,0,14,4)
+          MoveScaled(-1,0,14,4)
+          Font = Font["Arial,-2"]
           Text = ("Añadir")
           Picture = Picture["icon:/16/add"]
           Border = True
         }
         { ToolButtonEditarCurso ToolButton
-          MoveScaled(14,0,14,4)
+          MoveScaled(13,0,14,4)
+          Font = Font["Arial,-2"]
           Text = ("Editar")
           Picture = Picture["icon:/16/edit"]
           Border = True
         }
         { ToolButtonBorrarCurso ToolButton
-          MoveScaled(28,0,14,4)
+          MoveScaled(27,0,14,4)
+          Font = Font["Arial,-2"]
           Text = ("Borrar")
           Picture = Picture["icon:/16/erase"]
           Border = True
         }
         { ToolButtonExpedienteCurso ToolButton
-          MoveScaled(42,0,18,4)
+          MoveScaled(41,0,18,4)
+          Font = Font["Arial,-2"]
           Text = ("Expediente")
           Picture = Picture["icon:/16/view-detail"]
           Border = True
         }
-        { ToolButtonImprimir2 ToolButton
-          MoveScaled(61,0,13,4)
-          Text = ("Imprimir")
+        { ToolButtonImprimirListaCursos ToolButton
+          MoveScaled(60,0,13,4)
+          Font = Font["Arial,-2"]
+          Text = ("Imprimir Lista")
           Picture = Picture["icon:/16/printer"]
           Border = True
         }
@@ -105,7 +134,7 @@
       { LabelMensajeCursos Label
         MoveScaled(1,5,73,4)
       }
-      Index = 2
+      Index = 3
       Text = ("Listados")
       Picture = Picture["icon:/16/text"]
       { Label1 Label
@@ -115,14 +144,6 @@
       { ListBoxInforme ListBox
         MoveScaled(2,5,60,44)
         Enabled = False
-      }
-      Index = 3
-      Text = ("Acerca de...")
-      Picture = Picture["icon:/16/question"]
-      { TextLabel1 TextLabel
-        MoveScaled(0,0,55,51)
-        Text = ("Control de Cursos y Alumnos<br>\nRealizado por:<br>\nJulio Sánchez Berro y Jorge Agustín Pereyra\n\n\n")
-        Alignment = Align.Center
       }
       Index = 4
       Text = ("Administrador")

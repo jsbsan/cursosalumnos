@@ -2,7 +2,7 @@ main
 CursoAlumnos
 0
 0
-0.0.5
+0.0.9
 
 gb.image
 gb.gui
@@ -10,5 +10,6 @@ gb.form
 gb.db
 gb.db.form
 gb.db.sqlite3
+gb.desktop
 gb.settings
 
