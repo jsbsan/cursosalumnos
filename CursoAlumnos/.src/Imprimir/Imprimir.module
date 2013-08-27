@@ -229,20 +229,19 @@ Public Sub ListaAlumnosConCursosParticipal()
   
   'consultar todos los id
   resultadoTodosLosAlumnos = controladorAplicacion.ContenidoAlumnos() 
-  
+  ModuleUtilidadesDisco.vaciarDirectorio("/tmp/ListaTodosLosAlumnos")
   Try Mkdir "/tmp/ListaTodosLosAlumnos"
   'por cada id crear un documento
   Do While resultadoTodosLosAlumnos.Available
     Inc fila
     FichaAlumno(resultadoTodosLosAlumnos["idAlumno"], False)
+    Do While (Not Exist("/tmp/FichaAlumno.pdf"))
+      Wait 0.1
+    Loop
     
     If Exist("/tmp/ListaTodosLosAlumnos/FichaAlumno" & Str(fila) & ".pdf") Then 
       Kill "/tmp/ListaTodosLosAlumnos/FichaAlumno" & Str(fila) & ".pdf"
     Endif
-    
-    Do While (Not Exist("/tmp/FichaAlumno.pdf"))
-      Wait 0.1
-    Loop
     
     Try Move "/tmp/FichaAlumno.pdf" To "/tmp/ListaTodosLosAlumnos/FichaAlumno" & Str(fila) & ".pdf"
     
@@ -268,19 +267,20 @@ Public Sub ListaCusosConAlumnosParticipal()
   'consultar todos los id
   resultadoTodosLosCursos = controladorAplicacion.ContenidoCurso() 
   
+  ModuleUtilidadesDisco.vaciarDirectorio("/tmp/ListaTodosLosCursos")
+  
   Try Mkdir "/tmp/ListaTodosLosCursos"
   'por cada id crear un documento
   Do While resultadoTodosLosCursos.Available
-    Inc fila
+    fila += 1
     FichaCurso(resultadoTodosLosCursos["idCurso"], False)
+    Do While (Not Exist("/tmp/FichaCurso.pdf"))
+      Wait 0.1
+    Loop
     
     If Exist("/tmp/ListaTodosLosCursos/FichaCurso" & Str(fila) & ".pdf") Then 
       Kill "/tmp/ListaTodosLosCursos/FichaCurso" & Str(fila) & ".pdf"
     Endif
-    
-    Do While (Not Exist("/tmp/FichaCurso.pdf"))
-      Wait 0.1
-    Loop
     
     Move "/tmp/FichaCurso.pdf" To "/tmp/ListaTodosLosCursos/FichaCurso" & Str(fila) & ".pdf"
     
