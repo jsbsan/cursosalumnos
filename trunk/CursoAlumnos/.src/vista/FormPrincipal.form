@@ -153,7 +153,7 @@
         Text = ("Clave Actual:")
       }
       { ButtonCambiarClave Button
-        MoveScaled(22,39,15,4)
+        MoveScaled(35,37,15,4)
         Text = ("Cambiar")
         Picture = Picture["icon:/16/apply"]
       }
@@ -190,6 +190,13 @@
       { TextBoxUsuarioActual TextBox
         MoveScaled(25,6,25,4)
         Password = True
+      }
+      { ToolButtonVersion ToolButton
+        MoveScaled(5,44,58,5)
+        AutoResize = True
+        Text = ("Comprobar si existe nueva Versión del programa")
+        Picture = Picture["icon:/16/refresh"]
+        Border = True
       }
       Index = 5
       Text = ("Salir")

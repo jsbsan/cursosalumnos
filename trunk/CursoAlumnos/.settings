@@ -100,10 +100,10 @@ LastCommit="Formularios de expedientes de alumnos y cursos\n---- Esta línea y l
 [OpenFile]
 File[1]=".src/vista/FControlAcceso.form"
 File[2]=".src/vista/FControlAcceso.class:13.27"
-File[3]=".src/controlador/main.module:9.6"
+File[3]=".src/controlador/main.module:6.2"
 File[4]=".src/controlador/Controlador.class:140.33"
 File[5]=".src/vista/FormPrincipal.form"
-File[6]=".src/vista/FormPrincipal.class:245.50"
+File[6]=".src/vista/FormPrincipal.class:411.2"
 File[7]=".src/modelo/Logica.class:233.58"
 File[8]=".src/vista/FormAlumno.form"
 File[9]=".src/vista/FormAlumno.class:116.24"
@@ -134,8 +134,8 @@ File[33]=".src/Otros Formularios y Modulos/FormPensando.class:18.3"
 File[34]="icoLoading.gif"
 File[35]=".src/vista/FormEligeCurso.form"
 File[36]=".src/vista/FormEligeCurso.class:0.19"
+Active=37
 File[37]=".src/vista/FormEligeAlumno.form"
-Active=38
 File[38]=".src/vista/FormEligeAlumno.class:138.0"
 File[39]="esquema.MpBd:0.0"
 File[40]=".src/Imprimir/Imprimir.module:98.37"
@@ -156,7 +156,8 @@ File[54]="logo gambas.png"
 File[55]=".src/modelo/DAO/AlumnoDAO.class:0.19"
 File[56]=".src/modelo/DAO/CursoDAO.class:0.19"
 File[57]=".src/modelo/DAO/RelacionDAO.class:0.19"
-Count=57
+File[58]=".src/Otros Formularios y Modulos/ModuleUpdate.module:13.18"
+Count=58
 
 [VersionControl]
 RememberPassword=1

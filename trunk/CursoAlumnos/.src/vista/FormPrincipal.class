@@ -12,7 +12,7 @@ Public Sub Form_Open()
   Dim curs As New Cursodao
   
   Me.Title = "Control de Cursos y Alumnos"
-  TextLabelAcercaDe.text &= "<br> Version :" & Application.Version
+  TextLabelAcercaDe.text &= "<br> Version " & Application.Version
   alu.gridFormatearColumnas(GridViewAlumno)
   regillaAlumno()
   curs.gridFormatearColumnas(GridViewCurso)
@@ -403,5 +403,11 @@ Public Sub ListBoxInforme_Click()
     Case 5 ' Expediente de Curso determinado con lista de Alumnos
       imprimir.ExpedienteDeterminadoCurso
   End Select
+  
+End
+
+Public Sub ToolButtonVersion_Click()
+  
+  ModuleUpdate.comprobar("cursosalumnos", Application.Version, "http://controldecursosdealumnos.blogspot.com.es/2013/08/version.html")
   
 End
