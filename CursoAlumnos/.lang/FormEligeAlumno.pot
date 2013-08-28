@@ -14,15 +14,39 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: FormEligeAlumno.form:17
+#: FormEligeAlumno.form:24
 msgid "Alumnos Disponibles...."
 msgstr ""
 
-#: FormEligeAlumno.form:26
+#: FormEligeAlumno.form:33
 msgid "Aceptar"
 msgstr ""
 
-#: FormEligeAlumno.form:33
+#: FormEligeAlumno.form:40
 msgid "Cancelar"
+msgstr ""
+
+#: FormEligeAlumno.form:48
+msgid "Por nº Documento"
+msgstr ""
+
+#: FormEligeAlumno.form:54
+msgid "Por Legajo"
+msgstr ""
+
+#: FormEligeAlumno.form:60
+msgid "Por Apellidos"
+msgstr ""
+
+#: FormEligeAlumno.form:66
+msgid "Listar Todos"
+msgstr ""
+
+#: FormEligeAlumno.form:77
+msgid "Buscar"
+msgstr ""
+
+#: FormEligeAlumno.form:84
+msgid "Buscar....."
 msgstr ""
 

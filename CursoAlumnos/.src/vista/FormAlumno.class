@@ -114,12 +114,13 @@ Public Sub rellena(alu As AlumnoVO)
   TextBoxLEGAJO.Text = alu.Legajo
   TextBoxNACIONALIDAD.Text = alu.Nacionalidad
   
-  If alu.RutaFoto <> "transparente.png" Then 
+  If alu.RutaFoto <> "transparente.png" And alu.RutaFoto <> "" Then 
     
     PictureBoxAlumno.Tag = ControladorAplicacion.rutaTrabajo & "Fotos/" & alu.RutaFoto
     PictureBoxAlumno.Picture = Picture[ControladorAplicacion.rutaTrabajo & "Fotos/" & alu.RutaFoto]
   Else
     PictureBoxAlumno.Picture = Picture["icono_fotos_personas.png"]
+    PictureBoxAlumno.Tag = ""
   Endif
   TextBoxTELEFONO.Text = ""
   
@@ -165,6 +166,11 @@ Public Sub creaminifoto(ruta As String, Optional w As Integer, Optional h As Int
   If ruta = "" Then 
     ruta = ControladorAplicacion.rutaTrabajo & "Fotos/transparente.png"
   Endif
+  If Exist(ruta) Then 
+  Else
+    ruta = ControladorAplicacion.rutaTrabajo & "Fotos/transparente.png"
+  Endif
+  
   i = Image.Load(ruta)
   
   If w = 0 And h = 0 Then 

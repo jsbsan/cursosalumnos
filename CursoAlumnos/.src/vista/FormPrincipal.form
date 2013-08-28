@@ -11,7 +11,7 @@
       MoveScaled(0,0,98,14)
       Border = Border.Plain
       { PictureBox1 PictureBox
-        MoveScaled(0,0,96,14)
+        MoveScaled(0,1,96,14)
         Picture = Picture["colegio13.jpg"]
         Stretch = True
       }
@@ -112,10 +112,10 @@
           Picture = Picture["icon:/16/erase"]
           Border = True
         }
-        { ToolButtonExpedienteCurso ToolButton
+        { ToolButtonFichaCurso ToolButton
           MoveScaled(41,0,18,4)
           Font = Font["Arial,-2"]
-          Text = ("Expediente")
+          Text = ("Ficha")
           Picture = Picture["icon:/16/view-detail"]
           Border = True
         }

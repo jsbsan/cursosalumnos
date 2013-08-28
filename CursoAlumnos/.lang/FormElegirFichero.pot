@@ -30,3 +30,7 @@ msgstr ""
 msgid "Pegar (Url)"
 msgstr ""
 
+#: FormElegirFichero.class:45
+msgid "Elija un fichero o pulse Cancelar"
+msgstr ""
+

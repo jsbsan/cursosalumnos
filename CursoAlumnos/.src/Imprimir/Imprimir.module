@@ -95,7 +95,7 @@ Public Sub FichaCurso(idcurso As Integer, show As Boolean)
   doc.pageFooter("", "", "" & doc.pageNumber())
   
   stext &= doc.bold("Curso: ") & String.Upper$(curso.Nombre) & doc.CrLf()
-  stext &= doc.bold("Obsevaciones: ") & doc.CrLf()
+  stext &= doc.bold("Detalles: ") & doc.CrLf()
   stext &= curso.Detalle & doc.CrLf()
   stext &= doc.spaceV(0.5)
   stext &= doc.bold("Alumnos del Curso:")
@@ -292,7 +292,7 @@ Public Sub ListaCusosConAlumnosParticipal()
   fpensando.parar = True
   fpensando.Close()
   fpensando = Null
-
+  
 End
 
 '------------------------------------------

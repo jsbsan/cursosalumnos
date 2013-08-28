@@ -3,6 +3,14 @@
 Public ControladorAplicacion As Controlador
 Private resultadoAlumnos As Result
 Public AlumnoElegido As ClaseDato
+Private criterioBusqueda As Integer
+
+Public Sub Form_Open()
+  'muestra inicialmente todos los alumnos
+  
+  criterioBusqueda = 4
+  
+End
 
 Public Sub Form_show()
   
@@ -68,10 +76,6 @@ Public Sub GridViewAlumnos_Data(row As Integer, column As Integer)
   
 End
 
-Public Sub Form_Open()
-  
-End
-
 Private Sub regillaAlumno()
   
   With GridViewAlumnos    
@@ -83,5 +87,60 @@ Private Sub regillaAlumno()
     .Columns[6].width = 250
     .font.size = 8
   End With
+  
+End
+
+Public Sub ToolButtonBuscar_Click()
+  
+  Select Case criterioBusqueda
+    Case 1
+      'por documento
+      resultadoAlumnos = ControladorAplicacion.ContenidoDocumento(TextBoxPalabraBusqueda.text)
+    Case 2
+      'por apellidos
+      resultadoAlumnos = ControladorAplicacion.ContenidoApellidos(TextBoxPalabraBusqueda.text)
+    Case 3
+      'por un legajo
+      resultadoAlumnos = ControladorAplicacion.ContenidoLegajo(TextBoxPalabraBusqueda.text)
+    Case 4
+      'todos los alumnos
+      resultadoAlumnos = ControladorAplicacion.ContenidoAlumnos()
+  End Select
+  
+  'refresco datos 
+  GridViewAlumnos.Rows.count = 0 'lo ponemos a cero el numero de filas
+  GridViewAlumnos.Rows.count = resultadoAlumnos.count 'actualizamso al resultado de la consulta
+  
+End
+
+Public Sub RadioDocumento_Click()
+  
+  criterioBusqueda = 1
+  
+End
+
+Public Sub RadioApellidos_Click()
+  
+  criterioBusqueda = 2
+  
+End
+
+Public Sub RadioLegajo_Click()
+  
+  criterioBusqueda = 3
+  
+End
+
+Public Sub RadioListarTodos_Click()
+  
+  criterioBusqueda = 4
+  
+End
+
+Public Sub TextBoxPalabraBusqueda_KeyRelease()
+  
+  If criterioBusqueda <> 4 Then 
+    ToolButtonBuscar_Click()
+  Endif
   
 End
