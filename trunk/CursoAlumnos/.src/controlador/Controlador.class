@@ -101,6 +101,28 @@ Public Function ContenidoAlumnos() As Result
   
 End
 
+'BUSQUEDA POR VARIOS CRITERIOS....
+Public Function ContenidoDocumento(dato As String) As Result
+  
+  Return log.ContenidoDocumento(dato)  
+  
+End
+
+Public Function ContenidoApellidos(dato As String) As Result
+  
+  Return log.ContenidoApellidos(dato)
+  
+End
+
+Public Function ContenidoLegajo(dato As String) As Result
+  'por un legajo
+
+  Return log.ContenidoLegajo(dato)
+  
+End
+
+'-----------------------------------------------------------
+'
 Public Function ContenidoCurso() As Result
   
   Return log.ContenidoCursosOrdenados()
@@ -139,3 +161,4 @@ Public Function modificarIdRelacion(datos As RelacionVO) As Boolean
   Return log.modificarIdRelacion(datos)
   
 End
+

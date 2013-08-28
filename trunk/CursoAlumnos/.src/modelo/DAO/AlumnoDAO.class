@@ -23,18 +23,18 @@ Public Function registrar(NuevaAlumno As AlumnoVO) As Boolean
   Dim SQLString As String
   
   conectar.Conexion()
-  SQLString = "INSERT INTO Alumno(RutaFoto,idAlumno,Apellido,Nombre,Documento,FechaNacimiento,Domicilio,Telefono,Nacionalidad,EscOrigen,Legajo) Values ('"
-  SQLString &= NuevaAlumno.RutaFoto
-  SQLString &= "'," & "null" ' NuevaAlumno.idAlumno
-  SQLString &= ",'" & NuevaAlumno.Apellido
-  SQLString &= "','" & NuevaAlumno.Nombre
-  SQLString &= "','" & NuevaAlumno.Documento
-  SqlString &= "','" & Format(NuevaAlumno.FechaNacimiento, "yyyy-mm-dd") 
-  SQLString &= "','" & NuevaAlumno.Domicilio
-  SQLString &= "','" & NuevaAlumno.Telefono
-  SQLString &= "','" & NuevaAlumno.Nacionalidad
-  SQLString &= "','" & NuevaAlumno.EscOrigen
-  SQLString &= "','" & NuevaAlumno.Legajo & "')"
+  SQLString = "INSERT INTO Alumno(RutaFoto,idAlumno,Apellido,Nombre,Documento,FechaNacimiento,Domicilio,Telefono,Nacionalidad,EscOrigen,Legajo) Values ("
+  SQLString &= "'" & NuevaAlumno.RutaFoto & "'"
+  SQLString &= ",Null" 
+  SQLString &= ",'" & NuevaAlumno.Apellido & "'"
+  SQLString &= ",'" & NuevaAlumno.Nombre & "'"
+  SQLString &= ",'" & NuevaAlumno.Documento & "'"
+  SqlString &= ",'" & Format(NuevaAlumno.FechaNacimiento, "yyyy-mm-dd") & "'" 
+  SQLString &= ",'" & NuevaAlumno.Domicilio & "'"
+  SQLString &= ",'" & NuevaAlumno.Telefono & "'"
+  SQLString &= ",'" & NuevaAlumno.Nacionalidad & "'"
+  SQLString &= ",'" & NuevaAlumno.EscOrigen & "'"
+  SQLString &= ",'" & NuevaAlumno.Legajo & "')"
   Try conectar.hconn.Exec(SQLString) 
   If Error Then 
     Message.Error(" Se ha producido un ERROR al Intentar insertar datos, revise ID,  " & "\nError:  " & error.text)
@@ -573,7 +573,7 @@ Public Function BuscarContenidoRutaFoto(valor As String, Optional CampoOrden As 
   If CampoOrden = Null Then 
     SQlString &= " WHERE RutaFoto like '%" & valor & "%' "
   Else 
-    SQlString &= " WHERE RutaFoto like '%" & valor & "%'  Order by CampoOrden"
+    SQlString &= " WHERE RutaFoto like '%" & valor & "%'  Order by " & CampoOrden
   Endif 
   Try mRs = conectar.hconn.Exec(SQLString) 
   If Error Then 
@@ -595,7 +595,7 @@ Public Function BuscarIgualRutaFoto(valor As String, Optional CampoOrden As Stri
   If CampoOrden = Null Then 
     SQlString &= " WHERE RutaFoto like '" & valor & "' "
   Else 
-    SQlString &= " WHERE RutaFoto like '" & valor & "'  Order by CampoOrden"
+    SQlString &= " WHERE RutaFoto like '" & valor & "'   Order by " & CampoOrden
   Endif 
   Try mRs = conectar.hconn.Exec(SQLString) 
   If Error Then 
@@ -617,73 +617,7 @@ Public Function BuscarIgualIdAlumno(valor As Integer, Optional CampoOrden As Str
   If CampoOrden = Null Then 
     SQlString &= " WHERE idAlumno like '" & valor & "' "
   Else 
-    SQlString &= " WHERE idAlumno like '" & valor & "'  Order by CampoOrden"
-  Endif 
-  Try mRs = conectar.hconn.Exec(SQLString) 
-  If Error Then 
-    Message.Error(" Se ha producido un ERROR al Buscar datos, " & "\nError: " & error.text)
-  Else 
-    Return mRs
-  Endif 
-  
-End  
-
-Public Function BuscarMenorQueIdAlumno(valor As Integer, Optional CampoOrden As String) As Result
-  
-  Dim conectar As New Conexion
-  Dim SQLString As String
-  Dim mRs As Result
-  
-  conectar.Conexion()
-  SQLString = "Select * From Alumno"
-  If CampoOrden = Null Then 
-    SQlString &= " WHERE idAlumno<" & valor 
-  Else 
-    SQlString &= " WHERE idAlumno<" & valor & "  Order by CampoOrden"
-  Endif 
-  Try mRs = conectar.hconn.Exec(SQLString) 
-  If Error Then 
-    Message.Error(" Se ha producido un ERROR al Buscar datos, " & "\nError: " & error.text)
-  Else 
-    Return mRs
-  Endif 
-  
-End  
-
-Public Function BuscarMayorQueIdAlumno(valor As Integer, Optional CampoOrden As String) As Result
-  
-  Dim conectar As New Conexion
-  Dim SQLString As String
-  Dim mRs As Result
-  
-  conectar.Conexion()
-  SQLString = "Select * From Alumno"
-  If CampoOrden = Null Then 
-    SQlString &= " WHERE idAlumno>" & valor  
-  Else 
-    SQlString &= " WHERE idAlumno>" & valor & " Order by CampoOrden"
-  Endif 
-  Try mRs = conectar.hconn.Exec(SQLString) 
-  If Error Then 
-    Message.Error(" Se ha producido un ERROR al Buscar datos, " & "\nError: " & error.text)
-  Else 
-    Return mRs
-  Endif 
-  
-End  
-
-Public Function BuscarEntreIdAlumno(valorMin As Integer, valorMax As Integer, Optional CampoOrden As String) As Result
-  
-  Dim conectar As New Conexion
-  Dim SQLString As String
-  Dim mRs As Result
-  
-  conectar.Conexion()
-  SQLString = "Select * From Alumno"
-  If CampoOrden = Null Then 
-    SQlString &= " WHERE idAlumno BETWEEN " & valorMin & " And " & valorMax  
-  Else 
-    SQlString &= " WHERE idAlumno BETWEEN " & valorMin & " And " & valorMax & "Order by CampoOrden"
+    SQlString &= " WHERE idAlumno like '" & valor & "'   Order by " & CampoOrden
   Endif 
   Try mRs = conectar.hconn.Exec(SQLString) 
   If Error Then 
@@ -705,7 +639,7 @@ Public Function BuscarContenidoApellido(valor As String, Optional CampoOrden As 
   If CampoOrden = Null Then 
     SQlString &= " WHERE Apellido like '%" & valor & "%' "
   Else 
-    SQlString &= " WHERE Apellido like '%" & valor & "%'  Order by CampoOrden"
+    SQlString &= " WHERE Apellido like '%" & valor & "%'  Order by " & CampoOrden
   Endif 
   Try mRs = conectar.hconn.Exec(SQLString) 
   If Error Then 
@@ -727,7 +661,7 @@ Public Function BuscarIgualApellido(valor As String, Optional CampoOrden As Stri
   If CampoOrden = Null Then 
     SQlString &= " WHERE Apellido like '" & valor & "' "
   Else 
-    SQlString &= " WHERE Apellido like '" & valor & "'  Order by CampoOrden"
+    SQlString &= " WHERE Apellido like '" & valor & "'   Order by " & CampoOrden
   Endif 
   Try mRs = conectar.hconn.Exec(SQLString) 
   If Error Then 
@@ -749,7 +683,7 @@ Public Function BuscarContenidoNombre(valor As String, Optional CampoOrden As St
   If CampoOrden = Null Then 
     SQlString &= " WHERE Nombre like '%" & valor & "%' "
   Else 
-    SQlString &= " WHERE Nombre like '%" & valor & "%'  Order by CampoOrden"
+    SQlString &= " WHERE Nombre like '%" & valor & "%'  Order by " & CampoOrden
   Endif 
   Try mRs = conectar.hconn.Exec(SQLString) 
   If Error Then 
@@ -771,7 +705,7 @@ Public Function BuscarIgualNombre(valor As String, Optional CampoOrden As String
   If CampoOrden = Null Then 
     SQlString &= " WHERE Nombre like '" & valor & "' "
   Else 
-    SQlString &= " WHERE Nombre like '" & valor & "'  Order by CampoOrden"
+    SQlString &= " WHERE Nombre like '" & valor & "'   Order by " & CampoOrden
   Endif 
   Try mRs = conectar.hconn.Exec(SQLString) 
   If Error Then 
@@ -793,7 +727,7 @@ Public Function BuscarContenidoDocumento(valor As String, Optional CampoOrden As
   If CampoOrden = Null Then 
     SQlString &= " WHERE Documento like '%" & valor & "%' "
   Else 
-    SQlString &= " WHERE Documento like '%" & valor & "%'  Order by CampoOrden"
+    SQlString &= " WHERE Documento like '%" & valor & "%'  Order by " & CampoOrden
   Endif 
   Try mRs = conectar.hconn.Exec(SQLString) 
   If Error Then 
@@ -815,7 +749,7 @@ Public Function BuscarIgualDocumento(valor As String, Optional CampoOrden As Str
   If CampoOrden = Null Then 
     SQlString &= " WHERE Documento like '" & valor & "' "
   Else 
-    SQlString &= " WHERE Documento like '" & valor & "'  Order by CampoOrden"
+    SQlString &= " WHERE Documento like '" & valor & "'   Order by " & CampoOrden
   Endif 
   Try mRs = conectar.hconn.Exec(SQLString) 
   If Error Then 
@@ -837,7 +771,7 @@ Public Function BuscarIgualFechaNacimiento(valor As Date, Optional CampoOrden As
   If CampoOrden = Null Then 
     SQlString &= " WHERE FechaNacimiento like '" & valor & "' "
   Else 
-    SQlString &= " WHERE FechaNacimiento like '" & valor & "'  Order by CampoOrden"
+    SQlString &= " WHERE FechaNacimiento like '" & valor & "'   Order by " & CampoOrden
   Endif 
   Try mRs = conectar.hconn.Exec(SQLString) 
   If Error Then 
@@ -859,7 +793,7 @@ Public Function BuscarMenorQueFechaNacimiento(valor As Date, Optional CampoOrden
   If CampoOrden = Null Then 
     SQlString &= " WHERE FechaNacimiento<" & valor 
   Else 
-    SQlString &= " WHERE FechaNacimiento<" & valor & "  Order by CampoOrden"
+    SQlString &= " WHERE FechaNacimiento<" & valor & "   Order by " & CampoOrden
   Endif 
   Try mRs = conectar.hconn.Exec(SQLString) 
   If Error Then 
@@ -881,7 +815,7 @@ Public Function BuscarMayorQueFechaNacimiento(valor As Date, Optional CampoOrden
   If CampoOrden = Null Then 
     SQlString &= " WHERE FechaNacimiento>" & valor  
   Else 
-    SQlString &= " WHERE FechaNacimiento>" & valor & " Order by CampoOrden"
+    SQlString &= " WHERE FechaNacimiento>" & valor & "  Order by " & CampoOrden
   Endif 
   Try mRs = conectar.hconn.Exec(SQLString) 
   If Error Then 
@@ -903,7 +837,7 @@ Public Function BuscarEntreFechaNacimiento(valorMin As Date, valorMax As Date, O
   If CampoOrden = Null Then 
     SQlString &= " WHERE FechaNacimiento BETWEEN " & valorMin & " And " & valorMax  
   Else 
-    SQlString &= " WHERE FechaNacimiento BETWEEN " & valorMin & " And " & valorMax & "Order by CampoOrden"
+    SQlString &= " WHERE FechaNacimiento BETWEEN " & valorMin & " And " & valorMax & " Order by " & CampoOrden
   Endif 
   Try mRs = conectar.hconn.Exec(SQLString) 
   If Error Then 
@@ -925,7 +859,7 @@ Public Function BuscarContenidoDomicilio(valor As String, Optional CampoOrden As
   If CampoOrden = Null Then 
     SQlString &= " WHERE Domicilio like '%" & valor & "%' "
   Else 
-    SQlString &= " WHERE Domicilio like '%" & valor & "%'  Order by CampoOrden"
+    SQlString &= " WHERE Domicilio like '%" & valor & "%'  Order by " & CampoOrden
   Endif 
   Try mRs = conectar.hconn.Exec(SQLString) 
   If Error Then 
@@ -947,7 +881,7 @@ Public Function BuscarIgualDomicilio(valor As String, Optional CampoOrden As Str
   If CampoOrden = Null Then 
     SQlString &= " WHERE Domicilio like '" & valor & "' "
   Else 
-    SQlString &= " WHERE Domicilio like '" & valor & "'  Order by CampoOrden"
+    SQlString &= " WHERE Domicilio like '" & valor & "'   Order by " & CampoOrden
   Endif 
   Try mRs = conectar.hconn.Exec(SQLString) 
   If Error Then 
@@ -969,7 +903,7 @@ Public Function BuscarContenidoTelefono(valor As String, Optional CampoOrden As 
   If CampoOrden = Null Then 
     SQlString &= " WHERE Telefono like '%" & valor & "%' "
   Else 
-    SQlString &= " WHERE Telefono like '%" & valor & "%'  Order by CampoOrden"
+    SQlString &= " WHERE Telefono like '%" & valor & "%'  Order by " & CampoOrden
   Endif 
   Try mRs = conectar.hconn.Exec(SQLString) 
   If Error Then 
@@ -991,7 +925,7 @@ Public Function BuscarIgualTelefono(valor As String, Optional CampoOrden As Stri
   If CampoOrden = Null Then 
     SQlString &= " WHERE Telefono like '" & valor & "' "
   Else 
-    SQlString &= " WHERE Telefono like '" & valor & "'  Order by CampoOrden"
+    SQlString &= " WHERE Telefono like '" & valor & "'   Order by " & CampoOrden
   Endif 
   Try mRs = conectar.hconn.Exec(SQLString) 
   If Error Then 
@@ -1013,7 +947,7 @@ Public Function BuscarContenidoNacionalidad(valor As String, Optional CampoOrden
   If CampoOrden = Null Then 
     SQlString &= " WHERE Nacionalidad like '%" & valor & "%' "
   Else 
-    SQlString &= " WHERE Nacionalidad like '%" & valor & "%'  Order by CampoOrden"
+    SQlString &= " WHERE Nacionalidad like '%" & valor & "%'  Order by " & CampoOrden
   Endif 
   Try mRs = conectar.hconn.Exec(SQLString) 
   If Error Then 
@@ -1035,7 +969,7 @@ Public Function BuscarIgualNacionalidad(valor As String, Optional CampoOrden As 
   If CampoOrden = Null Then 
     SQlString &= " WHERE Nacionalidad like '" & valor & "' "
   Else 
-    SQlString &= " WHERE Nacionalidad like '" & valor & "'  Order by CampoOrden"
+    SQlString &= " WHERE Nacionalidad like '" & valor & "'   Order by " & CampoOrden
   Endif 
   Try mRs = conectar.hconn.Exec(SQLString) 
   If Error Then 
@@ -1057,7 +991,7 @@ Public Function BuscarContenidoEscOrigen(valor As String, Optional CampoOrden As
   If CampoOrden = Null Then 
     SQlString &= " WHERE EscOrigen like '%" & valor & "%' "
   Else 
-    SQlString &= " WHERE EscOrigen like '%" & valor & "%'  Order by CampoOrden"
+    SQlString &= " WHERE EscOrigen like '%" & valor & "%'  Order by " & CampoOrden
   Endif 
   Try mRs = conectar.hconn.Exec(SQLString) 
   If Error Then 
@@ -1079,7 +1013,7 @@ Public Function BuscarIgualEscOrigen(valor As String, Optional CampoOrden As Str
   If CampoOrden = Null Then 
     SQlString &= " WHERE EscOrigen like '" & valor & "' "
   Else 
-    SQlString &= " WHERE EscOrigen like '" & valor & "'  Order by CampoOrden"
+    SQlString &= " WHERE EscOrigen like '" & valor & "'   Order by " & CampoOrden
   Endif 
   Try mRs = conectar.hconn.Exec(SQLString) 
   If Error Then 
@@ -1101,7 +1035,7 @@ Public Function BuscarContenidoLegajo(valor As String, Optional CampoOrden As St
   If CampoOrden = Null Then 
     SQlString &= " WHERE Legajo like '%" & valor & "%' "
   Else 
-    SQlString &= " WHERE Legajo like '%" & valor & "%'  Order by CampoOrden"
+    SQlString &= " WHERE Legajo like '%" & valor & "%'  Order by " & CampoOrden
   Endif 
   Try mRs = conectar.hconn.Exec(SQLString) 
   If Error Then 
@@ -1123,7 +1057,7 @@ Public Function BuscarIgualLegajo(valor As String, Optional CampoOrden As String
   If CampoOrden = Null Then 
     SQlString &= " WHERE Legajo like '" & valor & "' "
   Else 
-    SQlString &= " WHERE Legajo like '" & valor & "'  Order by CampoOrden"
+    SQlString &= " WHERE Legajo like '" & valor & "'   Order by " & CampoOrden
   Endif 
   Try mRs = conectar.hconn.Exec(SQLString) 
   If Error Then 
@@ -1137,7 +1071,7 @@ End
 Public Function sql(consulta As String) As Result
   
   Dim conectar As New Conexion
-  ' Dim SQLString As String
+  Dim SQLString As String
   Dim mRs As Result
   
   conectar.Conexion()
@@ -1150,11 +1084,11 @@ End
 Public Function informe() As String
   
   Dim texto As String
-  
+
   Print "Base de datos: CursosAlumnos"
   Print "        Tabla: Alumno"
   Print "             Campo: RutaFoto Tipo: String"
-  Print "             Campo: idAlumno Tipo: Integer"
+  Print "             Campo: idAlumno Tipo: Null"
   Print "             Campo: Apellido Tipo: String"
   Print "             Campo: Nombre Tipo: String"
   Print "             Campo: Documento Tipo: String"
@@ -1167,7 +1101,7 @@ Public Function informe() As String
   texto = "Base_de_datos:|CursosAlumnos|"
   texto &= "Tabla:|Alumno"
   texto &= "|campo:|RutaFoto|tipo:|String"
-  texto &= "|campo:|idAlumno|tipo:|Integer"
+  texto &= "|campo:|idAlumno|tipo:|Null"
   texto &= "|campo:|Apellido|tipo:|String"
   texto &= "|campo:|Nombre|tipo:|String"
   texto &= "|campo:|Documento|tipo:|String"
@@ -1178,11 +1112,11 @@ Public Function informe() As String
   texto &= "|campo:|EscOrigen|tipo:|String"
   texto &= "|campo:|Legajo|tipo:|String"
   Return texto 
-  
+
 End
 
 Public Function gridFormatearColumnas(grid As GridView) As Gridview
-  
+
   With grid 
     .header = 3 
     .rows.count = 0 
@@ -1215,11 +1149,11 @@ Public Function gridFormatearColumnas(grid As GridView) As Gridview
     .Foreground = 0 
   End With
   Return grid 
-  
+
 End
 
 Public Function gridFormatearFilas(grid As GridView) As Gridview  
-  
+
   With grid  
     .header = 3 
     .rows.count = 11
@@ -1254,27 +1188,26 @@ Public Function gridFormatearFilas(grid As GridView) As Gridview
   grid[10, 0].text = "Legajo" 
   grid[10, 0].background = color.lightgray  
   Return grid 
-  
+
 End
 
 Public Sub contenido() As Result 
-  
+
   Dim conectar As New Conexion
   Dim SQLString As String
   Dim mRs As Result
-  
+
   conectar.Conexion()
   SQLString = "SELECT * FROM Alumno" 
   Try mRs = conectar.hconn.Exec(SQLString) 
   If Error Then message.info("Consulta erronea, revisela")
   Return mRs 
-  
+
 End 
 
 Public Function mostrarRegistro(numero As Integer, grid As GridView, Optional sqlcadena As String) As Result
-  
+
   Dim resultado As Result
-  
   If sqlcadena = Null Then 
     resultado = contenido()
   Else 
@@ -1292,14 +1225,15 @@ Public Function mostrarRegistro(numero As Integer, grid As GridView, Optional sq
   Try grid[8, 1].text = Str$(resultado!Nacionalidad)
   Try grid[9, 1].text = Str$(resultado!EscOrigen)
   Try grid[10, 1].text = Str$(resultado!Legajo)
-  
+
 End
 
 Public Function GridResultanteSQL(res As Result, grid As GridView) As Gridview  
-  
+
   Dim columna As Integer
   Dim hField As ResultField
-  
+  Dim a As Integer
+  Dim fila As Integer
   'defino la regilla
   With grid 
     .header = 3 
@@ -1315,17 +1249,17 @@ Public Function GridResultanteSQL(res As Result, grid As GridView) As Gridview
     .Background = 16777215 
     .Foreground = 0 
   End With
-  'relleno los datos procedentes de la consulta en las filas...
-  ' Grid.Rows.count = res.Count
+  'NO HACE FALTA:relleno los datos procedentes de la consulta en las filas...
+  'Grid.Rows.count = res.Count
   ' fila = -1
-  ' Do While res.Available
-  '  Inc fila
-  '  For a = 0 To grid.columns.count - 1
-  '    'PRINT grid.Columns[a].title
-  '    grid[fila, a].text = res[grid.Columns[a].title] ' nombre 'grid.Columns[a].title]
-  '  Next 
-  '  res.MoveNext()
-  'Loop
-  Return grid 
-  
+'  DO WHILE res.Available
+'   INC fila
+'    FOR a = 0 TO grid.columns.count - 1
+'    'PRINT grid.Columns[a].title
+'     grid[fila, a].text = res[grid.Columns[a].title] ' nombre 'grid.Columns[a].title]
+'    NEXT 
+'    res.MoveNext()
+'  LOOP
+ Return grid 
 End
+

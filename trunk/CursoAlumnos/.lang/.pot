@@ -27,14 +27,14 @@ msgid "Contraseña:"
 msgstr ""
 
 #: FControlAcceso.form:39 FormAlumno.form:155 FormCalendario.form:18
-#: FormCurso.form:40 FormElegirFichero.form:23 FormEligeAlumno.form:26
+#: FormCurso.form:40 FormElegirFichero.form:23 FormEligeAlumno.form:33
 #: FormEligeCurso.form:26 FormExpedienteAlumno.form:97
 #: FormExpedienteCurso.form:83
 msgid "Aceptar"
 msgstr ""
 
 #: FControlAcceso.form:46 FormAlumno.form:148 FormCurso.form:33
-#: FormElegirFichero.form:31 FormEligeAlumno.form:33 FormEligeCurso.form:33
+#: FormElegirFichero.form:31 FormEligeAlumno.form:40 FormEligeCurso.form:33
 msgid "Cancelar"
 msgstr ""
 
@@ -110,8 +110,36 @@ msgstr ""
 msgid "Pegar (Url)"
 msgstr ""
 
-#: FormEligeAlumno.form:17
+#: FormElegirFichero.class:45
+msgid "Elija un fichero o pulse Cancelar"
+msgstr ""
+
+#: FormEligeAlumno.form:24
 msgid "Alumnos Disponibles...."
+msgstr ""
+
+#: FormEligeAlumno.form:48
+msgid "Por nº Documento"
+msgstr ""
+
+#: FormEligeAlumno.form:54
+msgid "Por Legajo"
+msgstr ""
+
+#: FormEligeAlumno.form:60
+msgid "Por Apellidos"
+msgstr ""
+
+#: FormEligeAlumno.form:66
+msgid "Listar Todos"
+msgstr ""
+
+#: FormEligeAlumno.form:77
+msgid "Buscar"
+msgstr ""
+
+#: FormEligeAlumno.form:84
+msgid "Buscar....."
 msgstr ""
 
 #: FormEligeCurso.form:17
@@ -236,6 +264,10 @@ msgstr ""
 
 #: FormPrincipal.form:142
 msgid "Cursos"
+msgstr ""
+
+#: FormPrincipal.form:175
+msgid "Ficha"
 msgstr ""
 
 #: FormPrincipal.form:198

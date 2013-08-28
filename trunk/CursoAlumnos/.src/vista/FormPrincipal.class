@@ -10,7 +10,7 @@ Public Sub Form_Open()
   
   Dim alu As New Alumnodao
   Dim curs As New Cursodao
-
+  
   Me.Title = "Control de Cursos y Alumnos"
   TextLabelAcercaDe.text &= "<br> Version :" & Application.Version
   alu.gridFormatearColumnas(GridViewAlumno)
@@ -206,7 +206,7 @@ Public Sub ButtonCambiarClave_Click()
   
 End
 
-Public Sub ToolButtonExpedienteCurso_Click()
+Public Sub ToolButtonFichaCurso_Click()
   
   Dim cur As New CursoVO
   
@@ -227,14 +227,32 @@ End
 Public Sub ToolButtonExpediente_Click()
   
   Dim alu As New AlumnoVO
+  Dim Alumnoelegido As New ClaseDato
   
   If GridViewAlumno.row = -1 Then 
     'no puedo editar ya que no esta el cursor puesto en el gridvies
-    Message.Info("Seleccione un alumno")
+    
+    ControladorAplicacion.eligeAlumno.AlumnoElegido = Alumnoelegido
+    ControladorAplicacion.eligeAlumno.showmodal()
+    If Alumnoelegido.tag = "" Then
+      'no ha elegido nada
+      Return
+      
+    Else
+      
+      alu = ControladorAplicacion.BuscarIdalumno(Alumnoelegido.tag)
+      alu.idAlumno = Alumnoelegido.tag
+      ControladorAplicacion.fexpAlumno.TmpAlumno = alu
+      ControladorAplicacion.fexpAlumno.ShowModal()
+      RefrescarDatosAlumnos()
+      
+    Endif
+    
   Else
     
     alu = ControladorAplicacion.BuscarIdalumno(Val(GridViewAlumno[GridViewAlumno.row, 1].Text))
     alu.idAlumno = Val(GridViewAlumno[GridViewAlumno.row, 1].Text)
+    
     ControladorAplicacion.fexpAlumno.TmpAlumno = alu
     ControladorAplicacion.fexpAlumno.ShowModal()
     RefrescarDatosAlumnos()
@@ -363,7 +381,7 @@ End
 
 Public Sub GridViewCurso_DblClick()
   
-  ToolButtonExpedienteCurso_Click()
+  ToolButtonFichaCurso_Click()
   
 End
 

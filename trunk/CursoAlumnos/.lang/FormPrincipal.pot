@@ -54,6 +54,10 @@ msgstr ""
 msgid "Cursos"
 msgstr ""
 
+#: FormPrincipal.form:175
+msgid "Ficha"
+msgstr ""
+
 #: FormPrincipal.form:198
 msgid "Listados"
 msgstr ""

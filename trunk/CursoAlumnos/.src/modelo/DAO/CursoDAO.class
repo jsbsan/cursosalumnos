@@ -24,9 +24,9 @@ Public Function registrar(NuevaCurso As CursoVO) As Boolean
   
   conectar.Conexion()
   SQLString = "INSERT INTO Curso(idCurso,Nombre,Detalle) Values ("
-  SQLString &= "null" ' NuevaCurso.idCurso
-  SQLString &= ",'" & NuevaCurso.Nombre
-  SQLString &= "','" & NuevaCurso.Detalle & "')"
+  SQLString &= "Null" 
+  SQLString &= ",'" & NuevaCurso.Nombre & "'"
+  SQLString &= ",'" & NuevaCurso.Detalle & "')"
   Try conectar.hconn.Exec(SQLString) 
   If Error Then 
     Message.Error(" Se ha producido un ERROR al Intentar insertar datos, revise ID,  " & "\nError:  " & error.text)
@@ -165,73 +165,7 @@ Public Function BuscarIgualIdCurso(valor As Integer, Optional CampoOrden As Stri
   If CampoOrden = Null Then 
     SQlString &= " WHERE idCurso like '" & valor & "' "
   Else 
-    SQlString &= " WHERE idCurso like '" & valor & "'  Order by CampoOrden"
-  Endif 
-  Try mRs = conectar.hconn.Exec(SQLString) 
-  If Error Then 
-    Message.Error(" Se ha producido un ERROR al Buscar datos, " & "\nError: " & error.text)
-  Else 
-    Return mRs
-  Endif 
-  
-End  
-
-Public Function BuscarMenorQueIdCurso(valor As Integer, Optional CampoOrden As String) As Result
-  
-  Dim conectar As New Conexion
-  Dim SQLString As String
-  Dim mRs As Result
-  
-  conectar.Conexion()
-  SQLString = "Select * From Curso"
-  If CampoOrden = Null Then 
-    SQlString &= " WHERE idCurso<" & valor 
-  Else 
-    SQlString &= " WHERE idCurso<" & valor & "  Order by CampoOrden"
-  Endif 
-  Try mRs = conectar.hconn.Exec(SQLString) 
-  If Error Then 
-    Message.Error(" Se ha producido un ERROR al Buscar datos, " & "\nError: " & error.text)
-  Else 
-    Return mRs
-  Endif 
-  
-End  
-
-Public Function BuscarMayorQueIdCurso(valor As Integer, Optional CampoOrden As String) As Result
-  
-  Dim conectar As New Conexion
-  Dim SQLString As String
-  Dim mRs As Result
-  
-  conectar.Conexion()
-  SQLString = "Select * From Curso"
-  If CampoOrden = Null Then 
-    SQlString &= " WHERE idCurso>" & valor  
-  Else 
-    SQlString &= " WHERE idCurso>" & valor & " Order by CampoOrden"
-  Endif 
-  Try mRs = conectar.hconn.Exec(SQLString) 
-  If Error Then 
-    Message.Error(" Se ha producido un ERROR al Buscar datos, " & "\nError: " & error.text)
-  Else 
-    Return mRs
-  Endif 
-  
-End  
-
-Public Function BuscarEntreIdCurso(valorMin As Integer, valorMax As Integer, Optional CampoOrden As String) As Result
-  
-  Dim conectar As New Conexion
-  Dim SQLString As String
-  Dim mRs As Result
-  
-  conectar.Conexion()
-  SQLString = "Select * From Curso"
-  If CampoOrden = Null Then 
-    SQlString &= " WHERE idCurso BETWEEN " & valorMin & " And " & valorMax  
-  Else 
-    SQlString &= " WHERE idCurso BETWEEN " & valorMin & " And " & valorMax & "Order by CampoOrden"
+    SQlString &= " WHERE idCurso like '" & valor & "'   Order by " & CampoOrden
   Endif 
   Try mRs = conectar.hconn.Exec(SQLString) 
   If Error Then 
@@ -253,7 +187,7 @@ Public Function BuscarContenidoNombre(valor As String, Optional CampoOrden As St
   If CampoOrden = Null Then 
     SQlString &= " WHERE Nombre like '%" & valor & "%' "
   Else 
-    SQlString &= " WHERE Nombre like '%" & valor & "%'  Order by CampoOrden"
+    SQlString &= " WHERE Nombre like '%" & valor & "%'  Order by " & CampoOrden
   Endif 
   Try mRs = conectar.hconn.Exec(SQLString) 
   If Error Then 
@@ -275,7 +209,7 @@ Public Function BuscarIgualNombre(valor As String, Optional CampoOrden As String
   If CampoOrden = Null Then 
     SQlString &= " WHERE Nombre like '" & valor & "' "
   Else 
-    SQlString &= " WHERE Nombre like '" & valor & "'  Order by CampoOrden"
+    SQlString &= " WHERE Nombre like '" & valor & "'   Order by " & CampoOrden
   Endif 
   Try mRs = conectar.hconn.Exec(SQLString) 
   If Error Then 
@@ -297,7 +231,7 @@ Public Function BuscarContenidoDetalle(valor As String, Optional CampoOrden As S
   If CampoOrden = Null Then 
     SQlString &= " WHERE Detalle like '%" & valor & "%' "
   Else 
-    SQlString &= " WHERE Detalle like '%" & valor & "%'  Order by CampoOrden"
+    SQlString &= " WHERE Detalle like '%" & valor & "%'  Order by " & CampoOrden
   Endif 
   Try mRs = conectar.hconn.Exec(SQLString) 
   If Error Then 
@@ -319,7 +253,7 @@ Public Function BuscarIgualDetalle(valor As String, Optional CampoOrden As Strin
   If CampoOrden = Null Then 
     SQlString &= " WHERE Detalle like '" & valor & "' "
   Else 
-    SQlString &= " WHERE Detalle like '" & valor & "'  Order by CampoOrden"
+    SQlString &= " WHERE Detalle like '" & valor & "'   Order by " & CampoOrden
   Endif 
   Try mRs = conectar.hconn.Exec(SQLString) 
   If Error Then 
@@ -333,7 +267,7 @@ End
 Public Function sql(consulta As String) As Result
   
   Dim conectar As New Conexion
-  ' Dim SQLString As 'String
+  Dim SQLString As String
   Dim mRs As Result
   
   conectar.Conexion()
@@ -346,15 +280,15 @@ End
 Public Function informe() As String
   
   Dim texto As String
-  
+
   Print "Base de datos: CursosAlumnos"
   Print "        Tabla: Curso"
-  Print "             Campo: idCurso Tipo: Integer"
+  Print "             Campo: idCurso Tipo: Null"
   Print "             Campo: Nombre Tipo: String"
   Print "             Campo: Detalle Tipo: String"
   texto = "Base_de_datos:|CursosAlumnos|"
   texto &= "Tabla:|Curso"
-  texto &= "|campo:|idCurso|tipo:|Integer"
+  texto &= "|campo:|idCurso|tipo:|Null"
   texto &= "|campo:|Nombre|tipo:|String"
   texto &= "|campo:|Detalle|tipo:|String"
   Return texto 
@@ -420,9 +354,8 @@ Public Sub contenido() As Result
 End 
 
 Public Function mostrarRegistro(numero As Integer, grid As GridView, Optional sqlcadena As String) As Result
-  
+
   Dim resultado As Result
-  
   If sqlcadena = Null Then 
     resultado = contenido()
   Else 
@@ -432,14 +365,15 @@ Public Function mostrarRegistro(numero As Integer, grid As GridView, Optional sq
   Try grid[0, 1].text = Str$(resultado!idCurso)
   Try grid[1, 1].text = Str$(resultado!Nombre)
   Try grid[2, 1].text = Str$(resultado!Detalle)
-  
+
 End
 
 Public Function GridResultanteSQL(res As Result, grid As GridView) As Gridview  
-  
+
   Dim columna As Integer
   Dim hField As ResultField
-  
+  Dim a As Integer
+  Dim fila As Integer
   'defino la regilla
   With grid 
     .header = 3 
@@ -455,17 +389,17 @@ Public Function GridResultanteSQL(res As Result, grid As GridView) As Gridview
     .Background = 16777215 
     .Foreground = 0 
   End With
-  'relleno los datos procedentes de la consulta en las filas...
-  '  Grid.Rows.count = res.Count
-  '  fila = -1
-  '  Do While res.Available
-  '    Inc fila
-  '    For a = 0 To grid.columns.count - 1
-  '      'PRINT grid.Columns[a].title
-  '      grid[fila, a].text = res[grid.Columns[a].title] ' nombre 'grid.Columns[a].title]
-  '    Next 
+  'NO HACE FALTA:relleno los datos procedentes de la consulta en las filas...
+  'Grid.Rows.count = res.Count
+  ' fila = -1
+  '  DO WHILE res.Available
+  '   INC fila
+  '    FOR a = 0 TO grid.columns.count - 1
+  '    'PRINT grid.Columns[a].title
+  '     grid[fila, a].text = res[grid.Columns[a].title] ' nombre 'grid.Columns[a].title]
+  '    NEXT 
   '    res.MoveNext()
-  '  Loop
-  Return grid 
-  
+  '  LOOP
+ Return grid 
 End
+

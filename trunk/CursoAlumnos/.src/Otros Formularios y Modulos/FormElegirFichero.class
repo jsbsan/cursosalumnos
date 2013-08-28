@@ -41,6 +41,10 @@ Public Sub ToolButtonAceptar_Click()
   Dim fpensando As New FormPensando
   
   a = TextBoxUrl.Text
+  If a = "" Then 
+    Message.Info(("Elija un fichero o pulse Cancelar"))
+    Return 
+  Endif
   
   If InStr(a, "http://") <> 0 Then 
     
@@ -72,7 +76,7 @@ Public Sub ToolButtonAceptar_Click()
   fpensando.Close()
   fpensando = Null
   
-  Me.Close
+  Me.Close()
   
 End
 

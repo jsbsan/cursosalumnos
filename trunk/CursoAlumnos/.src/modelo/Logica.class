@@ -207,3 +207,32 @@ Public Function BorrarRelacionAlumno(idAlumno As Integer) As Boolean
   Return mirel.BorrarIdAlumno(idalumno)
   
 End
+'--------------------------------------------------------------
+' BUSQUEDAS....
+' -------------------------------------------------------------
+
+Public Function ContenidoLegajo(dato As String) As Result
+  
+  Dim mialu As New AlumnoDAO
+  
+  Return mialu.BuscarContenidoLegajo(dato, "Apellido")
+  
+End
+
+Public Function ContenidoApellidos(dato As String) As Result
+  
+  Dim mialu As New AlumnoDAO
+  
+  Return mialu.BuscarContenidoApellido(dato, "Apellido")
+  
+End
+
+Public Function ContenidoDocumento(dato As String) As Result
+  
+  Dim mialu As New AlumnoDAO
+  
+  Return mialu.BuscarContenidoDocumento(dato, "Apellido") 
+
+End
+
+  
