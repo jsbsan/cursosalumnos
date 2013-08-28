@@ -14,87 +14,91 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: FormPrincipal.form:65
+#: FormPrincipal.form:66
 msgid "Acerca de..."
 msgstr ""
 
-#: FormPrincipal.form:70
+#: FormPrincipal.form:71
 msgid "<h2>Control de Cursos y Alumnos</h2><br>\nRealizado por:<br>\n<i>Julio Sánchez Berro y Jorge Agustín Pereyra</i><br>\n<br>\n<br>\n<b>Nota:</b><br>\nEs necesario tener instalado las programas:<br>\nlatex-beamer <br>\ntexlive-latex-extra<br>\nPara la creación de informes<br>\n\n\n"
 msgstr ""
 
-#: FormPrincipal.form:85
+#: FormPrincipal.form:86
 msgid "Alumnos"
 msgstr ""
 
-#: FormPrincipal.form:95
+#: FormPrincipal.form:96
 msgid "Añadir"
 msgstr ""
 
-#: FormPrincipal.form:103
+#: FormPrincipal.form:104
 msgid "Editar"
 msgstr ""
 
-#: FormPrincipal.form:111
+#: FormPrincipal.form:112
 msgid "Borrar"
 msgstr ""
 
-#: FormPrincipal.form:119
+#: FormPrincipal.form:120
 msgid "Expediente"
 msgstr ""
 
-#: FormPrincipal.form:127
+#: FormPrincipal.form:128
 msgid "Imprimir Lista"
 msgstr ""
 
-#: FormPrincipal.form:135
+#: FormPrincipal.form:136
 msgid "si hace doble click editará el expediente"
 msgstr ""
 
-#: FormPrincipal.form:142
+#: FormPrincipal.form:143
 msgid "Cursos"
 msgstr ""
 
-#: FormPrincipal.form:175
+#: FormPrincipal.form:176
 msgid "Ficha"
 msgstr ""
 
-#: FormPrincipal.form:198
+#: FormPrincipal.form:199
 msgid "Listados"
 msgstr ""
 
-#: FormPrincipal.form:203
+#: FormPrincipal.form:204
 msgid "Listado de informes disponibles..."
 msgstr ""
 
-#: FormPrincipal.form:211
+#: FormPrincipal.form:212
 msgid "Administrador"
 msgstr ""
 
-#: FormPrincipal.form:216
+#: FormPrincipal.form:217
 msgid "Clave Actual:"
 msgstr ""
 
-#: FormPrincipal.form:221
+#: FormPrincipal.form:222
 msgid "Cambiar"
 msgstr ""
 
-#: FormPrincipal.form:232
+#: FormPrincipal.form:233
 msgid "Clave Nueva:"
 msgstr ""
 
-#: FormPrincipal.form:242
+#: FormPrincipal.form:243
 msgid "Reescriba la clave:"
 msgstr ""
 
-#: FormPrincipal.form:254
+#: FormPrincipal.form:255
 msgid "mensaje:"
 msgstr ""
 
-#: FormPrincipal.form:259
+#: FormPrincipal.form:260
 msgid "Usuario Actual:"
 msgstr ""
 
-#: FormPrincipal.form:267
+#: FormPrincipal.form:271
+msgid "Comprobar si existe nueva Versión del programa"
+msgstr ""
+
+#: FormPrincipal.form:276
 msgid "Salir"
 msgstr ""
 
