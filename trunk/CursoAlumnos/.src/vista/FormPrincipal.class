@@ -167,6 +167,10 @@ End
 Public Sub IconPanelMenu_Click()
   
   Select Case IconPanelMenu.Index
+    Case 3
+      'lista a imprimir
+      ListBoxInforme.SetFocus()
+      ListBoxInforme.Index = 0
     Case 4
       'cambio de contraseña
       LabelMensajeClave.text = "mensaje:"

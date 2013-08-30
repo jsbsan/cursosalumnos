@@ -66,47 +66,47 @@ msgstr ""
 msgid "Listado de informes disponibles..."
 msgstr ""
 
-#: FormPrincipal.form:214
+#: FormPrincipal.form:213
 msgid "Administrador"
 msgstr ""
 
-#: FormPrincipal.form:220
+#: FormPrincipal.form:219
 msgid "Clave Actual:"
 msgstr ""
 
-#: FormPrincipal.form:227
+#: FormPrincipal.form:226
 msgid "Cambiar Contraseña"
 msgstr ""
 
-#: FormPrincipal.form:239
+#: FormPrincipal.form:238
 msgid "Clave Nueva:"
 msgstr ""
 
-#: FormPrincipal.form:250
+#: FormPrincipal.form:249
 msgid "Reescriba la clave:"
 msgstr ""
 
-#: FormPrincipal.form:263
+#: FormPrincipal.form:262
 msgid "mensaje:"
 msgstr ""
 
-#: FormPrincipal.form:269
+#: FormPrincipal.form:268
 msgid "Usuario Actual:"
 msgstr ""
 
-#: FormPrincipal.form:281
+#: FormPrincipal.form:280
 msgid "Comprobar si existe nueva Versión del programa"
 msgstr ""
 
-#: FormPrincipal.form:290
+#: FormPrincipal.form:289
 msgid "Realizar Copia Datos"
 msgstr ""
 
-#: FormPrincipal.form:299
+#: FormPrincipal.form:298
 msgid "Restaurar Datos"
 msgstr ""
 
-#: FormPrincipal.form:304
+#: FormPrincipal.form:303
 msgid "Salir"
 msgstr ""
 
