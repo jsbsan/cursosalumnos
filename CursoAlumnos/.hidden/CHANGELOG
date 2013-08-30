@@ -1,3 +1,12 @@
+* Fri Aug 30 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.1.2
+-activado lista de impresion y sale al 1º elemento de la lista
+
+* Fri Aug 30 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.1.2
+-Activado lista de impresion que se habia quedado enabled=false
+
+* Fri Aug 30 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.1.2
+-Añadido copia y restauracion de datos
+
 * Wed Aug 28 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.1.1
 -Prelanzamiento0.1.1 añadido busquedas
 

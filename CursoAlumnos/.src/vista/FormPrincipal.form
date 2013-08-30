@@ -143,7 +143,6 @@
       }
       { ListBoxInforme ListBox
         MoveScaled(2,5,60,44)
-        Enabled = False
       }
       Index = 4
       Text = ("Administrador")
