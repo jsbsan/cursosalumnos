@@ -116,18 +116,21 @@ End
 Public Sub RadioDocumento_Click()
   
   criterioBusqueda = 1
+  TextBoxPalabraBusqueda.SetFocus()
   
 End
 
 Public Sub RadioApellidos_Click()
   
   criterioBusqueda = 2
-  
+  TextBoxPalabraBusqueda.SetFocus()
+
 End
 
 Public Sub RadioLegajo_Click()
   
   criterioBusqueda = 3
+  TextBoxPalabraBusqueda.SetFocus()
   
 End
 

@@ -11,13 +11,13 @@
       MoveScaled(0,0,98,14)
       Border = Border.Plain
       { PictureBox1 PictureBox
-        MoveScaled(0,1,96,14)
+        MoveScaled(2,0,96,14)
         Picture = Picture["colegio13.jpg"]
         Stretch = True
       }
     }
     { IconPanelMenu IconPanel
-      MoveScaled(0,14,97,52)
+      MoveScaled(0,15,97,52)
       AutoResize = True
       Count = 6
       Index = 0
@@ -149,53 +149,77 @@
       Text = ("Administrador")
       Picture = Picture["icon:/16/tools"]
       { Label2 Label
-        MoveScaled(6,12,18,3)
+        MoveScaled(7,7,18,3)
+        Font = Font["Andale Mono,-1"]
         Text = ("Clave Actual:")
       }
       { ButtonCambiarClave Button
-        MoveScaled(35,37,15,4)
-        Text = ("Cambiar")
+        MoveScaled(25,28,29,4)
+        Font = Font["Andale Mono,-1"]
+        AutoResize = True
+        Text = ("Cambiar Contraseña")
         Picture = Picture["icon:/16/apply"]
       }
       { TextBoxClaveActual TextBox
-        MoveScaled(25,11,25,4)
+        MoveScaled(26,6,25,4)
         Password = True
       }
       { Label3 Label
-        MoveScaled(6,19,17,4)
+        MoveScaled(7,14,17,4)
+        Font = Font["Andale Mono,-1"]
         Text = ("Clave Nueva:")
       }
       { TextBoxClaveNueva TextBox
-        MoveScaled(25,18,25,4)
+        MoveScaled(26,13,25,4)
         Password = True
       }
       { Label4 Label
-        MoveScaled(6,24,19,5)
+        MoveScaled(7,19,19,5)
+        Font = Font["Andale Mono,-1"]
         Text = ("Reescriba la clave:")
       }
       { TextBoxClaveReescrita TextBox
-        MoveScaled(25,24,25,4)
+        MoveScaled(26,19,25,4)
         Password = True
       }
       { LabelMensajeClave Label
-        MoveScaled(5,31,46,5)
+        MoveScaled(4,24,67,3)
+        Font = Font["Andale Mono,-1"]
         Foreground = &HFF0000&
         AutoResize = True
         Text = ("mensaje:")
       }
       { Label5 Label
-        MoveScaled(6,6,18,4)
+        MoveScaled(7,1,18,4)
+        Font = Font["Andale Mono,-1"]
         Text = ("Usuario Actual:")
       }
       { TextBoxUsuarioActual TextBox
-        MoveScaled(25,6,25,4)
+        MoveScaled(26,1,25,4)
         Password = True
       }
       { ToolButtonVersion ToolButton
-        MoveScaled(5,44,58,5)
+        MoveScaled(12,36,58,5)
+        Font = Font["Andale Mono,-1"]
         AutoResize = True
         Text = ("Comprobar si existe nueva Versión del programa")
         Picture = Picture["icon:/16/refresh"]
+        Border = True
+      }
+      { ToolButtonRealizarCopia ToolButton
+        MoveScaled(12,45,30,5)
+        Font = Font["Andale Mono,-1"]
+        AutoResize = True
+        Text = ("Realizar Copia Datos")
+        Picture = Picture["FloppyEntrada.png"]
+        Border = True
+      }
+      { ToolButtonRestaurarDatos ToolButton
+        MoveScaled(48,45,23,5)
+        Font = Font["Andale Mono,-1"]
+        AutoResize = True
+        Text = ("Restaurar Datos")
+        Picture = Picture["FloppyExtraer.png"]
         Border = True
       }
       Index = 5
