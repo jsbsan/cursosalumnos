@@ -411,3 +411,62 @@ Public Sub ToolButtonVersion_Click()
   ModuleUpdate.comprobar("cursosalumnos", Application.Version, "http://controldecursosdealumnos.blogspot.com.es/2013/08/version.html")
   
 End
+
+Public Sub ToolButtonRealizarCopia_Click()
+  
+  Dim hpross As Process
+  Dim nombre, nombreFinal As String
+  'creo una copia de la carpeta ./CursoAlumnos
+  nombre = "Copia" & Str$(Format(Now, "yyyy-mm-dd"))
+  If Exist(User.Home & "/.CursoAlumnos/" & nombre & ".tar") Then Kill User.Home & "/.CursoAlumnos/" & nombre & ".tar"
+  Shell "cd " & User.Home & "/.CursoAlumnos ; tar --exclude FotoCarnetMyWebCam.gambas -zcf " & nombre & ".tar *"
+  Wait 0.5
+  nombrefinal = nombre
+  If Exist(User.home & "/" & nombre & ".tar") Then 
+    nombreFinal = InputBox("Ponga otro nombre:", "Existe un fichero con el mismo nombre...", nombre & "(copia)")
+    
+  Endif
+  Move User.Home & "/.CursoAlumnos/" & nombre & ".tar" To User.home & "/" & nombrefinal & ".tar"
+  Message.Info("Se ha creado una copia de seguridad de los datos" & gb.CrLf & "Fichero: " & User.home & "/" & nombrefinal & ".tar")
+  
+End
+
+Public Sub ToolButtonRestaurarDatos_Click()
+  
+  Dim nombre As String
+  Dim resp As Integer
+  
+  resp = Message.Question("Si restaura una copia de seguridad, perderá los datos actuales", "Si, continue", "No, cancelar")
+  
+  If resp = 2 Then
+    Debug "cancelada operacion de restaurar"
+    Return
+  Endif
+  
+  Dialog.Path = User.Home
+  Dialog.Filter = ["*.tar", "tar"]
+  If Dialog.OpenFile() Then 
+    'no ha seleccionado nada
+  Else
+    Debug "Descomprimir fichero: " & Dialog.Path
+    'copia el archivo al directorio 
+    If Exist(User.home & "/.CursoAlumnos/" & File.Name(Dialog.Path)) Then Kill User.home & "/.CursoAlumnos/" & File.Name(Dialog.Path)
+    Copy Dialog.path To User.home & "/.CursoAlumnos/" & File.Name(Dialog.Path)
+    'borro ficheros y carpetas anteriores
+    ModuleUtilidadesDisco.vaciarDirectorio(User.home & "/.CursoAlumnos/Fotos")
+    ModuleUtilidadesDisco.vaciarDirectorio(User.home & "/.CursoAlumnos/MiniFotos")
+    Kill User.home & "/.CursoAlumnos/CursosAlumnos" 'antigua base de datos
+    Wait 0.5
+    'extraido datos
+    
+    Shell "cd " & User.Home & "/.CursoAlumnos ; tar -xf '" & File.Name(Dialog.path) & "'"
+    Wait 0.5
+    'relleno el gridview de datos...
+    RefrescarDatosAlumnos()
+    RefrescarDatosCursos()
+    IconPanelMenu.index = 1
+    Message.Info("Restaurada la copia de datos")
+    Kill User.Home & "/.CursoAlumnos ; tar -xf '" & File.Name(Dialog.path) & "'"
+  Endif
+  
+End

@@ -154,7 +154,7 @@ msgstr ""
 msgid "Copiar Al portapapeles"
 msgstr ""
 
-#: FormError.form:25 FormPrincipal.form:276
+#: FormError.form:25 FormPrincipal.form:304
 msgid "Salir"
 msgstr ""
 
@@ -214,11 +214,11 @@ msgstr ""
 msgid "Espere por favor..."
 msgstr ""
 
-#: FormPrincipal.form:66
+#: FormPrincipal.form:68
 msgid "Acerca de..."
 msgstr ""
 
-#: FormPrincipal.form:71
+#: FormPrincipal.form:73
 msgid ""
 "<h2>Control de Cursos y Alumnos</h2><br>\n"
 "Realizado por:<br>\n"
@@ -234,80 +234,88 @@ msgid ""
 "\n"
 msgstr ""
 
-#: FormPrincipal.form:86
+#: FormPrincipal.form:88
 msgid "Alumnos"
 msgstr ""
 
-#: FormPrincipal.form:96
+#: FormPrincipal.form:98
 msgid "Añadir"
 msgstr ""
 
-#: FormPrincipal.form:104
+#: FormPrincipal.form:106
 msgid "Editar"
 msgstr ""
 
-#: FormPrincipal.form:112
+#: FormPrincipal.form:114
 msgid "Borrar"
 msgstr ""
 
-#: FormPrincipal.form:120
+#: FormPrincipal.form:122
 msgid "Expediente"
 msgstr ""
 
-#: FormPrincipal.form:128
+#: FormPrincipal.form:130
 msgid "Imprimir Lista"
 msgstr ""
 
-#: FormPrincipal.form:136
+#: FormPrincipal.form:138
 msgid "si hace doble click editará el expediente"
 msgstr ""
 
-#: FormPrincipal.form:143
+#: FormPrincipal.form:145
 msgid "Cursos"
 msgstr ""
 
-#: FormPrincipal.form:176
+#: FormPrincipal.form:178
 msgid "Ficha"
 msgstr ""
 
-#: FormPrincipal.form:199
+#: FormPrincipal.form:201
 msgid "Listados"
 msgstr ""
 
-#: FormPrincipal.form:204
+#: FormPrincipal.form:206
 msgid "Listado de informes disponibles..."
 msgstr ""
 
-#: FormPrincipal.form:212
+#: FormPrincipal.form:214
 msgid "Administrador"
 msgstr ""
 
-#: FormPrincipal.form:217
+#: FormPrincipal.form:220
 msgid "Clave Actual:"
 msgstr ""
 
-#: FormPrincipal.form:222
-msgid "Cambiar"
+#: FormPrincipal.form:227
+msgid "Cambiar Contraseña"
 msgstr ""
 
-#: FormPrincipal.form:233
+#: FormPrincipal.form:239
 msgid "Clave Nueva:"
 msgstr ""
 
-#: FormPrincipal.form:243
+#: FormPrincipal.form:250
 msgid "Reescriba la clave:"
 msgstr ""
 
-#: FormPrincipal.form:255
+#: FormPrincipal.form:263
 msgid "mensaje:"
 msgstr ""
 
-#: FormPrincipal.form:260
+#: FormPrincipal.form:269
 msgid "Usuario Actual:"
 msgstr ""
 
-#: FormPrincipal.form:271
+#: FormPrincipal.form:281
 msgid "Comprobar si existe nueva Versión del programa"
+msgstr ""
+
+#: FormPrincipal.form:290
+msgid "Realizar Copia Datos"
+msgstr ""
+
+#: FormPrincipal.form:299
+msgid "Restaurar Datos"
 msgstr ""
 
 #: LatexHelper.module:13
