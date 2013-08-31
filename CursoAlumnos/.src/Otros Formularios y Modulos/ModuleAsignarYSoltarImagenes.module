@@ -36,7 +36,7 @@ Public Function asignaImagen2Paso(ruta As String, PictureBoxElegido As Picturebo
   Dim nombresimple As String
   
   If Not Exist(ruta) Then
-    Message.Info(("No se ha podido descargarse el archivo")) 
+    Message.Info(("No se ha podido descargarse el archivo, la ruta no existe" & gb.CrLf & ruta)) 
     Return 
   Endif
   

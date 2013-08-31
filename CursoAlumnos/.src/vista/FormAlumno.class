@@ -140,6 +140,7 @@ Public Sub ToolButtonfoto_Click()
   
   Exec [comando] Wait
   '  User.home & "/webcam_carnet.png"
+  '  cambio el nombre si tienes _ o espacios en blanco
   nombrefinal = ControladorAplicacion.rutaTrabajo & "Fotos/" & Replace(Replace(Replace("webcam_carnet" & Str$(Now()) & ".png", " ", "_"), "/", "-"), ":", "-")
   
   If Exist(User.home & "/webcam_carnet.png") Then 
