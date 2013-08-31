@@ -22,7 +22,3 @@ msgstr ""
 msgid "Ficheros de Imágenes"
 msgstr ""
 
-#: ModuleAsignarYSoltarImagenes.module:39
-msgid "No se ha podido descargarse el archivo"
-msgstr ""
-
