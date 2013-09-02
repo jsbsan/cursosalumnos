@@ -11,13 +11,13 @@
       MoveScaled(0,0,98,14)
       Border = Border.Plain
       { PictureBox1 PictureBox
-        MoveScaled(2,0,96,14)
+        MoveScaled(0,0,96,14)
         Picture = Picture["colegio13.jpg"]
         Stretch = True
       }
     }
     { IconPanelMenu IconPanel
-      MoveScaled(0,15,97,52)
+      MoveScaled(0,14,97,52)
       AutoResize = True
       Count = 6
       Index = 0
@@ -25,15 +25,15 @@
       Picture = Picture["icon:/16/question"]
       { TextLabelAcercaDe TextLabel
         MoveScaled(2,7,55,51)
-        Text = ("<h2>Control de Cursos y Alumnos</h2><br>\nRealizado por:<br>\n<i>Julio Sánchez Berro y Jorge Agustín Pereyra</i><br>\n<br>\n<br>\n<b>Nota:</b><br>\nEs necesario tener instalado las programas:<br>\nlatex-beamer <br>\ntexlive-latex-extra<br>\nPara la creación de informes<br>\n\n\n")
+        Text = ("<h2>Control de Cursos y Alumnos</h2><br>\nRealizado por:<br>\n<i>Julio Sánchez Berro y Jorge Agustín Pereyra</i><br>\n<br>\n<br>\n<b>Nota:</b><br>\nEs necesario tener instalado las programas:<br>\nsudo apt-get install imagemagick<br>\nsudo apt-get install latex-beamer <br>\nsudo apt-get install texlive-latex-extra<br>\nPara la creación de informes<br>\nY para ver los pdf:<br>\nsudo apt-get install evince<br>\n\n\n")
         Alignment = Align.Center
       }
       { PictureBoxLogo PictureBox
-        MoveScaled(9,2,11,13)
+        MoveScaled(10,1,11,11)
         Picture = Picture["libro.png"]
       }
       { PictureBox2 PictureBox
-        MoveScaled(41,1,11,13)
+        MoveScaled(41,1,11,11)
         Picture = Picture["logo gambas.png"]
         Stretch = True
       }
@@ -153,7 +153,7 @@
         Text = ("Clave Actual:")
       }
       { ButtonCambiarClave Button
-        MoveScaled(25,28,29,4)
+        MoveScaled(25,27,29,4)
         Font = Font["Andale Mono,-1"]
         AutoResize = True
         Text = ("Cambiar Contraseña")
@@ -198,7 +198,7 @@
         Password = True
       }
       { ToolButtonVersion ToolButton
-        MoveScaled(12,36,58,5)
+        MoveScaled(7,33,58,5)
         Font = Font["Andale Mono,-1"]
         AutoResize = True
         Text = ("Comprobar si existe nueva Versión del programa")
@@ -206,7 +206,7 @@
         Border = True
       }
       { ToolButtonRealizarCopia ToolButton
-        MoveScaled(12,45,30,5)
+        MoveScaled(7,39,30,5)
         Font = Font["Andale Mono,-1"]
         AutoResize = True
         Text = ("Realizar Copia Datos")
@@ -214,11 +214,28 @@
         Border = True
       }
       { ToolButtonRestaurarDatos ToolButton
-        MoveScaled(48,45,23,5)
+        MoveScaled(42,39,23,5)
         Font = Font["Andale Mono,-1"]
         AutoResize = True
         Text = ("Restaurar Datos")
         Picture = Picture["FloppyExtraer.png"]
+        Border = True
+      }
+      { Label6 Label
+        MoveScaled(1,44,37,4)
+        Text = ("Ruta donde se Guardan los Informes:")
+      }
+      { LabelRutaInforme Label
+        MoveScaled(1,48,56,3)
+        Text = ("/tmp")
+        Border = Border.Plain
+      }
+      { ToolButtonCambiarRutaInformes ToolButton
+        MoveScaled(58,47,13,4)
+        Font = Font["Andale Mono,-1"]
+        AutoResize = True
+        Text = ("Cambiar")
+        Picture = Picture["icon:/16/harddisk"]
         Border = True
       }
       Index = 5

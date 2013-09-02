@@ -76,4 +76,12 @@
     Picture = Picture["icon:/16/printer"]
     Border = True
   }
+  { ToolButtonBorrarObservacion ToolButton
+    MoveScaled(96,6,27,4.2857)
+    Font = Font["-2"]
+    AutoResize = True
+    Text = ("Borrar Observaciones")
+    Picture = Picture["icon:/16/erase"]
+    Border = True
+  }
 }

@@ -47,6 +47,7 @@ Public Sub main()
   
   'inicio directorios
   iniciarDirectoriosYArchivos(ControladorAplicacion) 
+  controladorAplicacion.rutainformes = "/tmp"
   
   'inicio usuario/password si no estan definidas
   ControladorAplicacion.comprobarUsuarioPassword()

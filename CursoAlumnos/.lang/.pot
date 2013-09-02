@@ -28,8 +28,8 @@ msgstr ""
 
 #: FControlAcceso.form:39 FormAlumno.form:155 FormCalendario.form:18
 #: FormCurso.form:40 FormElegirFichero.form:23 FormEligeAlumno.form:33
-#: FormEligeCurso.form:26 FormExpedienteAlumno.form:97
-#: FormExpedienteCurso.form:83
+#: FormEligeCurso.form:26 FormExpedienteAlumno.form:98
+#: FormExpedienteCurso.form:84
 msgid "Aceptar"
 msgstr ""
 
@@ -42,15 +42,15 @@ msgstr ""
 msgid "Control de Cursos y Alumnos"
 msgstr ""
 
-#: FormAlumno.form:36 FormExpedienteAlumno.form:27
+#: FormAlumno.form:36 FormExpedienteAlumno.form:28
 msgid "Nombre:"
 msgstr ""
 
-#: FormAlumno.form:50 FormExpedienteAlumno.form:38
+#: FormAlumno.form:50 FormExpedienteAlumno.form:39
 msgid "Apellidos:"
 msgstr ""
 
-#: FormAlumno.form:60 FormExpedienteAlumno.form:49
+#: FormAlumno.form:60 FormExpedienteAlumno.form:50
 msgid "Documento:"
 msgstr ""
 
@@ -154,7 +154,7 @@ msgstr ""
 msgid "Copiar Al portapapeles"
 msgstr ""
 
-#: FormError.form:25 FormPrincipal.form:303
+#: FormError.form:25 FormPrincipal.form:326
 msgid "Salir"
 msgstr ""
 
@@ -162,51 +162,55 @@ msgstr ""
 msgid "Label1"
 msgstr ""
 
-#: FormExpedienteAlumno.form:60
+#: FormExpedienteAlumno.form:61
 msgid "Cursos a los que esta apuntado:"
 msgstr ""
 
-#: FormExpedienteAlumno.form:67
+#: FormExpedienteAlumno.form:68
 msgid "Añadirle a un  Curso"
 msgstr ""
 
-#: FormExpedienteAlumno.form:76
+#: FormExpedienteAlumno.form:77
 msgid "Borrarle de un  Curso"
 msgstr ""
 
-#: FormExpedienteAlumno.form:85 FormExpedienteCurso.form:75
+#: FormExpedienteAlumno.form:86 FormExpedienteCurso.form:76
 msgid "Editar Observaciones"
 msgstr ""
 
-#: FormExpedienteAlumno.form:106
+#: FormExpedienteAlumno.form:107
 msgid "Editar Alumno"
 msgstr ""
 
-#: FormExpedienteAlumno.form:121 FormExpedienteCurso.form:101
+#: FormExpedienteAlumno.form:122 FormExpedienteCurso.form:102
 msgid "Imprimir"
 msgstr ""
 
-#: FormExpedienteCurso.form:24
+#: FormExpedienteAlumno.form:131 FormExpedienteCurso.form:111
+msgid "Borrar Observaciones"
+msgstr ""
+
+#: FormExpedienteCurso.form:25
 msgid "Curso:"
 msgstr ""
 
-#: FormExpedienteCurso.form:35
+#: FormExpedienteCurso.form:36
 msgid "Detalles:"
 msgstr ""
 
-#: FormExpedienteCurso.form:46
+#: FormExpedienteCurso.form:47
 msgid "Alumnos en el curso:"
 msgstr ""
 
-#: FormExpedienteCurso.form:57
+#: FormExpedienteCurso.form:58
 msgid "Añadir Alumno"
 msgstr ""
 
-#: FormExpedienteCurso.form:66
+#: FormExpedienteCurso.form:67
 msgid "Borrar Alumno"
 msgstr ""
 
-#: FormExpedienteCurso.form:92
+#: FormExpedienteCurso.form:93
 msgid "Editar Curso"
 msgstr ""
 
@@ -214,11 +218,11 @@ msgstr ""
 msgid "Espere por favor..."
 msgstr ""
 
-#: FormPrincipal.form:68
+#: FormPrincipal.form:71
 msgid "Acerca de..."
 msgstr ""
 
-#: FormPrincipal.form:73
+#: FormPrincipal.form:76
 msgid ""
 "<h2>Control de Cursos y Alumnos</h2><br>\n"
 "Realizado por:<br>\n"
@@ -227,95 +231,110 @@ msgid ""
 "<br>\n"
 "<b>Nota:</b><br>\n"
 "Es necesario tener instalado las programas:<br>\n"
-"latex-beamer <br>\n"
-"texlive-latex-extra<br>\n"
+"sudo apt-get install imagemagick<br>\n"
+"sudo apt-get install latex-beamer <br>\n"
+"sudo apt-get install texlive-latex-extra<br>\n"
 "Para la creación de informes<br>\n"
+"Y para ver los pdf:<br>\n"
+"sudo apt-get install evince<br>\n"
 "\n"
 "\n"
 msgstr ""
 
-#: FormPrincipal.form:88
+#: FormPrincipal.form:91
 msgid "Alumnos"
 msgstr ""
 
-#: FormPrincipal.form:98
+#: FormPrincipal.form:101
 msgid "Añadir"
 msgstr ""
 
-#: FormPrincipal.form:106
+#: FormPrincipal.form:109
 msgid "Editar"
 msgstr ""
 
-#: FormPrincipal.form:114
+#: FormPrincipal.form:117
 msgid "Borrar"
 msgstr ""
 
-#: FormPrincipal.form:122
+#: FormPrincipal.form:125
 msgid "Expediente"
 msgstr ""
 
-#: FormPrincipal.form:130
+#: FormPrincipal.form:133
 msgid "Imprimir Lista"
 msgstr ""
 
-#: FormPrincipal.form:138
+#: FormPrincipal.form:141
 msgid "si hace doble click editará el expediente"
 msgstr ""
 
-#: FormPrincipal.form:145
+#: FormPrincipal.form:148
 msgid "Cursos"
 msgstr ""
 
-#: FormPrincipal.form:178
+#: FormPrincipal.form:181
 msgid "Ficha"
 msgstr ""
 
-#: FormPrincipal.form:201
+#: FormPrincipal.form:204
 msgid "Listados"
 msgstr ""
 
-#: FormPrincipal.form:206
+#: FormPrincipal.form:209
 msgid "Listado de informes disponibles..."
 msgstr ""
 
-#: FormPrincipal.form:213
+#: FormPrincipal.form:216
 msgid "Administrador"
 msgstr ""
 
-#: FormPrincipal.form:219
+#: FormPrincipal.form:222
 msgid "Clave Actual:"
 msgstr ""
 
-#: FormPrincipal.form:226
+#: FormPrincipal.form:229
 msgid "Cambiar Contraseña"
 msgstr ""
 
-#: FormPrincipal.form:238
+#: FormPrincipal.form:241
 msgid "Clave Nueva:"
 msgstr ""
 
-#: FormPrincipal.form:249
+#: FormPrincipal.form:252
 msgid "Reescriba la clave:"
 msgstr ""
 
-#: FormPrincipal.form:262
+#: FormPrincipal.form:265
 msgid "mensaje:"
 msgstr ""
 
-#: FormPrincipal.form:268
+#: FormPrincipal.form:271
 msgid "Usuario Actual:"
 msgstr ""
 
-#: FormPrincipal.form:280
+#: FormPrincipal.form:283
 msgid "Comprobar si existe nueva Versión del programa"
 msgstr ""
 
-#: FormPrincipal.form:289
+#: FormPrincipal.form:292
 msgid "Realizar Copia Datos"
 msgstr ""
 
-#: FormPrincipal.form:298
+#: FormPrincipal.form:301
 msgid "Restaurar Datos"
+msgstr ""
+
+#: FormPrincipal.form:308
+msgid "Ruta donde se Guardan los Informes:"
+msgstr ""
+
+#: FormPrincipal.form:313
+msgid "/tmp"
+msgstr ""
+
+#: FormPrincipal.form:321
+msgid "Cambiar"
 msgstr ""
 
 #: LatexHelper.module:13

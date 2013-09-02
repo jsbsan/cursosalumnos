@@ -14,99 +14,111 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: FormPrincipal.form:68
+#: FormPrincipal.form:71
 msgid "Acerca de..."
 msgstr ""
 
-#: FormPrincipal.form:73
-msgid "<h2>Control de Cursos y Alumnos</h2><br>\nRealizado por:<br>\n<i>Julio Sánchez Berro y Jorge Agustín Pereyra</i><br>\n<br>\n<br>\n<b>Nota:</b><br>\nEs necesario tener instalado las programas:<br>\nlatex-beamer <br>\ntexlive-latex-extra<br>\nPara la creación de informes<br>\n\n\n"
+#: FormPrincipal.form:76
+msgid "<h2>Control de Cursos y Alumnos</h2><br>\nRealizado por:<br>\n<i>Julio Sánchez Berro y Jorge Agustín Pereyra</i><br>\n<br>\n<br>\n<b>Nota:</b><br>\nEs necesario tener instalado las programas:<br>\nsudo apt-get install imagemagick<br>\nsudo apt-get install latex-beamer <br>\nsudo apt-get install texlive-latex-extra<br>\nPara la creación de informes<br>\nY para ver los pdf:<br>\nsudo apt-get install evince<br>\n\n\n"
 msgstr ""
 
-#: FormPrincipal.form:88
+#: FormPrincipal.form:91
 msgid "Alumnos"
 msgstr ""
 
-#: FormPrincipal.form:98
+#: FormPrincipal.form:101
 msgid "Añadir"
 msgstr ""
 
-#: FormPrincipal.form:106
+#: FormPrincipal.form:109
 msgid "Editar"
 msgstr ""
 
-#: FormPrincipal.form:114
+#: FormPrincipal.form:117
 msgid "Borrar"
 msgstr ""
 
-#: FormPrincipal.form:122
+#: FormPrincipal.form:125
 msgid "Expediente"
 msgstr ""
 
-#: FormPrincipal.form:130
+#: FormPrincipal.form:133
 msgid "Imprimir Lista"
 msgstr ""
 
-#: FormPrincipal.form:138
+#: FormPrincipal.form:141
 msgid "si hace doble click editará el expediente"
 msgstr ""
 
-#: FormPrincipal.form:145
+#: FormPrincipal.form:148
 msgid "Cursos"
 msgstr ""
 
-#: FormPrincipal.form:178
+#: FormPrincipal.form:181
 msgid "Ficha"
 msgstr ""
 
-#: FormPrincipal.form:201
+#: FormPrincipal.form:204
 msgid "Listados"
 msgstr ""
 
-#: FormPrincipal.form:206
+#: FormPrincipal.form:209
 msgid "Listado de informes disponibles..."
 msgstr ""
 
-#: FormPrincipal.form:213
+#: FormPrincipal.form:216
 msgid "Administrador"
 msgstr ""
 
-#: FormPrincipal.form:219
+#: FormPrincipal.form:222
 msgid "Clave Actual:"
 msgstr ""
 
-#: FormPrincipal.form:226
+#: FormPrincipal.form:229
 msgid "Cambiar Contraseña"
 msgstr ""
 
-#: FormPrincipal.form:238
+#: FormPrincipal.form:241
 msgid "Clave Nueva:"
 msgstr ""
 
-#: FormPrincipal.form:249
+#: FormPrincipal.form:252
 msgid "Reescriba la clave:"
 msgstr ""
 
-#: FormPrincipal.form:262
+#: FormPrincipal.form:265
 msgid "mensaje:"
 msgstr ""
 
-#: FormPrincipal.form:268
+#: FormPrincipal.form:271
 msgid "Usuario Actual:"
 msgstr ""
 
-#: FormPrincipal.form:280
+#: FormPrincipal.form:283
 msgid "Comprobar si existe nueva Versión del programa"
 msgstr ""
 
-#: FormPrincipal.form:289
+#: FormPrincipal.form:292
 msgid "Realizar Copia Datos"
 msgstr ""
 
-#: FormPrincipal.form:298
+#: FormPrincipal.form:301
 msgid "Restaurar Datos"
 msgstr ""
 
-#: FormPrincipal.form:303
+#: FormPrincipal.form:308
+msgid "Ruta donde se Guardan los Informes:"
+msgstr ""
+
+#: FormPrincipal.form:313
+msgid "/tmp"
+msgstr ""
+
+#: FormPrincipal.form:321
+msgid "Cambiar"
+msgstr ""
+
+#: FormPrincipal.form:326
 msgid "Salir"
 msgstr ""
 

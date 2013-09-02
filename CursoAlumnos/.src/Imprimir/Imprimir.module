@@ -19,6 +19,7 @@ Public Sub FichaAlumno(idalumno As Integer, show As Boolean)
   Dim stext As String
   Dim parrafo As String
   Dim fpensando As New FormPensando
+  Dim cadenaControlTerminadar As String
   
   fpensando.Show()
   
@@ -55,11 +56,25 @@ Public Sub FichaAlumno(idalumno As Integer, show As Boolean)
   'Escribir datos de las relaciones
   'escribir documento en pdf...
   'LatexHelper.compileTEX(stext, doc, "FichaAlumno", True)
+  cadenaControlTerminadar = ""
   If show = False Then
-    LatexHelper.compilePDF(stext, doc, "FichaAlumno", False)
+    cadenaControlTerminadar = LatexHelper.compilePDF(stext, doc, "FichaAlumno", False)
     
   Else
-    LatexHelper.compilePDF(stext, doc, "FichaAlumno", True)    
+    cadenaControlTerminadar = LatexHelper.compilePDF(stext, doc, "FichaAlumno", True)    
+  Endif
+  
+  Do While cadenaControlTerminadar = ""
+    Wait 0.2
+  Loop
+  
+  If controladorAplicacion.rutainformes = "/tmp" Then 
+    'no hago nada
+  Else
+    
+    BorrarSiExiste(controladorAplicacion.rutainformes & "/FichaAlumno.pdf")
+    Wait 0.2
+    Copy "/tmp/FichaAlumno.pdf" To controladorAplicacion.rutainformes & "/FichaAlumno.pdf"
   Endif
   
   fpensando.parar = True
@@ -78,6 +93,7 @@ Public Sub FichaCurso(idcurso As Integer, show As Boolean)
   Dim stext As String
   Dim parrafo As String
   Dim fpensando As New FormPensando
+  Dim cadenaControlTerminadar As String
   
   fpensando.Show()
   
@@ -106,10 +122,26 @@ Public Sub FichaCurso(idcurso As Integer, show As Boolean)
   
   'escribir documento en pdf...
   '  LatexHelper.compileTEX(stext, doc, "FichaCurso", True)
+  '  
+  cadenaControlTerminadar = ""
   If show = False Then
-    LatexHelper.compilePDF(stext, doc, "FichaCurso", False)
+    cadenaControlTerminadar = LatexHelper.compilePDF(stext, doc, "FichaCurso", False)
+    
   Else
-    LatexHelper.compilePDF(stext, doc, "FichaCurso", True)
+    cadenaControlTerminadar = LatexHelper.compilePDF(stext, doc, "FichaCurso", True)
+  Endif
+  
+  Do While cadenaControlTerminadar = ""
+    Wait 0.2
+  Loop
+  
+  If controladorAplicacion.rutainformes = "/tmp" Then 
+    'no hago nada
+  Else
+    
+    BorrarSiExiste(controladorAplicacion.rutainformes & "/FichaCurso.pdf")
+    Wait 0.2
+    Copy "/tmp/FichaCurso.pdf" To controladorAplicacion.rutainformes & "/FichaCurso.pdf"
   Endif
   
   fpensando.parar = True
@@ -129,6 +161,7 @@ Public Sub ListaAlumnos()
   
   Dim alu As New Alumnodao
   Dim fpensando As New FormPensando
+  Dim cadenaControlTerminadar As String
   
   fpensando.Show()
   
@@ -164,7 +197,21 @@ Public Sub ListaAlumnos()
   stext &= doc.Environment.LandScape.End()
   
   'LatexHelper.compileTEX(stext, doc, "ListaAlumnos", True)
+  cadenaControlTerminadar = ""
   LatexHelper.compilePDF(stext, doc, "ListaAlumnos", True)
+  
+  Do While cadenaControlTerminadar = ""
+    Wait 0.2
+  Loop
+  
+  If controladorAplicacion.rutainformes = "/tmp" Then 
+    'no hago nada
+  Else
+    BorrarSiExiste(controladorAplicacion.rutainformes & "/ListaAlumnos.pdf")
+    Wait 0.2
+    Copy "/tmp/ListaAlumnos.pdf" To controladorAplicacion.rutainformes & "/ListaAlumnos.pdf"
+    
+  Endif
   
   fpensando.parar = True
   fpensando.Close()
@@ -183,7 +230,8 @@ Public Sub ListaCusos()
   
   Dim cur As New CursoDAO
   Dim fpensando As New FormPensando
-  
+  Dim cadenaControlTerminadar As String
+
   fpensando.Show()
   
   cur.gridFormatearColumnas(gridviewTmporal)
@@ -211,7 +259,21 @@ Public Sub ListaCusos()
   stext &= "{ " & doc.TableGridViews(gridviewTmporal, "|l|l|") & " }"
   
   'LatexHelper.compileTEX(stext, doc, "ListaAlumnos", True)
-  LatexHelper.compilePDF(stext, doc, "ListaCursos", True)
+  cadenaControlTerminadar = ""
+  
+  cadenaControlTerminadar = LatexHelper.compilePDF(stext, doc, "ListaCursos", True)
+  
+  Do While cadenaControlTerminadar = ""
+    Wait 0.2
+  Loop
+  
+  If controladorAplicacion.rutainformes = "/tmp" Then 
+    'no hago nada
+  Else
+    BorrarSiExiste(controladorAplicacion.rutainformes & "/ListaCursos.pdf")
+    Wait 0.2
+    Copy "/tmp/ListaCursos.pdf" To controladorAplicacion.rutainformes & "/ListaCursos.pdf"
+  Endif
   
   fpensando.parar = True
   fpensando.Close()
@@ -244,6 +306,15 @@ Public Sub ListaAlumnosConCursosParticipal()
     Endif
     
     Try Move "/tmp/FichaAlumno.pdf" To "/tmp/ListaTodosLosAlumnos/FichaAlumno" & Str(fila) & ".pdf"
+    
+    Wait 0.2
+    If controladorAplicacion.rutainformes = "/tmp" Then 
+      'no hago nada
+    Else
+      BorrarSiExiste(controladorAplicacion.rutainformes & "/FichaAlumno" & Str(fila) & ".pdf")
+      Wait 0.2
+      Copy "/tmp/ListaTodosLosAlumnos/FichaAlumno" & Str(fila) & ".pdf" To controladorAplicacion.rutainformes & "/FichaAlumno" & Str(fila) & ".pdf"
+    Endif
     
     resultadoTodosLosAlumnos.MoveNext()
   Loop
@@ -283,6 +354,14 @@ Public Sub ListaCusosConAlumnosParticipal()
     Endif
     
     Move "/tmp/FichaCurso.pdf" To "/tmp/ListaTodosLosCursos/FichaCurso" & Str(fila) & ".pdf"
+    Wait 0.2
+    If controladorAplicacion.rutainformes = "/tmp" Then 
+      'no hago nada
+    Else
+      BorrarSiExiste(controladorAplicacion.rutainformes & "/FichaCurso" & Str(fila) & ".pdf")
+      Wait 0.2
+      Copy "/tmp/ListaTodosLosCursos/FichaCurso" & Str(fila) & ".pdf" To controladorAplicacion.rutainformes & "/FichaCurso" & Str(fila) & ".pdf"
+    Endif
     
     resultadoTodosLosCursos.MoveNext()
   Loop
@@ -396,5 +475,11 @@ Public Sub ExpedienteDeterminadoCurso()
     idCurso = cursoelegido.tag
     FichaCurso(idcurso, True)
   Endif  
+  
+End
+
+Public Sub BorrarSiExiste(ruta As String)
+  
+  If Exist(ruta) Then Kill ruta
   
 End

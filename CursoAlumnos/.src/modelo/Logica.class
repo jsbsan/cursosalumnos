@@ -192,6 +192,14 @@ Public Function borrarRelacionIdAlumno(idalumno As Integer) As Boolean
   
 End
 
+Public Function borrarRelacionIdRela(dato As RelacionVO) As Boolean
+  
+  Dim mirela As New RelacionDAO
+
+  Return mirela.BorrarIdRelacion(dato.idRelacion)
+  
+End
+
 Public Function BorrarRelacionCurso(idcurso As Integer) As Boolean
   
   Dim mirel As New RelacionDAO
@@ -232,7 +240,6 @@ Public Function ContenidoDocumento(dato As String) As Result
   Dim mialu As New AlumnoDAO
   
   Return mialu.BuscarContenidoDocumento(dato, "Apellido") 
-
+  
 End
 
-  

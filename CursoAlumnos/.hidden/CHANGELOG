@@ -1,3 +1,15 @@
+* Mon Sep 02 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.1.5
+- borrado de observaciones (de las varias que puede tener), añadido retardos para mostrar los pdf con string
+
+* Sat Aug 31 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.1.4
+- Con copia de archivos de listado a otro directorio
+
+* Sat Aug 31 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.1.4
+- imagemagick
+
+* Sat Aug 31 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.1.3
+- a
+
 * Sat Aug 31 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.1.3
 - Corregido error al Restaurar datos
 

@@ -52,7 +52,7 @@
     Border = True
   }
   { ToolButtonEditarObservacion ToolButton
-    MoveScaled(44,26,23,5)
+    MoveScaled(51,23,23,4)
     Font = Font["Arial,-2"]
     AutoResize = True
     Text = ("Editar Observaciones")
@@ -88,6 +88,14 @@
     AutoResize = True
     Text = ("Imprimir")
     Picture = Picture["icon:/16/printer"]
+    Border = True
+  }
+  { ToolButtonBorrarObservacion ToolButton
+    MoveScaled(51,28,23,4)
+    Font = Font["Arial,-2"]
+    AutoResize = True
+    Text = ("Borrar Observaciones")
+    Picture = Picture["icon:/16/erase"]
     Border = True
   }
 }
