@@ -11,6 +11,7 @@ Public eligecurso As FormEligeCurso
 Public eligeAlumno As FormEligeAlumno
 Public log As Logica
 
+Public rutainformes As String
 Public rutaTrabajo As String = User.home & "/.CursoAlumnos/"
 
 Private usuarioActual As String
@@ -116,7 +117,7 @@ End
 
 Public Function ContenidoLegajo(dato As String) As Result
   'por un legajo
-
+  
   Return log.ContenidoLegajo(dato)
   
 End
@@ -162,3 +163,8 @@ Public Function modificarIdRelacion(datos As RelacionVO) As Boolean
   
 End
 
+Public Function BorrarIdRelacion(datos As RelacionVO) As Boolean
+  
+  Return log.borrarRelacionIdRela(datos)
+  
+End

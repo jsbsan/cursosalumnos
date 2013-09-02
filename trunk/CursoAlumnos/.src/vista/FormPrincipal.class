@@ -167,7 +167,7 @@ End
 Public Sub IconPanelMenu_Click()
   
   Dim res As Integer
-
+  
   Select Case IconPanelMenu.Index
     Case 3
       'lista a imprimir
@@ -475,6 +475,16 @@ Public Sub ToolButtonRestaurarDatos_Click()
     IconPanelMenu.index = 1
     Message.Info("Restaurada la copia de datos")
     Kill User.Home & "/.CursoAlumnos/" & File.Name(Dialog.Path)
+  Endif
+  
+End
+
+Public Sub ToolButtonCambiarRutaInformes_Click()
+  
+  If Dialog.SelectDirectory() Then 
+  Else
+    ControladorAplicacion.rutainformes = Dialog.Path
+    LabelRutaInforme.text = ControladorAplicacion.rutainformes
   Endif
   
 End

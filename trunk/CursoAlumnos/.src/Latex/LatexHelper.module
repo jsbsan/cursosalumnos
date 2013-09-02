@@ -86,14 +86,14 @@ Public Function compilePDF(sText As String, classLatex As Latex, Optional NameFi
   
   'hproc = Exec ["/tmp/createPdf.sh"] ''create file .text to .pdf file
   
-  hproc = Shell "cd /tmp;pdflatex " & sfiletemp
+  hproc = Shell "cd /tmp;pdflatex " & sfiletemp Wait
   
   Do While hproc.state = Process.Running
     Wait 0.2
   Loop
   
   If show = True Then 
-    Exec ["evince", Replace$(sFileTemp, ".tex", ".pdf")]
+    Exec ["evince", (Replace$(sFileTemp, ".tex", ".pdf"))]
   Endif
   
   Return Replace$(sFileTemp, ".tex", ".pdf")

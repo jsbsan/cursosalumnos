@@ -45,6 +45,17 @@ Public Function asignaImagen2Paso(ruta As String, PictureBoxElegido As Picturebo
   copiar = "si"
   
   nombresimple = ModuleUtilidadesDisco.VerificarNombreEtiqueta(Replace(File.name(PictureBoxElegido.tag), " ", "_"), ["FOTO", "PLANTILLA", "CAMPO"], ["Imagen", "PLA_TILLA", "CA_PO"])
+  nombresimple = Replace$(nombresimple, "á", "a")
+  nombresimple = Replace$(nombresimple, "é", "e")  
+  nombresimple = Replace$(nombresimple, "í", "i")  
+  nombresimple = Replace$(nombresimple, "ó", "o")  
+  nombresimple = Replace$(nombresimple, "ú", "u")  
+  nombresimple = Replace$(nombresimple, "Á", "A")  
+  nombresimple = Replace$(nombresimple, "É", "E")  
+  nombresimple = Replace$(nombresimple, "Í", "I")  
+  nombresimple = Replace$(nombresimple, "Ó", "O")    '
+  nombresimple = Replace$(nombresimple, "Ú", "U")    '
+  
   nombrecopia = rutacopia & nombresimple
   
   While (Exist(nombrecopia))

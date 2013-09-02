@@ -183,3 +183,24 @@ Public Sub ToolButtonImprimir_Click()
   Imprimir.FichaAlumno(TmpAlumno.idAlumno, True)
   
 End
+
+Public Sub ToolButtonBorrarObservacion_Click()
+  
+  Dim rela As New RelacionVO
+  Dim textoObservacion As String
+  
+  If GridViewRelacionCursos.row = -1 Then 
+    Message.Info("Seleccione una observacion (fila) a borrar")
+  Else
+    
+    'modificar registro de observacion
+    rela.idRelacion = Val(GridViewRelacionCursos[GridViewRelacionCursos.row, 0].Text)
+    
+    If ControladorAplicacion.BorrarIdRelacion(rela) Then 
+      refrescarDatosCursos()
+    Else
+      Message.Error("No se ha podido modificar la observacion")
+    Endif
+  Endif
+  
+End
