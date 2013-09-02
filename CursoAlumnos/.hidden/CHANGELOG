@@ -1,4 +1,7 @@
 * Mon Sep 02 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.1.5
+- revisado lista de alumnos que no se apagaba el icono de espera
+
+* Mon Sep 02 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.1.5
 - borrado de observaciones (de las varias que puede tener), añadido retardos para mostrar los pdf con string
 
 * Sat Aug 31 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.1.4

@@ -1,5 +1,6 @@
 [Breakpoints]
-Count=0
+Breakpoint[1]="Imprimir.336"
+Count=1
 
 [DebugWindow]
 Count=0
@@ -102,9 +103,8 @@ File[1]=".src/vista/FControlAcceso.form"
 File[2]=".src/vista/FControlAcceso.class:13.27"
 File[3]=".src/controlador/main.module:50.2"
 File[4]=".src/controlador/Controlador.class:167.40"
-Active=5
 File[5]=".src/vista/FormPrincipal.form"
-File[6]=".src/vista/FormPrincipal.class:487.7"
+File[6]=".src/vista/FormPrincipal.class:397.3"
 File[7]=".src/modelo/Logica.class:199.2"
 File[8]=".src/vista/FormAlumno.form"
 File[9]=".src/vista/FormAlumno.class:156.2"
@@ -138,7 +138,8 @@ File[36]=".src/vista/FormEligeCurso.class:0.19"
 File[37]=".src/vista/FormEligeAlumno.form"
 File[38]=".src/vista/FormEligeAlumno.class:133.2"
 File[39]="esquema.MpBd:0.0"
-File[40]=".src/Imprimir/Imprimir.module:232.39"
+Active=40
+File[40]=".src/Imprimir/Imprimir.module:165.9"
 File[41]=".src/Latex/Latex.class:439.0"
 File[42]=".src/Latex/_Environment.class:5.33"
 File[43]=".src/Latex/_Line.class:0.19"
