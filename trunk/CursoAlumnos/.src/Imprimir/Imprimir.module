@@ -198,7 +198,7 @@ Public Sub ListaAlumnos()
   
   'LatexHelper.compileTEX(stext, doc, "ListaAlumnos", True)
   cadenaControlTerminadar = ""
-  LatexHelper.compilePDF(stext, doc, "ListaAlumnos", True)
+  cadenaControlTerminadar = LatexHelper.compilePDF(stext, doc, "ListaAlumnos", True)
   
   Do While cadenaControlTerminadar = ""
     Wait 0.2
@@ -231,7 +231,7 @@ Public Sub ListaCusos()
   Dim cur As New CursoDAO
   Dim fpensando As New FormPensando
   Dim cadenaControlTerminadar As String
-
+  
   fpensando.Show()
   
   cur.gridFormatearColumnas(gridviewTmporal)
@@ -319,12 +319,12 @@ Public Sub ListaAlumnosConCursosParticipal()
     resultadoTodosLosAlumnos.MoveNext()
   Loop
   
-  'abrir en la caperta temporal para ver los documentos pdf
-  Desktop.Open("/tmp/ListaTodosLosAlumnos")
-  
   fpensando.parar = True
   fpensando.Close()
   fpensando = Null
+  
+  'abrir en la caperta temporal para ver los documentos pdf
+  Desktop.Open("/tmp/ListaTodosLosAlumnos")
   
 End
 
@@ -367,10 +367,10 @@ Public Sub ListaCusosConAlumnosParticipal()
   Loop
   
   'abrir en la caperta temporal para ver los documentos pdf
-  Desktop.Open("/tmp/ListaTodosLosCursos")
   fpensando.parar = True
   fpensando.Close()
   fpensando = Null
+  Desktop.Open("/tmp/ListaTodosLosCursos")
   
 End
 
