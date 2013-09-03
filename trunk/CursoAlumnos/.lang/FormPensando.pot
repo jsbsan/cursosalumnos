@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: FormPensando.class:7
+#: FormPensando.class:10
 msgid "Espere por favor..."
 msgstr ""
 
