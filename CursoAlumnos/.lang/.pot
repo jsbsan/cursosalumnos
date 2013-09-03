@@ -215,7 +215,7 @@ msgstr ""
 msgid "Editar Curso"
 msgstr ""
 
-#: FormPensando.class:7
+#: FormPensando.class:10
 msgid "Espere por favor..."
 msgstr ""
 
@@ -338,19 +338,31 @@ msgstr ""
 msgid "Cambiar"
 msgstr ""
 
-#: LatexHelper.module:13
+#: LatexHelper.module:10
+msgid "Se ha producido un error al crear informe en pdf."
+msgstr ""
+
+#: LatexHelper.module:10
+msgid "Puede ser que haya utilizado caracteres no validos"
+msgstr ""
+
+#: LatexHelper.module:10
+msgid "Error: "
+msgstr ""
+
+#: LatexHelper.module:22
 msgid "Error: You need to install gedit"
 msgstr ""
 
-#: LatexHelper.module:38
+#: LatexHelper.module:47
 msgid "Error: Try create file .tex"
 msgstr ""
 
-#: LatexHelper.module:52
+#: LatexHelper.module:60
 msgid "Error: You need to install latex-beamer and texlive-latex-extra"
 msgstr ""
 
-#: LatexHelper.module:57
+#: LatexHelper.module:65
 msgid "Error: You need to install evince"
 msgstr ""
 

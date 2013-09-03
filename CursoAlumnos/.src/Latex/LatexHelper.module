@@ -2,6 +2,15 @@
 
 Export
 
+Public hproc As Process
+
+Public Sub Process_Error(sError As String)
+  
+  Message.Info(("Se ha producido un error al crear informe en pdf.") & gb.CrLf & ("Puede ser que haya utilizado caracteres no validos") & 
+    gb.CrLf & ("Error: ") & Serror)
+  
+End
+
 '' sText: article , NameFileText: name doc (without adding .tex),show: show file .tex with gedit programs. Return name file create Or Error
 Public Function compileTEX(sText As String, classLatex As Latex, Optional NameFileText As String, show As Boolean) As String 
   
@@ -45,7 +54,6 @@ Public Function compilePDF(sText As String, classLatex As Latex, Optional NameFi
   'Dim scontentFile As String
   Dim sContent As String
   Dim sFileTemp As String
-  Dim hproc As Process
   
   If Not CheckProgram("pdflatex") Then
     '    Print ("You need to install  latex-beamer and texlive-latex-extra")
@@ -86,7 +94,7 @@ Public Function compilePDF(sText As String, classLatex As Latex, Optional NameFi
   
   'hproc = Exec ["/tmp/createPdf.sh"] ''create file .text to .pdf file
   
-  hproc = Shell "cd /tmp;pdflatex " & sfiletemp Wait
+  hproc = Shell "cd /tmp;pdflatex " & sfiletemp
   
   Do While hproc.state = Process.Running
     Wait 0.2

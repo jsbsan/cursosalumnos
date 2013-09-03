@@ -405,14 +405,14 @@ Public Sub TableGridViews(rejilla As Gridview, Optional sformat As String) As St
   For ia = 0 To rejilla.Columns.count - 2
     If rejilla.Columns[ia].Width <> 0 Then 
       
-      stextorejilla &= "{\\bf " & Replace(CaracteresEspeciales(rejilla.Columns[ia].title), "_", " ") & "} & "
+      stextorejilla &= "{\\bf " & Replace(TextPure(rejilla.Columns[ia].title), "_", " ") & "} & "
     Else
       'no pongo titulo al ser la columna bacia...
     Endif
   Next
   'ultima columna...
   If rejilla.Columns[ia].Width <> 0 Then 
-    stextorejilla &= "{\\bf " & Replace(CaracteresEspeciales(rejilla.Columns[rejilla.Columns.count - 1].title), "_", " ") & "}\\\\" 
+    stextorejilla &= "{\\bf " & Replace(TextPure(rejilla.Columns[rejilla.Columns.count - 1].title), "_", " ") & "}\\\\" 
   Else
     stextorejilla = Left$(stextorejilla, Len(stextorejilla) - Len(" & ")) 'le quito " & "
     stextorejilla &= "\\\\ \n"  
@@ -424,11 +424,11 @@ Public Sub TableGridViews(rejilla As Gridview, Optional sformat As String) As St
   For ia = 0 To rejilla.Rows.count - 1
     For ib = 0 To rejilla.Columns.count - 2
       If rejilla.Columns[ib].Width <> 0 Then 
-        stextorejilla &= "{ " & CaracteresEspeciales(rejilla[ia, ib].text) & " } & "
+        stextorejilla &= "{ " & TextPure(rejilla[ia, ib].text) & " } & "
       Endif
     Next
     If rejilla.Columns[ib].Width <> 0 Then 
-      stextorejilla &= "{ " & CaracteresEspeciales(rejilla[ia, ib].text) & "} \\\\ \n"
+      stextorejilla &= "{ " & TextPure(rejilla[ia, ib].text) & "} \\\\ \n"
     Else
       stextorejilla = Left$(stextorejilla, Len(stextorejilla) - Len(" & ")) 'le quito " & "
       stextorejilla &= "\\\\ \n"
@@ -463,11 +463,12 @@ Private Function tableEnd() As String ''end table
   
 End
 
-Public Function CaracteresEspeciales(cadena As String) As String
+'añadido....
+Public Function TextPure(cadena As String) As String '' pure text where special characters are changed
   
-  Dim cadenaCaracteres As Variant = ["\\", "$", "#", "%", "&", "_", "{", "}", "~", "¿", "¡"]
-  Dim sustituyeCaracter As Variant = ["\\backslash", "\\$", "\\#", "\\%", "\\&", "\\_", "\\{", "\\}", "\\~", "?`", "!`"]
-  Dim a, encuentra As Integer
+  Dim cadenaCaracteres As Variant = ["\\", "$", "#", "%", "&", "_", "{", "}", "~", "¿", "¡", "^"]
+  Dim sustituyeCaracter As Variant = ["|", "\\$", "\\#", "\\%", "\\&", "\\_", "\\{", "\\}", " ", "?`", "!`", " "]
+  Dim a As Integer
   
   For a = 0 To cadenaCaracteres.max    
     cadena = Replace$(cadena, cadenaCaracteres[a], sustituyeCaracter[a])

@@ -143,13 +143,22 @@ m
 s
 (rejilla)Gridview;[(sformat)s]
 'converts a gridview content in a latex table
-CaracteresEspeciales
+TextPure
 m
 s
 (cadena)s
+'pure text where special characters are changed
 #LatexHelper
 
 C
+hproc
+V
+Process
+
+Process_Error
+M
+
+(sError)s
 compileTEX
 M
 s
