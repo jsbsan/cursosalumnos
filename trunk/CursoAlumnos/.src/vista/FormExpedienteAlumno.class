@@ -35,8 +35,10 @@ End
 
 Public Sub ToolButtonAnnadirAlumnoCurso_Click()
   
+  Dim dato As New ClaseDato
   Dim rela As New RelacionVO
   Dim cursoelegido As New ClaseDato
+  Dim formularioInput As New FormInput
   
   ControladorAplicacion.EligeCurso.cursoelegido = cursoelegido
   
@@ -46,7 +48,12 @@ Public Sub ToolButtonAnnadirAlumnoCurso_Click()
     rela.idAlumno = TmpAlumno.idAlumno
     rela.idCurso = cursoelegido.tag
     
-    rela.Observacion = InputBox("Observacion:", "Introduzca una observacion")
+    formularioInput.dato = dato
+    formularioInput.pront = "Observacion:"
+    formularioInput.titulo = "Introduzca una observacion"
+    formularioInput.Showmodal()
+    rela.Observacion = dato.tag
+    'rela.Observacion = InputBox("Observacion:", "Introduzca una observacion")
     If ControladorAplicacion.anadirRelacion(rela) Then 
       
       refrescarDatosCursos()
@@ -100,7 +107,9 @@ Public Sub ToolButtonBorrarAlumno_Click()
 End
 
 Public Sub ToolButtonEditarObservacion_Click()
-  
+
+  Dim dato As New ClaseDato
+  Dim formularioInput As New FormInput
   Dim rela As New RelacionVO
   Dim textoObservacion As String
   
@@ -108,7 +117,13 @@ Public Sub ToolButtonEditarObservacion_Click()
     Message.Info("Seleccione un curso")
   Else
     
-    textoObservacion = InputBox("Introduzca Observación:", "Observación del Aluno en el Curso " & GridViewRelacionCursos[GridViewRelacionCursos.row, 1].Text, GridViewRelacionCursos[GridViewRelacionCursos.row, 2].Text)
+    formularioInput.dato = dato
+    formularioInput.pront = "Introduzca Observación:"
+    formularioInput.titulo = "Observación del Aluno en el Curso " & GridViewRelacionCursos[GridViewRelacionCursos.row, 1].Text
+    formularioInput.Pordefecto = GridViewRelacionCursos[GridViewRelacionCursos.row, 2].Text
+    formularioInput.Showmodal()
+    
+    textoObservacion = dato.tag ' InputBox("Introduzca Observación:", "Observación del Aluno en el Curso " & GridViewRelacionCursos[GridViewRelacionCursos.row, 1].Text, GridViewRelacionCursos[GridViewRelacionCursos.row, 2].Text)
     If textoObservacion <> "" Then 
       'modificar registro de observacion
       rela.idAlumno = Val(GridViewRelacionCursos[GridViewRelacionCursos.row, 4].Text)
