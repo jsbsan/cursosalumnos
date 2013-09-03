@@ -212,11 +212,11 @@ Public Sub TextBoxNOMBRE_KeyPress()
   If Key.End = Key.CODE Or Key.Tab = Key.CODE Or Key.BackSpace = Key.CODE Or Key.delete = Key.code Or Key.Down = Key.code Or Key.Esc = Key.code Or Key.Tab = Key.code Or Key.Insert = Key.code Or Key.left = Key.code Or Key.Right = Key.code Then 
   Else
     
-    If InStr(" 0123456789,.:;ªº()=[]ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcefghijklmñopqurstuvwyxzáéíóúÁÉÍÓÚÖöüÜ", Str$(Key.text)) = 0 Then 
+    If InStr(moduloletras.posibles, Str$(Key.text)) = 0 Then 
       Stop Event
     Endif
   Endif
-
+  
 End
 
 Public Sub TextBoxAPELLIDOS_KeyPress()
@@ -228,11 +228,11 @@ Public Sub TextBoxAPELLIDOS_KeyPress()
   If Key.End = Key.CODE Or Key.Tab = Key.CODE Or Key.BackSpace = Key.CODE Or Key.delete = Key.code Or Key.Down = Key.code Or Key.Esc = Key.code Or Key.Tab = Key.code Or Key.Insert = Key.code Or Key.left = Key.code Or Key.Right = Key.code Then 
   Else
     
-    If InStr(" 0123456789,.:;ªº()=[]ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcefghijklmñopqurstuvwyxzáéíóúÁÉÍÓÚÖöüÜ", Str$(Key.text)) = 0 Then 
+    If InStr(moduloletras.posibles, Str$(Key.text)) = 0 Then 
       Stop Event
     Endif
   Endif
-
+  
 End
 
 Public Sub TextBoxDOCUMENTO_KeyPress()
@@ -244,11 +244,11 @@ Public Sub TextBoxDOCUMENTO_KeyPress()
   If Key.End = Key.CODE Or Key.Tab = Key.CODE Or Key.BackSpace = Key.CODE Or Key.delete = Key.code Or Key.Down = Key.code Or Key.Esc = Key.code Or Key.Tab = Key.code Or Key.Insert = Key.code Or Key.left = Key.code Or Key.Right = Key.code Then 
   Else
     
-    If InStr(" 0123456789,.:;ªº()=[]ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcefghijklmñopqurstuvwyxzáéíóúÁÉÍÓÚÖöüÜ", Str$(Key.text)) = 0 Then 
+    If InStr(Moduloletras.posibles, Str$(Key.text)) = 0 Then 
       Stop Event
     Endif
   Endif
-
+  
 End
 
 Public Sub TextBoxDOMICILIO_KeyPress()
@@ -260,11 +260,11 @@ Public Sub TextBoxDOMICILIO_KeyPress()
   If Key.End = Key.CODE Or Key.Tab = Key.CODE Or Key.BackSpace = Key.CODE Or Key.delete = Key.code Or Key.Down = Key.code Or Key.Esc = Key.code Or Key.Tab = Key.code Or Key.Insert = Key.code Or Key.left = Key.code Or Key.Right = Key.code Then 
   Else
     
-    If InStr(" 0123456789,.:;ªº()=[]ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcefghijklmñopqurstuvwyxzáéíóúÁÉÍÓÚÖöüÜ", Str$(Key.text)) = 0 Then 
+    If InStr(moduloletras.posibles, Str$(Key.text)) = 0 Then 
       Stop Event
     Endif
   Endif
-
+  
 End
 
 Public Sub TextBoxTELEFONO_KeyPress()
@@ -276,11 +276,11 @@ Public Sub TextBoxTELEFONO_KeyPress()
   If Key.End = Key.CODE Or Key.Tab = Key.CODE Or Key.BackSpace = Key.CODE Or Key.delete = Key.code Or Key.Down = Key.code Or Key.Esc = Key.code Or Key.Tab = Key.code Or Key.Insert = Key.code Or Key.left = Key.code Or Key.Right = Key.code Then 
   Else
     
-    If InStr(" 0123456789,.:;ªº()=[]ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcefghijklmñopqurstuvwyxzáéíóúÁÉÍÓÚÖöüÜ", Str$(Key.text)) = 0 Then 
+    If InStr(moduloletras.posibles, Str$(Key.text)) = 0 Then 
       Stop Event
     Endif
   Endif
-
+  
 End
 
 Public Sub TextBoxNACIONALIDAD_KeyPress()
@@ -292,11 +292,11 @@ Public Sub TextBoxNACIONALIDAD_KeyPress()
   If Key.End = Key.CODE Or Key.Tab = Key.CODE Or Key.BackSpace = Key.CODE Or Key.delete = Key.code Or Key.Down = Key.code Or Key.Esc = Key.code Or Key.Tab = Key.code Or Key.Insert = Key.code Or Key.left = Key.code Or Key.Right = Key.code Then 
   Else
     
-    If InStr(" 0123456789,.:;ªº()=[]ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcefghijklmñopqurstuvwyxzáéíóúÁÉÍÓÚÖöüÜ", Str$(Key.text)) = 0 Then 
+    If InStr(moduloletras.posibles, Str$(Key.text)) = 0 Then 
       Stop Event
     Endif
   Endif
-
+  
 End
 
 Public Sub TextBoxESCORIGEN_KeyPress()
@@ -308,11 +308,11 @@ Public Sub TextBoxESCORIGEN_KeyPress()
   If Key.End = Key.CODE Or Key.Tab = Key.CODE Or Key.BackSpace = Key.CODE Or Key.delete = Key.code Or Key.Down = Key.code Or Key.Esc = Key.code Or Key.Tab = Key.code Or Key.Insert = Key.code Or Key.left = Key.code Or Key.Right = Key.code Then 
   Else
     
-    If InStr(" 0123456789,.:;ªº()=[]ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcefghijklmñopqurstuvwyxzáéíóúÁÉÍÓÚÖöüÜ", Str$(Key.text)) = 0 Then 
+    If InStr(moduloletras.posibles, Str$(Key.text)) = 0 Then 
       Stop Event
     Endif
   Endif
-
+  
 End
 
 Public Sub TextBoxLEGAJO_KeyPress()
@@ -324,8 +324,9 @@ Public Sub TextBoxLEGAJO_KeyPress()
   If Key.End = Key.CODE Or Key.Tab = Key.CODE Or Key.BackSpace = Key.CODE Or Key.delete = Key.code Or Key.Down = Key.code Or Key.Esc = Key.code Or Key.Tab = Key.code Or Key.Insert = Key.code Or Key.left = Key.code Or Key.Right = Key.code Then 
   Else
     
-    If InStr(" 0123456789,.:;ªº()=[]ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcefghijklmñopqurstuvwyxzáéíóúÁÉÍÓÚÖöüÜ", Str$(Key.text)) = 0 Then 
+    If InStr(moduloletras.posibles, Str$(Key.text)) = 0 Then 
       Stop Event
     Endif
   Endif
+  
 End
