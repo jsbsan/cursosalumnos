@@ -261,6 +261,11 @@ Public Function InitDoc() As String
   stext = "\\documentclass[12pt,a4paper]{article}" & gb.CrLf 'type document: article
   stext &= "\\usepackage[dvips,dvipsnames,usenames]{color}" & gb.CrLf 'color
   stext &= "\\usepackage[utf8]{inputenc} % Escribir con acentos, ñ, ..." & gb.CrLf ' spanish
+  stext &= "\\textheight = 21 cm"
+  stext &= "\\textwidth = 17 cm"
+  stext &= "\\topmargin = -1 cm"
+  stext &= "\\oddsidemargin = 0 cm"
+  stext &= "\\parindent = 0 mm"
   stext &= "\\usepackage{lscape}" & gb.CrLf
   stext &= "\\usepackage[pdftex]{graphicx}  % Inclusión de imágenes" & gb.CrLf ' image
   stext &= "\\DeclareGraphicsExtensions {.pdf,.png,.jpg}" & gb.CrLf 'type image
@@ -400,14 +405,14 @@ Public Sub TableGridViews(rejilla As Gridview, Optional sformat As String) As St
   For ia = 0 To rejilla.Columns.count - 2
     If rejilla.Columns[ia].Width <> 0 Then 
       
-      stextorejilla &= "{\\bf " & Replace(rejilla.Columns[ia].title, "_", " ") & "} & "
+      stextorejilla &= "{\\bf " & Replace(CaracteresEspeciales(rejilla.Columns[ia].title), "_", " ") & "} & "
     Else
       'no pongo titulo al ser la columna bacia...
     Endif
   Next
   'ultima columna...
   If rejilla.Columns[ia].Width <> 0 Then 
-    stextorejilla &= "{\\bf " & Replace(rejilla.Columns[rejilla.Columns.count - 1].title, "_", " ") & "}\\\\" 
+    stextorejilla &= "{\\bf " & Replace(CaracteresEspeciales(rejilla.Columns[rejilla.Columns.count - 1].title), "_", " ") & "}\\\\" 
   Else
     stextorejilla = Left$(stextorejilla, Len(stextorejilla) - Len(" & ")) 'le quito " & "
     stextorejilla &= "\\\\ \n"  
@@ -419,11 +424,11 @@ Public Sub TableGridViews(rejilla As Gridview, Optional sformat As String) As St
   For ia = 0 To rejilla.Rows.count - 1
     For ib = 0 To rejilla.Columns.count - 2
       If rejilla.Columns[ib].Width <> 0 Then 
-        stextorejilla &= "{ " & rejilla[ia, ib].text & " } & "
+        stextorejilla &= "{ " & CaracteresEspeciales(rejilla[ia, ib].text) & " } & "
       Endif
     Next
     If rejilla.Columns[ib].Width <> 0 Then 
-      stextorejilla &= "{ " & rejilla[ia, ib].text & "} \\\\ \n"
+      stextorejilla &= "{ " & CaracteresEspeciales(rejilla[ia, ib].text) & "} \\\\ \n"
     Else
       stextorejilla = Left$(stextorejilla, Len(stextorejilla) - Len(" & ")) 'le quito " & "
       stextorejilla &= "\\\\ \n"
@@ -455,5 +460,18 @@ End
 Private Function tableEnd() As String ''end table
   
   Return "\\end{tabular}\n"
+  
+End
+
+Public Function CaracteresEspeciales(cadena As String) As String
+  
+  Dim cadenaCaracteres As Variant = ["\\", "$", "#", "%", "&", "_", "{", "}", "~", "¿", "¡"]
+  Dim sustituyeCaracter As Variant = ["\\backslash", "\\$", "\\#", "\\%", "\\&", "\\_", "\\{", "\\}", "\\~", "?`", "!`"]
+  Dim a, encuentra As Integer
+  
+  For a = 0 To cadenaCaracteres.max    
+    cadena = Replace$(cadena, cadenaCaracteres[a], sustituyeCaracter[a])
+  Next
+  Return cadena
   
 End

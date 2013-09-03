@@ -73,6 +73,29 @@ Public Sub TextBoxNombreCurso_KeyPress()
   
   If Key.code = Key.enter Or Key.code = Key.Return Then 
     TextAreaDetalle.SetFocus()
+    Return 
+  Endif
+  
+  'limitar caracteres  
+  If Key.End = Key.CODE Or Key.Tab = Key.CODE Or Key.BackSpace = Key.CODE Or Key.delete = Key.code Or Key.Down = Key.code Or Key.Esc = Key.code Or Key.Tab = Key.code Or Key.Insert = Key.code Or Key.left = Key.code Or Key.Right = Key.code Then 
+  Else
+    
+    If InStr(" 0123456789,.:;ªº()=[]ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcefghijklmñopqurstuvwyxzáéíóúÁÉÍÓÚÖöüÜ", Str$(Key.text)) = 0 Then 
+      Stop Event
+    Endif
+  Endif
+  
+End
+
+Public Sub TextAreaDetalle_KeyPress()
+  
+  'limitar caracteres  
+  If Key.End = Key.CODE Or Key.Tab = Key.CODE Or Key.BackSpace = Key.CODE Or Key.delete = Key.code Or Key.Down = Key.code Or Key.Esc = Key.code Or Key.Tab = Key.code Or Key.Insert = Key.code Or Key.left = Key.code Or Key.Right = Key.code Then 
+  Else
+    
+    If InStr(" 0123456789,.:;ªº()=[]ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcefghijklmñopqurstuvwyxzáéíóúÁÉÍÓÚÖöüÜ", Str$(Key.text)) = 0 Then 
+      Stop Event
+    Endif
   Endif
   
 End

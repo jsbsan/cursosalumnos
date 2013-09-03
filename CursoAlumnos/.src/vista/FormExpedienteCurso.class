@@ -92,18 +92,29 @@ End
 
 Public Sub ToolButtonEditarAlumno_Click()
   
+  Dim dato As New ClaseDato
   Dim rela As New RelacionVO
   Dim textoObservacion As String
-  
+  Dim formularioInput As New FormInput
+
   If GridViewRelacionAlumnos.row = -1 Then 
     Message.Info("Seleccione un Alumno")
   Else
     
-    textoObservacion = InputBox("Introduzca Observación sobre " & 
+    formularioInput.dato = dato
+    formularioInput.pront = "Introduzca Observación sobre " & 
       GridViewRelacionAlumnos[GridViewRelacionAlumnos.row, 4].Text & " " &
-      GridViewRelacionAlumnos[GridViewRelacionAlumnos.row, 3].Text, 
-      "Observación del Alumno", 
-      GridViewRelacionAlumnos[GridViewRelacionAlumnos.row, 5].Text)
+      GridViewRelacionAlumnos[GridViewRelacionAlumnos.row, 3].Text
+    formularioInput.titulo = "Observación del Alumno"
+    formularioInput.Pordefecto = GridViewRelacionAlumnos[GridViewRelacionAlumnos.row, 5].Text
+    formularioInput.Showmodal()
+    
+    textoObservacion = dato.tag
+    ' textoObservacion = InputBox("Introduzca Observación sobre " & 
+    '  GridViewRelacionAlumnos[GridViewRelacionAlumnos.row, 4].Text & " " &
+    '  GridViewRelacionAlumnos[GridViewRelacionAlumnos.row, 3].Text, 
+    '  "Observación del Alumno", 
+    '  GridViewRelacionAlumnos[GridViewRelacionAlumnos.row, 5].Text)
     
     If textoObservacion <> "" Then 
       'modificar registro de observacion

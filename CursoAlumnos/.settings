@@ -35,6 +35,9 @@ Geometry=[-10,-8,210,210]
 [DebugWindow/GridViewAlumno.Columns[column]]
 Geometry=[-7,-8,210,485]
 
+[DebugWindow/Key]
+Geometry=[-7,-8,210,210]
+
 [DebugWindow/Picture.Load(nombrecopia)]
 Geometry=[-7,-8,210,210]
 
@@ -52,6 +55,9 @@ Geometry=[-10,-8,326,223]
 
 [DebugWindow/alu]
 Geometry=[-7,-8,281,612]
+
+[DebugWindow/cadenaCaracteres]
+Geometry=[-11,482,210,210]
 
 [DebugWindow/con]
 Geometry=[-7,-8,549,210]
@@ -95,29 +101,32 @@ Geometry=[-7,-8,210,210]
 [DebugWindow/resultadoTodosLosAlumnos.Fields]
 Geometry=[7,6,210,210]
 
+[DebugWindow/sustituyeCaracter]
+Geometry=[-5,243,210,210]
+
 [FCommit]
 LastCommit="Formularios de expedientes de alumnos y cursos\n---- Esta línea y las siguientes serán ignoradas ----\n\nM       .src/Curso.class\nM       .src/Alumno.class\nM       .src/controlador/main.module\nM       .src/controlador/Controlador.class\nM       .src/vista/FormPrincipal.class\nA       .src/vista/FormExpedienteCurso.form\nA       .src/vista/FormExpedienteAlumno.form\nA       .src/vista/FormExpedienteCurso.class\nA       .src/vista/FormExpedienteAlumno.class\nA       .src/vista/FormCurso.form\nA       .src/vista/FormCurso.class\nM       .src/vista/FormPrincipal.form\nM       .gambas/MAIN\nM       .gambas/FORMPRINCIPAL\nM       .gambas/CONTROLADOR\nM       .settings\nM       .startup\nM       .project\nM       .lang/.pot\nM       .lang/FormPrincipal.pot"
 
 [OpenFile]
 File[1]=".src/vista/FControlAcceso.form"
-File[2]=".src/vista/FControlAcceso.class:13.27"
+File[2]=".src/vista/FControlAcceso.class:24.36"
 File[3]=".src/controlador/main.module:50.2"
 File[4]=".src/controlador/Controlador.class:167.40"
 File[5]=".src/vista/FormPrincipal.form"
-File[6]=".src/vista/FormPrincipal.class:397.3"
+File[6]=".src/vista/FormPrincipal.class:433.26"
 File[7]=".src/modelo/Logica.class:199.2"
 File[8]=".src/vista/FormAlumno.form"
-File[9]=".src/vista/FormAlumno.class:156.2"
+File[9]=".src/vista/FormAlumno.class:266.0"
 File[10]="icono_fotos_personas.png"
 File[11]=".src/vista/FormCalendario.form"
 File[12]=".src/vista/FormCalendario.class:22.0"
 File[13]=".src/controlador/ClaseDato.class:8.0"
 File[14]=".src/vista/FormCurso.form"
-File[15]=".src/vista/FormCurso.class:8.20"
+File[15]=".src/vista/FormCurso.class:98.7"
 File[16]=".src/vista/FormExpedienteCurso.form"
-File[17]=".src/vista/FormExpedienteCurso.class:189.0"
+File[17]=".src/vista/FormExpedienteCurso.class:97.38"
 File[18]=".src/vista/FormExpedienteAlumno.form"
-File[19]=".src/vista/FormExpedienteAlumno.class:201.63"
+File[19]=".src/vista/FormExpedienteAlumno.class:125.228"
 File[20]="transparente.png"
 File[21]=".src/modelo/conexion/conexion.class:14.0"
 File[22]=".src/modelo/VO/AlumnoVO.class:2.17"
@@ -130,17 +139,16 @@ File[28]=".src/Otros Formularios y Modulos/FormElegirFichero.class:18.2"
 File[29]=".src/controlador/ClassDato.class:0.19"
 File[30]=".src/Otros Formularios y Modulos/FormPensando.form"
 File[31]=".src/Otros Formularios y Modulos/FormError.form"
-File[32]=".src/Otros Formularios y Modulos/ModuleUtilidadesDisco.module:82.2"
+File[32]=".src/Otros Formularios y Modulos/ModuleUtilidadesDisco.module:139.0"
 File[33]=".src/Otros Formularios y Modulos/FormPensando.class:18.3"
 File[34]="icoLoading.gif"
 File[35]=".src/vista/FormEligeCurso.form"
 File[36]=".src/vista/FormEligeCurso.class:0.19"
 File[37]=".src/vista/FormEligeAlumno.form"
-File[38]=".src/vista/FormEligeAlumno.class:133.2"
+File[38]=".src/vista/FormEligeAlumno.class:156.131"
 File[39]="esquema.MpBd:0.0"
-Active=40
-File[40]=".src/Imprimir/Imprimir.module:165.9"
-File[41]=".src/Latex/Latex.class:439.0"
+File[40]=".src/Imprimir/Imprimir.module:196.9"
+File[41]=".src/Latex/Latex.class:266.35"
 File[42]=".src/Latex/_Environment.class:5.33"
 File[43]=".src/Latex/_Line.class:0.19"
 File[44]=".src/Latex/_Size.class:0.19"
@@ -160,7 +168,10 @@ File[57]=".src/modelo/DAO/RelacionDAO.class:0.19"
 File[58]=".src/Otros Formularios y Modulos/ModuleUpdate.module:13.18"
 File[59]="FloppyExtraer.png"
 File[60]="FloppyEntrada.png"
-Count=60
+File[61]=".src/Otros Formularios y Modulos/FormInput.form"
+Active=62
+File[62]=".src/Otros Formularios y Modulos/FormInput.class:31.104"
+Count=62
 
 [VersionControl]
 RememberPassword=1
