@@ -20,7 +20,7 @@ Public Sub FichaAlumno(idalumno As Integer, show As Boolean)
   Dim parrafo As String
   Dim fpensando As New FormPensando
   Dim cadenaControlTerminadar As String
-
+  
   fpensando.estadoimprimiendo = True
   fpensando.Show()
   
@@ -41,13 +41,13 @@ Public Sub FichaAlumno(idalumno As Integer, show As Boolean)
     gb.CrLf & gb.CrLf & ""
   
   stext &= parrafo
-  stext &= doc.bold("Nombre y Apellidos: ") & String.Upper$(alumno.Nombre) & " " & String.Upper$(alumno.Apellido) & doc.CrLf()
-  stext &= doc.bold("Documento: ") & alumno.Documento & doc.CrLf()
+  stext &= doc.bold("Nombre y Apellidos: ") & doc.text(String.Upper$(alumno.Nombre) & " " & String.Upper$(alumno.Apellido)) & doc.CrLf()
+  stext &= doc.bold("Documento: ") & doc.text(alumno.Documento) & doc.CrLf()
   stext &= doc.bold("Fecha Nacimiento: ") & Format(Date(Year(alumno.FechaNacimiento), Month(alumno.FechaNacimiento), Day(alumno.FechaNacimiento)), "dd mmmm yyyy") & doc.CrLf()
-  stext &= doc.bold("Teléfono: ") & alumno.Telefono & doc.CrLf() 
-  stext &= doc.bold("Nacionalidad: ") & alumno.Nacionalidad & doc.CrLf()
-  stext &= doc.bold("Esc. Origen: ") & alumno.EscOrigen & doc.CrLf()
-  stext &= doc.bold("Legajo: ") & alumno.Legajo & doc.CrLf()
+  stext &= doc.bold("Teléfono: ") & doc.text(alumno.Telefono) & doc.CrLf() 
+  stext &= doc.bold("Nacionalidad: ") & doc.text(alumno.Nacionalidad) & doc.CrLf()
+  stext &= doc.bold("Esc. Origen: ") & doc.text(alumno.EscOrigen) & doc.CrLf()
+  stext &= doc.bold("Legajo: ") & doc.text(alumno.Legajo) & doc.CrLf()
   stext &= doc.spaceV(0.5)
   stext &= doc.bold("Asistencia a Cursos:")
   stext &= doc.spaceV(0.5)
@@ -95,7 +95,7 @@ Public Sub FichaCurso(idcurso As Integer, show As Boolean)
   Dim parrafo As String
   Dim fpensando As New FormPensando
   Dim cadenaControlTerminadar As String
-
+  
   fpensando.estadoimprimiendo = True
   fpensando.Show()
   
@@ -112,9 +112,9 @@ Public Sub FichaCurso(idcurso As Integer, show As Boolean)
   doc.pageHeader("", "Expediente Curso", "")
   doc.pageFooter("", "", "" & doc.pageNumber())
   
-  stext &= doc.bold("Curso: ") & String.Upper$(curso.Nombre) & doc.CrLf()
+  stext &= doc.bold("Curso: ") & doc.text(String.Upper$(curso.Nombre)) & doc.CrLf()
   stext &= doc.bold("Detalles: ") & doc.CrLf()
-  stext &= curso.Detalle & doc.CrLf()
+  stext &= doc.text(curso.Detalle) & doc.CrLf()
   stext &= doc.spaceV(0.5)
   stext &= doc.bold("Alumnos del Curso:")
   stext &= doc.spaceV(0.5)
@@ -164,7 +164,7 @@ Public Sub ListaAlumnos()
   Dim alu As New Alumnodao
   Dim fpensando As New FormPensando
   Dim cadenaControlTerminadar As String
-
+  
   fpensando.estadoimprimiendo = True
   fpensando.Show()
   
@@ -234,7 +234,7 @@ Public Sub ListaCusos()
   Dim cur As New CursoDAO
   Dim fpensando As New FormPensando
   Dim cadenaControlTerminadar As String
-
+  
   fpensando.estadoimprimiendo = True
   fpensando.Show()
   
@@ -290,7 +290,7 @@ Public Sub ListaAlumnosConCursosParticipal()
   Dim resultadoTodosLosAlumnos As Result
   Dim fila As Integer = 0
   Dim fpensando As New FormPensando
-
+  
   fpensando.estadoimprimiendo = True
   fpensando.Show()
   
@@ -338,7 +338,7 @@ Public Sub ListaCusosConAlumnosParticipal()
   Dim resultadoTodosLosCursos As Result
   Dim fila As Integer = 0
   Dim fpensando As New FormPensando
-
+  
   fpensando.estadoimprimiendo = True
   fpensando.Show()
   'consultar todos los id
