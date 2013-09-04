@@ -36,10 +36,10 @@ Public Sub Form_Resize()
   IconPanelMenu.W = Me.w - IconPanelMenu.X
   IconPanelMenu.h = Me.H - IconPanelMenu.y - 10
   
-  GridViewAlumno.w = Me.w - GridViewAlumno.X - IconPanelMenu.X - 30
+  GridViewAlumno.w = Me.w - GridViewAlumno.X - IconPanelMenu.X - 30 - 130
   GridViewAlumno.h = Me.H - GridViewAlumno.y - IconPanelMenu.y - 10
   
-  GridViewCurso.w = Me.w - GridViewcurso.X - IconPanelMenu.X - 30
+  GridViewCurso.w = Me.w - GridViewcurso.X - IconPanelMenu.X - 30 - 130
   GridViewCurso.h = Me.H - GridViewCurso.y - IconPanelMenu.y - 10
   ListBoxInforme.h = Me.H - ListBoxInforme.y - IconPanelMenu.y - 10
   

@@ -231,9 +231,9 @@ End
 Public Sub text(sText As String, Optional InitParagraph As Boolean) As String
   
   If IsNull(InitParagraph) Or If InitParagraph = True Then 
-    Return gb.CrLf & sText & gb.CrLf 
+    Return gb.CrLf & TextPure(sText) & gb.CrLf 
   Else
-    Return sText & gb.CrLf   
+    Return TextPure(sText) & gb.CrLf   
   Endif
   
 End
@@ -436,7 +436,7 @@ Public Sub TableGridViews(rejilla As Gridview, Optional sformat As String) As St
     stextorejilla &= "\\hline  \n" 
   Next 
   
-  stext &= text(stextorejilla)
+  stext &= stextorejilla
   stext &= CrLf()
   stext &= tableEnd()
   Return stext
@@ -464,10 +464,10 @@ Private Function tableEnd() As String ''end table
 End
 
 'añadido....
-Public Function TextPure(cadena As String) As String '' pure text where special characters are changed
+Private Function TextPure(cadena As String) As String '' pure text where special characters are changed
   
   Dim cadenaCaracteres As Variant = ["\\", "$", "#", "%", "&", "_", "{", "}", "~", "¿", "¡", "^"]
-  Dim sustituyeCaracter As Variant = ["|", "\\$", "\\#", "\\%", "\\&", "\\_", "\\{", "\\}", " ", "?`", "!`", " "]
+  Dim sustituyeCaracter As Variant = [" ", "\\$", "\\#", "\\%", "\\&", "\\_", "\\{", "\\}", " ", "?`", "!`", " "]
   Dim a As Integer
   
   For a = 0 To cadenaCaracteres.max    
