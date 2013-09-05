@@ -1,5 +1,7 @@
 ' Gambas class file
 
+' Gambas class filete
+
 Export
 
 Private sUsePackageText As String
@@ -261,18 +263,19 @@ Public Function InitDoc() As String
   stext = "\\documentclass[12pt,a4paper]{article}" & gb.CrLf 'type document: article
   stext &= "\\usepackage[dvips,dvipsnames,usenames]{color}" & gb.CrLf 'color
   stext &= "\\usepackage[utf8]{inputenc} % Escribir con acentos, ñ, ..." & gb.CrLf ' spanish
-  stext &= "\\textheight = 21 cm"
+  stext &= "\\textheight = 25 cm"
   stext &= "\\textwidth = 17 cm"
   stext &= "\\topmargin = -1 cm"
   stext &= "\\oddsidemargin = 0 cm"
   stext &= "\\parindent = 0 mm"
   stext &= "\\usepackage{lscape}" & gb.CrLf
+  stext &= "\\usepackage{longtable}" & gb.CrLf '% para tablas largas
   stext &= "\\usepackage[pdftex]{graphicx}  % Inclusión de imágenes" & gb.CrLf ' image
   stext &= "\\DeclareGraphicsExtensions {.pdf,.png,.jpg}" & gb.CrLf 'type image
   stext &= "\\usepackage{amsmath}" & gb.crlf 'box
   stext &= "\\usepackage{fancybox}" & gb.CrLf 'type box
-  stext &= "\\usepackage{fancyhdr}" & gb.CrLf 'para indicar cabecera y pie de pagina
-  stext &= "\\pagestyle{fancy} " & gb.CrLf 'para indicar cabecera y pie de pagina
+  'stext &= "\\usepackage{fancyhdr}" & gb.CrLf 'para indicar cabecera y pie de pagina
+  ' stext &= "\\pagestyle{fancy} " & gb.CrLf 'para indicar cabecera y pie de pagina
   stext &= sUsePackageText & gb.CrLf
   stext &= "\\begin{document}" & gb.CrLf
   Return stext 
@@ -375,8 +378,9 @@ End
 '                tables Gridviews
 '-----------------------------------------------------------------
 '' converts a gridview content in a latex table
-Public Sub TableGridViews(rejilla As Gridview, Optional sformat As String) As String 
+Public Sub TableGridViews(rejilla As Gridview, Optional sformat As String, Optional TitleEndFirstHead As String, Optional TitleEndHead As String, Optional TitleEndFoot As String, Optional TitleEndLastFoot As String) As String 
   
+  Dim solocolumnas As String
   Dim stext As String
   Dim stextorejilla As String
   Dim ia As Integer
@@ -406,6 +410,7 @@ Public Sub TableGridViews(rejilla As Gridview, Optional sformat As String) As St
     If rejilla.Columns[ia].Width <> 0 Then 
       
       stextorejilla &= "{\\bf " & Replace(TextPure(rejilla.Columns[ia].title), "_", " ") & "} & "
+      solocolumnas &= "{\\bf " & Replace(TextPure(rejilla.Columns[ia].title), "_", " ") & "} & "
     Else
       'no pongo titulo al ser la columna bacia...
     Endif
@@ -413,13 +418,23 @@ Public Sub TableGridViews(rejilla As Gridview, Optional sformat As String) As St
   'ultima columna...
   If rejilla.Columns[ia].Width <> 0 Then 
     stextorejilla &= "{\\bf " & Replace(TextPure(rejilla.Columns[rejilla.Columns.count - 1].title), "_", " ") & "}\\\\" 
+    solocolumnas &= "{\\bf " & Replace(TextPure(rejilla.Columns[rejilla.Columns.count - 1].title), "_", " ") & "}\\\\" 
   Else
     stextorejilla = Left$(stextorejilla, Len(stextorejilla) - Len(" & ")) 'le quito " & "
     stextorejilla &= "\\\\ \n"  
+    solocolumnas = Left$(stextorejilla, Len(stextorejilla) - Len(" & ")) & "\\\\ \n "
   Endif
   
   stextorejilla &= "\\hline  \n"
   
+  stext &= CrLf() & "\n"
+  
+  If TitleEndFirstHead <> "" And TitleEndFoot <> "" Then 
+    stext &= " \n" & "\\multicolumn{" & Str$(rejilla.Columns.max - 1) & "}{c} {" & TextPure(TitleEndFirstHead) & "} \\\\ \n  \\hline" & " \n \\endfirsthead \n"
+    stext &= " \n" & "\\multicolumn{" & Str$(rejilla.Columns.max - 1) & "}{c} {" & TextPure(TitleEndHead) & "} \\\\ \n  \\hline" & " \n" & solocolumnas & " \n \\endhead \n " 
+    stext &= " \n" & "\\multicolumn{" & Str$(rejilla.Columns.max - 1) & "}{c} {" & TextPure(TitleEndFoot) & "} \\\\ \n \\endfoot \n"
+    stext &= " \n" & "\\multicolumn{" & Str$(rejilla.Columns.max - 1) & "}{c} {" & TextPure(TitleEndLastFoot) & "} \\\\ \n \n \\endlastfoot \n"
+  Endif
   'leo los datos..
   For ia = 0 To rejilla.Rows.count - 1
     For ib = 0 To rejilla.Columns.count - 2
@@ -450,16 +465,16 @@ Private Function tableInit(Optional sformat As String) As String
   ' |1||r|p{2cm}|
   ' lrc
   If IsNull(sformat) Then 
-    Return "\\begin{tabular}" & gb.CrLf
+    Return "\\begin{longtable}" & gb.CrLf
   Else
-    Return "\\begin{tabular}{" & sformat & "}" & gb.CrLf
+    Return "\\begin{longtable}{" & sformat & "}" & gb.CrLf
   Endif
   
 End
 
 Private Function tableEnd() As String ''end table
   
-  Return "\\end{tabular}\n"
+  Return "\\end{longtable}\n"
   
 End
 

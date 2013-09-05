@@ -33,8 +33,8 @@ Public Sub FichaAlumno(idalumno As Integer, show As Boolean)
   'realizar consulta 
   RefrescarDatosCursos()
   'Escribir datos del alumno
-  doc.pageHeader("", "Expediente Alumno", "")
-  doc.pageFooter("", "", "" & doc.pageNumber())
+  ' doc.pageHeader("", "Expediente Alumno", "")
+  'doc.pageFooter("", "", "" & doc.pageNumber())
   
   If alumno.RutaFoto = "" Then alumno.RutaFoto = "transparente.png"
   parrafo = doc.Picture(ControladorAplicacion.rutaTrabajo & "Fotos/" & alumno.RutaFoto, 0.5, 0) &
@@ -109,8 +109,8 @@ Public Sub FichaCurso(idcurso As Integer, show As Boolean)
   'realizar consulta 
   RefrescarDatosAlumnos()
   'Escribir datos del alumno
-  doc.pageHeader("", "Expediente Curso", "")
-  doc.pageFooter("", "", "" & doc.pageNumber())
+  'doc.pageHeader("", "Expediente Curso", "")
+  ' doc.pageFooter("", "", "" & doc.pageNumber())
   
   stext &= doc.bold("Curso: ") & doc.text(String.Upper$(curso.Nombre)) & doc.CrLf()
   stext &= doc.bold("Detalles: ") & doc.CrLf()
@@ -192,11 +192,12 @@ Public Sub ListaAlumnos()
     Next 
     resultadoCurso.MoveNext()
   Loop
-  doc.pageHeader("", "Lista de Alumnos", "")
-  doc.pageFooter("", "", "" & doc.pageNumber())
+  ' doc.pageHeader("", "Lista de Alumnos", "")
+  ' doc.pageFooter("", "", "" & doc.pageNumber())
   stext = doc.Environment.LandScape.Begin()
-  stext &= "\\scalebox{0.7}{ " & doc.TableGridViews(gridviewTmporal) & " }"
-  
+  'stext &= doc.Environment.Center.Begin() ' & doc.bold(doc.text("Lista de Alumnos")) & doc.CrLf() & doc.CrLf()
+  stext &= " " & doc.TableGridViews(gridviewTmporal,, "Lista de Alumnos", "Lista de Alumnos (continua)", "Sigue en la página siguiente...", "Fin de la lista de Alumnos") & " "
+  '  stext &= doc.Environment.Center.End()
   stext &= doc.Environment.LandScape.End()
   
   'LatexHelper.compileTEX(stext, doc, "ListaAlumnos", True)
@@ -257,10 +258,10 @@ Public Sub ListaCusos()
     Next 
     resultadoCurso.MoveNext()
   Loop
-  doc.pageHeader("", "Lista de Cursos", "")
-  doc.pageFooter("", doc.pageNumber(), "")
+  'doc.pageHeader("", "Lista de Cursos", "")
+  'doc.pageFooter("", doc.pageNumber(), "")
   
-  stext &= "{ " & doc.TableGridViews(gridviewTmporal, "|l|l|") & " }"
+  stext &= "{ " & doc.TableGridViews(gridviewTmporal, "|l|l|", "Lista de Cursos", "Lista de Cursos (continua)", "Sigue en la página siguiente...", "Fin listado de Cursos") & " }"
   
   'LatexHelper.compileTEX(stext, doc, "ListaAlumnos", True)
   cadenaControlTerminadar = ""

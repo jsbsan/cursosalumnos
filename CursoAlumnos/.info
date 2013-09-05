@@ -141,7 +141,7 @@ s
 TableGridViews
 m
 s
-(rejilla)Gridview;[(sformat)s]
+(rejilla)Gridview;[(sformat)s(TitleEndFirstHead)s(TitleEndHead)s(TitleEndFoot)s(TitleEndLastFoot)s]
 'converts a gridview content in a latex table
 #LatexHelper
 
