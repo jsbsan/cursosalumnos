@@ -103,6 +103,9 @@ Geometry=[-7,-8,210,210]
 [DebugWindow/resultadoTodosLosAlumnos.Fields]
 Geometry=[7,6,210,210]
 
+[DebugWindow/retornoAlumno]
+Geometry=[0,31,227,580]
+
 [DebugWindow/sustituyeCaracter]
 Geometry=[-5,243,210,210]
 
@@ -113,12 +116,12 @@ LastCommit="Formularios de expedientes de alumnos y cursos\n---- Esta línea y l
 File[1]=".src/vista/FControlAcceso.form"
 File[2]=".src/vista/FControlAcceso.class:24.36"
 File[3]=".src/controlador/main.module:6.2"
-File[4]=".src/controlador/Controlador.class:18.0"
+File[4]=".src/controlador/Controlador.class:143.2"
 File[5]=".src/vista/FormPrincipal.form"
-File[6]=".src/vista/FormPrincipal.class:33.24"
-File[7]=".src/modelo/Logica.class:199.2"
+File[6]=".src/vista/FormPrincipal.class:84.2"
+File[7]=".src/modelo/Logica.class:104.46"
 File[8]=".src/vista/FormAlumno.form"
-File[9]=".src/vista/FormAlumno.class:246.61"
+File[9]=".src/vista/FormAlumno.class:7.2"
 File[10]="icono_fotos_personas.png"
 File[11]=".src/vista/FormCalendario.form"
 File[12]=".src/vista/FormCalendario.class:22.0"
@@ -128,7 +131,7 @@ File[15]=".src/vista/FormCurso.class:82.61"
 File[16]=".src/vista/FormExpedienteCurso.form"
 File[17]=".src/vista/FormExpedienteCurso.class:97.38"
 File[18]=".src/vista/FormExpedienteAlumno.form"
-File[19]=".src/vista/FormExpedienteAlumno.class:90.2"
+File[19]=".src/vista/FormExpedienteAlumno.class:181.45"
 File[20]="transparente.png"
 File[21]=".src/modelo/conexion/conexion.class:14.0"
 File[22]=".src/modelo/VO/AlumnoVO.class:2.17"
@@ -142,15 +145,15 @@ File[29]=".src/controlador/ClassDato.class:0.19"
 File[30]=".src/Otros Formularios y Modulos/FormPensando.form"
 File[31]=".src/Otros Formularios y Modulos/FormError.form"
 File[32]=".src/Otros Formularios y Modulos/ModuleUtilidadesDisco.module:139.0"
-File[33]=".src/Otros Formularios y Modulos/FormPensando.class:26.260"
+File[33]=".src/Otros Formularios y Modulos/FormPensando.class:27.67"
 File[34]="icoLoading.gif"
 File[35]=".src/vista/FormEligeCurso.form"
 File[36]=".src/vista/FormEligeCurso.class:0.19"
 File[37]=".src/vista/FormEligeAlumno.form"
 File[38]=".src/vista/FormEligeAlumno.class:156.61"
 File[39]="esquema.MpBd:0.0"
-File[40]=".src/Imprimir/Imprimir.module:118.41"
-Active=41
+Active=40
+File[40]=".src/Imprimir/Imprimir.module:47.75"
 File[41]=".src/Latex/Latex.class:436.7"
 File[42]=".src/Latex/_Environment.class:5.33"
 File[43]=".src/Latex/_Line.class:0.19"
@@ -165,7 +168,7 @@ File[51]=".src/Latex/_Environment/_Landscape.class:0.19"
 File[52]=".src/Latex/_Environment/_Verbatim.class:0.19"
 File[53]="libro.png"
 File[54]="logo gambas.png"
-File[55]=".src/modelo/DAO/AlumnoDAO.class:0.19"
+File[55]=".src/modelo/DAO/AlumnoDAO.class:625.3"
 File[56]=".src/modelo/DAO/CursoDAO.class:0.19"
 File[57]=".src/modelo/DAO/RelacionDAO.class:0.19"
 File[58]=".src/Otros Formularios y Modulos/ModuleUpdate.module:13.18"

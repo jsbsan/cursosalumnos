@@ -108,7 +108,7 @@ Public Function buscarIdAlumno(id As Integer) As AlumnoVO
   retornoAlumno.Nombre = resultado["Nombre"]
   retornoAlumno.Documento = resultado["Documento"]
   retornoAlumno.FechaNacimiento = resultado["FechaNacimiento"]
-  retornoAlumno.Documento = resultado["Domicilio"]
+  retornoAlumno.Domicilio = resultado["Domicilio"]
   retornoAlumno.Telefono = resultado["Telefono"]
   retornoAlumno.Nacionalidad = resultado["Nacionalidad"]
   retornoAlumno.EscOrigen = resultado["EscOrigen"]
@@ -195,7 +195,7 @@ End
 Public Function borrarRelacionIdRela(dato As RelacionVO) As Boolean
   
   Dim mirela As New RelacionDAO
-
+  
   Return mirela.BorrarIdRelacion(dato.idRelacion)
   
 End
@@ -242,4 +242,3 @@ Public Function ContenidoDocumento(dato As String) As Result
   Return mialu.BuscarContenidoDocumento(dato, "Apellido") 
   
 End
-

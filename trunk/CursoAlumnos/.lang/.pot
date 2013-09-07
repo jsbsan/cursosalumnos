@@ -155,7 +155,7 @@ msgstr ""
 msgid "Copiar Al portapapeles"
 msgstr ""
 
-#: FormError.form:25 FormPrincipal.form:326
+#: FormError.form:25 FormPrincipal.form:327
 msgid "Salir"
 msgstr ""
 
@@ -282,59 +282,64 @@ msgstr ""
 msgid "Listados"
 msgstr ""
 
-#: FormPrincipal.form:209
-msgid "Listado de informes disponibles..."
+#: FormPrincipal.form:214
+msgid ""
+"Listado de informes disponibles...<br>\n"
+"<b>Nota</b><br>\n"
+"Los listados \"Lista de Alumnos con los cursos que participan\" y \"Lista de "
+"Cursos y Alumnos que lo conforman\", dependiendo del numero de alumnos y "
+"cursos, suelen tardar algo más en aparcer."
 msgstr ""
 
-#: FormPrincipal.form:216
+#: FormPrincipal.form:217
 msgid "Administrador"
 msgstr ""
 
-#: FormPrincipal.form:222
+#: FormPrincipal.form:223
 msgid "Clave Actual:"
 msgstr ""
 
-#: FormPrincipal.form:229
+#: FormPrincipal.form:230
 msgid "Cambiar Contraseña"
 msgstr ""
 
-#: FormPrincipal.form:241
+#: FormPrincipal.form:242
 msgid "Clave Nueva:"
 msgstr ""
 
-#: FormPrincipal.form:252
+#: FormPrincipal.form:253
 msgid "Reescriba la clave:"
 msgstr ""
 
-#: FormPrincipal.form:265
+#: FormPrincipal.form:266
 msgid "mensaje:"
 msgstr ""
 
-#: FormPrincipal.form:271
+#: FormPrincipal.form:272
 msgid "Usuario Actual:"
 msgstr ""
 
-#: FormPrincipal.form:283
+#: FormPrincipal.form:284
 msgid "Comprobar si existe nueva Versión del programa"
 msgstr ""
 
-#: FormPrincipal.form:292
+#: FormPrincipal.form:293
 msgid "Realizar Copia Datos"
 msgstr ""
 
-#: FormPrincipal.form:301
+#: FormPrincipal.form:302
 msgid "Restaurar Datos"
 msgstr ""
 
-#: FormPrincipal.form:308
+#: FormPrincipal.form:309
 msgid "Ruta donde se Guardan los Informes:"
 msgstr ""
 
-#: FormPrincipal.form:313
+#: FormPrincipal.form:314
 msgid "/tmp"
 msgstr ""
 
-#: FormPrincipal.form:321
+#: FormPrincipal.form:322
 msgid "Cambiar"
 msgstr ""
 
