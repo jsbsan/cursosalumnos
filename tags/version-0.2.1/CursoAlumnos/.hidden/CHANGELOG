@@ -1,0 +1,87 @@
+* Sat Sep 07 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.2.1
+- Corregido bug de presentar el documento como domicilio
+
+* Thu Sep 05 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.2.0
+- aumento  espera de 5 a 10 segundos para que aparezca el letrero
+
+* Thu Sep 05 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.2.0
+- mejoras en informaes de tablas multipaginas
+
+* Wed Sep 04 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.1.9
+- añado algunos caracteres mas y barra de desplazamiento vertical para gridview alumnos y cursos
+
+* Tue Sep 03 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.1.8
+- anado n y d en letras admitidas
+
+* Tue Sep 03 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.1.7
+- espera
+
+* Tue Sep 03 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.1.7
+- mensaje de errror si se tarda mucho en imprimir un pdf
+
+* Tue Sep 03 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.1.6
+- filtrar textbox caracteres valido
+
+* Mon Sep 02 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.1.5
+- revisado lista de alumnos que no se apagaba el icono de espera
+
+* Mon Sep 02 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.1.5
+- borrado de observaciones (de las varias que puede tener), añadido retardos para mostrar los pdf con string
+
+* Sat Aug 31 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.1.4
+- Con copia de archivos de listado a otro directorio
+
+* Sat Aug 31 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.1.4
+- imagemagick
+
+* Sat Aug 31 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.1.3
+- a
+
+* Sat Aug 31 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.1.3
+- Corregido error al Restaurar datos
+
+* Fri Aug 30 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.1.2
+-activado lista de impresion y sale al 1º elemento de la lista
+
+* Fri Aug 30 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.1.2
+-Activado lista de impresion que se habia quedado enabled=false
+
+* Fri Aug 30 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.1.2
+-Añadido copia y restauracion de datos
+
+* Wed Aug 28 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.1.1
+-Prelanzamiento0.1.1 añadido busquedas
+
+* Tue Aug 27 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.0.9
+- Prelanzamiento14
+
+* Tue Aug 27 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.0.9
+- Prelanzamiento12
+
+* Tue Aug 27 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.0.9
+- Prelanzamiento11
+
+* Tue Aug 27 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.0.9
+- Prelanzamiento10
+
+* Tue Aug 27 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.0.9
+- Prelanzamiento9
+
+* Tue Aug 27 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.0.7
+-Prelanzamiento7
+
+* Tue Aug 27 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.0.6
+- Prelanzamiento4
+
+* Tue Aug 27 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.0.5
+- Prelanzamiento3
+
+* Tue Aug 27 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.0.5
+-Prelanzamiento2
+
+* Tue Aug 27 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.0.5
+-Prelanzamiento
+
+* Tue Aug 27 2013 jsbsan <jusabejusabe@gmail.com> 0.0.5
+- Lanzamiento inicial
+

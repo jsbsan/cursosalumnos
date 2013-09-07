@@ -1,0 +1,35 @@
+# Gambas Project File 3.0
+# Compiled with Gambas 3.4.1
+Title=CursoAlumnos
+Startup=main
+Icon=libro.png
+Version=0.2.1
+Component=gb.image
+Component=gb.qt4
+Component=gb.form
+Component=gb.db
+Component=gb.db.form
+Component=gb.db.sqlite3
+Component=gb.desktop
+Component=gb.settings
+Component=gb.net
+Component=gb.net.curl
+Component=gb.qt4.ext
+Description="Control de Alumnos en Cursos"
+Authors="Julio Sánchez Berro y Jorge Agustín Pereyra"
+TabSize=2
+Translate=1
+Language=es
+ExecPath=/home/uno/CursoAlumnos.gambas
+Maintainer=Julio Sánchez Berro y Jorge Agustín Pereyra
+Address=jusabejusabe@gmail.com
+Url=jsbsan.blogspot.com
+License=General Public License
+PackageName=cursoalumnos-0.2.1
+CreateEachDirectory=1
+Packager=1
+Systems=debian
+Menus=debian:"Applications/Education"
+Categories=debian:"Education"
+Groups=debian:"admin"
+ExtraDependencies=debian:"latex-beamer\t\t\ntexlive-latex-extra\t\t\nimagemagick\t\t\nevince\t\t"

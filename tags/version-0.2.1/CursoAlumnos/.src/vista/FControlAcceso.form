@@ -1,0 +1,67 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,81,42)
+  Background = &HFFFFFF&
+  Icon = Picture["icon:/16/book"]
+  Persistent = True
+  Resizable = False
+  { Label1 Label
+    MoveScaled(12,21,25,6)
+    Font = Font["Arial,Bold,+2"]
+    Text = ("Usuario:")
+    Alignment = Align.Right
+  }
+  { Label2 Label
+    MoveScaled(11,28,26,7)
+    Font = Font["Arial,Bold,+2"]
+    Text = ("Contraseña:")
+    Alignment = Align.Right
+  }
+  { ToolButtonAceptar ToolButton
+    MoveScaled(50,35,15,6)
+    Text = ("Aceptar")
+    Picture = Picture["icon:/16/apply"]
+    Border = True
+  }
+  { ToolButtonCancelar ToolButton
+    MoveScaled(19,35,15,6)
+    Text = ("Cancelar")
+    Picture = Picture["icon:/16/cancel"]
+    Border = True
+  }
+  { TextBoxUsuario TextBox
+    MoveScaled(42,21,17,5)
+    Password = True
+  }
+  { TextBoxContrasena TextBox
+    MoveScaled(42,29,17,5)
+    Password = True
+  }
+  { PictureBox1 PictureBox
+    MoveScaled(0,0,80,15)
+    Picture = Picture["colegio13.jpg"]
+  }
+  { TextLabel1 TextLabel
+    MoveScaled(3,15,78,5)
+    Font = Font["Arial,Bold,+3"]
+    Foreground = &H4765BF&
+    Text = ("Control de Cursos y Alumnos")
+    Alignment = Align.Center
+  }
+  { TextLabel2 TextLabel
+    MoveScaled(3,15,78,4)
+    Font = Font["Arial,Bold,+3"]
+    Text = ("Control de Cursos y Alumnos")
+    Alignment = Align.Center
+  }
+  { PictureBoxLogo PictureBox
+    MoveScaled(3,19,11,13)
+    Picture = Picture["libro.png"]
+  }
+  { PictureBox2 PictureBox
+    MoveScaled(69,19,11,13)
+    Picture = Picture["logo gambas.png"]
+    Stretch = True
+  }
+}

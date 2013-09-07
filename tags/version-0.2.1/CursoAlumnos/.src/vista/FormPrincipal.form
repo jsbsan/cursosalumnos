@@ -1,0 +1,248 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,101,71)
+  Icon = Picture["icon:/16/book"]
+  Persistent = True
+  Arrangement = Arrange.Fill
+  { VBox1 VBox
+    MoveScaled(1,1,98,68)
+    { Panel1 Panel
+      MoveScaled(0,0,98,14)
+      Border = Border.Plain
+      { PictureBox1 PictureBox
+        MoveScaled(0,0,96,14)
+        Picture = Picture["colegio13.jpg"]
+        Stretch = True
+      }
+    }
+    { IconPanelMenu IconPanel
+      MoveScaled(0,14,97,52)
+      AutoResize = True
+      Count = 6
+      Index = 0
+      Text = ("Acerca de...")
+      Picture = Picture["icon:/16/question"]
+      { TextLabelAcercaDe TextLabel
+        MoveScaled(2,7,55,51)
+        Text = ("<h2>Control de Cursos y Alumnos</h2><br>\nRealizado por:<br>\n<i>Julio Sánchez Berro y Jorge Agustín Pereyra</i><br>\n<br>\n<br>\n<b>Nota:</b><br>\nEs necesario tener instalado las programas:<br>\nsudo apt-get install imagemagick<br>\nsudo apt-get install latex-beamer <br>\nsudo apt-get install texlive-latex-extra<br>\nPara la creación de informes<br>\nY para ver los pdf:<br>\nsudo apt-get install evince<br>\n\n\n")
+        Alignment = Align.Center
+      }
+      { PictureBoxLogo PictureBox
+        MoveScaled(10,1,11,11)
+        Picture = Picture["libro.png"]
+      }
+      { PictureBox2 PictureBox
+        MoveScaled(41,1,11,11)
+        Picture = Picture["logo gambas.png"]
+        Stretch = True
+      }
+      Index = 1
+      Text = ("Alumnos")
+      Picture = Picture["icon:/16/people"]
+      { HBox1 HBox
+        MoveScaled(1,1,76,4)
+        AutoResize = True
+        { ToolButtonAnadir ToolButton
+          MoveScaled(0,0,14,4)
+          Font = Font["Arial,-2"]
+          Text = ("Añadir")
+          Picture = Picture["icon:/16/add"]
+          Border = True
+        }
+        { ToolButtonEditar ToolButton
+          MoveScaled(14,0,14,4)
+          Font = Font["Arial,-2"]
+          Text = ("Editar")
+          Picture = Picture["icon:/16/edit"]
+          Border = True
+        }
+        { ToolButtonBorrar ToolButton
+          MoveScaled(28,0,14,4)
+          Font = Font["Arial,-2"]
+          Text = ("Borrar")
+          Picture = Picture["icon:/16/erase"]
+          Border = True
+        }
+        { ToolButtonExpediente ToolButton
+          MoveScaled(43,0,18,4)
+          Font = Font["Arial,-2"]
+          Text = ("Expediente")
+          Picture = Picture["icon:/16/view-detail"]
+          Border = True
+        }
+        { ToolButtonImprimirListaAlumnos ToolButton
+          MoveScaled(60,0,13,4)
+          Font = Font["Arial,-2"]
+          Text = ("Imprimir Lista")
+          Picture = Picture["icon:/16/printer"]
+          Border = True
+        }
+      }
+      { GridViewAlumno GridView
+        MoveScaled(1,9,70,42)
+        ToolTip = ("si hace doble click editará el expediente")
+      }
+      { LabelMensajeAlumnos Label
+        MoveScaled(1,5,73,4)
+      }
+      Index = 2
+      Text = ("Cursos")
+      Picture = Picture["icon:/16/book"]
+      { HBox2 HBox
+        MoveScaled(1,1,75,4)
+        { ToolButtonAnadirCurso ToolButton
+          MoveScaled(-1,0,14,4)
+          Font = Font["Arial,-2"]
+          Text = ("Añadir")
+          Picture = Picture["icon:/16/add"]
+          Border = True
+        }
+        { ToolButtonEditarCurso ToolButton
+          MoveScaled(13,0,14,4)
+          Font = Font["Arial,-2"]
+          Text = ("Editar")
+          Picture = Picture["icon:/16/edit"]
+          Border = True
+        }
+        { ToolButtonBorrarCurso ToolButton
+          MoveScaled(27,0,14,4)
+          Font = Font["Arial,-2"]
+          Text = ("Borrar")
+          Picture = Picture["icon:/16/erase"]
+          Border = True
+        }
+        { ToolButtonFichaCurso ToolButton
+          MoveScaled(41,0,18,4)
+          Font = Font["Arial,-2"]
+          Text = ("Ficha")
+          Picture = Picture["icon:/16/view-detail"]
+          Border = True
+        }
+        { ToolButtonImprimirListaCursos ToolButton
+          MoveScaled(60,0,13,4)
+          Font = Font["Arial,-2"]
+          Text = ("Imprimir Lista")
+          Picture = Picture["icon:/16/printer"]
+          Border = True
+        }
+      }
+      { GridViewCurso GridView
+        MoveScaled(1,9,71,42)
+        ToolTip = ("si hace doble click editará el expediente")
+      }
+      { LabelMensajeCursos Label
+        MoveScaled(1,5,73,4)
+      }
+      Index = 3
+      Text = ("Listados")
+      Picture = Picture["icon:/16/text"]
+      { ListBoxInforme ListBox
+        MoveScaled(1,15,60,37)
+      }
+      { Label1 TextLabel
+        MoveScaled(2,0,68,13)
+        AutoResize = True
+        Text = ("Listado de informes disponibles...<br>\n<b>Nota</b><br>\nLos listados \"Lista de Alumnos con los cursos que participan\" y \"Lista de Cursos y Alumnos que lo conforman\", dependiendo del numero de alumnos y cursos, suelen tardar algo más en aparcer.")
+      }
+      Index = 4
+      Text = ("Administrador")
+      Picture = Picture["icon:/16/tools"]
+      { Label2 Label
+        MoveScaled(7,7,18,3)
+        Font = Font["Andale Mono,-1"]
+        Text = ("Clave Actual:")
+      }
+      { ButtonCambiarClave Button
+        MoveScaled(25,27,29,4)
+        Font = Font["Andale Mono,-1"]
+        AutoResize = True
+        Text = ("Cambiar Contraseña")
+        Picture = Picture["icon:/16/apply"]
+      }
+      { TextBoxClaveActual TextBox
+        MoveScaled(26,6,25,4)
+        Password = True
+      }
+      { Label3 Label
+        MoveScaled(7,14,17,4)
+        Font = Font["Andale Mono,-1"]
+        Text = ("Clave Nueva:")
+      }
+      { TextBoxClaveNueva TextBox
+        MoveScaled(26,13,25,4)
+        Password = True
+      }
+      { Label4 Label
+        MoveScaled(7,19,19,5)
+        Font = Font["Andale Mono,-1"]
+        Text = ("Reescriba la clave:")
+      }
+      { TextBoxClaveReescrita TextBox
+        MoveScaled(26,19,25,4)
+        Password = True
+      }
+      { LabelMensajeClave Label
+        MoveScaled(4,24,67,3)
+        Font = Font["Andale Mono,-1"]
+        Foreground = &HFF0000&
+        AutoResize = True
+        Text = ("mensaje:")
+      }
+      { Label5 Label
+        MoveScaled(7,1,18,4)
+        Font = Font["Andale Mono,-1"]
+        Text = ("Usuario Actual:")
+      }
+      { TextBoxUsuarioActual TextBox
+        MoveScaled(26,1,25,4)
+        Password = True
+      }
+      { ToolButtonVersion ToolButton
+        MoveScaled(7,33,58,5)
+        Font = Font["Andale Mono,-1"]
+        AutoResize = True
+        Text = ("Comprobar si existe nueva Versión del programa")
+        Picture = Picture["icon:/16/refresh"]
+        Border = True
+      }
+      { ToolButtonRealizarCopia ToolButton
+        MoveScaled(7,39,30,5)
+        Font = Font["Andale Mono,-1"]
+        AutoResize = True
+        Text = ("Realizar Copia Datos")
+        Picture = Picture["FloppyEntrada.png"]
+        Border = True
+      }
+      { ToolButtonRestaurarDatos ToolButton
+        MoveScaled(42,39,23,5)
+        Font = Font["Andale Mono,-1"]
+        AutoResize = True
+        Text = ("Restaurar Datos")
+        Picture = Picture["FloppyExtraer.png"]
+        Border = True
+      }
+      { Label6 Label
+        MoveScaled(1,44,37,4)
+        Text = ("Ruta donde se Guardan los Informes:")
+      }
+      { LabelRutaInforme Label
+        MoveScaled(1,48,56,3)
+        Text = ("/tmp")
+        Border = Border.Plain
+      }
+      { ToolButtonCambiarRutaInformes ToolButton
+        MoveScaled(58,47,13,4)
+        Font = Font["Andale Mono,-1"]
+        AutoResize = True
+        Text = ("Cambiar")
+        Picture = Picture["icon:/16/harddisk"]
+        Border = True
+      }
+      Index = 5
+      Text = ("Salir")
+      Picture = Picture["icon:/16/quit"]
+      Index = 0
+    }
+  }
+}
