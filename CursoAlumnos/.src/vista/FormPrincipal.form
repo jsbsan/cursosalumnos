@@ -137,12 +137,13 @@
       Index = 3
       Text = ("Listados")
       Picture = Picture["icon:/16/text"]
-      { Label1 Label
-        MoveScaled(2,0,57,6)
-        Text = ("Listado de informes disponibles...")
-      }
       { ListBoxInforme ListBox
-        MoveScaled(2,5,60,44)
+        MoveScaled(1,15,60,37)
+      }
+      { Label1 TextLabel
+        MoveScaled(2,0,68,13)
+        AutoResize = True
+        Text = ("Listado de informes disponibles...<br>\n<b>Nota</b><br>\nLos listados \"Lista de Alumnos con los cursos que participan\" y \"Lista de Cursos y Alumnos que lo conforman\", dependiendo del numero de alumnos y cursos, suelen tardar algo más en aparcer.")
       }
       Index = 4
       Text = ("Administrador")

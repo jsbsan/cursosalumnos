@@ -107,7 +107,7 @@ Public Sub ToolButtonBorrarAlumno_Click()
 End
 
 Public Sub ToolButtonEditarObservacion_Click()
-
+  
   Dim dato As New ClaseDato
   Dim formularioInput As New FormInput
   Dim rela As New RelacionVO
@@ -119,7 +119,7 @@ Public Sub ToolButtonEditarObservacion_Click()
     
     formularioInput.dato = dato
     formularioInput.pront = "Introduzca Observación:"
-    formularioInput.titulo = "Observación del Aluno en el Curso " & GridViewRelacionCursos[GridViewRelacionCursos.row, 1].Text
+    formularioInput.titulo = "Observación del Alumno en el Curso " & GridViewRelacionCursos[GridViewRelacionCursos.row, 1].Text
     formularioInput.Pordefecto = GridViewRelacionCursos[GridViewRelacionCursos.row, 2].Text
     formularioInput.Showmodal()
     

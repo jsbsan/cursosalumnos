@@ -1,3 +1,9 @@
+* Sat Sep 07 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.2.1
+- Corregido bug de presentar el documento como domicilio
+
+* Thu Sep 05 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.2.0
+- aumento  espera de 5 a 10 segundos para que aparezca el letrero
+
 * Thu Sep 05 2013 Julio Sánchez Berro y Jorge Agustín Pereyra <jusabejusabe@gmail.com> 0.2.0
 - mejoras en informaes de tablas multipaginas
 
